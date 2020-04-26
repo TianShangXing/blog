@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="python2和python3的区别 print语句被python3废弃，只能使用print函数
+Python3中字符串是Unicode (utf-8)编码，支持中文做标识符。
+python2中是ASCII编码，需要更改字符集才能正常支持中文，所以在.py文件中会看到#&amp;ndash; coding: UTF-8 &amp;ndash;
+异常处理 Python2中try:&amp;hellip;except Exception, e:&amp;hellip;，在Python3中改为了try:&amp;hellip;except Exception as e:&amp;hellip;
+Python3中不再使用xrange方法，只有range方法。
+range在Python2中返回列表，而在Python3中返回range可迭代对象。
+在Python2中有两个不等运算符!=和&amp;lt;&amp;gt;，在Python3中去掉了&amp;lt;&amp;gt;，只有!=符号表示不等
+在Python2中双反引号可以替代repr函数，在Python3中去掉了双反引号的表是方法，只能用repr方法。
+StringIO模块现在被合并到新的io模组内。new, md5, gopherlib等模块被删除。
+httplib, BaseHTTPServer, CGIHTTPServer, SimpleHTTPServer, Cookie, cookielib被合并到http包内。
+取消了exec语句，只剩下exec()函数。
+在Python2中long是比int取值范围更大的整数，Python3中取消了long类型，int的取值范围扩大到之前的long类型范围。
+列表推导 不再支持[n for n in a,b]语法，改为[n for n in (a,b)]或[n for n in [a,b]]
+python 2 中通过input输入的类型是int，只有通过raw_input()输入的类型才是str。
+python 3中通过input输入的类型都是str，去掉了row_input()方法。
+python3.6中dict有序 有序是指遍历时的输出顺序与输入顺序相同
+关于哈希表   散列表概念 散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
+  哈希函数 给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(Hash) 函数。 （相关：是不是可以这样理解，数组可以通过下标进行访问，时间复杂度是O(1)，对于不连续存储的数据结构，如果知道下标也可以直接进行访问，所以可以通过哈希函数将key映射成数组下标，进行访问）
+  冲突 不同的key经过hash函数运行后得到相同的值，产生冲突；
+  冲突解决方式" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/blogs/python2%E5%92%8Cpython3%E7%9A%84%E5%8C%BA%E5%88%AB/" />
+
+
+    <title>
+        
+            Python2和python3的区别 :: TianShangXing&#39;s Blog  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Python2和python3的区别">
+<meta itemprop="description" content="python2和python3的区别 print语句被python3废弃，只能使用print函数
+Python3中字符串是Unicode (utf-8)编码，支持中文做标识符。
+python2中是ASCII编码，需要更改字符集才能正常支持中文，所以在.py文件中会看到#&ndash; coding: UTF-8 &ndash;
+异常处理 Python2中try:&hellip;except Exception, e:&hellip;，在Python3中改为了try:&hellip;except Exception as e:&hellip;
+Python3中不再使用xrange方法，只有range方法。
+range在Python2中返回列表，而在Python3中返回range可迭代对象。
+在Python2中有两个不等运算符!=和&lt;&gt;，在Python3中去掉了&lt;&gt;，只有!=符号表示不等
+在Python2中双反引号可以替代repr函数，在Python3中去掉了双反引号的表是方法，只能用repr方法。
+StringIO模块现在被合并到新的io模组内。new, md5, gopherlib等模块被删除。
+httplib, BaseHTTPServer, CGIHTTPServer, SimpleHTTPServer, Cookie, cookielib被合并到http包内。
+取消了exec语句，只剩下exec()函数。
+在Python2中long是比int取值范围更大的整数，Python3中取消了long类型，int的取值范围扩大到之前的long类型范围。
+列表推导 不再支持[n for n in a,b]语法，改为[n for n in (a,b)]或[n for n in [a,b]]
+python 2 中通过input输入的类型是int，只有通过raw_input()输入的类型才是str。
+python 3中通过input输入的类型都是str，去掉了row_input()方法。
+python3.6中dict有序 有序是指遍历时的输出顺序与输入顺序相同
+关于哈希表   散列表概念 散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
+  哈希函数 给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(Hash) 函数。 （相关：是不是可以这样理解，数组可以通过下标进行访问，时间复杂度是O(1)，对于不连续存储的数据结构，如果知道下标也可以直接进行访问，所以可以通过哈希函数将key映射成数组下标，进行访问）
+  冲突 不同的key经过hash函数运行后得到相同的值，产生冲突；
+  冲突解决方式">
+<meta itemprop="datePublished" content="2019-12-27T18:04:50&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-27T18:04:50&#43;08:00" />
+<meta itemprop="wordCount" content="83">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Python2和python3的区别"/>
+<meta name="twitter:description" content="python2和python3的区别 print语句被python3废弃，只能使用print函数
+Python3中字符串是Unicode (utf-8)编码，支持中文做标识符。
+python2中是ASCII编码，需要更改字符集才能正常支持中文，所以在.py文件中会看到#&ndash; coding: UTF-8 &ndash;
+异常处理 Python2中try:&hellip;except Exception, e:&hellip;，在Python3中改为了try:&hellip;except Exception as e:&hellip;
+Python3中不再使用xrange方法，只有range方法。
+range在Python2中返回列表，而在Python3中返回range可迭代对象。
+在Python2中有两个不等运算符!=和&lt;&gt;，在Python3中去掉了&lt;&gt;，只有!=符号表示不等
+在Python2中双反引号可以替代repr函数，在Python3中去掉了双反引号的表是方法，只能用repr方法。
+StringIO模块现在被合并到新的io模组内。new, md5, gopherlib等模块被删除。
+httplib, BaseHTTPServer, CGIHTTPServer, SimpleHTTPServer, Cookie, cookielib被合并到http包内。
+取消了exec语句，只剩下exec()函数。
+在Python2中long是比int取值范围更大的整数，Python3中取消了long类型，int的取值范围扩大到之前的long类型范围。
+列表推导 不再支持[n for n in a,b]语法，改为[n for n in (a,b)]或[n for n in [a,b]]
+python 2 中通过input输入的类型是int，只有通过raw_input()输入的类型才是str。
+python 3中通过input输入的类型都是str，去掉了row_input()方法。
+python3.6中dict有序 有序是指遍历时的输出顺序与输入顺序相同
+关于哈希表   散列表概念 散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。
+  哈希函数 给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(Hash) 函数。 （相关：是不是可以这样理解，数组可以通过下标进行访问，时间复杂度是O(1)，对于不连续存储的数据结构，如果知道下标也可以直接进行访问，所以可以通过哈希函数将key映射成数组下标，进行访问）
+  冲突 不同的key经过hash函数运行后得到相同的值，产生冲突；
+  冲突解决方式"/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2019-12-27 18:04:50 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/blogs/python2%E5%92%8Cpython3%E7%9A%84%E5%8C%BA%E5%88%AB/">Python2和python3的区别</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="python2和python3的区别">python2和python3的区别</h3>
+<p>print语句被python3废弃，只能使用print函数</p>
+<p>Python3中字符串是Unicode (utf-8)编码，支持中文做标识符。</p>
+<p>python2中是ASCII编码，需要更改字符集才能正常支持中文，所以在.py文件中会看到#&ndash; coding: UTF-8 &ndash;</p>
+<p>异常处理 Python2中try:&hellip;except Exception, e:&hellip;，在Python3中改为了try:&hellip;except Exception as e:&hellip;</p>
+<p>Python3中不再使用xrange方法，只有range方法。</p>
+<p>range在Python2中返回列表，而在Python3中返回range可迭代对象。</p>
+<p>在Python2中有两个不等运算符!=和&lt;&gt;，在Python3中去掉了&lt;&gt;，只有!=符号表示不等</p>
+<p>在Python2中双反引号<code>可以替代repr函数，在Python3中去掉了双反引号的表是方法，只能用repr</code>方法。</p>
+<p>StringIO模块现在被合并到新的io模组内。new, md5, gopherlib等模块被删除。</p>
+<p>httplib, BaseHTTPServer, CGIHTTPServer, SimpleHTTPServer, Cookie, cookielib被合并到http包内。</p>
+<p>取消了exec语句，只剩下exec()函数。</p>
+<p>在Python2中long是比int取值范围更大的整数，Python3中取消了long类型，int的取值范围扩大到之前的long类型范围。</p>
+<p>列表推导 不再支持[n for n in a,b]语法，改为[n for n in (a,b)]或[n for n in [a,b]]</p>
+<p>python 2 中通过input输入的类型是int，只有通过raw_input()输入的类型才是str。</p>
+<p>python 3中通过input输入的类型都是str，去掉了row_input()方法。</p>
+<h3 id="python36中dict有序">python3.6中dict有序</h3>
+<p>有序是指遍历时的输出顺序与输入顺序相同</p>
+<h3 id="关于哈希表">关于哈希表</h3>
+<ol>
+<li>
+<p>散列表概念 散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。</p>
+</li>
+<li>
+<p>哈希函数 给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(Hash) 函数。 （相关：是不是可以这样理解，数组可以通过下标进行访问，时间复杂度是O(1)，对于不连续存储的数据结构，如果知道下标也可以直接进行访问，所以可以通过哈希函数将key映射成数组下标，进行访问）</p>
+</li>
+<li>
+<p>冲突 不同的key经过hash函数运行后得到相同的值，产生冲突；</p>
+</li>
+<li>
+<p>冲突解决方式</p>
+</li>
+<li>
+<p>开放寻址：线性探测、二次探测、伪随机数序列（python的dict解决冲突用的这个，具体的策略没有看太明白）</p>
+</li>
+<li>
+<p>再哈希法：将哈希值再哈希，然后存储；</p>
+</li>
+<li>
+<p>链地址法：hash过后值相同的存储在链表里；</p>
+</li>
+<li>
+<p>公共溢出区</p>
+</li>
+</ol>
+<h3 id="python实现dict无序到有序">python实现dict无序到有序：</h3>
+<ol>
+<li>
+<p>原先的内存布局entries为哈希表，表中直接存储PyDictKeyEntry（hash、key、value），也就是说当当前位置为空的时候存的是（0， null， null）浪费了大量内存；</p>
+</li>
+<li>
+<p>python3.6: indices充当哈希表，存储的entries的index，使用index去访问存有PyDictKeyEntry的数组</p>
+</li>
+</ol>
+<h3 id="python3-dict性能优化">python3 dict性能优化</h3>
+<p>节省存储空间：将存储PyDictKeyEntry的稀疏数组更改为存储int的稀疏数组； 之前的dict_entry是稀疏表，经压缩后在密集表上循环，使用更少的内存； 调整大小更快，并且触及更少的内存。 目前，每一个散列/键/值条目在一个过程中被移动或复制调整。 在新的布局中，只有索引是更新。 大多数情况下，散列/键/值条目从不移动（除了偶尔交换填充删除留下的空洞）。</p>
+<h3 id="range和xrange区别">range和xrange区别</h3>
+<p>range返回的是一个包含所有元素的列表，xrange返回的是一个生成器，生成器是一个可迭代对象，在对生成器进行迭代时，元素是逐个被创建的。而列表需要根据列表长度而开辟出相应的内存空间用来遍历，一般来看，在对大序列进行迭代的时候，因为xrange的特性，所以它会比较节约内存。</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="/">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

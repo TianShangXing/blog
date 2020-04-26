@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
+钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。
+这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： https://open-dev.dingtalk.com/
+在移动应用中选择登录
+创建一个网站应用，其中有用的信息是appid,appsecret，还有回调网址
+随后，查看官方文档，查看如何构造登录url: https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6
+这里我们用django的视图来操作
+# 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;amp;response_type=code&amp;amp;scope=snsapi_login&amp;amp;state=STATE&amp;amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
+随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
+怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&amp;quot;code&amp;quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.b64encode(hmac.new(appSecret.encode(&#39;utf-8&#39;),timestamp.encode(&#39;utf-8&#39;), digestmod=sha256)." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/blogs/%E9%92%89%E9%92%89%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" />
+
+
+    <title>
+        
+            钉钉三方登录 :: TianShangXing&#39;s Blog  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="钉钉三方登录">
+<meta itemprop="description" content="**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
+钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。
+这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： https://open-dev.dingtalk.com/
+在移动应用中选择登录
+创建一个网站应用，其中有用的信息是appid,appsecret，还有回调网址
+随后，查看官方文档，查看如何构造登录url: https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6
+这里我们用django的视图来操作
+# 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
+随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
+怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.b64encode(hmac.new(appSecret.encode(&#39;utf-8&#39;),timestamp.encode(&#39;utf-8&#39;), digestmod=sha256).">
+<meta itemprop="datePublished" content="2020-04-02T19:13:18&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-02T19:13:18&#43;08:00" />
+<meta itemprop="wordCount" content="93">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="钉钉三方登录"/>
+<meta name="twitter:description" content="**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
+钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。
+这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： https://open-dev.dingtalk.com/
+在移动应用中选择登录
+创建一个网站应用，其中有用的信息是appid,appsecret，还有回调网址
+随后，查看官方文档，查看如何构造登录url: https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6
+这里我们用django的视图来操作
+# 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
+随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
+怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.b64encode(hmac.new(appSecret.encode(&#39;utf-8&#39;),timestamp.encode(&#39;utf-8&#39;), digestmod=sha256)."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-04-02 19:13:18 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/blogs/%E9%92%89%E9%92%89%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">钉钉三方登录</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。</p>
+<p>钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。</p>
+<p>这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： <a href="https://open-dev.dingtalk.com/">https://open-dev.dingtalk.com/</a></p>
+<p>在移动应用中选择登录</p>
+<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20191221/20191221095402_74481.png" alt=""></p>
+<p>创建一个网站应用，其中有用的信息是appid,appsecret，还有回调网址</p>
+<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20191221/20191221095537_44738.png" alt=""></p>
+<p>随后，查看官方文档，查看如何构造登录url: <a href="https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6">https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6</a></p>
+<p>这里我们用django的视图来操作</p>
+<pre><code># 构造钉钉登录url
+def ding_url(request):
+    appid = 'dingoaukgkwqknzjvamdqh'
+    redirect_uri = 'http://localhost:8000/dingding_back/'
+
+    return redirect('https://oapi.dingtalk.com/connect/qrconnect?appid=' + appid +'&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=' + redirect_uri)
+</code></pre><p>然后访问: http://localhost:8000/ding_url，就可以进行扫码</p>
+<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20191221/20191221100217_14450.png" alt=""></p>
+<p>随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的</p>
+<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20191221/20191221100604_41675.png" alt=""></p>
+<p>怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可</p>
+<pre><code>import time
+import hmac
+import base64
+from hashlib import sha256
+import urllib
+import json
+
+# 构造钉钉回调方法
+def ding_back(request):
+
+    # 获取code
+    code = request.GET.get(&quot;code&quot;)
+
+    t = time.time()
+    
+    # 时间戳
+    timestamp = str((int(round(t * 1000))))
+    appSecret ='ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160'
+
+    # 构造签名
+    signature = base64.b64encode(hmac.new(appSecret.encode('utf-8'),timestamp.encode('utf-8'), digestmod=sha256).digest())
+    
+    # 请求接口，换取钉钉用户名
+    payload = {'tmp_auth_code':code}
+    headers = {'Content-Type': 'application/json'}
+    res = requests.post('https://oapi.dingtalk.com/sns/getuserinfo_bycode?signature='+urllib.parse.quote(signature.decode(&quot;utf-8&quot;))+&quot;&amp;timestamp=&quot;+timestamp+&quot;&amp;      accessKey=dingoaukgkwqknzjvamdqh&quot;,data=json.dumps(payload),headers=headers)
+
+    res_dict = json.loads(res.text)
+    print(res_dict)
+    return HttpResponse(res.text)
+</code></pre><p>访问一下，可以看到已经显示出了钉钉的用户名</p>
+<p>就是这么简单，最后附上项目地址： <a href="https://gitee.com/TianShangXing/mydjango3">https://gitee.com/TianShangXing/mydjango3</a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="/">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="Go lang无疑是目前的当红炸子鸡，极大地提高了后端编程的效率，同时有着极高的性能。借助Go语言我们 可以用同步的方式写出高并发的服务端软件，同时，Go语言也是云原生第一语言，Docker，Kubernetes等等著名的项目都是使用Go语言实现的。
+Hugo 是基于 Go 语言的静态网站生成器。
+什么是静态网站生成器？顾名思义，就是以最快的速度生成一个高可用的web页面，我们知道Django作为一款非常流行的框架被广泛应用，但是部署起来实在是太麻烦了，各种命令各种配置，动态页面必然要涉及数据库的配置和操作，另外只要涉及数据库操作，你就不得不考虑sql注入等一系列的安全因素。而纯静态页面则没有这个烦恼，如果我们只需要一个简单的站点，一些简单的功能和页面，比如博客，我们只想以极简的方式用markdown语法写下文字或者代码，让服务器访问纯静态页面，这就是静态网站生成器可以提供给我们的好处。
+为啥选择Hugo?
+Hugo是一种go语言编写的静态网站生成器。适用于搭建个人blog、公司主页、help等网站，是一种小型的CMS系统。静态站点的好处就是快速、安全、易于部署，方便管理。
+Hugo的优点包含但不限于：
+得益于Go的高性能，性能很快 世界上最快的静态网站生成工具，5秒生成6000个页面 文档为Markdown格式,语法超简单 Hugo 可以做静态文件生成工具，还是高性能web 服务； 丰富的站点迁移工具，可以将wordpress，Ghost，Jekyll，DokuWiki，Blogger轻松迁移至 Hugo 超详细的文档 活跃的社区 更加自由的内容组织方式 丰富的主题模板，可以让你的网站更加炫目多彩 多环境支持：macos ，linux，windows
+首先，可以去go的官网网站下载安装包 https://golang.org/dl/ 然后直接双击安装即可，不需要配置环境变量，因为安装过程自动配置，安装完毕后，打开命令行，输入
+go version 显示主版本号即表示hugo安装成功
+然后，可以进行hugo的在线源码编译安装，打开命令行，输入下面的命令
+go get -u -v github.com/spf13/hugo go build -o hugo main.go mv hugo $GOPATH/bin 如果你不想在线编译安装，也可以去hugo的官网 https://github.com/gohugoio/hugo/releases 下载稳定版的压缩包，解压之后环境变量也自动帮您配好
+装完以后，在命令行内输入
+hugo version 打印出版本号即表示hugo安装成功
+在命令行中输入命令
+hugo new site hugo_blog 就生成了一个名字为hugo_blog的新站点，可以感受到速度非常快，和vue.js创建新站点的速度比起来简直天差地别
+打开配置文件config.toml，这是hugo的站点的相关配置，可以进行一些个性化的定制，改为下面这样：
+baseurl = &amp;quot;/&amp;quot; title = &amp;quot;My site.&amp;quot; copyright = &amp;quot;Copyright (c) 2017, all rights reserved." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/blogs/hugo/" />
+
+
+    <title>
+        
+            利用基于Go Lang的Hugo来打造属于自己的纯静态博客系统 :: TianShangXing&#39;s Blog  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="利用基于Go Lang的Hugo来打造属于自己的纯静态博客系统">
+<meta itemprop="description" content="Go lang无疑是目前的当红炸子鸡，极大地提高了后端编程的效率，同时有着极高的性能。借助Go语言我们 可以用同步的方式写出高并发的服务端软件，同时，Go语言也是云原生第一语言，Docker，Kubernetes等等著名的项目都是使用Go语言实现的。
+Hugo 是基于 Go 语言的静态网站生成器。
+什么是静态网站生成器？顾名思义，就是以最快的速度生成一个高可用的web页面，我们知道Django作为一款非常流行的框架被广泛应用，但是部署起来实在是太麻烦了，各种命令各种配置，动态页面必然要涉及数据库的配置和操作，另外只要涉及数据库操作，你就不得不考虑sql注入等一系列的安全因素。而纯静态页面则没有这个烦恼，如果我们只需要一个简单的站点，一些简单的功能和页面，比如博客，我们只想以极简的方式用markdown语法写下文字或者代码，让服务器访问纯静态页面，这就是静态网站生成器可以提供给我们的好处。
+为啥选择Hugo?
+Hugo是一种go语言编写的静态网站生成器。适用于搭建个人blog、公司主页、help等网站，是一种小型的CMS系统。静态站点的好处就是快速、安全、易于部署，方便管理。
+Hugo的优点包含但不限于：
+得益于Go的高性能，性能很快 世界上最快的静态网站生成工具，5秒生成6000个页面 文档为Markdown格式,语法超简单 Hugo 可以做静态文件生成工具，还是高性能web 服务； 丰富的站点迁移工具，可以将wordpress，Ghost，Jekyll，DokuWiki，Blogger轻松迁移至 Hugo 超详细的文档 活跃的社区 更加自由的内容组织方式 丰富的主题模板，可以让你的网站更加炫目多彩 多环境支持：macos ，linux，windows
+首先，可以去go的官网网站下载安装包 https://golang.org/dl/ 然后直接双击安装即可，不需要配置环境变量，因为安装过程自动配置，安装完毕后，打开命令行，输入
+go version 显示主版本号即表示hugo安装成功
+然后，可以进行hugo的在线源码编译安装，打开命令行，输入下面的命令
+go get -u -v github.com/spf13/hugo go build -o hugo main.go mv hugo $GOPATH/bin 如果你不想在线编译安装，也可以去hugo的官网 https://github.com/gohugoio/hugo/releases 下载稳定版的压缩包，解压之后环境变量也自动帮您配好
+装完以后，在命令行内输入
+hugo version 打印出版本号即表示hugo安装成功
+在命令行中输入命令
+hugo new site hugo_blog 就生成了一个名字为hugo_blog的新站点，可以感受到速度非常快，和vue.js创建新站点的速度比起来简直天差地别
+打开配置文件config.toml，这是hugo的站点的相关配置，可以进行一些个性化的定制，改为下面这样：
+baseurl = &quot;/&quot; title = &quot;My site.&quot; copyright = &quot;Copyright (c) 2017, all rights reserved.">
+<meta itemprop="datePublished" content="2020-01-03T14:29:07&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-03T14:29:07&#43;08:00" />
+<meta itemprop="wordCount" content="231">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="利用基于Go Lang的Hugo来打造属于自己的纯静态博客系统"/>
+<meta name="twitter:description" content="Go lang无疑是目前的当红炸子鸡，极大地提高了后端编程的效率，同时有着极高的性能。借助Go语言我们 可以用同步的方式写出高并发的服务端软件，同时，Go语言也是云原生第一语言，Docker，Kubernetes等等著名的项目都是使用Go语言实现的。
+Hugo 是基于 Go 语言的静态网站生成器。
+什么是静态网站生成器？顾名思义，就是以最快的速度生成一个高可用的web页面，我们知道Django作为一款非常流行的框架被广泛应用，但是部署起来实在是太麻烦了，各种命令各种配置，动态页面必然要涉及数据库的配置和操作，另外只要涉及数据库操作，你就不得不考虑sql注入等一系列的安全因素。而纯静态页面则没有这个烦恼，如果我们只需要一个简单的站点，一些简单的功能和页面，比如博客，我们只想以极简的方式用markdown语法写下文字或者代码，让服务器访问纯静态页面，这就是静态网站生成器可以提供给我们的好处。
+为啥选择Hugo?
+Hugo是一种go语言编写的静态网站生成器。适用于搭建个人blog、公司主页、help等网站，是一种小型的CMS系统。静态站点的好处就是快速、安全、易于部署，方便管理。
+Hugo的优点包含但不限于：
+得益于Go的高性能，性能很快 世界上最快的静态网站生成工具，5秒生成6000个页面 文档为Markdown格式,语法超简单 Hugo 可以做静态文件生成工具，还是高性能web 服务； 丰富的站点迁移工具，可以将wordpress，Ghost，Jekyll，DokuWiki，Blogger轻松迁移至 Hugo 超详细的文档 活跃的社区 更加自由的内容组织方式 丰富的主题模板，可以让你的网站更加炫目多彩 多环境支持：macos ，linux，windows
+首先，可以去go的官网网站下载安装包 https://golang.org/dl/ 然后直接双击安装即可，不需要配置环境变量，因为安装过程自动配置，安装完毕后，打开命令行，输入
+go version 显示主版本号即表示hugo安装成功
+然后，可以进行hugo的在线源码编译安装，打开命令行，输入下面的命令
+go get -u -v github.com/spf13/hugo go build -o hugo main.go mv hugo $GOPATH/bin 如果你不想在线编译安装，也可以去hugo的官网 https://github.com/gohugoio/hugo/releases 下载稳定版的压缩包，解压之后环境变量也自动帮您配好
+装完以后，在命令行内输入
+hugo version 打印出版本号即表示hugo安装成功
+在命令行中输入命令
+hugo new site hugo_blog 就生成了一个名字为hugo_blog的新站点，可以感受到速度非常快，和vue.js创建新站点的速度比起来简直天差地别
+打开配置文件config.toml，这是hugo的站点的相关配置，可以进行一些个性化的定制，改为下面这样：
+baseurl = &quot;/&quot; title = &quot;My site.&quot; copyright = &quot;Copyright (c) 2017, all rights reserved."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-01-03 14:29:07 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/blogs/hugo/">利用基于Go Lang的Hugo来打造属于自己的纯静态博客系统</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Go lang无疑是目前的当红炸子鸡，极大地提高了后端编程的效率，同时有着极高的性能。借助Go语言我们 可以用同步的方式写出高并发的服务端软件，同时，Go语言也是云原生第一语言，Docker，Kubernetes等等著名的项目都是使用Go语言实现的。</p>
+<p>Hugo 是基于 Go 语言的静态网站生成器。</p>
+<p>什么是静态网站生成器？顾名思义，就是以最快的速度生成一个高可用的web页面，我们知道Django作为一款非常流行的框架被广泛应用，但是部署起来实在是太麻烦了，各种命令各种配置，动态页面必然要涉及数据库的配置和操作，另外只要涉及数据库操作，你就不得不考虑sql注入等一系列的安全因素。而纯静态页面则没有这个烦恼，如果我们只需要一个简单的站点，一些简单的功能和页面，比如博客，我们只想以极简的方式用markdown语法写下文字或者代码，让服务器访问纯静态页面，这就是静态网站生成器可以提供给我们的好处。</p>
+<p>为啥选择Hugo?</p>
+<p>Hugo是一种go语言编写的静态网站生成器。适用于搭建个人blog、公司主页、help等网站，是一种小型的CMS系统。静态站点的好处就是快速、安全、易于部署，方便管理。</p>
+<p>Hugo的优点包含但不限于：</p>
+<p>得益于Go的高性能，性能很快 <br>
+世界上最快的静态网站生成工具，5秒生成6000个页面
+文档为Markdown格式,语法超简单
+Hugo 可以做静态文件生成工具，还是高性能web 服务；
+丰富的站点迁移工具，可以将wordpress，Ghost，Jekyll，DokuWiki，Blogger轻松迁移至 Hugo
+超详细的文档
+活跃的社区
+更加自由的内容组织方式
+丰富的主题模板，可以让你的网站更加炫目多彩
+多环境支持：macos ，linux，windows</p>
+<p>首先，可以去go的官网网站下载安装包  <a href="https://golang.org/dl/">https://golang.org/dl/</a> 然后直接双击安装即可，不需要配置环境变量，因为安装过程自动配置，安装完毕后，打开命令行，输入</p>
+<pre><code>go version
+</code></pre><p>显示主版本号即表示hugo安装成功</p>
+<p>然后，可以进行hugo的在线源码编译安装，打开命令行，输入下面的命令</p>
+<pre><code>go get -u -v github.com/spf13/hugo
+go build -o hugo main.go
+mv hugo $GOPATH/bin
+</code></pre><p>如果你不想在线编译安装，也可以去hugo的官网 <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a> 下载稳定版的压缩包，解压之后环境变量也自动帮您配好</p>
+<p>装完以后，在命令行内输入</p>
+<pre><code>hugo version
+</code></pre><p>打印出版本号即表示hugo安装成功</p>
+<p>在命令行中输入命令</p>
+<pre><code>hugo new site hugo_blog
+</code></pre><p>就生成了一个名字为hugo_blog的新站点，可以感受到速度非常快，和vue.js创建新站点的速度比起来简直天差地别</p>
+<p>打开配置文件config.toml，这是hugo的站点的相关配置，可以进行一些个性化的定制，改为下面这样：</p>
+<pre><code>baseurl = &quot;/&quot;
+title = &quot;My site.&quot;
+copyright = &quot;Copyright (c) 2017, all rights reserved.&quot;
+canonifyurls = true
+languageCode = &quot;en-US&quot;
+paginate = 3
+theme = &quot;hugo-dusk&quot;
+
+googleAnalytics = &quot;&quot;
+disqusShortname = &quot;&quot;
+
+[author]
+  name = &quot;&quot;
+
+SectionPagesMenu = &quot;main&quot;
+
+# Configure syntax highlight
+[markup]
+  [markup.highlight]
+    style = &quot;rrt&quot; # dark themes: monokai, api, fruity, native, rrt, swapoff
+
+[[menu.main]]
+  name = &quot;Posts&quot;
+  weight = -120
+  identifier = &quot;post&quot;
+  url = &quot;/post/&quot;
+
+[[menu.main]]
+  name = &quot;Tags&quot;
+  weight = -110
+  identifier = &quot;tag&quot;
+  url = &quot;/tags/&quot;
+
+[params.meta]
+  keywords = &quot;blog, tech&quot;
+  description = &quot;Personal blog.&quot;
+
+[params]
+  github = &quot;github id&quot;
+  gitlab = &quot;gitlab id&quot;
+  twitter = &quot;twitter id&quot;
+  linkedin = &quot;linkedin id&quot;
+  email = &quot;myemail&quot;
+  theme_colors = &quot;default-dark&quot; # uses color css file under static/css/default-dark.css
+  utterancesRepo=&quot;REPO_NAME&quot; # Utterances is enabled when this param is set
+  utterancesTheme=&quot;github-dark&quot; # Default: github-dark
+  utterancesIssueTerm=&quot;pathname&quot; # Default: pathname
+</code></pre><p>可以看到我们制定了一个主题hugo-dusk，添加了Theme后的站点才有血有肉，丰富多彩。</p>
+<p>更多的主题可以在这个上面下载，都是免费而开源的 <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
+<p>进入到站点内的themes目录，输入命令下载hyde主题，hugo有很多漂亮的主题可以选择</p>
+<pre><code>git clone https://github.com/gyorb/hugo-dusk
+</code></pre><p>结构和样式有了，我们还没有内容。我们来创建站点的第一篇文章</p>
+<p>输入命令</p>
+<pre><code>hugo new one.md
+</code></pre><p>hugo在content下创建one.md文件，我们编写一些文件内容：</p>
+<pre><code>---
+date: &quot;2020-01-3&quot;
+title: &quot;第一篇文章&quot;
+---
+
+### 你好，欢迎您来到我的博客
+
+</code></pre><p>然后在命令行中输入</p>
+<pre><code>hugo server
+</code></pre><p>这样就可以看到已经在1313端口起了一个hugo服务</p>
+<p>访问一下，就可以看到我们非常快速而简单博客已经做好了。</p>
+<p>那么如何部署到线上呢？非常简单输入命令进行打包操作：</p>
+<pre><code>hugo --baseUrl=&quot;项目地址/&quot;
+</code></pre><p>hugo就会把你的站点生成纯静态页面，然后打包到public文件夹</p>
+<p>将public上传到gitee下就可以拥有你的专属个人博客了。</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="/">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

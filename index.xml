@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TianShangXing&#39;s Blog</title>
+    <link>/</link>
+    <description>Recent content on TianShangXing&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 16:08:54 +0800</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MD5加密</title>
+      <link>/blogs/md5%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Thu, 23 Apr 2020 22:35:48 +0800</pubDate>
+      
+      <guid>/blogs/md5%E5%8A%A0%E5%AF%86/</guid>
+      <description>MD5加密算法  代码实现
+# 导入加密库 import hashlib # md5加密方法 def make_password(mypass): # 生成md5对象 md5 = hashlib.md5() # 转码操作 mypass_utf8 = str(mypass).encode(encoding=&amp;quot;utf-8&amp;quot;) # 加密操作 md5.update(mypass_utf8) # 返回密文 return md5.hexdigest() </description>
+    </item>
+    
+    <item>
+      <title>HeyUI</title>
+      <link>/blogs/heyui/</link>
+      <pubDate>Thu, 23 Apr 2020 22:10:39 +0800</pubDate>
+      
+      <guid>/blogs/heyui/</guid>
+      <description>HeyUI  HeyUI 是一套基于 Vue2.0 的开源 UI 组件库，主要服务于一些中后台产品。
+HeyUI 是一个自动化图形化界面组件，便于后端研发入手前端。
+HeyUI 提供的是一整套解决方案，所有的组件提供全局的可配置模式
+官网： https://www.heyui.top/
+安装 npm install heyui --save
+使用 import HeyUI from &#39;heyui&#39;; Vue.use(HeyUI); new Vue({ el: &#39;#app&#39;, router, components: { App }, template: &#39;&amp;lt;App/&amp;gt;&#39;, render: h =&amp;gt; h(App) }) </description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>/blogs/django/</link>
+      <pubDate>Wed, 22 Apr 2020 17:11:46 +0800</pubDate>
+      
+      <guid>/blogs/django/</guid>
+      <description>Django Django是一个开放源代码的Web应用框架，由Python写成。采用了MVT的软件设计模式，即模型（Model），视图（View）和模板（Template）。
+安装依赖 pip install Django==2.0.4 pip install django-cors-headers pip install djangorestframework pip install PyMySQL pip install opencv-python pip install opencv-contrib-python pip install numpy pip install pillow pip install dwebsocket 依赖文件生成 requirements.txt pip freeze &amp;gt; requirements.txt 依赖文件安装 requirements.txt pip install -r requirements.txt 新建Django项目 django-admin startproject mydjango 新建子应用 python manage.py startapp myapp 数据库迁移 python manage.py makemigrations myapp python manage.py migrate 反向迁移 python manage.py inspectdb &amp;gt; mymodels.py 启动项目 python manage.py runserver 项目仓库： https://github.</description>
+    </item>
+    
+    <item>
+      <title>Vue.js常用语法</title>
+      <link>/blogs/vue.js%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 22 Apr 2020 17:10:41 +0800</pubDate>
+      
+      <guid>/blogs/vue.js%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</guid>
+      <description>Vue.js 模板语法 Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。
+Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统。
+结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上。
+ 文本插值 数据绑定最常见的形式就是使用 {{&amp;hellip;}}（双大括号）的文本插值：
+&amp;lt;div&amp;gt; &amp;lt;p&amp;gt;{{ msg }}&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; Html 使用 v-html 指令用于输出 html 代码：
+&amp;lt;!-- 解析html语法 --&amp;gt; &amp;lt;div v-html=&amp;quot;msg&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { msg: &#39;&amp;lt;h1&amp;gt;变量&amp;lt;/h1&amp;gt;&#39;, } } } &amp;lt;/script&amp;gt; v-show 我们也可以使用 v-show 指令来根据条件展示元素：
+&amp;lt;div&amp;gt; &amp;lt;h3 v-show=&amp;quot;ok&amp;quot;&amp;gt;Hello World&amp;lt;/h3&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { ok: 1, // 0:false 1:true, } } } &amp;lt;/script&amp;gt; 缩写 Vue.</description>
+    </item>
+    
+    <item>
+      <title>Vue.js</title>
+      <link>/blogs/vue.js/</link>
+      <pubDate>Tue, 21 Apr 2020 21:41:54 +0800</pubDate>
+      
+      <guid>/blogs/vue.js/</guid>
+      <description>Vue.js Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。
+Vue.js 是用于构建交互式的 Web 界面的库。
+Vue.js 提供了 MVVM 数据绑定和一个可组合的组件系统，具有简单、灵活的 API。
+官网： https://cn.vuejs.org/
+安装流程 设置源 npm set registry https://registry.npmjs.org/ 设置国内源 npm set registry https://registry.npm.taobao.org 查看源 npm config list 升级npm npm install npm -g 全局安装 vue-cli npm install -g vue-cli npm清理缓存 npm cache clean --force 安装vue脚手架的命令，采用webpack打包工具，项目名是project vue init webpack project cd &amp;lt;项目名&amp;gt; npm install axios --save npm install style-loader —-save npm install heyui --save npm install js-md5 --save 进入项目 热启动 npm run dev 退出服务 ctrl + c 如果出现任何关于node依赖的问题导致服务无法启动，执行npm install无法解决的，则安装rimraf,然后进入项目目录下，执行rimraf node_modules 删除后，重新执行 npm install 安装依赖</description>
+    </item>
+    
+    <item>
+      <title>谷歌上网助手（Ghelper）</title>
+      <link>/blogs/ghelper/</link>
+      <pubDate>Sun, 12 Apr 2020 22:56:44 +0800</pubDate>
+      
+      <guid>/blogs/ghelper/</guid>
+      <description>谷歌上网助手（Ghelper） 专门为科研、外贸、跨境电商、海淘人员、开发人员服务的上网工具，以保护和加速Internet冲浪，chrome内核浏览器专用!
+可以解决chrome扩展无法自动更新的问题，同时可以访问谷歌google搜索，gmail邮箱，google+等谷歌产品。
+官网： http://googlehelper.net
+由于中国大陆无法直接打开Chrome应用商店.所以，可以利用chrome开发者模式，来安装源码码实现使用本插件. 安装登录成功后，再去线上安装正式版本。
+  打开你的Chrome浏览器的 更多工具&amp;gt;扩展程序页面. 或者直接在网址输入: chrome://extensions/
+  这个页面点击 &amp;ldquo;添加已解压的扩展程序&amp;rdquo;,如果没有，在右边有一个 “开发者模式” 开关，要打开.
+  选择本次下载包里的 ghelper_source 目录
+  确认后就行了.
+  另外建议装上源码包方式后，登录后就能访问谷歌了。建议选去 Chrome 应用商店 找到我们的正式在线版本.这样当我们升级你本机也会升级.安装正式线上版本后，回到扩展页面把刚才导入的已解压的包删除掉或停止就行了。
+如果还有什么问题可以发邮件: GhelperInfo@gmail.com
+国内用户还可以用QQ浏览器，在它的应用中心可以直接安装.</description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>/blogs/mysql/</link>
+      <pubDate>Sun, 12 Apr 2020 12:01:31 +0800</pubDate>
+      
+      <guid>/blogs/mysql/</guid>
+      <description>MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/cn/
+数据库迁移 建立数据库映射关系 python manage.py makemigrations myapp # 子应用名称 建表 python manage.py migrate </description>
+    </item>
+    
+    <item>
+      <title>简历中必须要注意的技术词汇</title>
+      <link>/blogs/%E7%AE%80%E5%8E%86%E4%B8%AD%E5%BF%85%E9%A1%BB%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E8%AF%8D%E6%B1%87/</link>
+      <pubDate>Sun, 12 Apr 2020 10:47:34 +0800</pubDate>
+      
+      <guid>/blogs/%E7%AE%80%E5%8E%86%E4%B8%AD%E5%BF%85%E9%A1%BB%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E8%AF%8D%E6%B1%87/</guid>
+      <description>概述  每年到了这个时候又快到了找工作的旺季，也就是俗称的「金三银四」。对于程序员来说，这个时候也是最好找工作和跳槽的时机。很多程序员花了太多的时间在 自己的技术水平提升 和 笔试、面试题准备之上，却忽略了找工作第一步所需要的一个严谨且靠谱的简历，导致最终结果是 其实技术没问题，但投出去的简历惨不忍睹，甚至连面试的机会都没有。
+而我觉得程序员写简历，第一步就是需要注意严谨而规范地使用各种技术词汇，但是我发现不论个人博客或者是个人简历很多人可能都是想当然的凭自己的印象来拼写技术词汇， 因此本文就几个大的方面来总结一下程序员写简历时必须注意的词汇拼写注意事项，以供必要时查阅！当然这里列出的词汇可能有限，大家可以集思广益，一起提交和补充！
+后端开发     正确拼写 错误拼写举例     RESTful Restful、RestFul   Web web、WEB   Java JAVA、java   Linux LINUX、linux   Runtime runtime   MySQL mysql   SQLite sqlite   Spring spring   Spring Boot Springboot、SpringBoot   Spring Cloud Springcloud、SpringCloud   Spring MVC SpringMVC、Springmvc   NoSQL nosql、NOSQL   MyBatis mybatis、Mybatis   Maven maven、MAVEN   Redis redis   Elasticsearch elasticsearch、ElasticSearch   持续更新中… 持续更新中…    前端开发     正确拼写 错误拼写举例     HTML Html、html   HTTP Http、http   CSS Css、css   JavaScript javascript、Javascript、js、JS   Node.</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/blogs/linux/</link>
+      <pubDate>Sun, 12 Apr 2020 10:45:33 +0800</pubDate>
+      
+      <guid>/blogs/linux/</guid>
+      <description>Linux简介  Linux，全称GNU/Linux，是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和Unix的多用户、多任务、支持多线程和多CPU的操作系统。伴随着互联网的发展，Linux得到了来自全世界软件爱好者、组织、公司的支持。它除了在服务器方面保持着强劲的发展势头以外，在个人电脑、嵌入式系统上都有着长足的进步。使用者不仅可以直观地获取该操作系统的实现机制，而且可以根据自身的需要来修改完善Linux，使其最大化地适应用户的需要。
+Linux 不仅系统性能稳定，而且是开源软件。其核心防火墙组件性能高效、配置简单，保证了系统的安全。在很多企业网络中，为了追求速度和安全，Linux不仅仅是被网络运维人员当作服务器使用，Linux既可以当作服务器，又可以当作网络防火墙是Linux的 一大亮点。
+Linux 具有开放源码、没有版权、技术社区用户多等特点 ，开放源码使得用户可以自由裁剪，灵活性高，功能强大，成本低。尤其系统中内嵌网络协议栈 ，经过适当的配置就可实现路由器的功能。这些特点使得Linux成为开发路由交换设备的理想开发平台。
+Linux常用命令   系统命令  runlevel # 查看当前的运行级别 systemctl status firewalld # 开启网络服务功能 systemctl stop firewalld # 关闭 systemctl restart firewalld # 重启 systemctl reload firewalld # 重载 reboot # 重启 halt # 关机 poweroff # 关机 查看文件常用指令  cat # 在命令提示符下查看文件内容 more # 在命令提示符中分页查看文件内容 less # 命令行中查看文件可以上下翻页反复浏览 head # 命令行中查看文件头几行 tail # 命令行中查看文件尾几行 wc # 统计文件的单词数 行数等信息 目录管理常用指令  pwd # 查看你当前所在的目录 cd # 切换目录 ls # 查看显示目录的内容 du # 统计目录和文件空间的占用情况 mkdir # 创建新目录 rmdir # 删除空目录 touch # 创建文件 rm # 删除文件 ln # 创建硬链接 ln -s # 创建软链接 cp # 复制文件或目录 mv # 移动文件或目录 which # 查看linux命令所在的目录 账号与权限  1.</description>
+    </item>
+    
+    <item>
+      <title>Django跨域问题</title>
+      <link>/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 10 Apr 2020 15:20:40 +0800</pubDate>
+      
+      <guid>/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</guid>
+      <description>关于Django跨域问题 　首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
+　这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
+ 安装插件  pip install django-cors-headers 编辑配置文件  INSTALLED_APPS = [ &#39;django.contrib.admin&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.messages&#39;, &#39;django.contrib.staticfiles&#39;, &#39;corsheaders&#39;, ] MIDDLEWARE = [ &#39;django.middleware.security.SecurityMiddleware&#39;, &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;, &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件 &#39;django.middleware.common.CommonMiddleware&#39;, # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;, &#39;django.contrib.messages.middleware.MessageMiddleware&#39;, &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 　至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。</description>
+    </item>
+    
+  </channel>
+</rss>

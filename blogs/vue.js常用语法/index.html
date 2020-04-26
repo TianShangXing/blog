@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="Vue.js 模板语法 Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。
+Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统。
+结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上。
+ 文本插值 数据绑定最常见的形式就是使用 {{&amp;hellip;}}（双大括号）的文本插值：
+&amp;lt;div&amp;gt; &amp;lt;p&amp;gt;{{ msg }}&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; Html 使用 v-html 指令用于输出 html 代码：
+&amp;lt;!-- 解析html语法 --&amp;gt; &amp;lt;div v-html=&amp;quot;msg&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { msg: &#39;&amp;lt;h1&amp;gt;变量&amp;lt;/h1&amp;gt;&#39;, } } } &amp;lt;/script&amp;gt; v-show 我们也可以使用 v-show 指令来根据条件展示元素：
+&amp;lt;div&amp;gt; &amp;lt;h3 v-show=&amp;quot;ok&amp;quot;&amp;gt;Hello World&amp;lt;/h3&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { ok: 1, // 0:false 1:true, } } } &amp;lt;/script&amp;gt; 缩写 Vue." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/blogs/vue.js%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" />
+
+
+    <title>
+        
+            Vue.js常用语法 :: TianShangXing&#39;s Blog  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Vue.js常用语法">
+<meta itemprop="description" content="Vue.js 模板语法 Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。
+Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统。
+结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上。
+ 文本插值 数据绑定最常见的形式就是使用 {{&hellip;}}（双大括号）的文本插值：
+&lt;div&gt; &lt;p&gt;{{ msg }}&lt;/p&gt; &lt;/div&gt; Html 使用 v-html 指令用于输出 html 代码：
+&lt;!-- 解析html语法 --&gt; &lt;div v-html=&quot;msg&quot;&gt;&lt;/div&gt; &lt;script&gt; export default { data() { return { msg: &#39;&lt;h1&gt;变量&lt;/h1&gt;&#39;, } } } &lt;/script&gt; v-show 我们也可以使用 v-show 指令来根据条件展示元素：
+&lt;div&gt; &lt;h3 v-show=&quot;ok&quot;&gt;Hello World&lt;/h3&gt; &lt;/div&gt; &lt;script&gt; export default { data() { return { ok: 1, // 0:false 1:true, } } } &lt;/script&gt; 缩写 Vue.">
+<meta itemprop="datePublished" content="2020-04-22T17:10:41&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-22T17:10:41&#43;08:00" />
+<meta itemprop="wordCount" content="234">
+<meta itemprop="image" content="/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Vue.js常用语法"/>
+<meta name="twitter:description" content="Vue.js 模板语法 Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。
+Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统。
+结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上。
+ 文本插值 数据绑定最常见的形式就是使用 {{&hellip;}}（双大括号）的文本插值：
+&lt;div&gt; &lt;p&gt;{{ msg }}&lt;/p&gt; &lt;/div&gt; Html 使用 v-html 指令用于输出 html 代码：
+&lt;!-- 解析html语法 --&gt; &lt;div v-html=&quot;msg&quot;&gt;&lt;/div&gt; &lt;script&gt; export default { data() { return { msg: &#39;&lt;h1&gt;变量&lt;/h1&gt;&#39;, } } } &lt;/script&gt; v-show 我们也可以使用 v-show 指令来根据条件展示元素：
+&lt;div&gt; &lt;h3 v-show=&quot;ok&quot;&gt;Hello World&lt;/h3&gt; &lt;/div&gt; &lt;script&gt; export default { data() { return { ok: 1, // 0:false 1:true, } } } &lt;/script&gt; 缩写 Vue."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-04-22 17:10:41 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/blogs/vue.js%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">Vue.js常用语法</a></h2>
+
+            
+
+            <div class="post-content">
+                <h2 id="vuejs-模板语法">Vue.js 模板语法</h2>
+<p>Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。</p>
+<p>Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统。</p>
+<p>结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上。</p>
+<hr>
+<h3 id="文本插值">文本插值</h3>
+<p>数据绑定最常见的形式就是使用 {{&hellip;}}（双大括号）的文本插值：</p>
+<pre><code>&lt;div&gt;
+  &lt;p&gt;{{ msg }}&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><h3 id="html">Html</h3>
+<p>使用 v-html 指令用于输出 html 代码：</p>
+<pre><code>&lt;!-- 解析html语法 --&gt;
+&lt;div v-html=&quot;msg&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+export default {
+    data() {
+        return {
+            msg: '&lt;h1&gt;变量&lt;/h1&gt;',
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre><h3 id="v-show">v-show</h3>
+<p>我们也可以使用 v-show 指令来根据条件展示元素：</p>
+<pre><code>&lt;div&gt;
+&lt;h3 v-show=&quot;ok&quot;&gt;Hello World&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+export default {
+    data() {
+        return {
+            ok: 1, // 0:false  1:true,
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre><h3 id="缩写">缩写</h3>
+<p>Vue.js 为两个最为常用的指令提供了特别的缩写：</p>
+<p>v-bind 缩写</p>
+<pre><code>&lt;!-- 完整语法 --&gt;
+&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;
+&lt;!-- 缩写 --&gt;
+&lt;a :href=&quot;url&quot;&gt;&lt;/a&gt;
+</code></pre><p>v-on 缩写</p>
+<pre><code>&lt;!-- 完整语法 --&gt;
+&lt;a v-on:click=&quot;doSomething&quot;&gt;&lt;/a&gt;
+&lt;!-- 缩写 --&gt;
+&lt;a @click=&quot;doSomething&quot;&gt;&lt;/a&gt;
+</code></pre><h3 id="条件判断-v-if-v-else-if-v-else">条件判断 v-if v-else-if v-else</h3>
+<pre><code>&lt;div v-if=&quot;type === 'A'&quot;&gt;A&lt;/div&gt;
+&lt;div v-else-if=&quot;type === 'B'&quot;&gt;B&lt;/div&gt;
+&lt;div v-else&gt;啥也不是&lt;/div&gt;
+
+&lt;script&gt;
+export default {
+    data() {
+        return {
+            type: 'A',
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre><h3 id="循环语句-v-for">循环语句 v-for</h3>
+<pre><code>&lt;ul&gt;
+    &lt;!--  --&gt;
+    &lt;li v-for=&quot;(item, index) in tlist&quot; :key=&quot;index&quot; :class=&quot;{on:index%2==0, off:index%2!==0}&quot;&gt;
+        {{ item.text }}
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+export default {
+    data() {
+        return {
+            tlist: [{text: '家电'}, {text: '生鲜'}, {text: '果蔬'}],
+        }
+    }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+    .on {background: rebeccapurple; color: white;}
+    .off {background: red; color: black;}
+&lt;/style&gt;
+</code></pre><h3 id="监听属性-watch">监听属性 watch</h3>
+<pre><code>&lt;button @click='counter++'&gt;点我加1&lt;/button&gt;
+
+&lt;script&gt;
+export default {
+    // 监听属性
+    watch: {
+        counter: function (nval, oval) {
+            console.log('计数器由' + oval + '变成了' + nval)
+        }
+    },
+}
+&lt;/script&gt;
+</code></pre><h3 id="计算属性-computed">计算属性 computed</h3>
+<pre><code>&lt;div&gt;{{ reverse_msg }}&lt;/div&gt;
+
+&lt;script&gt;
+export default {
+    // 计算属性
+    computed: {
+        // 反转
+        reverse_msg: function (){
+            return this.msg.split('').reverse().join('');
+        }
+    },
+}
+&lt;/script&gt;
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="/">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>
