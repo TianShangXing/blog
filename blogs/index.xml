@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 23 Apr 2020 22:35:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 16:11:20 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>百度智能云文字识别</title>
+      <link>https://tianshangxing.github.io/blog/blogs/%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/</link>
+      <pubDate>Tue, 28 Apr 2020 16:11:20 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/</guid>
+      <description>现在好多的网址在登录时都需要输入验证码才能够登录成功，防止被恶意登录
+今天我就教你们一招用百度智能云来帮助我们破解验证码
+首先，先申请百度智能云： https://cloud.baidu.com/
+然后在人工智能 -&amp;gt; 文字识别模块 新建一个应用
+建立成功后，会分配给你一个key和secret
+只不过这个接口免费版的每秒最多只能请求两次，一天有500次的请求机会
+这里推荐使用高精度的接口，普通的识别率太差了
+在帮助文档里找到 通用文字识别（高精度版）
+第一步，获取access_token
+# 获取token res = requests.get(&amp;quot;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;amp;client_id=你的key&amp;amp;client_secret=你的秘钥&amp;quot;) res = json.loads(str(res.text)) token = res[&#39;access_token&#39;] 然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码
+# 接口地址 url = &#39;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=&#39; + token # 定义头部信息 myheaders = {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;} # 操作图片 myimg = open(&#39;./code.png&#39;, &#39;rb&#39;) # 读取图片 temp_img = myimg.read() myimg.close() # 进行base64编码 temp_data = {&#39;image&#39;:base64.b64encode(temp_img)} # 对图片地址进行urlencode操作 temp_data = urllib.parse.urlencode(temp_data) # 请求视图接口 res = requests.post(url=url, data=temp_data, headers=myheaders) code = res.</description>
+    </item>
     
     <item>
       <title>MD5加密</title>
@@ -125,17 +144,6 @@ Vue.js 提供了 MVVM 数据绑定和一个可组合的组件系统，具有简�
 Linux 不仅系统性能稳定，而且是开源软件。其核心防火墙组件性能高效、配置简单，保证了系统的安全。在很多企业网络中，为了追求速度和安全，Linux不仅仅是被网络运维人员当作服务器使用，Linux既可以当作服务器，又可以当作网络防火墙是Linux的 一大亮点。
 Linux 具有开放源码、没有版权、技术社区用户多等特点 ，开放源码使得用户可以自由裁剪，灵活性高，功能强大，成本低。尤其系统中内嵌网络协议栈 ，经过适当的配置就可实现路由器的功能。这些特点使得Linux成为开发路由交换设备的理想开发平台。
 Linux常用命令   系统命令  runlevel # 查看当前的运行级别 systemctl status firewalld # 开启网络服务功能 systemctl stop firewalld # 关闭 systemctl restart firewalld # 重启 systemctl reload firewalld # 重载 reboot # 重启 halt # 关机 poweroff # 关机 查看文件常用指令  cat # 在命令提示符下查看文件内容 more # 在命令提示符中分页查看文件内容 less # 命令行中查看文件可以上下翻页反复浏览 head # 命令行中查看文件头几行 tail # 命令行中查看文件尾几行 wc # 统计文件的单词数 行数等信息 目录管理常用指令  pwd # 查看你当前所在的目录 cd # 切换目录 ls # 查看显示目录的内容 du # 统计目录和文件空间的占用情况 mkdir # 创建新目录 rmdir # 删除空目录 touch # 创建文件 rm # 删除文件 ln # 创建硬链接 ln -s # 创建软链接 cp # 复制文件或目录 mv # 移动文件或目录 which # 查看linux命令所在的目录 账号与权限  1.</description>
-    </item>
-    
-    <item>
-      <title>Django跨域问题</title>
-      <link>https://tianshangxing.github.io/blog/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Fri, 10 Apr 2020 15:20:40 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/</guid>
-      <description>关于Django跨域问题 　首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
-　这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
- 安装插件  pip install django-cors-headers 编辑配置文件  INSTALLED_APPS = [ &#39;django.contrib.admin&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.messages&#39;, &#39;django.contrib.staticfiles&#39;, &#39;corsheaders&#39;, ] MIDDLEWARE = [ &#39;django.middleware.security.SecurityMiddleware&#39;, &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;, &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件 &#39;django.middleware.common.CommonMiddleware&#39;, # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;, &#39;django.contrib.messages.middleware.MessageMiddleware&#39;, &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 　至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。</description>
     </item>
     
   </channel>

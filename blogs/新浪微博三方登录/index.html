@@ -11,7 +11,8 @@
 应用创建成功后，会立即跳转审核页面，需要填写一些资质，用来进行审核，其实这些审核没有必要去管，应用压根就不需要通过审核。
 只需要拿到appkey和appsecret即可，然后立即点击高级信息，填写回调网址。
 需要注意一点，回调授权和取消回调授权地址需要一致。
-那么新浪微博的登录逻辑很简单： 拼接url -&amp;gt; 回调获取code -&amp;gt; 利用code换取uid和access_token -&amp;gt; 使用access_token获取用户信息" />
+逻辑流程图： 那么新浪微博的登录逻辑很简单： 拼接url -&amp;gt; 回调获取code -&amp;gt; 利用code换取uid和access_token -&amp;gt; 使用access_token获取用户信息
+前端代码 methods:{ // 新浪微博三方登录 sina: function () { // 拼接url let client_id = 1484610767; let url = &#39;https://api.weibo.com/oauth2/authorize?client_id=&#39; &#43; client_id &#43; &#39;&amp;amp;redirect_uri=http://127.0.0.1:8000/md_admin/weibo&#39;; // 跳转 站外跳转：window.location.href window.location.href = url; }, } 后端代码 # 新浪微博回调方法 def wb_back(request): # 接收参数 code = request.GET.get(&#39;code&#39;, None) # 定义token接口地址 url = &#39;https://api.weibo.com/oauth2/access_token&#39; # 定义参数 re = requests.post(url, data={ &#39;client_id&#39;: 1484610767, &#39;client_secret&#39;: &#39;e61c56200479acd83075a88fb1ab4a87&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -54,10 +55,11 @@
 应用创建成功后，会立即跳转审核页面，需要填写一些资质，用来进行审核，其实这些审核没有必要去管，应用压根就不需要通过审核。
 只需要拿到appkey和appsecret即可，然后立即点击高级信息，填写回调网址。
 需要注意一点，回调授权和取消回调授权地址需要一致。
-那么新浪微博的登录逻辑很简单： 拼接url -&gt; 回调获取code -&gt; 利用code换取uid和access_token -&gt; 使用access_token获取用户信息">
+逻辑流程图： 那么新浪微博的登录逻辑很简单： 拼接url -&gt; 回调获取code -&gt; 利用code换取uid和access_token -&gt; 使用access_token获取用户信息
+前端代码 methods:{ // 新浪微博三方登录 sina: function () { // 拼接url let client_id = 1484610767; let url = &#39;https://api.weibo.com/oauth2/authorize?client_id=&#39; &#43; client_id &#43; &#39;&amp;redirect_uri=http://127.0.0.1:8000/md_admin/weibo&#39;; // 跳转 站外跳转：window.location.href window.location.href = url; }, } 后端代码 # 新浪微博回调方法 def wb_back(request): # 接收参数 code = request.GET.get(&#39;code&#39;, None) # 定义token接口地址 url = &#39;https://api.weibo.com/oauth2/access_token&#39; # 定义参数 re = requests.post(url, data={ &#39;client_id&#39;: 1484610767, &#39;client_secret&#39;: &#39;e61c56200479acd83075a88fb1ab4a87&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127.">
 <meta itemprop="datePublished" content="2020-03-16T19:12:33&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-16T19:12:33&#43;08:00" />
-<meta itemprop="wordCount" content="16">
+<meta itemprop="wordCount" content="139">
 <meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
 
 
@@ -73,7 +75,8 @@
 应用创建成功后，会立即跳转审核页面，需要填写一些资质，用来进行审核，其实这些审核没有必要去管，应用压根就不需要通过审核。
 只需要拿到appkey和appsecret即可，然后立即点击高级信息，填写回调网址。
 需要注意一点，回调授权和取消回调授权地址需要一致。
-那么新浪微博的登录逻辑很简单： 拼接url -&gt; 回调获取code -&gt; 利用code换取uid和access_token -&gt; 使用access_token获取用户信息"/>
+逻辑流程图： 那么新浪微博的登录逻辑很简单： 拼接url -&gt; 回调获取code -&gt; 利用code换取uid和access_token -&gt; 使用access_token获取用户信息
+前端代码 methods:{ // 新浪微博三方登录 sina: function () { // 拼接url let client_id = 1484610767; let url = &#39;https://api.weibo.com/oauth2/authorize?client_id=&#39; &#43; client_id &#43; &#39;&amp;redirect_uri=http://127.0.0.1:8000/md_admin/weibo&#39;; // 跳转 站外跳转：window.location.href window.location.href = url; }, } 后端代码 # 新浪微博回调方法 def wb_back(request): # 接收参数 code = request.GET.get(&#39;code&#39;, None) # 定义token接口地址 url = &#39;https://api.weibo.com/oauth2/access_token&#39; # 定义参数 re = requests.post(url, data={ &#39;client_id&#39;: 1484610767, &#39;client_secret&#39;: &#39;e61c56200479acd83075a88fb1ab4a87&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127."/>
 
 
 
@@ -155,13 +158,74 @@
                 <p>新浪微博：中国版的twitter，自2009年8月上线以来，新浪微博就一直保持着爆发式增长。2019年底，微博月活跃用户到达5.16亿，所以使用新浪微博账号进行三方登录来提高用户登录体验就显得尤为重要。本次就来实现一下微博登录。</p>
 <p>首先登录微博开放平台： <a href="https://open.weibo.com/">https://open.weibo.com/</a></p>
 <p>选择微链接-&gt;网站接入-&gt;立即接入 新建一个应用</p>
-<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20200311/20200311091521_30654.png" alt="markdown" title="markdown"></p>
+<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20200311/20200311091521_30654.png" alt=""></p>
 <p>应用创建成功后，会立即跳转审核页面，需要填写一些资质，用来进行审核，其实这些审核没有必要去管，应用压根就不需要通过审核。</p>
-<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20200311/20200311091634_25884.png" alt="markdown" title="markdown"></p>
+<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20200311/20200311091634_25884.png" alt=""></p>
 <p>只需要拿到appkey和appsecret即可，然后立即点击高级信息，填写回调网址。</p>
-<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20200311/20200311091720_49486.png" alt="markdown" title="markdown"></p>
+<p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20200311/20200311091720_49486.png" alt=""></p>
 <p>需要注意一点，回调授权和取消回调授权地址需要一致。</p>
+<p>逻辑流程图：
+<img src="https://tianshangxing.github.io/blog/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95.png" alt=""></p>
 <p>那么新浪微博的登录逻辑很简单： 拼接url -&gt; 回调获取code -&gt; 利用code换取uid和access_token -&gt; 使用access_token获取用户信息</p>
+<h3 id="前端代码">前端代码</h3>
+<pre><code>methods:{
+    // 新浪微博三方登录
+    sina: function () {
+        // 拼接url
+        let client_id = 1484610767;
+        
+        let url = 'https://api.weibo.com/oauth2/authorize?client_id=' + client_id + '&amp;redirect_uri=http://127.0.0.1:8000/md_admin/weibo';
+
+        // 跳转 站外跳转：window.location.href
+        window.location.href = url;
+    },
+}
+</code></pre><h3 id="后端代码">后端代码</h3>
+<pre><code># 新浪微博回调方法
+def wb_back(request):
+	# 接收参数
+	code = request.GET.get('code', None)
+
+	# 定义token接口地址
+	url = 'https://api.weibo.com/oauth2/access_token'
+
+	# 定义参数
+	re = requests.post(url, data={
+		'client_id': 1484610767,
+		'client_secret': 'e61c56200479acd83075a88fb1ab4a87',
+		'grant_type': 'authorization_code',
+		'code': code,
+		'redirect_uri': 'http://127.0.0.1:8000/md_admin/weibo'
+	})
+
+	# 换取新浪微博用户昵称
+	res = requests.get('https://api.weibo.com/2/users/show.json', params={'access_token': re.json()['access_token'], 'uid': re.json()['uid']})
+
+	sina_id = ''
+	user_id = ''
+
+	# 判断是否用新浪微博登陆过
+	user = User.objects.filter(username=str(res.json()['name'])).first()
+
+	if user:
+		# 代表曾经用该账号登录过
+		sina_id = user.username
+		user_id = user.id
+
+	else:
+		# 首次登录，入库
+		user = User(username=str(res.json()['name']), password=str(res.json()['id']))
+		user.save()
+
+		user = User.objects.filter(username=str(res.json()['name'])).first()
+
+		sina_id = user.username
+		user_id = user.id
+
+	# 重定向
+	return redirect('http://localhost:8080/?sina_id='+ str(sina_id) + '&amp;uid=' + str(user_id))
+</code></pre><p>这样新浪微博的用户名就加在路由中被返回到了前端</p>
+<p>就是这么简单，最后附上项目地址： <a href="https://github.com/TianShangXing/mydjango">https://github.com/TianShangXing/mydjango</a></p>
 
             </div>
         </article>
