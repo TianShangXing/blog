@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
-<meta name="description" content="**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
+<meta name="description" content="钉钉（DingTalk） 是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
 钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。
 这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： https://open-dev.dingtalk.com/
 在移动应用中选择登录
@@ -15,7 +15,7 @@
 # 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;amp;response_type=code&amp;amp;scope=snsapi_login&amp;amp;state=STATE&amp;amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
 随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
 怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
-import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&amp;quot;code&amp;quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.b64encode(hmac.new(appSecret.encode(&#39;utf-8&#39;),timestamp.encode(&#39;utf-8&#39;), digestmod=sha256)." />
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&amp;quot;code&amp;quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -52,7 +52,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 
 
 <meta itemprop="name" content="钉钉三方登录">
-<meta itemprop="description" content="**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
+<meta itemprop="description" content="钉钉（DingTalk） 是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
 钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。
 这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： https://open-dev.dingtalk.com/
 在移动应用中选择登录
@@ -62,10 +62,10 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 # 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
 随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
 怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
-import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.b64encode(hmac.new(appSecret.encode(&#39;utf-8&#39;),timestamp.encode(&#39;utf-8&#39;), digestmod=sha256).">
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.">
 <meta itemprop="datePublished" content="2020-04-02T19:13:18&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-02T19:13:18&#43;08:00" />
-<meta itemprop="wordCount" content="93">
+<meta itemprop="wordCount" content="94">
 <meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
 
 
@@ -75,7 +75,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 <meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
 
 <meta name="twitter:title" content="钉钉三方登录"/>
-<meta name="twitter:description" content="**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
+<meta name="twitter:description" content="钉钉（DingTalk） 是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
 钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。
 这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： https://open-dev.dingtalk.com/
 在移动应用中选择登录
@@ -85,7 +85,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 # 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
 随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
 怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
-import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.b64encode(hmac.new(appSecret.encode(&#39;utf-8&#39;),timestamp.encode(&#39;utf-8&#39;), digestmod=sha256)."/>
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64."/>
 
 
 
@@ -164,7 +164,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
             
 
             <div class="post-content">
-                <p>**钉钉（DingTalk）**是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。</p>
+                <p><strong>钉钉（DingTalk）</strong> 是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。</p>
 <p>钉钉因中国企业而生，帮助中国企业通过系统化的解决方案（微应用），全方位提升中国企业沟通和协同效率。</p>
 <p>这里我们使用Django来集成一下钉钉的三方账号登录，首先登录钉钉开发平台： <a href="https://open-dev.dingtalk.com/">https://open-dev.dingtalk.com/</a></p>
 <p>在移动应用中选择登录</p>
