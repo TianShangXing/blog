@@ -7,10 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 29 Apr 2020 21:44:36 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2020 22:38:31 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>测试基础</title>
+      <link>https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 28 May 2020 22:38:31 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/</guid>
+      <description>软件开发的生命周期   客户提出需求(概念)
+  根据客户的需求写出相对应的需求文档
+  前端设计效果图(原型图)
+后台开发人员设计与编写代码实现功能
+测试人员根据需求文档编写测试计划和测试用例
+  在后台开发实现功能后根据测试用例测试人员进行测试
+  开发完全结束后，测试人员进行整体测试，全面测试，测试成功后进入上线
+  软件上线后根据用户体验和实际效果进行小版本迭代
+  软件缺陷产生的原因种类  需求变更次数频繁 理解误差 产品或者客户 开发和设计 代码问题 开发人员 运维 资源使用率产生 公司问题  测试流程  在立项会上根据客户需求编写需求文档/规格说明书，UI设计原型图后台编码，测试人员编写测试计划和测试用例 随着开发的代码实现，测试进行测试评审 主要代码实现后测试人员先进行冒烟测试 代码实现后测试执行测试用例 根据执行的结果进行对应bug提交给相对于的开发人员让其修改代码 开发修改后测试人员进行回归测试  冒烟测试：在这个软件中主要功能实现后进行测试
+回归测试：在开发人员修改后进行的同一个问题的测试
+软件测试的分类   按阶段划分
+  单元测试：对一个模块测试
+  集成测试：对多个模块测试(有一定的关联)
+  系统测试：在软件编译后执行的整体测试
+  验收测试：对软件执行后的用户体验的测试
+​	α 阿尔法测试：有一定的开发测试人员的测试 内测
+​	β 贝塔测试： 只有用户参与的测试 公测</description>
+    </item>
     
     <item>
       <title>代码实现验证码功能</title>
@@ -131,17 +156,6 @@ Vue.js 提供了 MVVM 数据绑定和一个可组合的组件系统，具有简�
       <description>MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
 官网： https://www.mysql.com/cn/
 数据库迁移 建立数据库映射关系 python manage.py makemigrations myapp # 子应用名称 建表 python manage.py migrate </description>
-    </item>
-    
-    <item>
-      <title>简历中必须要注意的技术词汇</title>
-      <link>https://tianshangxing.github.io/blog/blogs/%E7%AE%80%E5%8E%86%E4%B8%AD%E5%BF%85%E9%A1%BB%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E8%AF%8D%E6%B1%87/</link>
-      <pubDate>Sun, 12 Apr 2020 10:47:34 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/%E7%AE%80%E5%8E%86%E4%B8%AD%E5%BF%85%E9%A1%BB%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E6%8A%80%E6%9C%AF%E8%AF%8D%E6%B1%87/</guid>
-      <description>概述  每年到了这个时候又快到了找工作的旺季，也就是俗称的「金三银四」。对于程序员来说，这个时候也是最好找工作和跳槽的时机。很多程序员花了太多的时间在 自己的技术水平提升 和 笔试、面试题准备之上，却忽略了找工作第一步所需要的一个严谨且靠谱的简历，导致最终结果是 其实技术没问题，但投出去的简历惨不忍睹，甚至连面试的机会都没有。
-而我觉得程序员写简历，第一步就是需要注意严谨而规范地使用各种技术词汇，但是我发现不论个人博客或者是个人简历很多人可能都是想当然的凭自己的印象来拼写技术词汇， 因此本文就几个大的方面来总结一下程序员写简历时必须注意的词汇拼写注意事项，以供必要时查阅！当然这里列出的词汇可能有限，大家可以集思广益，一起提交和补充！
-后端开发     正确拼写 错误拼写举例     RESTful Restful、RestFul   Web web、WEB   Java JAVA、java   Linux LINUX、linux   Runtime runtime   MySQL mysql   SQLite sqlite   Spring spring   Spring Boot Springboot、SpringBoot   Spring Cloud Springcloud、SpringCloud   Spring MVC SpringMVC、Springmvc   NoSQL nosql、NOSQL   MyBatis mybatis、Mybatis   Maven maven、MAVEN   Redis redis   Elasticsearch elasticsearch、ElasticSearch   持续更新中… 持续更新中…    前端开发     正确拼写 错误拼写举例     HTML Html、html   HTTP Http、http   CSS Css、css   JavaScript javascript、Javascript、js、JS   Node.</description>
     </item>
     
   </channel>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="软件开发的生命周期   客户提出需求(概念)
+  根据客户的需求写出相对应的需求文档
+  前端设计效果图(原型图)
+后台开发人员设计与编写代码实现功能
+测试人员根据需求文档编写测试计划和测试用例
+  在后台开发实现功能后根据测试用例测试人员进行测试
+  开发完全结束后，测试人员进行整体测试，全面测试，测试成功后进入上线
+  软件上线后根据用户体验和实际效果进行小版本迭代
+  软件缺陷产生的原因种类  需求变更次数频繁 理解误差 产品或者客户 开发和设计 代码问题 开发人员 运维 资源使用率产生 公司问题  测试流程  在立项会上根据客户需求编写需求文档/规格说明书，UI设计原型图后台编码，测试人员编写测试计划和测试用例 随着开发的代码实现，测试进行测试评审 主要代码实现后测试人员先进行冒烟测试 代码实现后测试执行测试用例 根据执行的结果进行对应bug提交给相对于的开发人员让其修改代码 开发修改后测试人员进行回归测试  冒烟测试：在这个软件中主要功能实现后进行测试
+回归测试：在开发人员修改后进行的同一个问题的测试
+软件测试的分类   按阶段划分
+  单元测试：对一个模块测试
+  集成测试：对多个模块测试(有一定的关联)
+  系统测试：在软件编译后执行的整体测试
+  验收测试：对软件执行后的用户体验的测试
+​	α 阿尔法测试：有一定的开发测试人员的测试 内测
+​	β 贝塔测试： 只有用户参与的测试 公测" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/" />
+
+
+    <title>
+        
+            测试基础 :: TianShangXing&#39;s Blog  — Hello Friend NG Theme
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="测试基础">
+<meta itemprop="description" content="软件开发的生命周期   客户提出需求(概念)
+  根据客户的需求写出相对应的需求文档
+  前端设计效果图(原型图)
+后台开发人员设计与编写代码实现功能
+测试人员根据需求文档编写测试计划和测试用例
+  在后台开发实现功能后根据测试用例测试人员进行测试
+  开发完全结束后，测试人员进行整体测试，全面测试，测试成功后进入上线
+  软件上线后根据用户体验和实际效果进行小版本迭代
+  软件缺陷产生的原因种类  需求变更次数频繁 理解误差 产品或者客户 开发和设计 代码问题 开发人员 运维 资源使用率产生 公司问题  测试流程  在立项会上根据客户需求编写需求文档/规格说明书，UI设计原型图后台编码，测试人员编写测试计划和测试用例 随着开发的代码实现，测试进行测试评审 主要代码实现后测试人员先进行冒烟测试 代码实现后测试执行测试用例 根据执行的结果进行对应bug提交给相对于的开发人员让其修改代码 开发修改后测试人员进行回归测试  冒烟测试：在这个软件中主要功能实现后进行测试
+回归测试：在开发人员修改后进行的同一个问题的测试
+软件测试的分类   按阶段划分
+  单元测试：对一个模块测试
+  集成测试：对多个模块测试(有一定的关联)
+  系统测试：在软件编译后执行的整体测试
+  验收测试：对软件执行后的用户体验的测试
+​	α 阿尔法测试：有一定的开发测试人员的测试 内测
+​	β 贝塔测试： 只有用户参与的测试 公测">
+<meta itemprop="datePublished" content="2020-05-28T22:38:31&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-28T22:38:31&#43;08:00" />
+<meta itemprop="wordCount" content="213">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="测试基础"/>
+<meta name="twitter:description" content="软件开发的生命周期   客户提出需求(概念)
+  根据客户的需求写出相对应的需求文档
+  前端设计效果图(原型图)
+后台开发人员设计与编写代码实现功能
+测试人员根据需求文档编写测试计划和测试用例
+  在后台开发实现功能后根据测试用例测试人员进行测试
+  开发完全结束后，测试人员进行整体测试，全面测试，测试成功后进入上线
+  软件上线后根据用户体验和实际效果进行小版本迭代
+  软件缺陷产生的原因种类  需求变更次数频繁 理解误差 产品或者客户 开发和设计 代码问题 开发人员 运维 资源使用率产生 公司问题  测试流程  在立项会上根据客户需求编写需求文档/规格说明书，UI设计原型图后台编码，测试人员编写测试计划和测试用例 随着开发的代码实现，测试进行测试评审 主要代码实现后测试人员先进行冒烟测试 代码实现后测试执行测试用例 根据执行的结果进行对应bug提交给相对于的开发人员让其修改代码 开发修改后测试人员进行回归测试  冒烟测试：在这个软件中主要功能实现后进行测试
+回归测试：在开发人员修改后进行的同一个问题的测试
+软件测试的分类   按阶段划分
+  单元测试：对一个模块测试
+  集成测试：对多个模块测试(有一定的关联)
+  系统测试：在软件编译后执行的整体测试
+  验收测试：对软件执行后的用户体验的测试
+​	α 阿尔法测试：有一定的开发测试人员的测试 内测
+​	β 贝塔测试： 只有用户参与的测试 公测"/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-05-28 22:38:31 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">测试基础</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="软件开发的生命周期">软件开发的生命周期</h3>
+<ol>
+<li>
+<p>客户提出需求(概念)</p>
+</li>
+<li>
+<p>根据客户的需求写出相对应的<strong>需求文档</strong></p>
+</li>
+<li>
+<p>前端设计效果图(原型图)</p>
+<p>后台开发人员设计与编写代码实现功能</p>
+<p>测试人员根据需求文档编写测试计划和测试用例</p>
+</li>
+<li>
+<p>在后台开发实现功能后根据测试用例测试人员进行测试</p>
+</li>
+<li>
+<p>开发完全结束后，测试人员进行整体测试，全面测试，测试成功后进入上线</p>
+</li>
+<li>
+<p>软件上线后根据用户体验和实际效果进行小版本迭代</p>
+</li>
+</ol>
+<h3 id="软件缺陷产生的原因种类">软件缺陷产生的原因种类</h3>
+<ol>
+<li>需求变更次数频繁  理解误差  产品或者客户</li>
+<li>开发和设计  代码问题              开发人员</li>
+<li>运维  资源使用率产生              公司问题</li>
+</ol>
+<h3 id="测试流程">测试流程</h3>
+<ol>
+<li>在立项会上根据客户需求编写需求文档/规格说明书，UI设计原型图后台编码，测试人员编写测试计划和测试用例</li>
+<li>随着开发的代码实现，测试进行测试评审</li>
+<li>主要代码实现后测试人员先进行冒烟测试</li>
+<li>代码实现后测试执行测试用例</li>
+<li>根据执行的结果进行对应bug提交给相对于的开发人员让其修改代码</li>
+<li>开发修改后测试人员进行回归测试</li>
+</ol>
+<p>冒烟测试：在这个软件中主要功能实现后进行测试</p>
+<p>回归测试：在开发人员修改后进行的同一个问题的测试</p>
+<h3 id="软件测试的分类">软件测试的分类</h3>
+<ol>
+<li>
+<p>按阶段划分</p>
+<ol>
+<li>
+<p>单元测试：对一个模块测试</p>
+</li>
+<li>
+<p>集成测试：对多个模块测试(有一定的关联)</p>
+</li>
+<li>
+<p>系统测试：在软件编译后执行的整体测试</p>
+</li>
+<li>
+<p>验收测试：对软件执行后的用户体验的测试</p>
+<p>​	α 阿尔法测试：有一定的开发测试人员的测试   内测</p>
+<p>​	β 贝塔测试： 只有用户参与的测试           公测</p>
+</li>
+</ol>
+</li>
+<li>
+<p>按是否运行程序划分</p>
+<ol>
+<li>静态测试：UI设计图</li>
+<li>动态测试：由执行代码过程中产生的问题</li>
+</ol>
+</li>
+<li>
+<p>按是否查看源代码方式划分</p>
+<ol>
+<li>
+<p>黑盒测试：不看源代码结构 只关心外观和能否输入输出以及响应时间</p>
+<p>功能测试：界面 安装 兼容 易用</p>
+<p>性能测试：压力测试 负载测试 一般性能 稳定性测试</p>
+<p>​					压力测试：在同一时间内进行多个用户的访问
+​					负载测试：在多个用户在一段时间的持续访问</p>
+</li>
+<li>
+<p>白盒测试：只看代码结构以及代码实现方式</p>
+</li>
+<li>
+<p>灰盒测试：介于黑盒和白盒之间一种</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="对任意物品的测试">对任意物品的测试</h3>
+<p>回答思路：</p>
+<ol>
+<li>功能上：体积 形状 用途 材质</li>
+<li>界面上：颜色  图案</li>
+<li>性能上</li>
+<li>易用性</li>
+<li>安全性</li>
+</ol>
+<p>对鼠标的测试</p>
+<ol>
+<li>功能上：
+<ol>
+<li>所有的按键都可以正常使用 ，并且给出正常的响应</li>
+<li>长时间不使用后可以继续使用</li>
+<li>按键后在规定的时间内给与响应</li>
+<li>连续多次按键给与正常的响应</li>
+<li>在有无鼠标垫的情况下能否正常响应</li>
+<li>防摔</li>
+<li>防水</li>
+<li>防火</li>
+<li>耐低温，高温</li>
+</ol>
+</li>
+<li>界面上：
+<ol>
+<li>外观是否美观</li>
+<li>手感是否舒适</li>
+<li>大小是否规格</li>
+<li>颜色搭配是否合理</li>
+<li>颜色会不会掉色</li>
+<li>logo是否显眼</li>
+<li>表面是否会留下划痕</li>
+</ol>
+</li>
+<li>性能上：
+<ol>
+<li>点击后多少时间会给与响应</li>
+<li>连续点击是否会正常响应</li>
+<li>按键的寿命</li>
+<li>滚轮滚动是否响应正常</li>
+<li>滚轮的寿命</li>
+<li>多高会摔坏</li>
+<li>按键力度多大会按坏</li>
+<li>按键，滚轮是否灵敏</li>
+</ol>
+</li>
+<li>易用性：
+<ol>
+<li>按键，滚轮是否灵活好用</li>
+<li>按键手感是否舒适</li>
+<li>弹起的力度是否合适</li>
+<li>按键声音是否合理</li>
+<li>鼠标大小是否符合人工工程</li>
+<li>防出汗</li>
+<li>防滑</li>
+</ol>
+</li>
+<li>安全性：
+<ol>
+<li>进水后是否会短路</li>
+<li>制作鼠标材料是否无毒</li>
+<li>高温下会不会发生形变</li>
+<li>是否出现漏电现象</li>
+<li>上时间使用会不会高温</li>
+</ol>
+</li>
+</ol>
+<h3 id="软件测试的原则">软件测试的原则</h3>
+<ol>
+<li>尽早原则</li>
+<li>考虑意外情况和极端情况的发生</li>
+<li>群集现象</li>
+<li>测出问题能够复现问题</li>
+<li>不要在短时间进行高效测试</li>
+<li>回归测试的关联性</li>
+<li>善于总结相关文档</li>
+</ol>
+<h3 id="面试题">面试题</h3>
+<p>如果在测试过程中出现的bug而开发人员不认为是bug的时候你该怎么办？</p>
+<p>​	回答思路：自我</p>
+<p>​						别人</p>
+<p>​						领导</p>
+<ol>
+<li>首先我会从自身去经过多次的测试发现bug的出现次数和频率，记录复现bug的方式，然后发送给开发人员</li>
+<li>再根据需求文档来确认是否为bug</li>
+<li>如果开发不认为是bug的话，将复现bug的记录和需求文档找产品经理进行商议由产品经理和项目经理来确认是否为bug</li>
+<li>如果项目经理和产品经理都不认为是bug，我会将bug记录在测试文档中，方便在下次评审会上将问题再次抛出</li>
+</ol>
+<h3 id="常见的软件测试开发模式">常见的软件测试开发模式</h3>
+<ol>
+<li>V型</li>
+<li>W型</li>
+<li>H型</li>
+<li>螺旋形</li>
+</ol>
+<h3 id="公司的组织架构">公司的组织架构</h3>
+<p>一般在公司内部有的部门：人事	财务	开发(前端 后台  移动端 测试)	市场(产品)	运维(产品维护的服务)</p>
+<p>开发，测试   1个测试对应5个开发	1个前端 3个后台 1个移动端</p>
+<p>CEO	首席执行官</p>
+<p>CTO	首席技术官</p>
+<p>COO	首席运营官</p>
+<p>CIO	  首席信息官</p>
+<p>CFO	 首席财务官</p>
+<p>UI	前端</p>
+<p>ANDROID	安卓</p>
+<p>IOS	 iOS</p>
+<p>QA	测试</p>
+<p>OP	运维</p>
+<p>TS	技术支持</p>
+<p>DBA	数据库管理</p>
+<p>OD	运营总监</p>
+<p>MD	市场总监</p>
+<p>GM	总经理</p>
+<p>PM	产品经理</p>
+<p>RD	研发</p>
+<h3 id="测试工具">测试工具</h3>
+<p>world文档	测试计划	测试用例	缺陷报告</p>
+<p>接口工具	charles	Fiddler	postman</p>
+<p>性能工具	Jmeter	Loadrunner</p>
+<p>bug管理工具	禅道	jira	QTP</p>
+<p>自动化管理工具	selenium	appnium	uptest	pytest</p>
+<p>云测工具	Testing</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>
