@@ -7,10 +7,42 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 28 May 2020 22:38:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2020 23:06:14 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>测试用例</title>
+      <link>https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</link>
+      <pubDate>Fri, 29 May 2020 23:06:14 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</guid>
+      <description>测试计划  需求 提取测试点 编写测试用例  测试用例 测试用例的定义：
+执行测试的依据，将测试的操作步骤进行以文档的方式记录下来
+测试用例的格式：
+测试用例的模块	测试用例的编号	执行条件	测试输入	预期结果	实际结果
+测试用例的模块：操作软件的一个大的菜单	命名以模块名称为主
+测试用例的编号：命名以菜单下具体功能_数字
+执行条件：操作的先决条件
+测试输入：对具体的功能操作步骤
+预期结果：以需求文档上的内容为主
+实际结果：依据测试数据的内容输出后得到的结果可能与预期一致或者不一致
+​
+测试用例的特性：
+代表性：能够代表并覆盖各种合理的和不合理、合法的和不合法的、边界的和越界的以及极限的输入数据、操作等。
+针对性：对程序中的可能存在的错误有针对性地测试
+可判定性：测试执行结果的正确性是可判定的，每一个测试用例都应有相应的期望结果
+可重现性：对同样的测试用例，系统的执行结果应当是相同的
+测试用例的输入类型：
+ 字母 数字 特殊符号 空字符 汉字  软件分类
+OA：办公自动化
+crm：客户管理系统
+ERP：进销存系统
+编写测试用例的时候3步骤走：
+ 根据需求提取测试用例的测试点 根据测试点内容输入不同数据类型 得到不用结果来编写测试用例  测试方法(测试策略)  等价类划分法 边界值法 因果图法 正交法 场景法 错误推断法  测试评审的标准  测试用例的正确性测试用例不含有争议 测试用例是否冗余 测试用例的覆盖率 测试用例是否满足需求文档  评审的内容有以下几个方面
+ 用例设计的结构安排是否清晰、合理，是否利于高效对需求进行覆盖。 优先极安排是否合理。 是否覆盖测试需求上的所有功能点。 用例是否具有很好可执行性。例如用例的前提条件、执行步骤、输入数据和期待结果是否清晰、正确_期待结果是否有明显的验证方法。 是否已经删除了冗余的用例。 是否包含充分的负面测试用例。充分的定义，如果在这里使用2&amp;amp;8法则，那就是4倍于正面用例的数量，毕竟一个健壮的软件，其中80%的代码都是在&amp;quot;保护&amp;quot;20%的功能实现。 是否从用户层面来设计用户使用场景和使用流程的测试用例。 是否简洁，复用性强。例如，可将重复度高的步骤或过程抽取出来定义为一些可复用标准步骤  </description>
+    </item>
     
     <item>
       <title>测试基础</title>
@@ -145,17 +177,6 @@ Vue.js 提供了 MVVM 数据绑定和一个可组合的组件系统，具有简�
   另外建议装上源码包方式后，登录后就能访问谷歌了。建议选去 Chrome 应用商店 找到我们的正式在线版本.这样当我们升级你本机也会升级.安装正式线上版本后，回到扩展页面把刚才导入的已解压的包删除掉或停止就行了。
 如果还有什么问题可以发邮件: GhelperInfo@gmail.com
 国内用户还可以用QQ浏览器，在它的应用中心可以直接安装.</description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>https://tianshangxing.github.io/blog/blogs/mysql/</link>
-      <pubDate>Sun, 12 Apr 2020 12:01:31 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/mysql/</guid>
-      <description>MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
-官网： https://www.mysql.com/cn/
-数据库迁移 建立数据库映射关系 python manage.py makemigrations myapp # 子应用名称 建表 python manage.py migrate </description>
     </item>
     
   </channel>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="测试计划  需求 提取测试点 编写测试用例  测试用例 测试用例的定义：
+执行测试的依据，将测试的操作步骤进行以文档的方式记录下来
+测试用例的格式：
+测试用例的模块	测试用例的编号	执行条件	测试输入	预期结果	实际结果
+测试用例的模块：操作软件的一个大的菜单	命名以模块名称为主
+测试用例的编号：命名以菜单下具体功能_数字
+执行条件：操作的先决条件
+测试输入：对具体的功能操作步骤
+预期结果：以需求文档上的内容为主
+实际结果：依据测试数据的内容输出后得到的结果可能与预期一致或者不一致
+​
+测试用例的特性：
+代表性：能够代表并覆盖各种合理的和不合理、合法的和不合法的、边界的和越界的以及极限的输入数据、操作等。
+针对性：对程序中的可能存在的错误有针对性地测试
+可判定性：测试执行结果的正确性是可判定的，每一个测试用例都应有相应的期望结果
+可重现性：对同样的测试用例，系统的执行结果应当是相同的
+测试用例的输入类型：
+ 字母 数字 特殊符号 空字符 汉字  软件分类
+OA：办公自动化
+crm：客户管理系统
+ERP：进销存系统
+编写测试用例的时候3步骤走：
+ 根据需求提取测试用例的测试点 根据测试点内容输入不同数据类型 得到不用结果来编写测试用例  测试方法(测试策略)  等价类划分法 边界值法 因果图法 正交法 场景法 错误推断法  测试评审的标准  测试用例的正确性测试用例不含有争议 测试用例是否冗余 测试用例的覆盖率 测试用例是否满足需求文档  评审的内容有以下几个方面
+ 用例设计的结构安排是否清晰、合理，是否利于高效对需求进行覆盖。 优先极安排是否合理。 是否覆盖测试需求上的所有功能点。 用例是否具有很好可执行性。例如用例的前提条件、执行步骤、输入数据和期待结果是否清晰、正确_期待结果是否有明显的验证方法。 是否已经删除了冗余的用例。 是否包含充分的负面测试用例。充分的定义，如果在这里使用2&amp;amp;8法则，那就是4倍于正面用例的数量，毕竟一个健壮的软件，其中80%的代码都是在&amp;quot;保护&amp;quot;20%的功能实现。 是否从用户层面来设计用户使用场景和使用流程的测试用例。 是否简洁，复用性强。例如，可将重复度高的步骤或过程抽取出来定义为一些可复用标准步骤  " />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/" />
+
+
+    <title>
+        
+            测试用例 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="测试用例">
+<meta itemprop="description" content="测试计划  需求 提取测试点 编写测试用例  测试用例 测试用例的定义：
+执行测试的依据，将测试的操作步骤进行以文档的方式记录下来
+测试用例的格式：
+测试用例的模块	测试用例的编号	执行条件	测试输入	预期结果	实际结果
+测试用例的模块：操作软件的一个大的菜单	命名以模块名称为主
+测试用例的编号：命名以菜单下具体功能_数字
+执行条件：操作的先决条件
+测试输入：对具体的功能操作步骤
+预期结果：以需求文档上的内容为主
+实际结果：依据测试数据的内容输出后得到的结果可能与预期一致或者不一致
+​
+测试用例的特性：
+代表性：能够代表并覆盖各种合理的和不合理、合法的和不合法的、边界的和越界的以及极限的输入数据、操作等。
+针对性：对程序中的可能存在的错误有针对性地测试
+可判定性：测试执行结果的正确性是可判定的，每一个测试用例都应有相应的期望结果
+可重现性：对同样的测试用例，系统的执行结果应当是相同的
+测试用例的输入类型：
+ 字母 数字 特殊符号 空字符 汉字  软件分类
+OA：办公自动化
+crm：客户管理系统
+ERP：进销存系统
+编写测试用例的时候3步骤走：
+ 根据需求提取测试用例的测试点 根据测试点内容输入不同数据类型 得到不用结果来编写测试用例  测试方法(测试策略)  等价类划分法 边界值法 因果图法 正交法 场景法 错误推断法  测试评审的标准  测试用例的正确性测试用例不含有争议 测试用例是否冗余 测试用例的覆盖率 测试用例是否满足需求文档  评审的内容有以下几个方面
+ 用例设计的结构安排是否清晰、合理，是否利于高效对需求进行覆盖。 优先极安排是否合理。 是否覆盖测试需求上的所有功能点。 用例是否具有很好可执行性。例如用例的前提条件、执行步骤、输入数据和期待结果是否清晰、正确_期待结果是否有明显的验证方法。 是否已经删除了冗余的用例。 是否包含充分的负面测试用例。充分的定义，如果在这里使用2&amp;8法则，那就是4倍于正面用例的数量，毕竟一个健壮的软件，其中80%的代码都是在&quot;保护&quot;20%的功能实现。 是否从用户层面来设计用户使用场景和使用流程的测试用例。 是否简洁，复用性强。例如，可将重复度高的步骤或过程抽取出来定义为一些可复用标准步骤  ">
+<meta itemprop="datePublished" content="2020-05-29T23:06:14&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-29T23:06:14&#43;08:00" />
+<meta itemprop="wordCount" content="62">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="测试用例"/>
+<meta name="twitter:description" content="测试计划  需求 提取测试点 编写测试用例  测试用例 测试用例的定义：
+执行测试的依据，将测试的操作步骤进行以文档的方式记录下来
+测试用例的格式：
+测试用例的模块	测试用例的编号	执行条件	测试输入	预期结果	实际结果
+测试用例的模块：操作软件的一个大的菜单	命名以模块名称为主
+测试用例的编号：命名以菜单下具体功能_数字
+执行条件：操作的先决条件
+测试输入：对具体的功能操作步骤
+预期结果：以需求文档上的内容为主
+实际结果：依据测试数据的内容输出后得到的结果可能与预期一致或者不一致
+​
+测试用例的特性：
+代表性：能够代表并覆盖各种合理的和不合理、合法的和不合法的、边界的和越界的以及极限的输入数据、操作等。
+针对性：对程序中的可能存在的错误有针对性地测试
+可判定性：测试执行结果的正确性是可判定的，每一个测试用例都应有相应的期望结果
+可重现性：对同样的测试用例，系统的执行结果应当是相同的
+测试用例的输入类型：
+ 字母 数字 特殊符号 空字符 汉字  软件分类
+OA：办公自动化
+crm：客户管理系统
+ERP：进销存系统
+编写测试用例的时候3步骤走：
+ 根据需求提取测试用例的测试点 根据测试点内容输入不同数据类型 得到不用结果来编写测试用例  测试方法(测试策略)  等价类划分法 边界值法 因果图法 正交法 场景法 错误推断法  测试评审的标准  测试用例的正确性测试用例不含有争议 测试用例是否冗余 测试用例的覆盖率 测试用例是否满足需求文档  评审的内容有以下几个方面
+ 用例设计的结构安排是否清晰、合理，是否利于高效对需求进行覆盖。 优先极安排是否合理。 是否覆盖测试需求上的所有功能点。 用例是否具有很好可执行性。例如用例的前提条件、执行步骤、输入数据和期待结果是否清晰、正确_期待结果是否有明显的验证方法。 是否已经删除了冗余的用例。 是否包含充分的负面测试用例。充分的定义，如果在这里使用2&amp;8法则，那就是4倍于正面用例的数量，毕竟一个健壮的软件，其中80%的代码都是在&quot;保护&quot;20%的功能实现。 是否从用户层面来设计用户使用场景和使用流程的测试用例。 是否简洁，复用性强。例如，可将重复度高的步骤或过程抽取出来定义为一些可复用标准步骤  "/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-05-29 23:06:14 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/">测试用例</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="测试计划">测试计划</h3>
+<ol>
+<li>需求</li>
+<li>提取测试点</li>
+<li>编写测试用例</li>
+</ol>
+<h3 id="测试用例">测试用例</h3>
+<p>测试用例的定义：</p>
+<p>执行测试的依据，将测试的操作步骤进行以文档的方式记录下来</p>
+<p>测试用例的格式：</p>
+<p>测试用例的模块	测试用例的编号	执行条件	测试输入	预期结果	实际结果</p>
+<p>测试用例的模块：操作软件的一个大的菜单	命名以模块名称为主</p>
+<p>测试用例的编号：命名以菜单下具体功能_数字</p>
+<p>执行条件：操作的先决条件</p>
+<p>测试输入：对具体的功能操作步骤</p>
+<p>预期结果：以需求文档上的内容为主</p>
+<p>实际结果：依据测试数据的内容输出后得到的结果可能与预期一致或者不一致</p>
+<p>​</p>
+<p>测试用例的特性：</p>
+<p>代表性：能够代表并覆盖各种合理的和不合理、合法的和不合法的、边界的和越界的以及极限的输入数据、操作等。</p>
+<p>针对性：对程序中的可能存在的错误有针对性地测试</p>
+<p>可判定性：测试执行结果的正确性是可判定的，每一个测试用例都应有相应的期望结果</p>
+<p>可重现性：对同样的测试用例，系统的执行结果应当是相同的</p>
+<p>测试用例的输入类型：</p>
+<ol>
+<li>字母</li>
+<li>数字</li>
+<li>特殊符号</li>
+<li>空字符</li>
+<li>汉字</li>
+</ol>
+<p>软件分类</p>
+<p>OA：办公自动化</p>
+<p>crm：客户管理系统</p>
+<p>ERP：进销存系统</p>
+<p>编写测试用例的时候3步骤走：</p>
+<ol>
+<li>根据需求提取测试用例的测试点</li>
+<li>根据测试点内容输入不同数据类型</li>
+<li>得到不用结果来编写测试用例</li>
+</ol>
+<h3 id="测试方法测试策略">测试方法(测试策略)</h3>
+<ol>
+<li>等价类划分法</li>
+<li>边界值法</li>
+<li>因果图法</li>
+<li>正交法</li>
+<li>场景法</li>
+<li>错误推断法</li>
+</ol>
+<h3 id="测试评审的标准">测试评审的标准</h3>
+<ol>
+<li>测试用例的正确性测试用例不含有争议</li>
+<li>测试用例是否冗余</li>
+<li>测试用例的覆盖率</li>
+<li>测试用例是否满足需求文档</li>
+</ol>
+<p>评审的内容有以下几个方面</p>
+<ol>
+<li>用例设计的结构安排是否清晰、合理，是否利于高效对需求进行覆盖。</li>
+<li>优先极安排是否合理。</li>
+<li>是否覆盖测试需求上的所有功能点。</li>
+<li>用例是否具有很好可执行性。例如用例的前提条件、执行步骤、输入数据和期待结果是否清晰、正确_期待结果是否有明显的验证方法。</li>
+<li>是否已经删除了冗余的用例。</li>
+<li>是否包含充分的负面测试用例。充分的定义，如果在这里使用2&amp;8法则，那就是4倍于正面用例的数量，毕竟一个健壮的软件，其中80%的代码都是在&quot;保护&quot;20%的功能实现。</li>
+<li>是否从用户层面来设计用户使用场景和使用流程的测试用例。</li>
+<li>是否简洁，复用性强。例如，可将重复度高的步骤或过程抽取出来定义为一些可复用标准步骤</li>
+</ol>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>
