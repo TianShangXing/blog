@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 29 May 2020 23:06:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 00:10:30 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用户后台管理测试用例</title>
+      <link>https://tianshangxing.github.io/blog/blogs/%E7%94%A8%E6%88%B7%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</link>
+      <pubDate>Sun, 31 May 2020 00:10:30 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/%E7%94%A8%E6%88%B7%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>测试用例</title>
@@ -158,25 +167,6 @@ Vue.js 是用于构建交互式的 Web 界面的库。
 Vue.js 提供了 MVVM 数据绑定和一个可组合的组件系统，具有简单、灵活的 API。
 官网： https://cn.vuejs.org/
 安装流程 设置源 npm set registry https://registry.npmjs.org/ 设置国内源 npm set registry https://registry.npm.taobao.org 查看源 npm config list 升级npm npm install npm -g 全局安装 vue-cli npm install -g vue-cli npm清理缓存 npm cache clean --force 安装vue脚手架的命令，采用webpack打包工具，项目名是project vue init webpack project cd &amp;lt;项目名&amp;gt; npm install axios --save npm install style-loader —-save npm install heyui --save npm install js-md5 --save 进入项目 热启动 npm run dev 退出服务 ctrl + c 如果出现任何关于node依赖的问题导致服务无法启动，执行npm install无法解决的，则安装rimraf,然后进入项目目录下，执行rimraf node_modules 删除后，重新执行 npm install 安装依赖</description>
-    </item>
-    
-    <item>
-      <title>谷歌上网助手（Ghelper）</title>
-      <link>https://tianshangxing.github.io/blog/blogs/ghelper/</link>
-      <pubDate>Sun, 12 Apr 2020 22:56:44 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/ghelper/</guid>
-      <description>谷歌上网助手（Ghelper） 专门为科研、外贸、跨境电商、海淘人员、开发人员服务的上网工具，以保护和加速Internet冲浪，chrome内核浏览器专用!
-可以解决chrome扩展无法自动更新的问题，同时可以访问谷歌google搜索，gmail邮箱，google+等谷歌产品。
-官网： http://googlehelper.net
-由于中国大陆无法直接打开Chrome应用商店.所以，可以利用chrome开发者模式，来安装源码码实现使用本插件. 安装登录成功后，再去线上安装正式版本。
-  打开你的Chrome浏览器的 更多工具&amp;gt;扩展程序页面. 或者直接在网址输入: chrome://extensions/
-  这个页面点击 &amp;ldquo;添加已解压的扩展程序&amp;rdquo;,如果没有，在右边有一个 “开发者模式” 开关，要打开.
-  选择本次下载包里的 ghelper_source 目录
-  确认后就行了.
-  另外建议装上源码包方式后，登录后就能访问谷歌了。建议选去 Chrome 应用商店 找到我们的正式在线版本.这样当我们升级你本机也会升级.安装正式线上版本后，回到扩展页面把刚才导入的已解压的包删除掉或停止就行了。
-如果还有什么问题可以发邮件: GhelperInfo@gmail.com
-国内用户还可以用QQ浏览器，在它的应用中心可以直接安装.</description>
     </item>
     
   </channel>
