@@ -7,10 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 31 May 2020 00:10:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2020 20:59:03 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>缺陷报告和测试管理工具</title>
+      <link>https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 01 Jun 2020 20:59:03 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <description>缺陷报告编写 缺陷严重程度划分：系统崩溃，严重，一般，次要，建议
+修正优先级：高，中，低
+Bug定级示例 1级，系统崩溃
+定义：严重阻碍测试和开发工作 对应优先级：最高 具体可分为：
+ 功能完全没有实现 应用闪退/崩溃无法运行 应用必现安全模式，无法运行 其他导致功能无法测试的问题  2级，至关重要
+定义：非阻碍用例执行的严重问题
+对应优先级：高
+具体可分为：
+ 简单操作应用闪退/崩溃，卡死 数据丢失 严重影响系统，自身功能无法运行 严重数值计算错误 数据库损坏或无法保存配置 安全性问题（包括数据加密等）  3级，主要
+定义：功能存在缺陷，但不影响应用和系统的稳定性
+对应优先级：中
+具体可分为：
+ 内存泄露（长时间不用的对象需要被回收，不被回收占内存） 功能实现逻辑覆盖不全面 非必现，但复现概率超过50%的闪退/崩溃和安全模式  4级，一般
+定义：对应用熟悉度高才能感知到的问题，对应用基本功能实现无影响
+对应优先级：中
+具体可分为：
+ 轻微数值计算错误 功能实现有误，与产品文档不完全贴切 用户简单操作，即可明显感知的UI问题  5级，较小
+定义：界面，性能缺陷 对应优先级：低
+具体可分为：
+ 操作界面错误（提示显示规则，刷新规则是否与文档一致） 边界条件显示错误 提示信息和界面效果展示错误（包括未给出信息、信息提示错误等） 复现率低于5%的闪退/崩溃和安全模式 插件兼容和性能未优化问题 非正常操作导致UI显示异常  6级，建议
+定义：对于产品的意见或者建议 对应优先级：低
+具体可分为：
+ 对于产品设计方面的意见和建议 对于产品界面优化方面的意见和建议 对于产品需要优化增强用户体验方面的意见和建议  Bug生命周期 新建	确认	解决	重新验证	关闭	重新打开</description>
+    </item>
     
     <item>
       <title>用户后台管理测试用例</title>
@@ -154,19 +185,6 @@ Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将�
 &amp;lt;div&amp;gt; &amp;lt;p&amp;gt;{{ msg }}&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; Html 使用 v-html 指令用于输出 html 代码：
 &amp;lt;!-- 解析html语法 --&amp;gt; &amp;lt;div v-html=&amp;quot;msg&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { msg: &#39;&amp;lt;h1&amp;gt;变量&amp;lt;/h1&amp;gt;&#39;, } } } &amp;lt;/script&amp;gt; v-show 我们也可以使用 v-show 指令来根据条件展示元素：
 &amp;lt;div&amp;gt; &amp;lt;h3 v-show=&amp;quot;ok&amp;quot;&amp;gt;Hello World&amp;lt;/h3&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { ok: 1, // 0:false 1:true, } } } &amp;lt;/script&amp;gt; 缩写 Vue.</description>
-    </item>
-    
-    <item>
-      <title>Vue.js</title>
-      <link>https://tianshangxing.github.io/blog/blogs/vue.js/</link>
-      <pubDate>Tue, 21 Apr 2020 21:41:54 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/vue.js/</guid>
-      <description>Vue.js Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。
-Vue.js 是用于构建交互式的 Web 界面的库。
-Vue.js 提供了 MVVM 数据绑定和一个可组合的组件系统，具有简单、灵活的 API。
-官网： https://cn.vuejs.org/
-安装流程 设置源 npm set registry https://registry.npmjs.org/ 设置国内源 npm set registry https://registry.npm.taobao.org 查看源 npm config list 升级npm npm install npm -g 全局安装 vue-cli npm install -g vue-cli npm清理缓存 npm cache clean --force 安装vue脚手架的命令，采用webpack打包工具，项目名是project vue init webpack project cd &amp;lt;项目名&amp;gt; npm install axios --save npm install style-loader —-save npm install heyui --save npm install js-md5 --save 进入项目 热启动 npm run dev 退出服务 ctrl + c 如果出现任何关于node依赖的问题导致服务无法启动，执行npm install无法解决的，则安装rimraf,然后进入项目目录下，执行rimraf node_modules 删除后，重新执行 npm install 安装依赖</description>
     </item>
     
   </channel>

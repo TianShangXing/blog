@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="缺陷报告编写 缺陷严重程度划分：系统崩溃，严重，一般，次要，建议
+修正优先级：高，中，低
+Bug定级示例 1级，系统崩溃
+定义：严重阻碍测试和开发工作 对应优先级：最高 具体可分为：
+ 功能完全没有实现 应用闪退/崩溃无法运行 应用必现安全模式，无法运行 其他导致功能无法测试的问题  2级，至关重要
+定义：非阻碍用例执行的严重问题
+对应优先级：高
+具体可分为：
+ 简单操作应用闪退/崩溃，卡死 数据丢失 严重影响系统，自身功能无法运行 严重数值计算错误 数据库损坏或无法保存配置 安全性问题（包括数据加密等）  3级，主要
+定义：功能存在缺陷，但不影响应用和系统的稳定性
+对应优先级：中
+具体可分为：
+ 内存泄露（长时间不用的对象需要被回收，不被回收占内存） 功能实现逻辑覆盖不全面 非必现，但复现概率超过50%的闪退/崩溃和安全模式  4级，一般
+定义：对应用熟悉度高才能感知到的问题，对应用基本功能实现无影响
+对应优先级：中
+具体可分为：
+ 轻微数值计算错误 功能实现有误，与产品文档不完全贴切 用户简单操作，即可明显感知的UI问题  5级，较小
+定义：界面，性能缺陷 对应优先级：低
+具体可分为：
+ 操作界面错误（提示显示规则，刷新规则是否与文档一致） 边界条件显示错误 提示信息和界面效果展示错误（包括未给出信息、信息提示错误等） 复现率低于5%的闪退/崩溃和安全模式 插件兼容和性能未优化问题 非正常操作导致UI显示异常  6级，建议
+定义：对于产品的意见或者建议 对应优先级：低
+具体可分为：
+ 对于产品设计方面的意见和建议 对于产品界面优化方面的意见和建议 对于产品需要优化增强用户体验方面的意见和建议  Bug生命周期 新建	确认	解决	重新验证	关闭	重新打开" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" />
+
+
+    <title>
+        
+            缺陷报告和测试管理工具 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="缺陷报告和测试管理工具">
+<meta itemprop="description" content="缺陷报告编写 缺陷严重程度划分：系统崩溃，严重，一般，次要，建议
+修正优先级：高，中，低
+Bug定级示例 1级，系统崩溃
+定义：严重阻碍测试和开发工作 对应优先级：最高 具体可分为：
+ 功能完全没有实现 应用闪退/崩溃无法运行 应用必现安全模式，无法运行 其他导致功能无法测试的问题  2级，至关重要
+定义：非阻碍用例执行的严重问题
+对应优先级：高
+具体可分为：
+ 简单操作应用闪退/崩溃，卡死 数据丢失 严重影响系统，自身功能无法运行 严重数值计算错误 数据库损坏或无法保存配置 安全性问题（包括数据加密等）  3级，主要
+定义：功能存在缺陷，但不影响应用和系统的稳定性
+对应优先级：中
+具体可分为：
+ 内存泄露（长时间不用的对象需要被回收，不被回收占内存） 功能实现逻辑覆盖不全面 非必现，但复现概率超过50%的闪退/崩溃和安全模式  4级，一般
+定义：对应用熟悉度高才能感知到的问题，对应用基本功能实现无影响
+对应优先级：中
+具体可分为：
+ 轻微数值计算错误 功能实现有误，与产品文档不完全贴切 用户简单操作，即可明显感知的UI问题  5级，较小
+定义：界面，性能缺陷 对应优先级：低
+具体可分为：
+ 操作界面错误（提示显示规则，刷新规则是否与文档一致） 边界条件显示错误 提示信息和界面效果展示错误（包括未给出信息、信息提示错误等） 复现率低于5%的闪退/崩溃和安全模式 插件兼容和性能未优化问题 非正常操作导致UI显示异常  6级，建议
+定义：对于产品的意见或者建议 对应优先级：低
+具体可分为：
+ 对于产品设计方面的意见和建议 对于产品界面优化方面的意见和建议 对于产品需要优化增强用户体验方面的意见和建议  Bug生命周期 新建	确认	解决	重新验证	关闭	重新打开">
+<meta itemprop="datePublished" content="2020-06-01T20:59:03&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-01T20:59:03&#43;08:00" />
+<meta itemprop="wordCount" content="104">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="缺陷报告和测试管理工具"/>
+<meta name="twitter:description" content="缺陷报告编写 缺陷严重程度划分：系统崩溃，严重，一般，次要，建议
+修正优先级：高，中，低
+Bug定级示例 1级，系统崩溃
+定义：严重阻碍测试和开发工作 对应优先级：最高 具体可分为：
+ 功能完全没有实现 应用闪退/崩溃无法运行 应用必现安全模式，无法运行 其他导致功能无法测试的问题  2级，至关重要
+定义：非阻碍用例执行的严重问题
+对应优先级：高
+具体可分为：
+ 简单操作应用闪退/崩溃，卡死 数据丢失 严重影响系统，自身功能无法运行 严重数值计算错误 数据库损坏或无法保存配置 安全性问题（包括数据加密等）  3级，主要
+定义：功能存在缺陷，但不影响应用和系统的稳定性
+对应优先级：中
+具体可分为：
+ 内存泄露（长时间不用的对象需要被回收，不被回收占内存） 功能实现逻辑覆盖不全面 非必现，但复现概率超过50%的闪退/崩溃和安全模式  4级，一般
+定义：对应用熟悉度高才能感知到的问题，对应用基本功能实现无影响
+对应优先级：中
+具体可分为：
+ 轻微数值计算错误 功能实现有误，与产品文档不完全贴切 用户简单操作，即可明显感知的UI问题  5级，较小
+定义：界面，性能缺陷 对应优先级：低
+具体可分为：
+ 操作界面错误（提示显示规则，刷新规则是否与文档一致） 边界条件显示错误 提示信息和界面效果展示错误（包括未给出信息、信息提示错误等） 复现率低于5%的闪退/崩溃和安全模式 插件兼容和性能未优化问题 非正常操作导致UI显示异常  6级，建议
+定义：对于产品的意见或者建议 对应优先级：低
+具体可分为：
+ 对于产品设计方面的意见和建议 对于产品界面优化方面的意见和建议 对于产品需要优化增强用户体验方面的意见和建议  Bug生命周期 新建	确认	解决	重新验证	关闭	重新打开"/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-01 20:59:03 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">缺陷报告和测试管理工具</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="缺陷报告编写">缺陷报告编写</h3>
+<p>缺陷严重程度划分：系统崩溃，严重，一般，次要，建议</p>
+<p>修正优先级：高，中，低</p>
+<p><img src="https://tianshangxing.github.io/blog/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E4%B8%8A.png" alt="">
+<img src="https://tianshangxing.github.io/blog/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E4%B8%8B.png" alt=""></p>
+<h3 id="bug定级示例">Bug定级示例</h3>
+<p><strong>1级，系统崩溃</strong><br>
+<strong>定义</strong>：严重阻碍测试和开发工作 <br>
+<strong>对应优先级：最高</strong> <br>
+<strong>具体可分为：</strong></p>
+<ol>
+<li>功能完全没有实现</li>
+<li>应用闪退/崩溃无法运行</li>
+<li>应用必现安全模式，无法运行</li>
+<li>其他导致功能无法测试的问题</li>
+</ol>
+<p><strong>2级，至关重要</strong><br>
+<strong>定义</strong>：非阻碍用例执行的严重问题<br>
+<strong>对应优先级：高</strong><br>
+<strong>具体可分为：</strong></p>
+<ol>
+<li>简单操作应用闪退/崩溃，卡死</li>
+<li>数据丢失</li>
+<li>严重影响系统，自身功能无法运行</li>
+<li>严重数值计算错误</li>
+<li>数据库损坏或无法保存配置</li>
+<li>安全性问题（包括数据加密等）</li>
+</ol>
+<p><strong>3级，主要</strong><br>
+<strong>定义</strong>：功能存在缺陷，但不影响应用和系统的稳定性<br>
+<strong>对应优先级：中</strong><br>
+<strong>具体可分为：</strong></p>
+<ol>
+<li>内存泄露（长时间不用的对象需要被回收，不被回收占内存）</li>
+<li>功能实现逻辑覆盖不全面</li>
+<li>非必现，但复现概率超过50%的闪退/崩溃和安全模式</li>
+</ol>
+<p><strong>4级，一般</strong><br>
+<strong>定义</strong>：对应用熟悉度高才能感知到的问题，对应用基本功能实现无影响<br>
+<strong>对应优先级：中</strong><br>
+<strong>具体可分为：</strong></p>
+<ol>
+<li>轻微数值计算错误</li>
+<li>功能实现有误，与产品文档不完全贴切</li>
+<li>用户简单操作，即可明显感知的UI问题</li>
+</ol>
+<p><strong>5级，较小</strong><br>
+<strong>定义</strong>：界面，性能缺陷 <br>
+<strong>对应优先级：低</strong><br>
+<strong>具体可分为：</strong></p>
+<ol>
+<li>操作界面错误（提示显示规则，刷新规则是否与文档一致）</li>
+<li>边界条件显示错误</li>
+<li>提示信息和界面效果展示错误（包括未给出信息、信息提示错误等）</li>
+<li>复现率低于5%的闪退/崩溃和安全模式</li>
+<li>插件兼容和性能未优化问题</li>
+<li>非正常操作导致UI显示异常</li>
+</ol>
+<p><strong>6级，建议</strong><br>
+<strong>定义</strong>：对于产品的意见或者建议 <br>
+<strong>对应优先级：低</strong><br>
+<strong>具体可分为：</strong></p>
+<ol>
+<li>对于产品设计方面的意见和建议</li>
+<li>对于产品界面优化方面的意见和建议</li>
+<li>对于产品需要优化增强用户体验方面的意见和建议</li>
+</ol>
+<h3 id="bug生命周期">Bug生命周期</h3>
+<p>新建	确认	解决	重新验证	关闭	重新打开</p>
+<ol>
+<li>
+<p>一个Bug由测试人员发现并提交，我们将状态标注为新建；</p>
+</li>
+<li>
+<p>开发人员接收了该Bug，将Bug的状态改为已分配(Assigned)，表示已经认可；</p>
+</li>
+<li>
+<p>开发人员解决了该Bug后，将Bug的状态修改为已解决，并发给测试人员回归测试；</p>
+</li>
+<li>
+<p>测试人员对Bug进行回归测试，如果确实已经解决，就将Bug状态修改为关闭，否则的话则发给开发人员重新修改。</p>
+</li>
+</ol>
+<p>注意：Bug是可以“死而复生”的，以前版本已经关闭的Bug，如果新版本中重新出现，我们就需要将其状态修改为重新打开。</p>
+<p><img src="https://tianshangxing.github.io/blog/Bug%E5%A4%84%E7%90%86.png" alt=""></p>
+<h3 id="测试管理工具">测试管理工具</h3>
+<p>​	测试管理工具是在指在软件开发过程中，对测试需求、计划、用例和实施过程进行管理、对<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/1940019">软件缺陷</a>进行跟踪处理的工具。通过使用测试管理工具，测试人员或开发人员可以更方便地记录和监控每个测试活动、阶段的结果，找出软件的缺陷和错误，记录测试活动中发现的缺陷和改进建议。通过使用测试管理工具，<a href="https://baike.baidu.com/item/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/1928697">测试用例</a>可以被多个测试活动或阶段复用，可以输出测试分析报告和<a href="https://baike.baidu.com/item/%E7%BB%9F%E8%AE%A1%E6%8A%A5%E8%A1%A8/5099887">统计报表</a>。有些测试管理工具可以更好地支持协同操作，共享中央数据库，支持并行测试和记录，从而大大提高测试效率。</p>
+<h3 id="测试工具">测试工具</h3>
+<p>​   目前市场上主流的<a href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95">软件测试</a>管理工具有：<a href="https://baike.baidu.com/item/TestCenter">TestCenter</a>（泽众软件出品）、<a href="https://baike.baidu.com/item/TestDirector">TestDirector</a>（MI公司TD，8.0后改成<a href="https://baike.baidu.com/item/QC/13474821"><strong>QC</strong></a>），TestManager（IBM），QADirector（<a href="https://baike.baidu.com/item/Compuware/775857">Compuware</a>），<a href="https://baike.baidu.com/item/TestLink">TestLink</a>（开源组织），QATraq（开源组织），<a href="https://baike.baidu.com/item/oKit">oKit</a> (统御至诚)。<a href="https://baike.baidu.com/item/JIRA"><strong>Jira</strong></a> 管理工具，<a href="https://www.zentao.net/"><strong>禅道</strong></a>。</p>
+<p>测试管理包含的内容有：测试框架、<a href="https://baike.baidu.com/item/%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92">测试计划</a>与组织、测试过程管理、测试分析与<a href="https://baike.baidu.com/item/%E7%BC%BA%E9%99%B7%E7%AE%A1%E7%90%86">缺陷管理</a>。</p>
+<h3 id="禅道">禅道</h3>
+<p>​   禅道由青岛易软天创网络科技有限公司开发，国产开源项目管理软件。它集产品管理、项目管理、质量管理、文档管理、组织管理和事务管理于一体，是一款专业的研发项目管理软件，完整覆盖了研发项目管理的核心流程。</p>
+<p>禅道官方网站： <a href="http://www.zentao.net/">http://www.zentao.net/</a></p>
+<p>官网使用步骤详解： <a href="http://www.zentao.net/book/zentaopmshelp/38.html">http://www.zentao.net/book/zentaopmshelp/38.html</a></p>
+<h3 id="禅道项目管理系统的特点">禅道项目管理系统的特点</h3>
+<p>第一款完整涵盖产品管理、任务管理、测试管理的开源管理软件，使用一个软件解决项目管理核心问题。</p>
+<p>基于国际流行的敏捷管理方式scrum。</p>
+<p>B/S Broswer/Server C/S Client/Server 架构，方便部署、使用。</p>
+<p>概念简单，容易上手。</p>
+<p>开源的项目管理软件，可自由进行定制，修改。</p>
+<p>免费的项目管理软件，降低企业的投入成本。</p>
+<p>自主的开发框架，预留扩展机制，通过第三方的插件扩展获得更多的功能。</p>
+<h3 id="禅道系统的功能列表">禅道系统的功能列表</h3>
+<ol>
+<li>产品管理：包括产品、需求、计划、发布、路线图等功能。</li>
+<li>项目管理：包括项目、任务、团队、版本、燃尽图等功能。</li>
+<li>质量管理：包括bug、测试用例、测试任务、测试结果等功能。</li>
+<li>文档管理：包括产品文档库、项目文档库、自定义文档库等功能。</li>
+<li>事务管理：包括todo管理，我的任务、我的Bug、我的需求、我的项目等个人事务管理功能。</li>
+<li>组织管理：包括部门、用户、分组、权限等功能。</li>
+<li>统计功能：丰富的统计表。</li>
+<li>搜索功能：强大的搜索，帮助您找到相应的数据。</li>
+<li>扩展机制，几乎可以对禅道的任何地方进行扩展。</li>
+<li>api机制，所见皆API，方便与其他系统集成。</li>
+</ol>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>
