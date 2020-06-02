@@ -13,6 +13,31 @@
     
     
     <item>
+      <title>MySQL基础</title>
+      <link>https://tianshangxing.github.io/blog/blogs/mysql%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Tue, 02 Jun 2020 22:11:14 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/mysql%E5%9F%BA%E7%A1%80/</guid>
+      <description>MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/cn/
+ MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
+ 数值类型 MySQL支持所有标准SQL数值数据类型。
+这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL和NUMERIC)，以及近似数值数据类型(FLOAT、REAL和DOUBLE PRECISION)。
+关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。
+BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB表。
+作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。
+下面的表显示了需要的每个整数类型的存储和范围。
+ 日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
+每个时间类型有一个有效值范围和一个&amp;quot;零&amp;quot;值，当指定不合法的MySQL不能表示的值时使用&amp;quot;零&amp;quot;值。
+ 字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
+注意：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。
+CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。
+BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。
+BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。
+有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。</description>
+    </item>
+    
+    <item>
       <title>缺陷报告和测试管理工具</title>
       <link>https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 01 Jun 2020 20:59:03 +0800</pubDate>
@@ -170,21 +195,6 @@ HeyUI 提供的是一整套解决方案，所有的组件提供全局的可配�
       <guid>https://tianshangxing.github.io/blog/blogs/django/</guid>
       <description>Django Django是一个开放源代码的Web应用框架，由Python写成。采用了MVT的软件设计模式，即模型（Model），视图（View）和模板（Template）。
 安装依赖 pip install Django==2.0.4 pip install django-cors-headers pip install djangorestframework pip install PyMySQL pip install opencv-python pip install opencv-contrib-python pip install numpy pip install pillow pip install dwebsocket 依赖文件生成 requirements.txt pip freeze &amp;gt; requirements.txt 依赖文件安装 requirements.txt pip install -r requirements.txt 新建Django项目 django-admin startproject mydjango 新建子应用 python manage.py startapp myapp 数据库迁移 python manage.py makemigrations myapp python manage.py migrate 反向迁移 python manage.py inspectdb &amp;gt; mymodels.py 启动项目 python manage.py runserver 项目仓库： https://github.</description>
-    </item>
-    
-    <item>
-      <title>Vue.js常用语法</title>
-      <link>https://tianshangxing.github.io/blog/blogs/vue.js%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Wed, 22 Apr 2020 17:10:41 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/vue.js%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</guid>
-      <description>Vue.js 模板语法 Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。
-Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统。
-结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上。
- 文本插值 数据绑定最常见的形式就是使用 {{&amp;hellip;}}（双大括号）的文本插值：
-&amp;lt;div&amp;gt; &amp;lt;p&amp;gt;{{ msg }}&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; Html 使用 v-html 指令用于输出 html 代码：
-&amp;lt;!-- 解析html语法 --&amp;gt; &amp;lt;div v-html=&amp;quot;msg&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { msg: &#39;&amp;lt;h1&amp;gt;变量&amp;lt;/h1&amp;gt;&#39;, } } } &amp;lt;/script&amp;gt; v-show 我们也可以使用 v-show 指令来根据条件展示元素：
-&amp;lt;div&amp;gt; &amp;lt;h3 v-show=&amp;quot;ok&amp;quot;&amp;gt;Hello World&amp;lt;/h3&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { ok: 1, // 0:false 1:true, } } } &amp;lt;/script&amp;gt; 缩写 Vue.</description>
     </item>
     
   </channel>
