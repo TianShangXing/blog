@@ -77,7 +77,7 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
 有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。">
 <meta itemprop="datePublished" content="2020-06-02T22:11:14&#43;08:00" />
 <meta itemprop="dateModified" content="2020-06-02T22:11:14&#43;08:00" />
-<meta itemprop="wordCount" content="210">
+<meta itemprop="wordCount" content="628">
 <meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
 
 
@@ -214,6 +214,51 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
 <p>BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。</p>
 <p>有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。</p>
 <hr>
+<h3 id="mysql约束类型">MySQL约束类型</h3>
+<hr>
+<table>
+<thead>
+<tr>
+<th>约束名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NULL</td>
+<td>空</td>
+</tr>
+<tr>
+<td>NOT NULL</td>
+<td>非空</td>
+</tr>
+<tr>
+<td>UNIQUE</td>
+<td>取值不允许重复（唯一）</td>
+</tr>
+<tr>
+<td>AUTO_INCREMENT</td>
+<td>自增</td>
+</tr>
+<tr>
+<td>PRIMARY KEY</td>
+<td>主键（主关键字）</td>
+</tr>
+<tr>
+<td>FOREIGN KEY</td>
+<td>外键（外关键字）</td>
+</tr>
+<tr>
+<td>CHECK</td>
+<td>逻辑表达式约束</td>
+</tr>
+<tr>
+<td>DEFAULT</td>
+<td>默认值（缺省值）</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h3 id="mysql语言分类">MySQL语言分类</h3>
 <hr>
 <ol>
@@ -298,11 +343,160 @@ update user set name = &lsquo;刘星伸&rsquo; where id=1;</p>
 <hr>
 <h3 id="mysql操作">MySQL操作</h3>
 <p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C1.png" alt="MySQL操作1"></p>
-<hr>
-<p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C2.png" alt="MySQL操作2"></p>
-<hr>
-<p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C3.png" alt="MySQL操作3"></p>
+<pre><code>创建数据库：
+create database 1907c charset=utf8;
 
+删除数据库：
+drop database 1907c;
+
+切换数据库：
+use 1907c;
+
+创建表：
+create table user(
+
+id int(11) primary key auto_increment,
+
+name varchar(20) not null,
+
+​phone varchar(20)
+
+);
+
+查看表结构：
+desc user;
+
+查看创建表的sql语句：
+show create table user;
+
+修改表名：
+alter table user rename to student;
+
+删除表：
+drop table student;
+
+对表结构的添加字段：
+alter table user add sex char(2);
+
+对表结构的删除字段：
+alter table user drop sex;
+
+修改数据库的编码格式：
+alter database 1907c character set gbk
+
+指定字段添加：
+insert into user(name) values ('天上星');
+
+所有字段都添加内容：
+insert into user values (5, '刘星伸', '15647419067', '男');
+
+批量添加数据 多条数据用,隔开：
+insert into user values (3, '小星星', '17735399067', '男'), (4, '大星星', '15647419067', '男');
+
+批量修改：
+update user set name='刘星伸';
+
+指定数据修改需要添加 where 关键字：
+update user set name = '星' where id=1;
+</code></pre><hr>
+<p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C2.png" alt="MySQL操作2"></p>
+<pre><code>CREATE DATABASE books charset=utf8;
+
+use books
+
+create table book (
+	id int primary key auto_increment,
+	name varchar(50),
+	price double(11, 2),
+	author varchar(20),
+	publish varchar(50)
+);
+
+insert into book values
+(1, '北平无故事', 25, '刘和平', '作家出版社'),
+(2, '人间失格', 16, '太宰治著', '作家出版社'),
+(3, '高兴', 16, '贾平凹', '人民出版社'),
+(4, '源氏物语', 57, '刘和平', '人民出版社'),
+(5, '卡夫卡文集', 9, '卡夫卡', '邮电出版社'),
+(6, '大家', 12, '王蒙', '邮电出版社'),
+(7, '拉片子', 37, '杨健', '清华出版社'),
+(8, '古代散文', 5, '归有光', '安徽出版社'),
+(9, '百花散文', 6, '孙虹选', '百花文艺出版社'),
+(10, '方令孺散文集', 5, '方令孺', '安徽文艺');
+
+查询所有图书的信息，并按价格降序显示:
+select * from book ORDER BY price desc;
+
+查询所有作家出版社的图书信息，并按价格降序显示:
+select publish, name, price from book ORDER BY price desc;
+
+查询出所有刘和平的图书信息 ，并输出：
+select * from book where author='刘和平';
+
+删除ID是2的记录，如果没有相关记录则提示：
+delete from book where id=2;
+
+将所有价格不足10元的图书调到10元，并查看信息：
+update book set price=10 where price&lt;10;
+
+select * from book where price=10;
+
+查看所有图书的价格情况，并升序显示:
+select id,name,price from book ORDER BY price ASC;
+
+查看所有价格低于20元的图书信息：
+select * from book where price&gt;20;
+
+所有图书的价格上调20%，并查看信息：
+update book set price=price*1.2;
+</code></pre><hr>
+<p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C3.png" alt="MySQL操作3"></p>
+<pre><code>CREATE DATABASE db_test charset=utf8;
+
+use db_test
+
+create table staff (
+	sid int primary key auto_increment,
+	sname varchar(20),
+	sex enum('男', '女'),
+	job varchar(20),
+	birthday DATE,
+	salary int(11),
+	comm int(11),
+	withhold int(11)
+);
+
+insert into staff values
+(1001, '张三', '男', '高级工程师', '1975-1-1', 2200, 1100, 200),
+(1002, '李四', '女', '助工', '1985-1-1', 1200, 200, 100),
+(1003, '王五', '男', '工程师', '1978-11-11', 1900, 700, 200),
+(1004, '赵六', '男', '工程师', '1979-1-1', 1960, 700, 150);
+
+修改表名为emp：
+alter table staff rename to emp;
+
+向表中添加字段hobby,设置类型为varchar(50),设置唯一约束：
+alter table emp add hobby varchar(50) unique;
+
+向表中添加一条记录：
+insert into emp value (1005, '星', '男', '测试', '1998-12-17', 9960, 700, 150, '电影，足球，纯音乐');
+
+修改sname字段的类型为varchar(30)：
+alter table emp change sname sname varchar(30);
+
+查询表中sid字段的值从是1002或1003或1005员工的所有记录：
+select * from emp where sid=1002 or sid=1003 or sid=1005;
+
+修改表中job值是高级工程师员工的job为“架构师”：
+update emp set job='架构师' where job='高级工程师';
+
+删除表中sid是1003并且sname是王五的员工的记录：
+delete from emp where sid=1003 and sname='王五';
+
+修改表中sid是1004员工的salary在原来的基础上-300：
+update emp set salary=salary-300 where sid=1004;
+
+</code></pre>
             </div>
         </article>
 

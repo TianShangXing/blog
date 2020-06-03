@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/cn/
+ MySQL查询  查询所有字段
+select * from 表名; 例： select * from students; 查询指定字段
+select 列1,列2,... from 表名; 例: select name from students; 使用 as 给字段起别名
+select id as 序号, name as 名字, gender as 性别 from students; 例: -- 如果是单表查询 可以省略表名 select id, name, gender from students; -- 表名.字段名 select students.id,students.name,students.gender from students; -- 可以通过 as 给表起别名 select s." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/mysql%E8%BF%9B%E9%98%B6/" />
+
+
+    <title>
+        
+            MySQL进阶 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="MySQL进阶">
+<meta itemprop="description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/cn/
+ MySQL查询  查询所有字段
+select * from 表名; 例： select * from students; 查询指定字段
+select 列1,列2,... from 表名; 例: select name from students; 使用 as 给字段起别名
+select id as 序号, name as 名字, gender as 性别 from students; 例: -- 如果是单表查询 可以省略表名 select id, name, gender from students; -- 表名.字段名 select students.id,students.name,students.gender from students; -- 可以通过 as 给表起别名 select s.">
+<meta itemprop="datePublished" content="2020-06-03T19:54:48&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-03T19:54:48&#43;08:00" />
+<meta itemprop="wordCount" content="1047">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="MySQL进阶"/>
+<meta name="twitter:description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/cn/
+ MySQL查询  查询所有字段
+select * from 表名; 例： select * from students; 查询指定字段
+select 列1,列2,... from 表名; 例: select name from students; 使用 as 给字段起别名
+select id as 序号, name as 名字, gender as 性别 from students; 例: -- 如果是单表查询 可以省略表名 select id, name, gender from students; -- 表名.字段名 select students.id,students.name,students.gender from students; -- 可以通过 as 给表起别名 select s."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-03 19:54:48 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/mysql%E8%BF%9B%E9%98%B6/">MySQL进阶</a></h2>
+
+            
+
+            <div class="post-content">
+                <h1 id="mysql">MySQL</h1>
+<hr>
+<p><img src="https://www.runoob.com/wp-content/uploads/2014/03/mysql.jpg" alt=""></p>
+<p><strong>MySQL</strong> 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。</p>
+<p>官网： <a href="https://www.mysql.com/cn/">https://www.mysql.com/cn/</a></p>
+<hr>
+<h3 id="mysql查询">MySQL查询</h3>
+<hr>
+<p>查询所有字段</p>
+<pre><code>select * from 表名;
+例：
+select * from students;
+</code></pre><p>查询指定字段</p>
+<pre><code>select 列1,列2,... from 表名;
+例:
+select name from students;
+</code></pre><p>使用 as 给字段起别名</p>
+<pre><code>select id as 序号, name as 名字, gender as 性别 from students;
+
+例:
+-- 如果是单表查询 可以省略表名
+select id, name, gender from students;
+
+-- 表名.字段名
+select students.id,students.name,students.gender from students;
+
+-- 可以通过 as 给表起别名 
+select s.id,s.name,s.gender from students as s;
+
+</code></pre><p>在select后面列前使用distinct可以消除重复的行</p>
+<pre><code>select distinct 列1,... from 表名;
+例：
+select distinct gender from students;
+</code></pre><h4 id="条件查询">条件查询</h4>
+<p>使用where子句对表中的数据筛选，结果为true的行会出现在结果集中</p>
+<pre><code>select * from 表名 where 条件;
+例：
+select * from students where id=1;
+</code></pre><p>where后面支持多种运算符，进行条件的处理</p>
+<ol>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>模糊查询</li>
+<li>范围查询</li>
+<li>空判断</li>
+</ol>
+<p><strong>比较运算符</strong></p>
+<ol>
+<li>等于: =</li>
+<li>大于: &gt;</li>
+<li>大于等于: &gt;=</li>
+<li>小于: &lt;</li>
+<li>小于等于: &lt;=</li>
+<li>不等于: != 或 &lt;&gt;</li>
+</ol>
+<pre><code>例：查询编号大于3的学生
+select * from students where id &gt; 3;
+
+例：查询编号不大于4的学生
+select * from students where id &lt;= 4;
+
+例：查询姓名不是“黄蓉”的学生
+select * from students where name != '黄蓉';
+
+例：查询没被删除的学生
+select * from students where is_delete=0;
+</code></pre><p><strong>逻辑运算符</strong></p>
+<ol>
+<li>and</li>
+<li>or</li>
+<li>not</li>
+</ol>
+<pre><code>例：查询编号大于3的女同学
+select * from students where id &gt; 3 and gender=0;
+
+例：查询编号小于4或没被删除的学生
+select * from students where id &lt; 4 or is_delete=0;
+</code></pre><p><strong>模糊查询</strong></p>
+<ol>
+<li>like</li>
+<li>%表示任意多个任意字符</li>
+<li>_表示一个任意字符</li>
+</ol>
+<pre><code>例：查询姓黄的学生
+select * from students where name like '黄%';
+例：查询姓黄并且“名”是一个字的学生
+
+select * from students where name like '黄_';
+例：查询姓黄或叫靖的学生
+select * from students where name like '黄%' or name like '%靖';
+</code></pre><p><strong>范围查询</strong></p>
+<ol>
+<li>in表示在一个非连续的范围内</li>
+<li>between &hellip; and &hellip;表示在一个连续的范围内</li>
+</ol>
+<pre><code>例：查询编号是1或3或8的学生
+select * from students where id in(1,3,8);
+
+例：查询编号为3至8的学生
+select * from students where id between 3 and 8;
+
+例：查询编号是3至8的男生
+select * from students where (id between 3 and 8) and gender=1;
+</code></pre><p><strong>空判断</strong></p>
+<ol>
+<li>is null 空</li>
+<li>is not null  非空</li>
+</ol>
+<pre><code>例：查询没有填写身高的学生
+select * from students where height is null;
+判非空is not null
+
+例：查询填写了身高的学生
+select * from students where height is not null;
+
+例：查询填写了身高的男生
+select * from students where height is not null and gender=1;
+</code></pre><p><strong>优先级</strong></p>
+<ul>
+<li>优先级由高到低的顺序为：小括号，not，比较运算符，逻辑运算符</li>
+<li>and比or先运算，如果同时出现并希望先算or，需要结合()使用</li>
+</ul>
+<h4 id="排序">排序</h4>
+<p>语法：</p>
+<pre><code>select * from 表名 order by 列1 asc|desc [,列2 asc|desc,...]
+</code></pre><p><strong>注意</strong></p>
+<ul>
+<li>默认按照列值从小到大排列（asc）</li>
+<li>asc从小到大排列，即升序</li>
+<li>desc从大到小排序，即降序</li>
+<li>将行数据按照列1进行排序，如果某些行列1的值相同时，则按照列2排序，以此类推</li>
+</ul>
+<pre><code>例：查询未删除男生信息，按学号降序
+select * from students where gender=1 and is_delete=0 order by id desc;
+
+例：查询未删除学生信息，按名称升序
+select * from students where is_delete=0 order by name;
+
+例：显示所有的学生信息，先按照年龄从大--&gt;小排序，当年龄相同时 按照身高从高--&gt;矮排序
+select * from students  order by age desc,height desc;
+</code></pre><h4 id="聚合函数">聚合函数</h4>
+<p><strong>总数</strong></p>
+<p>count(*)表示计算总行数，括号中写星与列名，结果是相同的</p>
+<pre><code>例：查询学生总数
+select count(*) from students;
+</code></pre><p><strong>最大值</strong></p>
+<p>max(列)表示求此列的最大值</p>
+<pre><code>例：查询女生的编号最大值
+select max(id) from students where gender=2;
+</code></pre><p><strong>最小值</strong></p>
+<p>min(列)表示求此列的最小值</p>
+<pre><code>例：查询未删除的学生最小编号
+select min(id) from students where is_delete=0;
+</code></pre><p><strong>求和</strong></p>
+<p>sum(列)表示求此列的和</p>
+<pre><code>例：查询男生的总年龄
+select sum(age) from students where gender=1;
+
+-- 平均年龄
+select sum(age)/count(*) from students where gender=1;
+</code></pre><p><strong>平均值</strong></p>
+<p>avg(列)表示求此列的平均值</p>
+<pre><code>例：查询未删除女生的编号平均值
+select avg(id) from students where is_delete=0 and gender=2;
+</code></pre><h4 id="分组">分组</h4>
+<p><strong>group by</strong></p>
+<ol>
+<li>group by的含义:将查询结果按照1个或多个字段进行分组，字段值相同的为一组</li>
+<li>group by可用于单个字段分组，也可用于多个字段分组</li>
+</ol>
+<p><strong>group by + group_concat()</strong></p>
+<pre><code>例：统计学生的性别和每个性别包含的学生名字
+select gender,group_concat(name) from students group by gender;
+</code></pre><p><strong>group by + 集合函数</strong></p>
+<pre><code>例：分别统计每个性别的人年龄平均值
+select gender,avg(age) from students group by gender;
+
+例：分别统计每个性别的人的个数
+select gender,count(*) from students group by gender;
+</code></pre><p><strong>group by + having</strong></p>
+<ol>
+<li>having 条件表达式：用来分组查询后指定一些条件来输出查询结果</li>
+<li>having作用和where一样，但having只能用于group by</li>
+</ol>
+<pre><code>例：
+select gender,count(*) from students group by gender having count(*)&gt;2;
+</code></pre><p><strong>group by + with rollup</strong></p>
+<p>with rollup的作用是：在最后新增一行，来记录当前列里所有记录的总和</p>
+<pre><code>例：
+select gender,count(*) from students group by gender with rollup;
+</code></pre><h4 id="分页">分页</h4>
+<p>语法：</p>
+<pre><code>从start开始，每页获取count条数据
+select * from 表名 limit start,count
+
+例：查询前3行男生信息
+select * from students where gender=1 limit 0,3;
+
+每页显示m条数据，当前显示第n页
+求第n页的数据
+select * from students where is_delete=0 limit (n-1)*m,m
+</code></pre><hr>
+<h3 id="mysql操作">MySQL操作</h3>
+<p><img src="https://tianshangxing.github.io/blog/6.3MySQL%E6%93%8D%E4%BD%9C1.png" alt="6.3MySQL操作1">
+<img src="https://tianshangxing.github.io/blog/6.3MySQL%E6%93%8D%E4%BD%9C2.png" alt="6.3MySQL操作2">
+<img src="https://tianshangxing.github.io/blog/6.3MySQL%E6%93%8D%E4%BD%9C3.png" alt="6.3MySQL操作3">
+<img src="https://tianshangxing.github.io/blog/6.3MySQL%E6%93%8D%E4%BD%9C4.png" alt="6.3MySQL操作4"></p>
+<h3 id="具体操作">具体操作：</h3>
+<hr>
+<pre><code>CREATE DATABASE 07test charset=utf8;
+
+use 07test
+
+-- 创建学生表
+create table student(
+	sno varchar(20) primary key,
+	sname  varchar(10) not null,
+	ssex varchar(10) not null,
+	sbirthday datetime,
+	class varchar(20)
+);
+
+-- 创建教师表
+create table teacher(
+	tno varchar(20) primary key,
+	tname varchar(20) not null,
+	tsex varchar(20) not null,
+	tbirthday datetime,
+	pro varchar(20) not null,
+	depart varchar(20) not null
+);
+
+-- 创建课程表
+create table course(
+  cno varchar(20) primary key,	
+	cname varchar(20) not null,
+	tno varchar(20) not null,
+	foreign key(tno) references teacher(tno)
+);
+
+-- 创建成绩表
+create table score(
+	sno varchar(20) not null,
+	cno varchar(20) not null,
+	degree decimal(10, 0),
+	foreign key(sno) references student(sno),
+	foreign key(cno) references course(cno),
+	primary key(sno, cno)
+);
+
+
+-- 1.查询student表中的所有记录
+select * from student;
+
+
+-- 2.检查student表中的所有记录的sname，ssex和class列。
+select sname, ssex, class from student;
+
+
+-- 3.查询老师所有的单位即不重复的depart distinct
+select distinct depart from teacher;
+
+
+-- 4.查询socre表中成绩在从68到80之间的记录。
+select * from score where degree between 68 and 80;
+
+
+-- 5.查询score表成绩中为85、86或88。
+select * from score where degree in(85, 86, 88);
+
+
+-- 6.查询student表中“95031”班或性别为“女”同学的同学记录
+select * from student where class='95031' or ssex='女';
+
+
+-- 7.以class降序查询student表的所有记录
+select * from student order by class desc;
+
+
+-- 8.以cno升序，degree降序查询score表的所有记录
+select * from score order by cno asc, degree desc;
+
+
+-- 9.查询“95031”班学生人数。
+select count(*) from student where class='95031';
+
+
+-- 10.查询score表中的最高分的学生学号和课程号（子查询或者排序）
+select max(degree) from score;
+
+select sno,cno from score where degree=(select max(degree) from score);
+
+select sno,cno,degree from score order by degree desc limit 0,4;
+
+
+-- 11.查看每门课的平均成绩 (分组查询)
+select cno, avg(degree) from score group by cno;
+
+
+-- 12.查询score表中至少有2名同学选修的并以3开头的课程的平均分数 havimg(组级过滤)
+-- having 条件表达式：用来分组查询后指定一些条件来输出查询结果
+-- having作用和where一样，但having只能用于group by
+1.将成绩表按课程分组
+select * from score group by cno;
+2.将分组后的结果按至少2名同学分
+select * from score group by cno having count(cno) &gt;= 2;
+3.将课程名以3开头
+select * from score where cno like '3%' group by cno having count(cno) &gt;= 2;
+
+
+select cno,avg(degree), count(*) from score group by cno having count(cno) &gt;= 2 and cno like '3%';
+
+
+-- 13.查询分数大于70，小于90的sno列（条件查询）
+select sno, degree from score where degree between 70 and 90;
+
+select sno, degree from score where degree&gt;70 and degree&lt;90;
+
+
+-- 14.查询所有学生的 sname,cno,和degree 列。（多表查询）
+select sno, sname from student;
+
+select cno, degree from score;
+
+select sname, cno, degree from student, score where student.sno = score.sno;
+
+
+--  15.查询所有学生的sno，cname和degree
+select cno, cname from course;
+
+select sno, cno, degree from score;
+
+select sno, cname, degree from course, score where course.cno = score.cno;
+
+-- 16.查询所有学生的sname，cname和degree(三表联查)
+select sname, cname, degree from student, course, score where student.sno = score.sno and course.cno = score.cno;
+
+
+-- 17.查阅“95031&quot;班学生每门课的平均分
+select * from student where class='95031';
+
+select * from score where sno in (select sno from student where class='95031');
+
+select sno, avg(degree) from score where sno in (select sno from student where class='95031') group by cno;
+
+
+-- 18.查询选修”3-105“课程的成绩高于”109“号同学”3-105“成绩的所有同学的记录
+1.先查询”109“号同学”3-105“成绩
+select degree from score where sno='109' and cno='3-105';
+2.再找到选修”3-105“课程的成绩高于”109“号同学”3-105“成绩
+select * from score where cno='3-105' and degree&gt;(select degree from score where sno='109' and cno='3-105');
+
+-- 19.查询成绩高于学号109，课程号为3-105的成绩的所有记录 子查询
+1.先查询”109“号同学”3-105“成绩
+select degree from score where sno='109' and cno='3-105';
+
+2.再查询高于他成绩的
+select * from score where degree&gt;(select degree from score where sno='109' and cno='3-105');
+
+
+
+-- 20.查询和学号为108.101的同学同年出生的所有学生的sno。sname和sbirthday的函数与带in 关键字的子查询
+1.先查询和学号为108.101的同学的生日
+select year(sbirthday) from student where sno in (108,101);
+
+select sno, sname, sbirthday from student where year(sbirthday) in (select year(sbirthday) from student where sno in (108,101));
+
+-- 21.查询”张旭“教师任课的学生成绩
+1.先查询教师的id号
+select tno from teacher where tname=&quot;张旭&quot;;
+
+2.然后根据教师的id号来查询课程id
+select cno from course where tno=(select tno from teacher where tname=&quot;张旭&quot;); 
+
+3.查询”张旭“教师任课的学生成绩
+select degree from score where cno = (select cno from course where tno=(select tno from teacher where tname=&quot;张旭&quot;));
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

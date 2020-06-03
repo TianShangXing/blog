@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 02 Jun 2020 22:11:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2020 19:54:48 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL进阶</title>
+      <link>https://tianshangxing.github.io/blog/blogs/mysql%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Wed, 03 Jun 2020 19:54:48 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/mysql%E8%BF%9B%E9%98%B6/</guid>
+      <description>MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/cn/
+ MySQL查询  查询所有字段
+select * from 表名; 例： select * from students; 查询指定字段
+select 列1,列2,... from 表名; 例: select name from students; 使用 as 给字段起别名
+select id as 序号, name as 名字, gender as 性别 from students; 例: -- 如果是单表查询 可以省略表名 select id, name, gender from students; -- 表名.字段名 select students.id,students.name,students.gender from students; -- 可以通过 as 给表起别名 select s.</description>
+    </item>
     
     <item>
       <title>MySQL基础</title>
@@ -185,16 +199,6 @@ HeyUI 提供的是一整套解决方案，所有的组件提供全局的可配�
 官网： https://www.heyui.top/
 安装 npm install heyui --save
 使用 import HeyUI from &#39;heyui&#39;; Vue.use(HeyUI); new Vue({ el: &#39;#app&#39;, router, components: { App }, template: &#39;&amp;lt;App/&amp;gt;&#39;, render: h =&amp;gt; h(App) }) </description>
-    </item>
-    
-    <item>
-      <title>Django</title>
-      <link>https://tianshangxing.github.io/blog/blogs/django/</link>
-      <pubDate>Wed, 22 Apr 2020 17:11:46 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/django/</guid>
-      <description>Django Django是一个开放源代码的Web应用框架，由Python写成。采用了MVT的软件设计模式，即模型（Model），视图（View）和模板（Template）。
-安装依赖 pip install Django==2.0.4 pip install django-cors-headers pip install djangorestframework pip install PyMySQL pip install opencv-python pip install opencv-contrib-python pip install numpy pip install pillow pip install dwebsocket 依赖文件生成 requirements.txt pip freeze &amp;gt; requirements.txt 依赖文件安装 requirements.txt pip install -r requirements.txt 新建Django项目 django-admin startproject mydjango 新建子应用 python manage.py startapp myapp 数据库迁移 python manage.py makemigrations myapp python manage.py migrate 反向迁移 python manage.py inspectdb &amp;gt; mymodels.py 启动项目 python manage.py runserver 项目仓库： https://github.</description>
     </item>
     
   </channel>
