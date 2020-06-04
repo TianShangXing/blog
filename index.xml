@@ -13,6 +13,28 @@
     
     
     <item>
+      <title>App移动端测试</title>
+      <link>https://tianshangxing.github.io/blog/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Thu, 04 Jun 2020 23:07:39 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/</guid>
+      <description>App移动端测试  现有市场上的移动端操作系统：
+ Android iOS 微软 塞班 华为（未来）  测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
+移动端测试内容有   应用程序的功能测试
+ 测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现    安装和卸载的测试
+  软件安装后是否可以正常运行
+  安装过程中是否可以取消
+  安装空间不足时，是否有相应提示
+  是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
+  卸载是否支持取消功能，单击取消后软件卸载功能是否正常
+  卸载后文件是否全部删除所有的安装文件夹
+  从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
+    软件的升级测试
+ 当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。    登陆测试
+ 登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息    权限测试</description>
+    </item>
+    
+    <item>
       <title>MySQL进阶</title>
       <link>https://tianshangxing.github.io/blog/blogs/mysql%E8%BF%9B%E9%98%B6/</link>
       <pubDate>Wed, 03 Jun 2020 19:54:48 +0800</pubDate>
@@ -185,20 +207,6 @@ Django后端代码 # 导入图片库 # 绘画库 from PIL import ImageDraw # 字
       <guid>https://tianshangxing.github.io/blog/blogs/md5%E5%8A%A0%E5%AF%86/</guid>
       <description>MD5加密算法  代码实现
 # 导入加密库 import hashlib # md5加密方法 def make_password(mypass): # 生成md5对象 md5 = hashlib.md5() # 转码操作 mypass_utf8 = str(mypass).encode(encoding=&amp;quot;utf-8&amp;quot;) # 加密操作 md5.update(mypass_utf8) # 返回密文 return md5.hexdigest() </description>
-    </item>
-    
-    <item>
-      <title>HeyUI</title>
-      <link>https://tianshangxing.github.io/blog/blogs/heyui/</link>
-      <pubDate>Thu, 23 Apr 2020 22:10:39 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/heyui/</guid>
-      <description>HeyUI  HeyUI 是一套基于 Vue2.0 的开源 UI 组件库，主要服务于一些中后台产品。
-HeyUI 是一个自动化图形化界面组件，便于后端研发入手前端。
-HeyUI 提供的是一整套解决方案，所有的组件提供全局的可配置模式
-官网： https://www.heyui.top/
-安装 npm install heyui --save
-使用 import HeyUI from &#39;heyui&#39;; Vue.use(HeyUI); new Vue({ el: &#39;#app&#39;, router, components: { App }, template: &#39;&amp;lt;App/&amp;gt;&#39;, render: h =&amp;gt; h(App) }) </description>
     </item>
     
   </channel>
