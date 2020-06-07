@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="Monkey命令   通过使用程序模拟用户对移动端设备操作(单击 拖动 滑动 按键等)进行压力测试
+  可以使用Monkey命令进行检测多长时间内发生异常错误
+  出现的方式：
+ 程序的访问量的多少 程序在一定时间内进行压力尝试一直程序的奔溃 异常 错误    使用Monkey命令的方式
+ 手动的方式在模拟器或者是真机操作 可以使用云测平台对于不同的手机不同的系统版本不同的测试    monkey命令的启动 adb shell monkey &#43; 命令参数  对app进行多次访问的测试  adb monkey -p com.wan.android(包名\具体的页面) 100访问的测试  显示日志的详细程度
+-v 包括 启动提示 测试完成 最终结果
+-v -v 标为详细的日志 发送到activity(页面的)的事件信息
+-v -v -v 最为详细的日志 测试中选中或者是没有选中的activity(信息)测试信息
+  打印日志的命令
+adb shell monkey 200 &amp;gt;d:/monkeylog.txt 调整触摸事件的占比  --pct-touch 调整触摸事件的占比 用于用户对app的操作上的时间延迟  --throttle 用于用户对app的操作上的时间延迟 单位是毫秒 如果没有时间的延迟 monkey会以最快的方式进行操作 发送请求 动作事件的占比  --pct-motion 动作事件的占比   --ignore-crashes 如果app发生崩溃或者是异常的时候 monkey会停止执行 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 --ignore-timeouts (ANR) APP发生超时限制的时候 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 0: 触摸事件的占比 1： 手势事件占比 2： 两指操作占比 3： 动作事件(有一定轨迹) 4： 屏幕旋转的占比 5： 导航事件 上下左右 6： 导航事件 home 回退 隐形菜单 7： 按键事件 关机键 音量添加 减少 8： 启动activity事件 9： 键盘抬起事件" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/monkey%E5%91%BD%E4%BB%A4/" />
+
+
+    <title>
+        
+            Monkey命令 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Monkey命令">
+<meta itemprop="description" content="Monkey命令   通过使用程序模拟用户对移动端设备操作(单击 拖动 滑动 按键等)进行压力测试
+  可以使用Monkey命令进行检测多长时间内发生异常错误
+  出现的方式：
+ 程序的访问量的多少 程序在一定时间内进行压力尝试一直程序的奔溃 异常 错误    使用Monkey命令的方式
+ 手动的方式在模拟器或者是真机操作 可以使用云测平台对于不同的手机不同的系统版本不同的测试    monkey命令的启动 adb shell monkey &#43; 命令参数  对app进行多次访问的测试  adb monkey -p com.wan.android(包名\具体的页面) 100访问的测试  显示日志的详细程度
+-v 包括 启动提示 测试完成 最终结果
+-v -v 标为详细的日志 发送到activity(页面的)的事件信息
+-v -v -v 最为详细的日志 测试中选中或者是没有选中的activity(信息)测试信息
+  打印日志的命令
+adb shell monkey 200 &gt;d:/monkeylog.txt 调整触摸事件的占比  --pct-touch 调整触摸事件的占比 用于用户对app的操作上的时间延迟  --throttle 用于用户对app的操作上的时间延迟 单位是毫秒 如果没有时间的延迟 monkey会以最快的方式进行操作 发送请求 动作事件的占比  --pct-motion 动作事件的占比   --ignore-crashes 如果app发生崩溃或者是异常的时候 monkey会停止执行 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 --ignore-timeouts (ANR) APP发生超时限制的时候 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 0: 触摸事件的占比 1： 手势事件占比 2： 两指操作占比 3： 动作事件(有一定轨迹) 4： 屏幕旋转的占比 5： 导航事件 上下左右 6： 导航事件 home 回退 隐形菜单 7： 按键事件 关机键 音量添加 减少 8： 启动activity事件 9： 键盘抬起事件">
+<meta itemprop="datePublished" content="2020-06-07T22:03:43&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-07T22:03:43&#43;08:00" />
+<meta itemprop="wordCount" content="101">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="Monkey命令"/>
+<meta name="twitter:description" content="Monkey命令   通过使用程序模拟用户对移动端设备操作(单击 拖动 滑动 按键等)进行压力测试
+  可以使用Monkey命令进行检测多长时间内发生异常错误
+  出现的方式：
+ 程序的访问量的多少 程序在一定时间内进行压力尝试一直程序的奔溃 异常 错误    使用Monkey命令的方式
+ 手动的方式在模拟器或者是真机操作 可以使用云测平台对于不同的手机不同的系统版本不同的测试    monkey命令的启动 adb shell monkey &#43; 命令参数  对app进行多次访问的测试  adb monkey -p com.wan.android(包名\具体的页面) 100访问的测试  显示日志的详细程度
+-v 包括 启动提示 测试完成 最终结果
+-v -v 标为详细的日志 发送到activity(页面的)的事件信息
+-v -v -v 最为详细的日志 测试中选中或者是没有选中的activity(信息)测试信息
+  打印日志的命令
+adb shell monkey 200 &gt;d:/monkeylog.txt 调整触摸事件的占比  --pct-touch 调整触摸事件的占比 用于用户对app的操作上的时间延迟  --throttle 用于用户对app的操作上的时间延迟 单位是毫秒 如果没有时间的延迟 monkey会以最快的方式进行操作 发送请求 动作事件的占比  --pct-motion 动作事件的占比   --ignore-crashes 如果app发生崩溃或者是异常的时候 monkey会停止执行 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 --ignore-timeouts (ANR) APP发生超时限制的时候 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 0: 触摸事件的占比 1： 手势事件占比 2： 两指操作占比 3： 动作事件(有一定轨迹) 4： 屏幕旋转的占比 5： 导航事件 上下左右 6： 导航事件 home 回退 隐形菜单 7： 按键事件 关机键 音量添加 减少 8： 启动activity事件 9： 键盘抬起事件"/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-07 22:03:43 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/monkey%E5%91%BD%E4%BB%A4/">Monkey命令</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="monkey命令">Monkey命令</h3>
+<ol>
+<li>
+<p>通过使用程序模拟用户对移动端设备操作(单击 拖动 滑动 按键等)进行压力测试</p>
+</li>
+<li>
+<p>可以使用Monkey命令进行检测多长时间内发生异常错误</p>
+</li>
+<li>
+<p>出现的方式：</p>
+<ol>
+<li>程序的访问量的多少</li>
+<li>程序在一定时间内进行压力尝试一直程序的奔溃  异常  错误</li>
+</ol>
+</li>
+<li>
+<p>使用Monkey命令的方式</p>
+<ol>
+<li>手动的方式在模拟器或者是真机操作</li>
+<li>可以使用云测平台对于不同的手机不同的系统版本不同的测试</li>
+</ol>
+</li>
+</ol>
+<h4 id="monkey命令的启动">monkey命令的启动</h4>
+<pre><code>adb shell monkey + 命令参数 
+</code></pre><ol>
+<li>对app进行多次访问的测试</li>
+</ol>
+<pre><code>adb monkey  -p com.wan.android(包名\具体的页面) 100访问的测试
+</code></pre><ol start="2">
+<li>
+<p>显示日志的详细程度</p>
+<p>-v              包括 启动提示 测试完成 最终结果</p>
+<p>-v -v           标为详细的日志   发送到activity(页面的)的事件信息</p>
+<p>-v -v -v        最为详细的日志   测试中选中或者是没有选中的activity(信息)测试信息</p>
+</li>
+</ol>
+<p>打印日志的命令</p>
+<pre><code>adb shell monkey 200 &gt;d:/monkeylog.txt
+</code></pre><ol start="3">
+<li>调整触摸事件的占比</li>
+</ol>
+<pre><code>--pct-touch    调整触摸事件的占比
+</code></pre><ol start="4">
+<li>用于用户对app的操作上的时间延迟</li>
+</ol>
+<pre><code>--throttle  用于用户对app的操作上的时间延迟  单位是毫秒   
+
+如果没有时间的延迟 monkey会以最快的方式进行操作  发送请求
+</code></pre><ol start="5">
+<li>动作事件的占比</li>
+</ol>
+<pre><code>--pct-motion    动作事件的占比  
+</code></pre><ol start="6">
+<li></li>
+</ol>
+<pre><code>--ignore-crashes  如果app发生崩溃或者是异常的时候 monkey会停止执行
+
+如果在abd 命令中有此命令参数  mongkey会继续执行直至事件计数完成
+					  
+--ignore-timeouts (ANR) APP发生超时限制的时候
+
+如果在abd 命令中有此命令参数  mongkey会继续执行直至事件计数完成
+</code></pre><p>0:  触摸事件的占比
+1： 手势事件占比
+2： 两指操作占比
+3： 动作事件(有一定轨迹)
+4： 屏幕旋转的占比
+5： 导航事件 上下左右
+6： 导航事件  home 回退  隐形菜单
+7： 按键事件  关机键  音量添加 减少
+8： 启动activity事件
+9： 键盘抬起事件<br>
+10: 其他事件</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="MySQL练习题 -- 1.	创建test1数据库 CREATE DATABASE test1 charset=utf8; use test1; -- 2.	在test1数据库中创建student表 create table student( id int PRIMARY KEY auto_increment, name VARCHAR(20), score int, address VARCHAR(50), useremail VARCHAR(20) ); -- 3.	向student表中添加记录 insert into student VALUES (1, &#39;张三&#39;, 98, &#39;北京&#39;, &#39;111111111@qq.com&#39;), (2, &#39;李四&#39;, 88, &#39;上海&#39;, &#39;111111112@qq.com&#39;), (3, &#39;王五&#39;, 78, &#39;广州&#39;, &#39;111111113@qq.com&#39;), (4, &#39;赵六&#39;, 68, &#39;深圳&#39;, &#39;111111114@qq.com&#39;), (5, &#39;孙七&#39;, 58, &#39;杭州&#39;, &#39;111111115@qq.com&#39;), (6, &#39;小红&#39;, 48, &#39;北京&#39;, &#39;111111116@qq.com&#39;), (7, &#39;小黑&#39;, 99, &#39;上海&#39;, &#39;1111111117@qq." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/mysql%E7%BB%83%E4%B9%A0/" />
+
+
+    <title>
+        
+            MySQL练习 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="MySQL练习">
+<meta itemprop="description" content="MySQL练习题 -- 1.	创建test1数据库 CREATE DATABASE test1 charset=utf8; use test1; -- 2.	在test1数据库中创建student表 create table student( id int PRIMARY KEY auto_increment, name VARCHAR(20), score int, address VARCHAR(50), useremail VARCHAR(20) ); -- 3.	向student表中添加记录 insert into student VALUES (1, &#39;张三&#39;, 98, &#39;北京&#39;, &#39;111111111@qq.com&#39;), (2, &#39;李四&#39;, 88, &#39;上海&#39;, &#39;111111112@qq.com&#39;), (3, &#39;王五&#39;, 78, &#39;广州&#39;, &#39;111111113@qq.com&#39;), (4, &#39;赵六&#39;, 68, &#39;深圳&#39;, &#39;111111114@qq.com&#39;), (5, &#39;孙七&#39;, 58, &#39;杭州&#39;, &#39;111111115@qq.com&#39;), (6, &#39;小红&#39;, 48, &#39;北京&#39;, &#39;111111116@qq.com&#39;), (7, &#39;小黑&#39;, 99, &#39;上海&#39;, &#39;1111111117@qq.">
+<meta itemprop="datePublished" content="2020-06-06T22:45:29&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-06T22:45:29&#43;08:00" />
+<meta itemprop="wordCount" content="2906">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="MySQL练习"/>
+<meta name="twitter:description" content="MySQL练习题 -- 1.	创建test1数据库 CREATE DATABASE test1 charset=utf8; use test1; -- 2.	在test1数据库中创建student表 create table student( id int PRIMARY KEY auto_increment, name VARCHAR(20), score int, address VARCHAR(50), useremail VARCHAR(20) ); -- 3.	向student表中添加记录 insert into student VALUES (1, &#39;张三&#39;, 98, &#39;北京&#39;, &#39;111111111@qq.com&#39;), (2, &#39;李四&#39;, 88, &#39;上海&#39;, &#39;111111112@qq.com&#39;), (3, &#39;王五&#39;, 78, &#39;广州&#39;, &#39;111111113@qq.com&#39;), (4, &#39;赵六&#39;, 68, &#39;深圳&#39;, &#39;111111114@qq.com&#39;), (5, &#39;孙七&#39;, 58, &#39;杭州&#39;, &#39;111111115@qq.com&#39;), (6, &#39;小红&#39;, 48, &#39;北京&#39;, &#39;111111116@qq.com&#39;), (7, &#39;小黑&#39;, 99, &#39;上海&#39;, &#39;1111111117@qq."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-06 22:45:29 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/mysql%E7%BB%83%E4%B9%A0/">MySQL练习</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="mysql练习题">MySQL练习题</h3>
+<pre><code>-- 1.	创建test1数据库
+CREATE DATABASE test1 charset=utf8;
+
+use test1;
+
+-- 2.	在test1数据库中创建student表
+create table student(
+	id int PRIMARY KEY auto_increment,
+	name VARCHAR(20),
+	score int,
+	address VARCHAR(50),
+	useremail VARCHAR(20)
+);
+
+-- 3.	向student表中添加记录
+insert into student VALUES
+(1, '张三', 98, '北京', '111111111@qq.com'),
+(2, '李四', 88, '上海', '111111112@qq.com'),
+(3, '王五', 78, '广州', '111111113@qq.com'),
+(4, '赵六', 68, '深圳', '111111114@qq.com'),
+(5, '孙七', 58, '杭州', '111111115@qq.com'),
+(6, '小红', 48, '北京', '111111116@qq.com'),
+(7, '小黑', 99, '上海', '1111111117@qq.com'),
+(8, '小绿', 100, '杭州', '111111118@qq.com'),
+(9, '小粉', 60, '杭州', '111111119@qq.com'),
+(10, '小紫', 70, '黑龙江', '111111110@qq.com');
+
+
+-- 4.使用sql语句查询出表中的所有内容
+select * from student;
+
+-- 5.使用sql语句查询出表中所有score&gt;70的同学的id,name,score
+select id, name, score from student where score&gt;70;
+
+-- 6.更改name字段的数据类型为varchar(50)
+alter table student change name name varchar(50);
+
+-- 7.向表中添加一个字段，字段名称为“pingjia”,字段类型为varchar(20)
+alter table student add pingjia varchar(20);
+
+-- 8.更改姓名是张三的同学的分数为88
+update student set score = 88 where name = '张三';
+
+-- 9.如果80分为及格线，查询出所有及格的同学的详细信息
+select * from student where score &gt;= 80;
+
+-- 10.把姓名是“小红”的同学的分数在原来的基础上+40
+update student set score = score + 40 where name = '小红';
+
+-- 11.使用关键字in,查询id值是1或5或7的同学的基本信息
+select * from student where id in (1, 5 ,7);
+
+-- 12.查询id值在5至8的所有同学的基本信息
+select * from student where id between 5 and 8;
+
+-- 13.查询姓名是小红并且分数大于60的同学的基本信息
+select * from student where name = '小红' and score &gt; 60;
+
+-- 14.查询姓名是小红或者分数大于90的同学的基本信息
+select * from student where name = '小红' or score &gt; 90;
+
+-- 15.查询score字段值是NULL的同学的基本信息
+select * from student where score is null;
+
+-- 16.查询score字段值不是NULL的同学的id和name
+select * from student where score is not null;
+
+
+-- 1.	创建test2数据库
+CREATE DATABASE test2 charset=utf8;
+
+use test2
+
+-- 2.	在test2数据库中创建student表
+create table student(
+	id int PRIMARY KEY auto_increment,
+	name VARCHAR(20),
+	score int,
+	address VARCHAR(50),
+	useremail VARCHAR(20)
+);
+
+-- 3.	向student表中添加记录
+insert into student VALUES
+(1, '张三', 98, '北京', '111111111@qq.com'),
+(2, '李四', 88, '上海', '111111112@qq.com'),
+(3, '王五', 78, '广州', '111111113@qq.com'),
+(4, '赵六', 68, '深圳', '111111114@qq.com'),
+(5, '孙七', 58, '杭州', '111111115@qq.com'),
+(6, '小红', 48, '北京', '111111116@qq.com'),
+(7, '小黑', 99, '上海', '1111111117@qq.com'),
+(8, '小绿', 100, '杭州', '111111118@qq.com'),
+(9, '小粉', 60, '杭州', '111111119@qq.com'),
+(10, '小紫', 70, '黑龙江', '111111110@qq.com');
+
+-- 4. 使用sql语句查询出表中id,name,和address字段的所有内容
+select id, name, address from student;
+
+-- 5. 使用sql语句查询出表中所有同学的id,name,score
+select id, name, score from student;
+
+-- 6. 更改useremail字段的数据类型为varchar(50)
+alter table student change useremail useremail varchar(50);
+
+-- 7. 向表中添加一个字段，字段名称为“pingjia”,字段类型为varchar(20)
+alter table student add pingjia varchar(20);
+
+-- 8. 更改姓名是张三的同学的分数为92
+update student set score = 92 where name = '张三';
+
+-- 9. 如果80分为及格线，查询出所有不及格的同学的详细信息
+select * from student where score &lt; 80;
+
+-- 10. 把姓名是“小红”的同学的分数在原来的基础上+20
+update student set score = score + 20 where name = '小红';
+
+-- 11. 使用关键字in,查询id值是1或5或7的同学的基本信息
+select * from student where id in (1, 5 ,7);
+
+-- 12. 查询id值在4至9的所有同学的基本信息
+select * from student where id between 4 and 9;
+
+
+-- 13.	查询姓名是小红并且分数大于60的同学的基本信息
+select * from student where name = '小红' and score &gt; 60;
+
+-- 14.	查询姓名是小红或者分数大于90的同学的基本信息
+select * from student where name = '小红' or score &gt; 90;
+
+-- 15.	查询score字段值是NULL的同学的基本信息
+select * from student where score is null;
+
+-- 16.	查询name不是张三的同学的id，name，和score
+select id, name, score from student where name != '张三';
+
+
+-- 1.	创建test3数据库
+CREATE DATABASE test3 charset=utf8;
+
+use test3;
+
+-- 2.	在test3数据库中创建student表
+create table student(
+	id int PRIMARY KEY auto_increment,
+	name VARCHAR(20),
+	score int,
+	address VARCHAR(50),
+	useremail VARCHAR(20)
+);
+
+-- 3.	向student表中添加记录
+insert into student VALUES
+(1, '张三', 98, '北京', '111111111@qq.com'),
+(2, '李四', 88, '上海', '111111112@qq.com'),
+(3, '王五', 78, '广州', '111111113@qq.com'),
+(4, '赵六', 68, '深圳', '111111114@qq.com'),
+(5, '孙七', 58, '杭州', '111111115@qq.com'),
+(6, '小红', 48, '北京', '111111116@qq.com'),
+(7, '小黑', 99, '上海', '1111111117@qq.com'),
+(8, '小绿', 100, '杭州', '111111118@qq.com'),
+(9, '小粉', 60, '杭州', '111111119@qq.com'),
+(10, '小紫', 70, '黑龙江', '111111110@qq.com');
+--  
+-- 4.	使用sql语句查询出表中的所有内容
+select * from student;
+
+-- 5.	使用sql语句查询出表中所有同学的id,name,score
+select id, name, score from student;
+
+-- 6.	更改name字段的数据类型为varchar(50)
+alter table student change name name varchar(50);
+
+-- 7.	向表中添加一个字段，字段名称为“pingjia”,字段类型为varchar(50)
+alter table student add pingjia varchar(50);
+
+-- 8.	更改姓名是小紫的同学的分数为100
+update student set score = 100 where name = '小紫';
+
+-- 9.	如果80分为及格线，查询出所有及格的同学的详细信息
+select * from student where score &gt;= 80;
+
+-- 10.	把姓名是“小红”的同学的分数在原来的基础上+30
+update student set score = score + 30 where name = '小红';
+
+-- 11.	使用关键字in,查询id值是2或4或8的同学的基本信息
+select * from student where id in (2, 4 ,8);
+
+-- 12.	查询id值在5至8的所有同学的基本信息
+select * from student where id between 5 and 8;
+
+-- 13.	查询姓名是小红并且分数大于60的同学的基本信息
+select * from student where name = '小红' and score &gt; 60;
+
+-- 14.	查询姓名是小红或者分数大于90的同学的基本信息
+select * from student where name = '小红' or score &gt; 90;
+
+-- 15.	查询score字段值是不为NULL的同学的基本信息
+select * from student where score is not null;
+
+-- 16.	查询id值在6至8的同学的name和score
+select name, score from student where id BETWEEN 6 AND 8;
+
+
+-- 1.	创建test4数据库
+CREATE DATABASE test4 charset=utf8;
+
+use test4;
+
+-- 2.	在test4数据库中创建student表
+create table student(
+	id int PRIMARY KEY auto_increment,
+	name VARCHAR(20),
+	score int,
+	address VARCHAR(50),
+	useremail VARCHAR(20)
+);
+
+-- 3.	向student表中添加记录
+insert into student VALUES
+(1, '张三', 98, '北京', '111111111@qq.com'),
+(2, '李四', 88, '上海', '111111112@qq.com'),
+(3, '王五', 78, '广州', '111111113@qq.com'),
+(4, '赵六', 68, '深圳', '111111114@qq.com'),
+(5, '孙七', 58, '杭州', '111111115@qq.com'),
+(6, '小红', 48, '北京', '111111116@qq.com'),
+(7, '小黑', 99, '上海', '1111111117@qq.com'),
+(8, '小绿', 100, '杭州', '111111118@qq.com'),
+(9, '小粉', 60, '杭州', '111111119@qq.com'),
+(10, '小紫', 70, '黑龙江', '111111110@qq.com');
+ 
+-- 4.	使用sql语句查询出表中的所有内容
+select * from student;
+
+-- 5.	使用sql语句查询出表中所有同学的id,name,score
+select id, name, score from student;
+
+-- 6.	更改useremail字段的数据类型为varchar(50)
+alter table student change useremail useremail varchar(50);
+
+-- 7.	向表中添加一个字段，字段名称为“pingjia”,字段类型为varchar(20)
+alter table student add pingjia varchar(20);
+
+-- 8.	更改姓名是李四的同学的分数为48
+update student set score = 48 where name = '李四';
+
+-- 9.	如果80分为及格线，查询出所有不及格的同学的详细信息
+select * from student where score &lt; 80;
+
+-- 10.	把姓名是“小红”的同学的分数在48的基础上+40
+update student set score = score + 40 where name = '小红';
+
+-- 11.	使用关键字in,查询id值是3或9或10的同学的基本信息
+select * from student where id in (3, 9 ,10);
+
+-- 12.	查询id值在2至6的所有同学的基本信息
+select name, score from student where id BETWEEN 2 AND 6;
+
+-- 13.	查询姓名是小红并且分数大于60的同学的基本信息
+select * from student where name = '小红' and score &gt; 60;
+
+-- 14.	查询姓名是张三或者分数大于90或者address字段值是杭州的同学的基本信息
+select * from student where name = '张三' or score &gt; 90 or address = '杭州';
+
+-- 15.	查询score字段值是NULL的同学的基本信息
+select * from student where score is not null;
+
+-- 16.	查询score的值在68-80的同学的id和name
+select id, name from student where score BETWEEN 68 and 80;
+
+
+-- 1.	创建test5数据库（10分）
+CREATE DATABASE test5 charset=utf8;
+
+use test5;
+
+-- 2.	在test5数据库中创建emp表（10分）
+create table emp(
+	empno int PRIMARY KEY auto_increment,
+	ename VARCHAR(50),
+	job VARCHAR(50),
+	mgr int,
+	hiredate DATE,
+	sal DECIMAL(7, 2),
+	comm DECIMAL(7, 2),
+	deptno INT
+);
+ 
+-- 3.	向emp表中添加记录（10分）
+insert into emp VALUES
+(1001, '甘宁', '文员', 1013, '2000-12-17', 8000.00, NULL, 20),
+(1002, '黛绮丝', '销售员', 1006, '2001-02-20', 16000.00, 3000.00, 30),
+(1003, '殷天正', '销售员', 1006, '2001-02-22', 12500.00, 5000.00, 20),
+(1004, '刘备', '经理', 1009, '2001-04-02', 29750.00, NULL, 20),
+(1005, '谢逊', '销售员', 1006, '2001-09-28', 12500.00, 14000, 30),
+(1006, '关羽', '经理', 1009, '2001-05-01', 28500.00, NULL, 30),
+(1007, '张飞', '经理', 1009, '2001-09-01', 24500.00, NULL, 10),
+(1008, '诸葛亮', '分析师', 1004, '2007-04-19', 30000.00, NULL, 20),
+(1009, '曾阿牛', '董事长', NULL, '2001-11-17', 50000.00, NULL, 10),
+(1010, '韦一笑', '销售员', 1006, '2001-09-08', 15000.00, NULL, 30),
+(1011, '周泰', '文员', 1008, '2007-05-23', 11000.00, NULL, 20),
+(1012, '程普', '文员', 1006, '2001-12-03', 9500.00, NULL, 30),
+(1013, '庞统', '分析师', 1004, '2001-12-03', 30000.00, NULL, 20),
+(1014, '黄盖', '文员', 1007, '2002-01-23', 13000.00, NULL, 10),
+(1015, '张三', '文员', 1007, '2002-01-23', 53000.00, NULL, 50);
+ 
+-- 4.	查询表中所有内容（10分）
+select * from emp;
+
+-- 5.	查询表中姓名是张三的所有消息记录（10分）
+select * from emp where ename='张三';
+
+-- 6.	查询表中姓名是三个字组成的所有员工的ename,job,sal字段的对应信息（10分）
+select ename,job,sal from emp where ename like '___';
+
+-- 7.	查询表中empno字段从1004至1008所有员工的记录（10分）
+select * from emp where empno BETWEEN 1004 and 1008;
+
+-- 8.	查询表中所有job字段是文员并且姓名是黄盖的员工的所有信息（10分）
+select * from emp where job ='文员' and ename ='黄盖';
+
+-- 9.	查询表中在2001年以后入职的员工信息（10分）
+select * from emp where hiredate &gt; '2001-01-01';
+
+-- 10.	查询表中奖金（COMM）是NULL的员工信息（10分）
+select * from emp where comm is null;
+
+
+-- 1.	创建test6数据库（10分）
+CREATE DATABASE test6 charset=utf8;
+
+use test6;
+
+-- 2.	在test6数据库中创建emp表（10分）
+create table emp(
+	empno int PRIMARY KEY auto_increment,
+	ename VARCHAR(50),
+	job VARCHAR(50),
+	mgr int,
+	hiredate DATE,
+	sal DECIMAL(7, 2),
+	comm DECIMAL(7, 2),
+	deptno INT
+);
+
+-- 3.	向emp表中添加记录（10分）
+insert into emp VALUES
+(1001, '甘宁', '文员', 1013, '2000-12-17', 8000.00, NULL, 20),
+(1002, '黛绮丝', '销售员', 1006, '2001-02-20', 16000.00, 3000.00, 30),
+(1003, '殷天正', '销售员', 1006, '2001-02-22', 12500.00, 5000.00, 20),
+(1004, '刘备', '经理', 1009, '2001-04-02', 29750.00, NULL, 20),
+(1005, '谢逊', '销售员', 1006, '2001-09-28', 12500.00, 14000, 30),
+(1006, '关羽', '经理', 1009, '2001-05-01', 28500.00, NULL, 30),
+(1007, '张飞', '经理', 1009, '2001-09-01', 24500.00, NULL, 10),
+(1008, '诸葛亮', '分析师', 1004, '2007-04-19', 30000.00, NULL, 20),
+(1009, '曾阿牛', '董事长', NULL, '2001-11-17', 50000.00, NULL, 10),
+(1010, '韦一笑', '销售员', 1006, '2001-09-08', 15000.00, NULL, 30),
+(1011, '周泰', '文员', 1008, '2007-05-23', 11000.00, NULL, 20),
+(1012, '程普', '文员', 1006, '2001-12-03', 9500.00, NULL, 30),
+(1013, '庞统', '分析师', 1004, '2001-12-03', 30000.00, NULL, 20),
+(1014, '黄盖', '文员', 1007, '2002-01-23', 13000.00, NULL, 10),
+(1015, '张三', '文员', 1007, '2002-01-23', 53000.00, NULL, 50);
+
+-- 4.	查询表中所有内容（10分）
+select * from emp;
+
+-- 5.	修改表名为”yuangong_table”（10分）
+alter table emp rename yuangong_table;
+
+-- 6.	修改job字段的类型为varchar(20)(10分)
+alter table yuangong_table change job job varchar(20);
+
+-- 7.	删除表中姓名为张三并且工作（job）的所有信息（10分）
+delete from yuangong_table where ename ='张三';
+
+-- 8.	查询表中empno字段从1004至1008所有员工的记录（10分）
+select * from yuangong_table where empno BETWEEN 1004 and 1008;
+
+-- 9.	查询表中所有job字段是文员并且姓名是黄盖的员工的所有信息（10分）
+select * from yuangong_table where job ='文员' and ename ='黄盖';
+
+-- 10.	查询表中在2001年以后入职的员工信息（10分）
+select * from yuangong_table where hiredate &gt; '2001-01-01';
+
+
+-- 1.	创建test7数据库（10分）
+CREATE DATABASE test7 charset=utf8;
+
+use test7;
+
+-- 2.	在test7数据库中创建yuangong表（10分）
+create table yuangong(
+	empno int PRIMARY KEY auto_increment,
+	ename VARCHAR(50),
+	job VARCHAR(50),
+	mgr int,
+	hiredate DATE,
+	sal DECIMAL(7, 2),
+	comm DECIMAL(7, 2),
+	deptno INT
+);
+
+-- 3.	向yuangong表中添加记录（10分） 
+insert into yuangong VALUES
+(1001, '甘宁', '文员', 1013, '2000-12-17', 8000.00, NULL, 20),
+(1002, '黛绮丝', '销售员', 1006, '2001-02-20', 16000.00, 3000.00, 30),
+(1003, '殷天正', '销售员', 1006, '2001-02-22', 12500.00, 5000.00, 20),
+(1004, '刘备', '经理', 1009, '2001-04-02', 29750.00, NULL, 20),
+(1005, '谢逊', '销售员', 1006, '2001-09-28', 12500.00, 14000, 30),
+(1006, '关羽', '经理', 1009, '2001-05-01', 28500.00, NULL, 30),
+(1007, '张飞', '经理', 1009, '2001-09-01', 24500.00, NULL, 10),
+(1008, '诸葛亮', '分析师', 1004, '2007-04-19', 30000.00, NULL, 20),
+(1009, '曾阿牛', '董事长', NULL, '2001-11-17', 50000.00, NULL, 10),
+(1010, '韦一笑', '销售员', 1006, '2001-09-08', 15000.00, NULL, 30),
+(1011, '周泰', '文员', 1008, '2007-05-23', 11000.00, NULL, 20),
+(1012, '程普', '文员', 1006, '2001-12-03', 9500.00, NULL, 30),
+(1013, '庞统', '分析师', 1004, '2001-12-03', 30000.00, NULL, 20),
+(1014, '黄盖', '文员', 1007, '2002-01-23', 13000.00, NULL, 10),
+(1015, '张三', '文员', 1007, '2002-01-23', 53000.00, NULL, 50);
+
+-- 4.	查询表中所有内容（10分）
+select * from yuangong;
+
+-- 5.	修改表名为”emp”（10分）
+alter table yuangong rename emp;
+
+-- 6.	修改ename字段的类型为varchar(40) (10分)
+alter table emp change ename ename varchar(40);
+
+-- 7.	删除表中empno是1014并且ename是黄盖的员工信息（10分）
+delete from emp where empno= 1014 and ename ='张三';
+
+-- 8.	查询表中empno字段的值是1007，1009或1011员工的所有记录（10分）
+select * from emp where empno in (1007, 1009, 1011);
+
+-- 9.	查询表中所有job字段是文员并且姓名是张三的员工的所有信息（10分）
+select * from emp where job = '文员' and ename = '张三';
+
+-- 10.	查询表中在2001年以后入职的员工信息（10分）
+select * from emp where hiredate &gt; '2001-01-01';
+
+
+-- 1.	创建test8数据库（10分）
+CREATE DATABASE test8 charset=utf8;
+
+use test8;
+
+-- 2.	在test8数据库中创建yuangong表，（10分）
+create table yuangong(
+	empno int PRIMARY KEY auto_increment,
+	ename VARCHAR(50),
+	job VARCHAR(50),
+	mgr int,
+	hiredate DATE,
+	sal DECIMAL(7, 2),
+	comm DECIMAL(7, 2),
+	deptno INT
+);
+
+-- 3.	向yuangong表中添加记录（10分）
+insert into yuangong VALUES
+(1001, '甘宁', '文员', 1013, '2000-12-17', 8000.00, NULL, 20),
+(1002, '黛绮丝', '销售员', 1006, '2001-02-20', 16000.00, 3000.00, 30),
+(1003, '殷天正', '销售员', 1006, '2001-02-22', 12500.00, 5000.00, 20),
+(1004, '刘备', '经理', 1009, '2001-04-02', 29750.00, NULL, 20),
+(1005, '谢逊', '销售员', 1006, '2001-09-28', 12500.00, 14000, 30),
+(1006, '关羽', '经理', 1009, '2001-05-01', 28500.00, NULL, 30),
+(1007, '张飞', '经理', 1009, '2001-09-01', 24500.00, NULL, 10),
+(1008, '诸葛亮', '分析师', 1004, '2007-04-19', 30000.00, NULL, 20),
+(1009, '曾阿牛', '董事长', NULL, '2001-11-17', 50000.00, NULL, 10),
+(1010, '韦一笑', '销售员', 1006, '2001-09-08', 15000.00, NULL, 30),
+(1011, '周泰', '文员', 1008, '2007-05-23', 11000.00, NULL, 20),
+(1012, '程普', '文员', 1006, '2001-12-03', 9500.00, NULL, 30),
+(1013, '庞统', '分析师', 1004, '2001-12-03', 30000.00, NULL, 20),
+(1014, '黄盖', '文员', 1007, '2002-01-23', 13000.00, NULL, 10),
+(1015, '张三', '文员', 1007, '2002-01-23', 53000.00, NULL, 50);
+
+-- 4.	修改表名为”emp”（10分）
+alter table yuangong rename emp;
+
+-- 5.	向表中添加记录，字段对应值分别为（1016，光头强，程序员，1007，2018-10-31，10000.00，NULL，30）（10分）
+insert into emp VALUES (1016, '光头强', '程序员', 1007, '2018-10-31', 10000.00, NULL, 30);
+
+-- 6.	查询emp表中所有记录（10分）
+select * from emp;
+
+-- 7.	删除表中empno是1007并且job是经理的员工信息（10分）
+delete from emp where empno= 1007 and job ='经理';
+
+-- 8.	查询表中empno字段的值是1007，1009或1011员工的所有记录（10分）
+select * from emp where empno in (1007, 1009, 1011);
+
+-- 9.	修改表中empno值是1004员工的姓名为“马云”（10分）
+update emp set ename = '马云' where empno = 1004;
+
+-- 10.	查询表中在2001年以后入职的员工信息（10分）
+select * from emp where hiredate &gt; '2001-01-01';
+
+
+-- 1.	创建test9数据库（10分）
+CREATE DATABASE test9 charset=utf8;
+
+use test9;
+
+-- 2.	在test9数据库中创建teacher表（10分）
+CREATE TABLE teacher(
+	number INT PRIMARY KEY AUTO_INCREMENT,
+	ename VARCHAR (30) NOT NULL,
+	sex VARCHAR(4),
+	depno INT ,
+	salary FLOAT(8,2),
+	address VARCHAR(100)
+	);
+
+-- 3.	向teacher表中添加记录（10分）
+INSERT INTO teacher VALUES
+(201,'刘芸','女',604,4500,'河北省沧州'),
+(202,'周星驰','男',601,1600,'山东省济南'),
+(203,'秦牧之','男',604,2800,'北京昌平'),
+(204,'周润发','男',602,3500,'河北省沧州'),
+(205,'林双','女',605,1200,'河北保定'),
+(206,'张帆','女',602,3000,'北京昌平'),
+(207,'陈友谅','男',604,2800,'山西省大同'),
+(208,'张国荣','男',601,2500,'山东省烟台');
+
+-- 4.	修改表名为”TS”（10分）
+alter table teacher rename ts;
+
+-- 5.	向表中添加记录，字段对应值分别为（209，毛不易，男，604，4000，黑龙江齐齐哈尔）（10分）
+INSERT INTO ts VALUES (209,'毛不易','男',604,4000,'黑龙江齐齐哈尔');
+
+-- 6.	查询TS表中所有记录（10分）
+SELECT * FROM ts;
+
+-- 7.	删除表中Number是201并且sex是女的教师信息（10分）
+DELETE FROM ts WHERE number=201 AND sex='女';
+
+-- 8.	查询表中Number字段的值是202，205或207教师的所有记录（10分）
+SELECT * FROM ts WHERE number IN (202,205,207);
+
+-- 9.	修改表中Number值是202教师的姓名为“马云”（10分）
+UPDATE ts SET ename='马云' WHERE number=202;
+
+-- 10.	按照工资对员工信息进行降序排序（10分）
+SELECT * FROM ts ORDER BY salary  DESC;
+
+
+-- 1.	创建test10数据库（10分）
+CREATE DATABASE test10 charset=utf8;
+
+use test10;
+
+-- 2.	在test10数据库中创建teacher表（10分）
+CREATE TABLE teacher(
+	number INT PRIMARY KEY AUTO_INCREMENT,
+	ename VARCHAR (30) NOT NULL,
+	sex VARCHAR(4),
+	depno INT ,
+	salary FLOAT(8,2),
+	address VARCHAR(100)
+	);
+
+-- 3.	向teacher表中添加记录（10分）
+INSERT INTO teacher VALUES
+(201,'刘芸','女',604,4500,'河北省沧州'),
+(202,'周星驰','男',601,1600,'山东省济南'),
+(203,'秦牧之','男',604,2800,'北京昌平'),
+(204,'周润发','男',602,3500,'河北省沧州'),
+(205,'林双','女',605,1200,'河北保定'),
+(206,'张帆','女',602,3000,'北京昌平'),
+(207,'陈友谅','男',604,2800,'山西省大同'),
+(208,'张国荣','男',601,2500,'山东省烟台');
+
+-- 4.	修改表名为”TS”（10分）
+alter table teacher rename ts;
+
+-- 5.	向表中添加记录，字段对应值分别为（209，林青霞，女，604，4000，黑龙江齐齐哈尔）（10分）
+INSERT INTO ts VALUES (209,'林青霞','女',604,4000,'黑龙江齐齐哈尔');
+
+-- 6.	查询TS表中Number,Name,Sex字段对应的记录（10分）
+SELECT number, ename, sex FROM ts;
+
+-- 7.	删除表中Number是201或者Name是陈友谅的教师信息（10分）
+delete from ts where number = 201 or ename = '陈友谅';
+
+-- 8.	查询表中Number字段的值从202至206教师的所有记录（10分）
+select * from ts WHERE number between 202 and 206;
+
+-- 9.	修改表中Name值是张国荣教师的性别为“女”（10分）
+update ts set sex = '女' where ename = '张国荣';
+
+-- 10.	按照工资对员工信息进行升序排序（10分）
+SELECT * FROM ts ORDER BY salary;
+
+
+-- 1.	创建test11数据库（10分）
+CREATE DATABASE test11 charset=utf8;
+
+use test11;
+
+-- 2.	在test11数据库中创建teacher表（10分）
+CREATE TABLE teacher(
+	number INT PRIMARY KEY AUTO_INCREMENT,
+	ename VARCHAR (30) NOT NULL,
+	sex VARCHAR(4),
+	depno INT ,
+	salary FLOAT(8,2),
+	address VARCHAR(100)
+	);
+
+-- 3.	向teacher表中添加记录（10分）
+INSERT INTO teacher VALUES
+(201,'刘芸','女',604,4500,'河北省沧州'),
+(202,'周星驰','男',601,1600,'山东省济南'),
+(203,'秦牧之','男',604,2800,'北京昌平'),
+(204,'周润发','男',602,3500,'河北省沧州'),
+(205,'林双','女',605,1200,'河北保定'),
+(206,'张帆','女',602,3000,'北京昌平'),
+(207,'陈友谅','男',604,2800,'山西省大同'),
+(208,'张国荣','男',601,2500,'山东省烟台');
+
+-- 4.	修改表名为”TS”（10分）
+alter table teacher rename ts;
+
+-- 5.	向表中添加记录，字段对应值分别为（209，林青霞，女，604，4000，黑龙江齐齐哈尔）（10分）
+INSERT INTO ts VALUES (209,'林青霞','女',604,4000,'黑龙江齐齐哈尔');
+
+-- 6.	向表中添加字段Hobby,设置类型为varchar(50),设置唯一约束（10分）
+alter table ts add hobby varchar(50) unique;
+
+-- 7.	使用desc语句查看teacher表的表结构（5分）
+desc ts;
+
+-- 8.	查询表中Number字段的值从202至206教师的所有记录（10分）
+select * from ts where number between 202 and 206
+
+-- 9.	修改表中Name值是张国荣教师的性别为“女”（10分）
+update ts set sex = '女' where ename = '张国荣';
+
+-- 10. 删除表中Sex是“男”或者Name是刘芸的记录（10分）
+DELETE from ts WHERE sex='男' and ename='刘芸';
+
+
+-- 1.	创建test12数据库（10分）
+CREATE DATABASE test12 charset=utf8;
+
+use test12;
+
+-- 2.	在test12数据库中创建teacher表（10分）
+CREATE TABLE teacher(
+	number INT PRIMARY KEY AUTO_INCREMENT,
+	ename VARCHAR (30) NOT NULL,
+	sex VARCHAR(4),
+	depno INT ,
+	salary FLOAT(8,2),
+	address VARCHAR(100)
+	);
+
+-- 3.	向teacher表中添加记录（10分）
+INSERT INTO teacher VALUES
+(201,'刘芸','女',604,4500,'河北省沧州'),
+(202,'周星驰','男',601,1600,'山东省济南'),
+(203,'秦牧之','男',604,2800,'北京昌平'),
+(204,'周润发','男',602,3500,'河北省沧州'),
+(205,'林双','女',605,1200,'河北保定'),
+(206,'张帆','女',602,3000,'北京昌平'),
+(207,'陈友谅','男',604,2800,'山西省大同'),
+(208,'张国荣','男',601,2500,'山东省烟台');
+
+-- 4.	修改表名为”ts”（10分）
+alter table teacher rename ts;
+
+-- 5.	向表中添加记录，字段对应值分别为（209，林青霞，女，604，4000，黑龙江齐齐哈尔）（10分）
+INSERT INTO ts VALUES (209,'林青霞','女',604,4000,'黑龙江齐齐哈尔');
+
+-- 6.	向表中添加字段Hobby,设置类型为varchar(50),设置唯一约束（10分）
+alter table ts add hobby varchar(50) unique;
+
+-- 7.	修改DepNo字段的类型为varchar(20)（5分）
+alter table ts change depno depno varchar(20);
+
+-- 8.	查询表中Number字段的值从202至206教师的所有记录（10分）
+select * from ts where number between 202 and 206;
+
+-- 9.	修改表中Name值是张国荣教师的性别为“女”（10分）
+update ts set sex = '女' where ename = '张国荣';
+
+-- 10. 删除表中Number是203或205或207的教师的记录（10分）
+DELETE from ts WHERE number in(203,205,207);
+
+
+-- 1.	创建test13数据库（5分）
+CREATE DATABASE test13 charset=utf8;
+
+use test13;
+
+-- 2.	在test13数据库中创建yuangong表（10分）
+CREATE TABLE yuangong(
+sid int PRIMARY key auto_increment,
+sname VARCHAR(20) NOT NULL,
+sex VARCHAR(4) DEFAULT '男',
+job VARCHAR(20) not null,
+birthday DATE,
+salary INT,
+comm INT,
+withhold INT
+);
+
+-- 3. 向yuangong表中添加记录（10分）
+INSERT into yuangong VALUES
+(1001, '张三', '男' ,'高级程师', '1975-1-1', 2200,1100, 200),
+(1002, '李四', '女', '助工', '1985-1-1', 1200,200, 100),
+(1003, '王五', '男', '工程师', '1978-11-11', 1900, 700, 200),
+(1004, '赵六', '男', '工程师', '1979-1-1', 1960, 700, 150);
+
+
+-- 4.	修改表名为”emp”（10分）
+ALTER TABLE yuangong RENAME emp;
+
+-- 5.	向表中添加字段Hobby,设置类型为varchar(50),设置唯一约束（10分）
+ALTER TABLE emp add hobby VARCHAR(50) UNIQUE;
+
+-- 6.	向表中添加记录，字段对应值分别为（1005，林青霞，女，架构师，1969-12-12，8000，NULL，100，阅读）（5分）
+insert into emp VALUES(1005,'林青霞','女','架构师','1969-12-12',8000,NULL,100,'阅读');
+
+-- 7.	修改姓名为“林青霞”的记录性别为男（5分）
+UPDATE emp set sex='男' WHERE sname='林青霞';
+
+-- 8.	修改sname字段的类型为varchar(30)（5分）
+ALTER TABLE emp change sname sname VARCHAR(30);
+
+-- 9.	查询表中sid字段的值从1002至1005员工的所有记录（5分）
+select * from emp WHERE sid BETWEEN 1002 AND 1005;
+
+-- 10.	修改表中job值是高级工程师员工的job为“架构师”（5分）
+UPDATE emp set job='架构师' WHERE job='高级工程师';
+
+-- 11.	删除表中sid是1001或1005或1003的员工的记录（10分）
+DELETE from emp WHERE sid in (1001, 1005, 1003)
+
+-- 12.	修改姓名为“赵六”的记录性别位“女”（5分）
+UPDATE emp set sex='女' WHERE sname='赵六';
+
+-- 13.	修改表中姓名是1002员工的salary在原来的基础上+2000（10分）
+UPDATE emp set salary = salary + 2000 WHERE sid=1002;
+
+
+-- 1.	创建test14数据库（10分）
+CREATE DATABASE test14 charset=utf8;
+
+use test14;
+
+-- 2.	在test14数据库中创建yuangong表（10分）
+CREATE TABLE yuangong(
+sid int PRIMARY key auto_increment,
+sname VARCHAR(20) NOT NULL,
+sex VARCHAR(4) DEFAULT '男',
+job VARCHAR(20) not null,
+birthday DATE,
+salary INT,
+comm INT,
+withhold INT
+);
+
+-- 3.	向yuangong表中添加记录（10分）
+INSERT into yuangong VALUES
+(1001, '张三', '男' ,'高级程师', '1975-1-1', 2200,1100, 200),
+(1002, '李四', '女', '助工', '1985-1-1', 1200,200, 100),
+(1003, '王五', '男', '工程师', '1978-11-11', 1900, 700, 200),
+(1004, '赵六', '男', '工程师', '1979-1-1', 1960, 700, 150);
+
+-- 4.	修改表名为”emp”（10分）
+ALTER TABLE yuangong RENAME emp;
+
+-- 5.	向表中添加字段Hobby,设置类型为varchar(50),设置唯一约束（10分）
+ALTER TABLE emp add hobby VARCHAR(50) UNIQUE;
+
+-- 6.	使用desc语句查看表结构（5分）
+desc emp;
+
+-- 7.	向表中添加记录，字段对应值分别为（1005，林青霞，女，架构师，1969-12-12，8000，NULL，100，阅读）（5分）
+insert into emp VALUES(1005,'林青霞','女','架构师','1969-12-12',8000,NULL,100,'阅读');
+
+-- 8.	修改sname字段的类型为varchar(40)（5分）
+ALTER TABLE emp change sname sname VARCHAR(40);
+
+-- 9.	查询表中sid字段的值从是1002或1005员工的所有记录（使用关键字or）（5分）
+select * from emp WHERE sid = 1002 or sid = 1005;
+
+-- 10.	修改表中job值是高级工程师员工的job为“架构师”（5分）
+UPDATE emp set job='架构师' WHERE job='高级工程师';
+
+-- 11.	删除表中sid是1001并且sname是漳卅三年的员工的记录（10分）
+DELETE from emp WHERE sid=1001 and sname='漳卅三年'
+
+-- 12.	修改表中姓名是1002员工的salary在原来的基础上+2000（10分）
+UPDATE emp set salary = salary + 2000 WHERE sid=1002;
+
+
+
+-- 1.	创建test15数据库（10分）
+CREATE DATABASE test15 charset=utf8;
+
+use test15;
+
+-- 2.	在test15数据库中创建yuangong表（10分）
+CREATE TABLE yuangong(
+sid int PRIMARY key auto_increment,
+sname VARCHAR(20) NOT NULL,
+sex VARCHAR(4) DEFAULT '男',
+job VARCHAR(20) not null,
+birthday DATE,
+salary INT,
+comm INT,
+withhold INT
+);
+
+-- 3.	向yuangong表中添加记录（10分）
+INSERT into yuangong VALUES
+(1001, '张三', '男' ,'高级程师', '1975-1-1', 2200,1100, 200),
+(1002, '李四', '女', '助工', '1985-1-1', 1200,200, 100),
+(1003, '王五', '男', '工程师', '1978-11-11', 1900, 700, 200),
+(1004, '赵六', '男', '工程师', '1979-1-1', 1960, 700, 150);
+
+-- 4.	修改表名为”emp”（10分）
+ALTER TABLE yuangong RENAME emp;
+
+-- 5.	向表中添加字段Hobby,设置类型为varchar(50),设置唯一约束（10分）
+ALTER TABLE emp add hobby VARCHAR(50) UNIQUE;
+
+-- 6.	使用desc语句查看表结构（5分）
+desc emp;
+
+-- 7.	向表中添加记录，字段对应值分别为（1005，林青霞，女，架构师，1969-12-12，8000，NULL，100，阅读）（5分）
+insert into emp VALUES(1005,'林青霞','女','架构师','1969-12-12',8000,NULL,100,'阅读');
+
+-- 8.	修改sname字段的类型为varchar(50)（5分）
+ALTER TABLE emp change sname sname VARCHAR(50);
+
+
+-- 9.	查询表中sid字段的值从是1002或1003或1005员工的所有记录（使用关键字in）（5分）
+select * from emp WHERE sid in (1002, 1003, 1005);
+
+
+-- 10.	修改表中job值是高级工程师员工的job为“架构师”（5分）
+UPDATE emp set job='架构师' WHERE job='高级工程师';
+
+-- 11.	删除表中sid是1003并且sname是王五的员工的记录（10分）
+DELETE from emp where sid = 1003 and sname = '王五';
+
+-- 12.	修改表中姓名是1004员工的salary在原来的基础上-300（10分）
+UPDATE emp set salary = salary - 300 WHERE sid=1004;
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>
