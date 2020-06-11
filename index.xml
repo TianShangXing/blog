@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>JMeter与MySQL交互</title>
+      <link>https://tianshangxing.github.io/blog/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</link>
+      <pubDate>Thu, 11 Jun 2020 21:57:56 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</guid>
+      <description>JMeter与MySQL交互  建立线程组  添加JDBC Connection Configuration  添加JDBC Request  查看结构树就可以看到查询结果  </description>
+    </item>
+    
+    <item>
       <title>JMeter使用</title>
       <link>https://tianshangxing.github.io/blog/blogs/jmeter%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 10 Jun 2020 23:39:21 +0800</pubDate>
@@ -201,15 +210,6 @@ Bug定级示例 1级，系统崩溃
 定义：对于产品的意见或者建议 对应优先级：低
 具体可分为：
  对于产品设计方面的意见和建议 对于产品界面优化方面的意见和建议 对于产品需要优化增强用户体验方面的意见和建议  Bug生命周期 新建	确认	解决	重新验证	关闭	重新打开</description>
-    </item>
-    
-    <item>
-      <title>用户后台管理测试用例</title>
-      <link>https://tianshangxing.github.io/blog/blogs/%E7%94%A8%E6%88%B7%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</link>
-      <pubDate>Sun, 31 May 2020 00:10:30 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/%E7%94%A8%E6%88%B7%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</guid>
-      <description></description>
     </item>
     
   </channel>
