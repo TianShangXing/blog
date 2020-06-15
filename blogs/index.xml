@@ -7,10 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 21:57:56 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 23:25:37 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux基础</title>
+      <link>https://tianshangxing.github.io/blog/blogs/linux%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 15 Jun 2020 23:25:37 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/linux%E5%9F%BA%E7%A1%80/</guid>
+      <description>Linux   目前市面上用的操作环境
+Windows	mac	Linux	麒麟	DOS
+  Linux简介
+Linux是一个基于POSIX和unix的多用户 多任务 支持多线程和 多cpu的一个操作系统
+  Linux的发行版：
+Ubuntu	RedHat	CentOS	Debian	SUse
+  Linux的使用领域：
+LNMP Linux+Nginx+mysql+Php
+LAMP Linux+apache+mysql+Php
+  Linux的安装：
+ 在虚拟机中进行安装linux 使用云服务的linux （阿里云 腾讯云）     常用命令   ls /：展示当前目录下的所有文件
+ etc：存放配置文件和子目录 var：存放日志以及线程程序 bin/usr/sbin：系统用户使用的命令    对文件的操作
+ cd ..：进入上一级目录 cd ../：进入根目录 cd **：进入任意文件夹 ls：展示所有文件夹下的子文件夹和子文件 ls -l：展示文件属性以及文件所属的用户和组    l rwx rwx rwx</description>
+    </item>
     
     <item>
       <title>JMeter与MySQL交互</title>
@@ -179,37 +200,6 @@ CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们
 BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。
 BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。
 有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。</description>
-    </item>
-    
-    <item>
-      <title>缺陷报告和测试管理工具</title>
-      <link>https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Mon, 01 Jun 2020 20:59:03 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E5%92%8C%E6%B5%8B%E8%AF%95%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
-      <description>缺陷报告编写 缺陷严重程度划分：系统崩溃，严重，一般，次要，建议
-修正优先级：高，中，低
-Bug定级示例 1级，系统崩溃
-定义：严重阻碍测试和开发工作 对应优先级：最高 具体可分为：
- 功能完全没有实现 应用闪退/崩溃无法运行 应用必现安全模式，无法运行 其他导致功能无法测试的问题  2级，至关重要
-定义：非阻碍用例执行的严重问题
-对应优先级：高
-具体可分为：
- 简单操作应用闪退/崩溃，卡死 数据丢失 严重影响系统，自身功能无法运行 严重数值计算错误 数据库损坏或无法保存配置 安全性问题（包括数据加密等）  3级，主要
-定义：功能存在缺陷，但不影响应用和系统的稳定性
-对应优先级：中
-具体可分为：
- 内存泄露（长时间不用的对象需要被回收，不被回收占内存） 功能实现逻辑覆盖不全面 非必现，但复现概率超过50%的闪退/崩溃和安全模式  4级，一般
-定义：对应用熟悉度高才能感知到的问题，对应用基本功能实现无影响
-对应优先级：中
-具体可分为：
- 轻微数值计算错误 功能实现有误，与产品文档不完全贴切 用户简单操作，即可明显感知的UI问题  5级，较小
-定义：界面，性能缺陷 对应优先级：低
-具体可分为：
- 操作界面错误（提示显示规则，刷新规则是否与文档一致） 边界条件显示错误 提示信息和界面效果展示错误（包括未给出信息、信息提示错误等） 复现率低于5%的闪退/崩溃和安全模式 插件兼容和性能未优化问题 非正常操作导致UI显示异常  6级，建议
-定义：对于产品的意见或者建议 对应优先级：低
-具体可分为：
- 对于产品设计方面的意见和建议 对于产品界面优化方面的意见和建议 对于产品需要优化增强用户体验方面的意见和建议  Bug生命周期 新建	确认	解决	重新验证	关闭	重新打开</description>
     </item>
     
   </channel>
