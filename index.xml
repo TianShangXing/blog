@@ -13,6 +13,19 @@
     
     
     <item>
+      <title>Linux下安装JDK，MySQL，tomcat</title>
+      <link>https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</link>
+      <pubDate>Tue, 16 Jun 2020 22:47:04 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</guid>
+      <description>我本地的Linux环境是Ubuntu，安装需要用到apt命令
+ Ubuntu下安装JDK  更新软件包列表  sudo apt-get update 安装JDK  sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功  java -version openjdk version &amp;quot;1.8.0_252&amp;quot; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)  出现JDK版本说明安装成功
+  还可以通过输入java和javac查看是否安装成功
+   Ubuntu下安装MySQL 1.安装MySQL
+sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g.</description>
+    </item>
+    
+    <item>
       <title>Linux基础</title>
       <link>https://tianshangxing.github.io/blog/blogs/linux%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Mon, 15 Jun 2020 23:25:37 +0800</pubDate>
@@ -175,31 +188,6 @@ adb shell monkey 200 &amp;gt;d:/monkeylog.txt 调整触摸事件的占比  --pct
 select * from 表名; 例： select * from students; 查询指定字段
 select 列1,列2,... from 表名; 例: select name from students; 使用 as 给字段起别名
 select id as 序号, name as 名字, gender as 性别 from students; 例: -- 如果是单表查询 可以省略表名 select id, name, gender from students; -- 表名.字段名 select students.id,students.name,students.gender from students; -- 可以通过 as 给表起别名 select s.</description>
-    </item>
-    
-    <item>
-      <title>MySQL基础</title>
-      <link>https://tianshangxing.github.io/blog/blogs/mysql%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Tue, 02 Jun 2020 22:11:14 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/mysql%E5%9F%BA%E7%A1%80/</guid>
-      <description>MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
-官网： https://www.mysql.com/cn/
- MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
- 数值类型 MySQL支持所有标准SQL数值数据类型。
-这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL和NUMERIC)，以及近似数值数据类型(FLOAT、REAL和DOUBLE PRECISION)。
-关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。
-BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB表。
-作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。
-下面的表显示了需要的每个整数类型的存储和范围。
- 日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
-每个时间类型有一个有效值范围和一个&amp;quot;零&amp;quot;值，当指定不合法的MySQL不能表示的值时使用&amp;quot;零&amp;quot;值。
- 字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
-注意：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。
-CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。
-BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。
-BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。
-有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。</description>
     </item>
     
   </channel>
