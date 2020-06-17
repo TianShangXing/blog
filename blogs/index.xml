@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 16 Jun 2020 22:47:04 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 23:16:49 +0800</lastBuildDate>
     
 	<atom:link href="https://tianshangxing.github.io/blog/blogs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python基础语法练习</title>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
+      <pubDate>Wed, 17 Jun 2020 23:16:49 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</guid>
+      <description>Python基础语法练习 # 1.	str = &amp;quot; fgh &amp;quot; 写一个函数，只去掉字符串右侧的空格，左侧的空格保留 def func(): str = &amp;quot; fgh &amp;quot; print(str.rstrip(&#39; &#39;)) func() # 2.	输入10个数字到列表中，如果输入的不是数字，则跳过，不存 def func(): l = [] b = 1 while True: b += 1 if len(l) == 10: break a = input(&amp;quot;请输入数字：&amp;quot;) if a.isdigit(): a = int(a) l.append(a) else: continue print(l) func() # 3.	写一个函数，可以判断一个字符串是否为回文例子qwewq，函数返回true或者false def func(): s = input(&#39;请输入字符串：&#39;) if s == s[::-1]: return True else: return False print(func()) # 4.</description>
+    </item>
     
     <item>
       <title>Linux下安装JDK，MySQL，tomcat</title>
@@ -174,20 +183,6 @@ adb shell monkey 200 &amp;gt;d:/monkeylog.txt 调整触摸事件的占比  --pct
     软件的升级测试
  当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。    登陆测试
  登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息    权限测试</description>
-    </item>
-    
-    <item>
-      <title>MySQL进阶</title>
-      <link>https://tianshangxing.github.io/blog/blogs/mysql%E8%BF%9B%E9%98%B6/</link>
-      <pubDate>Wed, 03 Jun 2020 19:54:48 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/mysql%E8%BF%9B%E9%98%B6/</guid>
-      <description>MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
-官网： https://www.mysql.com/cn/
- MySQL查询  查询所有字段
-select * from 表名; 例： select * from students; 查询指定字段
-select 列1,列2,... from 表名; 例: select name from students; 使用 as 给字段起别名
-select id as 序号, name as 名字, gender as 性别 from students; 例: -- 如果是单表查询 可以省略表名 select id, name, gender from students; -- 表名.字段名 select students.id,students.name,students.gender from students; -- 可以通过 as 给表起别名 select s.</description>
     </item>
     
   </channel>

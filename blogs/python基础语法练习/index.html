@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="Python基础语法练习 # 1.	str = &amp;quot; fgh &amp;quot; 写一个函数，只去掉字符串右侧的空格，左侧的空格保留 def func(): str = &amp;quot; fgh &amp;quot; print(str.rstrip(&#39; &#39;)) func() # 2.	输入10个数字到列表中，如果输入的不是数字，则跳过，不存 def func(): l = [] b = 1 while True: b &#43;= 1 if len(l) == 10: break a = input(&amp;quot;请输入数字：&amp;quot;) if a.isdigit(): a = int(a) l.append(a) else: continue print(l) func() # 3.	写一个函数，可以判断一个字符串是否为回文例子qwewq，函数返回true或者false def func(): s = input(&#39;请输入字符串：&#39;) if s == s[::-1]: return True else: return False print(func()) # 4." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/" />
+
+
+    <title>
+        
+            Python基础语法练习 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Python基础语法练习">
+<meta itemprop="description" content="Python基础语法练习 # 1.	str = &quot; fgh &quot; 写一个函数，只去掉字符串右侧的空格，左侧的空格保留 def func(): str = &quot; fgh &quot; print(str.rstrip(&#39; &#39;)) func() # 2.	输入10个数字到列表中，如果输入的不是数字，则跳过，不存 def func(): l = [] b = 1 while True: b &#43;= 1 if len(l) == 10: break a = input(&quot;请输入数字：&quot;) if a.isdigit(): a = int(a) l.append(a) else: continue print(l) func() # 3.	写一个函数，可以判断一个字符串是否为回文例子qwewq，函数返回true或者false def func(): s = input(&#39;请输入字符串：&#39;) if s == s[::-1]: return True else: return False print(func()) # 4.">
+<meta itemprop="datePublished" content="2020-06-17T23:16:49&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-17T23:16:49&#43;08:00" />
+<meta itemprop="wordCount" content="182">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="Python基础语法练习"/>
+<meta name="twitter:description" content="Python基础语法练习 # 1.	str = &quot; fgh &quot; 写一个函数，只去掉字符串右侧的空格，左侧的空格保留 def func(): str = &quot; fgh &quot; print(str.rstrip(&#39; &#39;)) func() # 2.	输入10个数字到列表中，如果输入的不是数字，则跳过，不存 def func(): l = [] b = 1 while True: b &#43;= 1 if len(l) == 10: break a = input(&quot;请输入数字：&quot;) if a.isdigit(): a = int(a) l.append(a) else: continue print(l) func() # 3.	写一个函数，可以判断一个字符串是否为回文例子qwewq，函数返回true或者false def func(): s = input(&#39;请输入字符串：&#39;) if s == s[::-1]: return True else: return False print(func()) # 4."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-17 23:16:49 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/">Python基础语法练习</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="python基础语法练习">Python基础语法练习</h3>
+<pre><code># 1.	str = &quot;  fgh        &quot;   写一个函数，只去掉字符串右侧的空格，左侧的空格保留
+def func():
+    str = &quot;  fgh        &quot;
+    print(str.rstrip(' '))
+
+
+func()
+
+
+# 2.	输入10个数字到列表中，如果输入的不是数字，则跳过，不存
+def func():
+    l = []
+    b = 1
+    while True:
+        b += 1
+        if len(l) == 10:
+            break
+        a = input(&quot;请输入数字：&quot;)
+        if a.isdigit():
+            a = int(a)
+            l.append(a)
+        else:
+            continue
+    print(l)
+
+
+func()
+
+
+# 3.	写一个函数，可以判断一个字符串是否为回文例子qwewq，函数返回true或者false
+def func():
+    s = input('请输入字符串：')
+    if s == s[::-1]:
+        return True
+    else:
+        return False
+
+
+print(func())
+
+
+# 4.	请手写一个函数，可以打印出 I'm &quot;ok&quot; it's your's  注意必须是原样输出
+def func():
+    print('I\'m &quot;ok&quot; it\'s your\'s')
+
+
+func()
+
+
+# 5.	str2 = &quot;This is the voa special English,health,report&quot;  写一个函数，统计字符串中单词出现的个数，注意是单词而不是字母
+def func():
+    str2 = &quot;This is the voa special English,health,report&quot;
+    str2 = str2.replace(',', ' ')
+    print(len(str2.split(' ')))
+
+
+func()
+
+
+# 6.	My_str = ‘11sdsfsdf45sfxcv67qwe_9’ 手写一个函数，计算出字符串中所有数字的和
+def func():
+    l = []  # 创建列表
+    My_str = '11sdsfsdf45sfxcv67qwe_9'
+    for i in My_str:  # 遍历字符串
+        if i.isdigit():  # 判断数字
+            l.append(int(i))  # 添加列表
+    print(sum(l))  # 计算和输出
+
+
+func()
+
+
+# 7.	s = '&lt;a href=&quot;www.test.com&quot;&gt;test&lt;/a&gt;'  写一个函数，能将字符串中的网址提取出来，即提取出www.test.com
+def func():
+    s = '&lt;a href=&quot;www.test.com&quot;&gt;test&lt;/a&gt;'
+    print(s.split('&quot;')[1])
+
+
+func()
+
+
+# 8.	str = &quot;卡巴斯基#杀毒软件#免费版#俄罗斯#&quot; 手写一个函数，将该字符串解析为['卡巴斯基', '杀毒软件', '免费版', '俄罗斯']
+def func():
+    str = &quot;卡巴斯基#杀毒软件#免费版#俄罗斯#&quot;
+    str = str.split('#')
+    print(str[:-1])
+
+
+func()
+
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>
