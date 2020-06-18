@@ -13,6 +13,20 @@
     
     
     <item>
+      <title>Python语法进阶</title>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Thu, 18 Jun 2020 22:25:49 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6/</guid>
+      <description>python优点 简单，易学，免费，开源，高层语言，可扩展性，可移植性，解释型语言，面向对象，丰富的库，规范的代码
+变量的类型 标识符命名规则   小驼峰式命名法（lower camel case）： 第一个单词以小写字母开始；第二个单词的首字母大写，例如：myName；
+  大驼峰式命名法（upper camel case）： 每一个单字的首字母都采用大写字母，例如：FirstName；
+  下划线命名法：用下划线“_”来连接所有的单词，比如my_name。
+  如何在python中查找关键字 可以在Python Shell通过以下命令进行查看当前系统中python的关键字
+import keyword keyword.kwlist 常用的格式符号有哪些    格式符 转换     %c 字符   %s 字符串   %d 有符号十进制整数   %u 无符号十进制整数   %f 浮点数    算术运算符    运算符 描述     + 加   - 减   * 乘   / 除   // 取整除   % 取余   ** 指数    python常用的数据类型转换    函数 说明     int(x, [base]) 将x转换为一个整数   float(x) 将x转换为一个浮点数   str(x) 将对象 x 转换为字符串   tuple(s) 将序列 s 转换为一个元组   list(s ) 将序列 s 转换为一个列表    python中的比较运算符    运算符 描述 示例     == 检查两个操作数的值是否相等，如果是则条件变为真。 如a=3,b=3，则（a == b) 为 True   !</description>
+    </item>
+    
+    <item>
       <title>Python基础语法练习</title>
       <link>https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
       <pubDate>Wed, 17 Jun 2020 23:16:49 +0800</pubDate>
@@ -161,28 +175,6 @@ adb shell monkey 200 &amp;gt;d:/monkeylog.txt 调整触摸事件的占比  --pct
       
       <guid>https://tianshangxing.github.io/blog/blogs/mysql%E7%BB%83%E4%B9%A0/</guid>
       <description>MySQL练习题 -- 1.	创建test1数据库 CREATE DATABASE test1 charset=utf8; use test1; -- 2.	在test1数据库中创建student表 create table student( id int PRIMARY KEY auto_increment, name VARCHAR(20), score int, address VARCHAR(50), useremail VARCHAR(20) ); -- 3.	向student表中添加记录 insert into student VALUES (1, &#39;张三&#39;, 98, &#39;北京&#39;, &#39;111111111@qq.com&#39;), (2, &#39;李四&#39;, 88, &#39;上海&#39;, &#39;111111112@qq.com&#39;), (3, &#39;王五&#39;, 78, &#39;广州&#39;, &#39;111111113@qq.com&#39;), (4, &#39;赵六&#39;, 68, &#39;深圳&#39;, &#39;111111114@qq.com&#39;), (5, &#39;孙七&#39;, 58, &#39;杭州&#39;, &#39;111111115@qq.com&#39;), (6, &#39;小红&#39;, 48, &#39;北京&#39;, &#39;111111116@qq.com&#39;), (7, &#39;小黑&#39;, 99, &#39;上海&#39;, &#39;1111111117@qq.</description>
-    </item>
-    
-    <item>
-      <title>App移动端测试</title>
-      <link>https://tianshangxing.github.io/blog/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Thu, 04 Jun 2020 23:07:39 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/</guid>
-      <description>App移动端测试  现有市场上的移动端操作系统：
- Android iOS 微软 塞班 华为（未来）  测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
-移动端测试内容有   应用程序的功能测试
- 测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现    安装和卸载的测试
-  软件安装后是否可以正常运行
-  安装过程中是否可以取消
-  安装空间不足时，是否有相应提示
-  是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
-  卸载是否支持取消功能，单击取消后软件卸载功能是否正常
-  卸载后文件是否全部删除所有的安装文件夹
-  从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
-    软件的升级测试
- 当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。    登陆测试
- 登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息    权限测试</description>
     </item>
     
   </channel>
