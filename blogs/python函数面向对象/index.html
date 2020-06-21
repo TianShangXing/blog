@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="函数 # 1.	请手写一个函数，用来取出1—100（均包含）中5的倍数或者带有数字5的所有整数 # def func(b): # 定义函数 添加形参 b # # for i in range(1, b &#43; 1): # 循环所有1-b所有数字 # if i % 5 == 0 or &amp;quot;5&amp;quot; in str(i): # 判断3的倍数或者带有数字3的所有整数 # print(i) # 输出 # # # func(100) # 调用函数 添加实参 # 2.	lis = [2,3,&#39;k&#39;,[&#39;qwe&#39;,20,[&#39;k&#39;,[&#39;tt&#39;,3,&#39;1&#39;]],89],&#39;ab&#39;,&#39;adv&#39;] 写一个函数将该列表中的tt变成大写 # def func(): # lis = [2, 3, &#39;k&#39;, [&#39;qwe&#39;, 20, [&#39;k&#39;, [&#39;tt&#39;, 3, &#39;1&#39;]], 89], &#39;ab&#39;, &#39;adv&#39;] # lis[3][2][1][0] = &#39;TT&#39; # 查下标替换tt 为 TT # print(lis) # # # func() # 3." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" />
+
+
+    <title>
+        
+            Python函数面向对象 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="Python函数面向对象">
+<meta itemprop="description" content="函数 # 1.	请手写一个函数，用来取出1—100（均包含）中5的倍数或者带有数字5的所有整数 # def func(b): # 定义函数 添加形参 b # # for i in range(1, b &#43; 1): # 循环所有1-b所有数字 # if i % 5 == 0 or &quot;5&quot; in str(i): # 判断3的倍数或者带有数字3的所有整数 # print(i) # 输出 # # # func(100) # 调用函数 添加实参 # 2.	lis = [2,3,&#39;k&#39;,[&#39;qwe&#39;,20,[&#39;k&#39;,[&#39;tt&#39;,3,&#39;1&#39;]],89],&#39;ab&#39;,&#39;adv&#39;] 写一个函数将该列表中的tt变成大写 # def func(): # lis = [2, 3, &#39;k&#39;, [&#39;qwe&#39;, 20, [&#39;k&#39;, [&#39;tt&#39;, 3, &#39;1&#39;]], 89], &#39;ab&#39;, &#39;adv&#39;] # lis[3][2][1][0] = &#39;TT&#39; # 查下标替换tt 为 TT # print(lis) # # # func() # 3.">
+<meta itemprop="datePublished" content="2020-06-20T22:42:10&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-20T22:42:10&#43;08:00" />
+<meta itemprop="wordCount" content="710">
+<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+
+<meta name="twitter:title" content="Python函数面向对象"/>
+<meta name="twitter:description" content="函数 # 1.	请手写一个函数，用来取出1—100（均包含）中5的倍数或者带有数字5的所有整数 # def func(b): # 定义函数 添加形参 b # # for i in range(1, b &#43; 1): # 循环所有1-b所有数字 # if i % 5 == 0 or &quot;5&quot; in str(i): # 判断3的倍数或者带有数字3的所有整数 # print(i) # 输出 # # # func(100) # 调用函数 添加实参 # 2.	lis = [2,3,&#39;k&#39;,[&#39;qwe&#39;,20,[&#39;k&#39;,[&#39;tt&#39;,3,&#39;1&#39;]],89],&#39;ab&#39;,&#39;adv&#39;] 写一个函数将该列表中的tt变成大写 # def func(): # lis = [2, 3, &#39;k&#39;, [&#39;qwe&#39;, 20, [&#39;k&#39;, [&#39;tt&#39;, 3, &#39;1&#39;]], 89], &#39;ab&#39;, &#39;adv&#39;] # lis[3][2][1][0] = &#39;TT&#39; # 查下标替换tt 为 TT # print(lis) # # # func() # 3."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-06-20 22:42:10 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">Python函数面向对象</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="函数">函数</h3>
+<pre><code># 1.	请手写一个函数，用来取出1—100（均包含）中5的倍数或者带有数字5的所有整数
+# def func(b):  # 定义函数 添加形参 b
+#
+#     for i in range(1, b + 1):  # 循环所有1-b所有数字
+#         if i % 5 == 0 or &quot;5&quot; in str(i):  # 判断3的倍数或者带有数字3的所有整数
+#             print(i)  # 输出
+#
+#
+# func(100)  # 调用函数 添加实参
+
+
+# 2.	lis = [2,3,'k',['qwe',20,['k',['tt',3,'1']],89],'ab','adv']  写一个函数将该列表中的tt变成大写
+# def func():
+#     lis = [2, 3, 'k', ['qwe', 20, ['k', ['tt', 3, '1']], 89], 'ab', 'adv']
+#     lis[3][2][1][0] = 'TT'  # 查下标替换tt 为 TT
+#     print(lis)
+#
+#
+# func()
+
+
+# 3. 打印该年所有月份，并显示所属季节，如：“1月 冬季 2月 冬季 3月 春季”等
+# class MyYear(object):
+#
+#     def __init__(self, year):  # 定义实例属性
+#         self.year = year
+#
+#     def show_season(self):
+#         for i in range(1, 13):  # 循环 1 - 12，然后判断
+#             if i &gt;= 3 and i &lt;= 5:
+#                 print(&quot;%d 春季&quot; % i)
+#             elif i &gt;= 6 and i &lt;= 8:
+#                 print(&quot;%d 夏季&quot; % i)
+#             elif i &gt;= 9 and i &lt;= 11:
+#                 print(&quot;%d 秋季&quot; % i)
+#             else:
+#                 print(&quot;%d 冬季&quot; % i)
+#
+#
+# year = int(input('输入年份：'))
+# p = MyYear(year)
+# p.show_season()
+
+
+# 4. 用户由键盘随机输入一个年份，如：2018，打印该年是否是闰年（能被4整除但不能被100整除，或者能被400整除的年	份）
+# class MyYear(object):
+#
+#     def __init__(self, year):  # 定义实例属性
+#         self.year = year
+#
+#     def isleap(self):
+#         if self.year % 400 == 0 or (self.year % 4 == 0 and self.year % 100 != 0):  # 判断闰年
+#             print(&quot;%d年是闰年&quot; % self.year)
+#         else:
+#             print(&quot;%d不是闰年&quot; % self.year)
+#
+#
+# year = int(input('输入年份：'))
+# p = MyYear(year)
+# p.isleap()
+
+
+# 5. 判断数字是否是回文数（数字顺读和逆读都是一样）
+# class MyYear(object):
+#
+#     def __init__(self, year):  # 定义实例属性
+#         self.year = year
+#
+#     def check_num(self):
+#         self.year = str(self.year)  # 转换类型
+#         if self.year == self.year[::-1]:  # 判断是否是回文数
+#             print(&quot;%d是回文数&quot; % int(self.year))
+#         else:
+#             print(&quot;%d不是回文数&quot; % int(self.year))
+#
+#
+# year = int(input('输入年份：'))
+# p = MyYear(year)
+# p.check_num()
+</code></pre><h3 id="面向对象">面向对象</h3>
+<pre><code># 1. 功能描述
+# 定义一个类：MyYear ，它包含：
+class MyYear(object):
+    # 1个实例属性：year
+    # 用户由键盘随机输入一个年份，如：2018，将该值作为MyYear类__init__方法的一个参数传入，并赋给类的实例属性year
+    def init(self, year):  # 定义实例属性
+        self.year = year
+
+    # 7个实例方法：
+    # 1)	show_season()
+    # 打印该年所有月份，并显示所属季节，如：“1月 冬季 2月 冬季 3月 春季”等
+    def show_season(self):
+        for i in range(1, 13):  # 循环 1 - 12，然后判断
+            if i &gt;= 3 and i &lt;= 5:
+                print(&quot;%d 春季&quot; % i)
+            elif i &gt;= 6 and i &lt;= 8:
+                print(&quot;%d 夏季&quot; % i)
+            elif i &gt;= 9 and i &lt;= 11:
+                print(&quot;%d 秋季&quot; % i)
+            else:
+                print(&quot;%d 冬季&quot; % i)
+
+    # 2)	isleap()
+    # 打印该年是否是闰年（能被4整除但不能被100整除，或者能被400整除的年	份），如：如果属性year的值为2018，则输出：“2018年不是闰年”
+    def isleap(self):
+        if self.year % 4000 or (self.year % 40 and self.year % 100 != 0):  # 判断闰年
+            print(&quot;%d年是闰年&quot; % self.year)
+
+        else:
+            print(&quot;%d不是闰年&quot; % self.year)
+
+    # 3)	year_sum()
+    # 打印从1到该年所在数字之间所有整数的和，如：如果属性year的值为2018，	则计算1+2+3+4+5+...+2018的值并输出结果。
+    def year_sum(self):
+        print(sum(range(1, self.year)))  # 循环计算 1-self.year 的和
+
+    # 4)	check_num()
+    # 判断该年所在数字是否是回文数（即是给定一个数，这个数顺读和逆读都是一样	的）并输出判断结果，如：如果属性year的值为2002，则输出“2002是回文	数”，	如果属性year的值为2018，则输出“2018不是回文数”
+    def check_num(self):
+        self.year = str(self.year)  # 转换类型
+
+        if self.year == self.year[::-1]:  # 判断是否是回文数
+            print(&quot;%d是回文数&quot; % int(self.year))
+        else:
+            print(&quot;%d不是回文数&quot; % int(self.year))
+
+    # 5)	show_leap_year()
+    # 判断从公元1年到该年所在的区间内的所有年份,输出所有闰年年份
+    # 如:如果属性year的值为20，则输出 4  8  12 16  20
+    def show_leap_year(self):
+        self.year = int(self.year)  # 转换类型
+
+        for i in range(1, self.year + 1):  # 循环1—year所有年份
+            if (i % 40 and i % 100 != 0) or (i % 4000):  # 判断闰年
+                print(int(i))
+
+    # 6)	show_num_div()
+    # 打印出从1-该年所在数字之间所有能被9整除或者包含数字9的年份,
+    # 如:如果属性year的值为20，则输出 9 18 19
+    def show_num_div(self):
+        for i in range(1, self.year + 1):  # 循环1—year所有年份
+            if i % 9 == 0 or '9' in str(i):  # 判断9整除或者包含数字9的年份
+                print(i)
+
+
+year = int(input('输入年份：'))
+p = MyYear()
+p.show_season()
+p.isleap()
+p.year_sum()
+p.check_num()
+p.show_leap_year()
+p.show_num_div()
+
+
+# 2. 功能描述
+# 定义一个类：MyNum，它包含：
+class MyNum():
+    # 1个实例属性：num
+    # 用户由键盘随机输入一个正整数数字，如：100，将该值作为MyNum类__init__方法的一个参数传入，并赋给类的实例属性num
+    def init(self, num):  # 实例属性
+        self.num = num
+
+    # 6个实例方法：
+    # 1)	show_num()
+    # 打印从1到属性num之间所有的数字，如：如果属性num为100，则打印“1 2 3 4 ...99 	100”
+    def show_num(self, num):
+        for i in range(1, num + 1):  # 循环1到属性num之间所有的数字
+            print(i)
+
+    # 2)	calc_sum()
+    # 计算从1-num之间所有数字的和并输出，如：如果属性num的值为100，则计算	1+2+3+...+99+100的值
+    def calc_sum(self, num):
+        print(sum(range(1, num + 1, )))  # 1到属性num之间所有的数字计算和
+
+    # 3)	calc_odd_sum()
+    # 计算从1-num之间所有奇数的和并输出，如：如果属性num的值为100，则计算	1+3+5+7+...+99的值
+    def calc_odd_sum(self, num):
+        print(sum(range(1, num + 1, 2)))  # 1到属性num之间所有的数字计算奇数和
+
+    # 4)	calc_even_sum()
+    # 计算从1-num之间所有偶数的和并输出，如：如果属性num的值为100，则计算	2+4+6+8+...+100的值
+    def clac_even_sum(self, num):
+        print(sum(range(0, num + 1, 2)))  # 1到属性num之间所有的数字计算偶数和
+
+    # 5)	show_num_div()
+    # 打印出从1-num之间所有能被7整除的数
+    def show_num_div(self, num):
+        l = [i for i in range(1, num + 1) if i % 7 == 0]
+
+        print(l)
+
+    # 6)	check_num()
+    # 判断num是否是回文数（即是给定一个数，这个数顺读和逆读都是一样的）并输	出判断结果，如：如果属性num的值为101，则输出“101是回文数”；如果属性	num的值为123，则输出“123不是回文数”
+    def check_num(self, num):
+        self.num = str(self.num)  # 装换类型
+
+        if self.num == self.num[::-1]:  # 判断是否是回文数
+            print(&quot;%d是回文数&quot; % int(self.num))
+        else:
+            print(&quot;%d不是回文数&quot; % int(self.num))
+
+
+num = int(input('请输入数字'))
+p = MyNum(num)
+p.show_num()
+p.calc_sum()
+p.calc_odd_sum()
+p.clac_even_sum()
+p.show_num_div()
+p.check_num()
+
+</code></pre>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+
+
+
+    </body>
+</html>

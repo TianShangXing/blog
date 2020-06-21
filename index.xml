@@ -13,6 +13,33 @@
     
     
     <item>
+      <title>Python文件操作和异常捕获</title>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%92%8C%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/</link>
+      <pubDate>Sun, 21 Jun 2020 23:26:46 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%92%8C%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/</guid>
+      <description>文件操作 打开文化 在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件
+open(文件名，访问模式)
+示例如下：
+f = open(&#39;test.txt&#39;, &#39;w&#39;) 关闭文件 close( )
+示例如下：
+# 新建一个文件，文件名为:test.txt f = open(&#39;test.txt&#39;, &#39;w&#39;) # 关闭这个文件 f.close() 读文件 以只读模式’r’打开文件,文件不存在，报错。 read:读全部内容，得到字符串 readline:一次读一行内容，得到字符串 readlines：读全部内容，得到包含每行内容的列表
+示例如下：
+f = open(&amp;quot;txt.py&amp;quot;, &amp;quot;r&amp;quot;) # 以只读模式，打开文件 # 文件读 # s = f.read() # 字符串 # s = f.readline() # 字符串 s = f.readlines() # 列表 print(s) f.close() # 关闭文件 写文件 以只写&amp;quot;w&amp;quot;模式打开文件，文件不存在，创建新文件，文件存在，清空原有内容 以追加&amp;quot;a&amp;quot;模式打开文件，文件不存在，创建新文件，文件存在，在原有内容末尾添加新内容 write:将字符串写入文件内容，想换行，手动写入&amp;rdquo;\n&amp;rdquo;
+示例如下：
+f = open(&amp;quot;txt2.py&amp;quot;, &amp;quot;w&amp;quot;) f.write(&amp;quot;hello world&amp;quot;) # 写完，不换行 f.</description>
+    </item>
+    
+    <item>
+      <title>Python函数面向对象</title>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Sat, 20 Jun 2020 22:42:10 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>函数 # 1.	请手写一个函数，用来取出1—100（均包含）中5的倍数或者带有数字5的所有整数 # def func(b): # 定义函数 添加形参 b # # for i in range(1, b + 1): # 循环所有1-b所有数字 # if i % 5 == 0 or &amp;quot;5&amp;quot; in str(i): # 判断3的倍数或者带有数字3的所有整数 # print(i) # 输出 # # # func(100) # 调用函数 添加实参 # 2.	lis = [2,3,&#39;k&#39;,[&#39;qwe&#39;,20,[&#39;k&#39;,[&#39;tt&#39;,3,&#39;1&#39;]],89],&#39;ab&#39;,&#39;adv&#39;] 写一个函数将该列表中的tt变成大写 # def func(): # lis = [2, 3, &#39;k&#39;, [&#39;qwe&#39;, 20, [&#39;k&#39;, [&#39;tt&#39;, 3, &#39;1&#39;]], 89], &#39;ab&#39;, &#39;adv&#39;] # lis[3][2][1][0] = &#39;TT&#39; # 查下标替换tt 为 TT # print(lis) # # # func() # 3.</description>
+    </item>
+    
+    <item>
       <title>Python语法进阶</title>
       <link>https://tianshangxing.github.io/blog/blogs/python%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6/</link>
       <pubDate>Thu, 18 Jun 2020 22:25:49 +0800</pubDate>
@@ -148,33 +175,6 @@ Request : 请求发送的大小；
 Response：返回数据的大小；
 Total：所有数据大小；
 Request Compression : 请求压缩；</description>
-    </item>
-    
-    <item>
-      <title>Monkey命令</title>
-      <link>https://tianshangxing.github.io/blog/blogs/monkey%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Sun, 07 Jun 2020 22:03:43 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/monkey%E5%91%BD%E4%BB%A4/</guid>
-      <description>Monkey命令   通过使用程序模拟用户对移动端设备操作(单击 拖动 滑动 按键等)进行压力测试
-  可以使用Monkey命令进行检测多长时间内发生异常错误
-  出现的方式：
- 程序的访问量的多少 程序在一定时间内进行压力尝试一直程序的奔溃 异常 错误    使用Monkey命令的方式
- 手动的方式在模拟器或者是真机操作 可以使用云测平台对于不同的手机不同的系统版本不同的测试    monkey命令的启动 adb shell monkey + 命令参数  对app进行多次访问的测试  adb monkey -p com.wan.android(包名\具体的页面) 100访问的测试  显示日志的详细程度
--v 包括 启动提示 测试完成 最终结果
--v -v 标为详细的日志 发送到activity(页面的)的事件信息
--v -v -v 最为详细的日志 测试中选中或者是没有选中的activity(信息)测试信息
-  打印日志的命令
-adb shell monkey 200 &amp;gt;d:/monkeylog.txt 调整触摸事件的占比  --pct-touch 调整触摸事件的占比 用于用户对app的操作上的时间延迟  --throttle 用于用户对app的操作上的时间延迟 单位是毫秒 如果没有时间的延迟 monkey会以最快的方式进行操作 发送请求 动作事件的占比  --pct-motion 动作事件的占比   --ignore-crashes 如果app发生崩溃或者是异常的时候 monkey会停止执行 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 --ignore-timeouts (ANR) APP发生超时限制的时候 如果在abd 命令中有此命令参数 mongkey会继续执行直至事件计数完成 0: 触摸事件的占比 1： 手势事件占比 2： 两指操作占比 3： 动作事件(有一定轨迹) 4： 屏幕旋转的占比 5： 导航事件 上下左右 6： 导航事件 home 回退 隐形菜单 7： 按键事件 关机键 音量添加 减少 8： 启动activity事件 9： 键盘抬起事件</description>
-    </item>
-    
-    <item>
-      <title>MySQL练习</title>
-      <link>https://tianshangxing.github.io/blog/blogs/mysql%E7%BB%83%E4%B9%A0/</link>
-      <pubDate>Sat, 06 Jun 2020 22:45:29 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/mysql%E7%BB%83%E4%B9%A0/</guid>
-      <description>MySQL练习题 -- 1.	创建test1数据库 CREATE DATABASE test1 charset=utf8; use test1; -- 2.	在test1数据库中创建student表 create table student( id int PRIMARY KEY auto_increment, name VARCHAR(20), score int, address VARCHAR(50), useremail VARCHAR(20) ); -- 3.	向student表中添加记录 insert into student VALUES (1, &#39;张三&#39;, 98, &#39;北京&#39;, &#39;111111111@qq.com&#39;), (2, &#39;李四&#39;, 88, &#39;上海&#39;, &#39;111111112@qq.com&#39;), (3, &#39;王五&#39;, 78, &#39;广州&#39;, &#39;111111113@qq.com&#39;), (4, &#39;赵六&#39;, 68, &#39;深圳&#39;, &#39;111111114@qq.com&#39;), (5, &#39;孙七&#39;, 58, &#39;杭州&#39;, &#39;111111115@qq.com&#39;), (6, &#39;小红&#39;, 48, &#39;北京&#39;, &#39;111111116@qq.com&#39;), (7, &#39;小黑&#39;, 99, &#39;上海&#39;, &#39;1111111117@qq.</description>
     </item>
     
   </channel>
