@@ -5,23 +5,26 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
-<meta name="description" content="JMeter测试 性能测试类型  基准测试：在给系统施加较低压力时，查看系统的运行状况并记录相关数做为基础参考 负载测试：是指对系统不断地增加压力或增加一定压力下的持续时间，直到系统的某项或多项性能指标达到安全临界值，例如某种资源已经达到饱和状态等 。 压力测试：压力测试是评估系统处于或超过预期负载时系统的运行情况，关注点在于系统在峰值负载或超出最大载荷情况下的处理能力。 稳定性测试（可靠性测试）：在给系统加载一定业务压力的情况下，使系统运行一段时间，以此检测系统是否稳定。24X3小时 并发测试：测试多个用户同时访问同一个应用、同一个模块或者数据记录时是否存在死锁或者其他性能问题，  线程组 进程：一个正在执行的程序对应一个进程 线程：一个进程有多个执行线程 线程组：按照线程性质对线程分组 三者关系：一个进程有多个线程组，一个线程组有多个线程
+<meta name="description" content="JMeter测试 性能测试类型 基准测试：在给系统施加较低压力时，查看系统的运行状况并记录相关数做为基础参考 负载测试：是指对系统不断地增加压力或增加一定压力下的持续时间，直到系统的某项或多项性能指标达到安全临界值，例如某种资源已经达到饱和状态等 。 压力测试：压力测试是评估系统处于或超过预期负载时系统的运行情况，关注点在于系统在峰值负载或超出最大载荷情况下的处理能力。 稳定性测试（可靠性测试）：在给系统加载一定业务压力的情况下，使系统运行一段时间，以此检测系统是否稳定。24X3小时 并发测试：测试多个用户同时访问同一个应用、同一个模块或者数据记录时是否存在死锁或者其他性能问题， 线程组 进程：一个正在执行的程序对应一个进程 线程：一个进程有多个执行线程 线程组：按照线程性质对线程分组 三者关系：一个进程有多个线程组，一个线程组有多个线程
 测试计划—线程组—线程组属性中的线程数
 并发执行：多个线程同时执行，特点：执行结束的顺序与开始的顺序不一致
 顺序执行：按照线程的启动顺序挨个执行
 默认情况下，线程组中的线程是并发执行
 每一个线程都要执行组内的http请求 设置线程组顺序执行：勾选测试计划中的（独立运行每个线程组）
 线程组用来模拟用户的并发访问
- 线程组主要包含三个参数：线程数、准备时长(Ramp-Up Period(in seconds))、循环次数。 线程数：虚拟用户数。一个虚拟用户占用一个进程或线程。设置多少虚拟用户数在这里也就是设置多少个线程数。 准备时长（秒）：设置的虚拟用户数需要多长时间全部启动。如果线程数为20 ，准备时长为10 ，那么需要10秒钟启动20个线程。也就是每秒钟启动2个线程。 循环次数：每个线程发送请求的次数。如果线程数为20 ，循环次数为100 ，那么每个线程发送100次请求。总请求数为20*100=2000 。如果勾选了“永远”，那么所有线程会一直发送请求，一到选择停止运行脚本。 调度器：设置线程组启动的开始时间和结束时间(配置调度器时，需要勾选循环次数为永远) 持续时间（秒）：测试持续时间，会覆盖结束时间 启动延迟（秒）：测试延迟启动时间，会覆盖启动时间 启动时间：测试启动时间，启动延迟会覆盖它。当启动时间已过，手动只需测试时当前时间也会覆盖它。 结束时间：测试结束时间，持续时间会覆盖它。   JMeter主要组件   测试计划是使用 JMeter 进行测试的起点，它是其它 JMeter 测试元件的容器。
-  线程组：代表一定数量的并发用户，它可以用来模拟并发用户发送请求。实际的请求内容在Sampler中定义，它被线程组包含。可以在“测试计划-&amp;gt;添加-&amp;gt;线程组”来建立它，然后在线程组面板里有几个输入栏：线程数、Ramp-Up Period(in seconds)、循环次数，其中Ramp-Up Period(in seconds)表示在这时间内创建完所有的线程。如有8个线程，Ramp-Up = 200秒，那么线程的启动时间间隔为200/8=25秒，这样的好处是：一开始不会对服务器有太大的负载。线程组是为模拟并发负载而设计。
-  取样器（Sampler）：模拟各种请求。所有实际的测试任务都由取样器承担，存在很多种请求。如：HTTP 、ftp请求等等。
-  监听器：负责收集测试结果，同时也被告知了结果显示的方式。功能是对取样器的请求结果显示、统计一些数据（吞吐量、KB/S……）等。
-  逻辑控制器：允许自定义JMeter发送请求的行为逻辑，它与Sampler结合使用可以模拟复杂的请求序列。
-  断言：用于来判断请求响应的结果是否如用户所期望，是否正确。它可以用来隔离问题域，即在确保功能正确的前提下执行压力测试。这个限制对于有效的测试是非常有用的。" />
+线程组主要包含三个参数：线程数、准备时长(Ramp-Up Period(in seconds))、循环次数。 线程数：虚拟用户数。一个虚拟用户占用一个进程或线程。设置多少虚拟用户数在这里也就是设置多少个线程数。 准备时长（秒）：设置的虚拟用户数需要多长时间全部启动。如果线程数为20 ，准备时长为10 ，那么需要10秒钟启动20个线程。也就是每秒钟启动2个线程。 循环次数：每个线程发送请求的次数。如果线程数为20 ，循环次数为100 ，那么每个线程发送100次请求。总请求数为20*100=2000 。如果勾选了“永远”，那么所有线程会一直发送请求，一到选择停止运行脚本。 调度器：设置线程组启动的开始时间和结束时间(配置调度器时，需要勾选循环次数为永远) 持续时间（秒）：测试持续时间，会覆盖结束时间 启动延迟（秒）：测试延迟启动时间，会覆盖启动时间 启动时间：测试启动时间，启动延迟会覆盖它。当启动时间已过，手动只需测试时当前时间也会覆盖它。 结束时间：测试结束时间，持续时间会覆盖它。 JMeter主要组件 测试计划是使用 JMeter 进行测试的起点，它是其它 JMeter 测试元件的容器。
+线程组：代表一定数量的并发用户，它可以用来模拟并发用户发送请求。实际的请求内容在Sampler中定义，它被线程组包含。可以在“测试计划-&amp;gt;添加-&amp;gt;线程组”来建立它，然后在线程组面板里有几个输入栏：线程数、Ramp-Up Period(in seconds)、循环次数，其中Ramp-Up Period(in seconds)表示在这时间内创建完所有的线程。如有8个线程，Ramp-Up = 200秒，那么线程的启动时间间隔为200/8=25秒，这样的好处是：一开始不会对服务器有太大的负载。线程组是为模拟并发负载而设计。
+取样器（Sampler）：模拟各种请求。所有实际的测试任务都由取样器承担，存在很多种请求。如：HTTP 、ftp请求等等。
+监听器：负责收集测试结果，同时也被告知了结果显示的方式。功能是对取样器的请求结果显示、统计一些数据（吞吐量、KB/S……）等。
+逻辑控制器：允许自定义JMeter发送请求的行为逻辑，它与Sampler结合使用可以模拟复杂的请求序列。
+断言：用于来判断请求响应的结果是否如用户所期望，是否正确。它可以用来隔离问题域，即在确保功能正确的前提下执行压力测试。这个限制对于有效的测试是非常有用的。
+定时器：负责定义请求（线程）之间的延迟间隔，模拟对服务器的连续请求。
+配置元件维护Sampler需要的配置信息，并根据实际的需要会修改请求的内容。
+前置处理器和后置处理器负责在生成请求之前和之后完成工作。前置处理器常常用来修改请求的设置，后置处理器则常常用来处理响应的数据。" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/jmeter%E4%BD%BF%E7%94%A8/" />
+<link rel="canonical" href="/blogs/jmeter%E4%BD%BF%E7%94%A8/" />
 
 
     <title>
@@ -37,61 +40,62 @@
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
-    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
-    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
-    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#252627">
     <meta name="theme-color" content="#252627">
 
 
 
 <meta itemprop="name" content="JMeter使用">
-<meta itemprop="description" content="JMeter测试 性能测试类型  基准测试：在给系统施加较低压力时，查看系统的运行状况并记录相关数做为基础参考 负载测试：是指对系统不断地增加压力或增加一定压力下的持续时间，直到系统的某项或多项性能指标达到安全临界值，例如某种资源已经达到饱和状态等 。 压力测试：压力测试是评估系统处于或超过预期负载时系统的运行情况，关注点在于系统在峰值负载或超出最大载荷情况下的处理能力。 稳定性测试（可靠性测试）：在给系统加载一定业务压力的情况下，使系统运行一段时间，以此检测系统是否稳定。24X3小时 并发测试：测试多个用户同时访问同一个应用、同一个模块或者数据记录时是否存在死锁或者其他性能问题，  线程组 进程：一个正在执行的程序对应一个进程 线程：一个进程有多个执行线程 线程组：按照线程性质对线程分组 三者关系：一个进程有多个线程组，一个线程组有多个线程
+<meta itemprop="description" content="JMeter测试 性能测试类型 基准测试：在给系统施加较低压力时，查看系统的运行状况并记录相关数做为基础参考 负载测试：是指对系统不断地增加压力或增加一定压力下的持续时间，直到系统的某项或多项性能指标达到安全临界值，例如某种资源已经达到饱和状态等 。 压力测试：压力测试是评估系统处于或超过预期负载时系统的运行情况，关注点在于系统在峰值负载或超出最大载荷情况下的处理能力。 稳定性测试（可靠性测试）：在给系统加载一定业务压力的情况下，使系统运行一段时间，以此检测系统是否稳定。24X3小时 并发测试：测试多个用户同时访问同一个应用、同一个模块或者数据记录时是否存在死锁或者其他性能问题， 线程组 进程：一个正在执行的程序对应一个进程 线程：一个进程有多个执行线程 线程组：按照线程性质对线程分组 三者关系：一个进程有多个线程组，一个线程组有多个线程
 测试计划—线程组—线程组属性中的线程数
 并发执行：多个线程同时执行，特点：执行结束的顺序与开始的顺序不一致
 顺序执行：按照线程的启动顺序挨个执行
 默认情况下，线程组中的线程是并发执行
 每一个线程都要执行组内的http请求 设置线程组顺序执行：勾选测试计划中的（独立运行每个线程组）
 线程组用来模拟用户的并发访问
- 线程组主要包含三个参数：线程数、准备时长(Ramp-Up Period(in seconds))、循环次数。 线程数：虚拟用户数。一个虚拟用户占用一个进程或线程。设置多少虚拟用户数在这里也就是设置多少个线程数。 准备时长（秒）：设置的虚拟用户数需要多长时间全部启动。如果线程数为20 ，准备时长为10 ，那么需要10秒钟启动20个线程。也就是每秒钟启动2个线程。 循环次数：每个线程发送请求的次数。如果线程数为20 ，循环次数为100 ，那么每个线程发送100次请求。总请求数为20*100=2000 。如果勾选了“永远”，那么所有线程会一直发送请求，一到选择停止运行脚本。 调度器：设置线程组启动的开始时间和结束时间(配置调度器时，需要勾选循环次数为永远) 持续时间（秒）：测试持续时间，会覆盖结束时间 启动延迟（秒）：测试延迟启动时间，会覆盖启动时间 启动时间：测试启动时间，启动延迟会覆盖它。当启动时间已过，手动只需测试时当前时间也会覆盖它。 结束时间：测试结束时间，持续时间会覆盖它。   JMeter主要组件   测试计划是使用 JMeter 进行测试的起点，它是其它 JMeter 测试元件的容器。
-  线程组：代表一定数量的并发用户，它可以用来模拟并发用户发送请求。实际的请求内容在Sampler中定义，它被线程组包含。可以在“测试计划-&gt;添加-&gt;线程组”来建立它，然后在线程组面板里有几个输入栏：线程数、Ramp-Up Period(in seconds)、循环次数，其中Ramp-Up Period(in seconds)表示在这时间内创建完所有的线程。如有8个线程，Ramp-Up = 200秒，那么线程的启动时间间隔为200/8=25秒，这样的好处是：一开始不会对服务器有太大的负载。线程组是为模拟并发负载而设计。
-  取样器（Sampler）：模拟各种请求。所有实际的测试任务都由取样器承担，存在很多种请求。如：HTTP 、ftp请求等等。
-  监听器：负责收集测试结果，同时也被告知了结果显示的方式。功能是对取样器的请求结果显示、统计一些数据（吞吐量、KB/S……）等。
-  逻辑控制器：允许自定义JMeter发送请求的行为逻辑，它与Sampler结合使用可以模拟复杂的请求序列。
-  断言：用于来判断请求响应的结果是否如用户所期望，是否正确。它可以用来隔离问题域，即在确保功能正确的前提下执行压力测试。这个限制对于有效的测试是非常有用的。">
-<meta itemprop="datePublished" content="2020-06-10T23:39:21&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-10T23:39:21&#43;08:00" />
-<meta itemprop="wordCount" content="57">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+线程组主要包含三个参数：线程数、准备时长(Ramp-Up Period(in seconds))、循环次数。 线程数：虚拟用户数。一个虚拟用户占用一个进程或线程。设置多少虚拟用户数在这里也就是设置多少个线程数。 准备时长（秒）：设置的虚拟用户数需要多长时间全部启动。如果线程数为20 ，准备时长为10 ，那么需要10秒钟启动20个线程。也就是每秒钟启动2个线程。 循环次数：每个线程发送请求的次数。如果线程数为20 ，循环次数为100 ，那么每个线程发送100次请求。总请求数为20*100=2000 。如果勾选了“永远”，那么所有线程会一直发送请求，一到选择停止运行脚本。 调度器：设置线程组启动的开始时间和结束时间(配置调度器时，需要勾选循环次数为永远) 持续时间（秒）：测试持续时间，会覆盖结束时间 启动延迟（秒）：测试延迟启动时间，会覆盖启动时间 启动时间：测试启动时间，启动延迟会覆盖它。当启动时间已过，手动只需测试时当前时间也会覆盖它。 结束时间：测试结束时间，持续时间会覆盖它。 JMeter主要组件 测试计划是使用 JMeter 进行测试的起点，它是其它 JMeter 测试元件的容器。
+线程组：代表一定数量的并发用户，它可以用来模拟并发用户发送请求。实际的请求内容在Sampler中定义，它被线程组包含。可以在“测试计划-&gt;添加-&gt;线程组”来建立它，然后在线程组面板里有几个输入栏：线程数、Ramp-Up Period(in seconds)、循环次数，其中Ramp-Up Period(in seconds)表示在这时间内创建完所有的线程。如有8个线程，Ramp-Up = 200秒，那么线程的启动时间间隔为200/8=25秒，这样的好处是：一开始不会对服务器有太大的负载。线程组是为模拟并发负载而设计。
+取样器（Sampler）：模拟各种请求。所有实际的测试任务都由取样器承担，存在很多种请求。如：HTTP 、ftp请求等等。
+监听器：负责收集测试结果，同时也被告知了结果显示的方式。功能是对取样器的请求结果显示、统计一些数据（吞吐量、KB/S……）等。
+逻辑控制器：允许自定义JMeter发送请求的行为逻辑，它与Sampler结合使用可以模拟复杂的请求序列。
+断言：用于来判断请求响应的结果是否如用户所期望，是否正确。它可以用来隔离问题域，即在确保功能正确的前提下执行压力测试。这个限制对于有效的测试是非常有用的。
+定时器：负责定义请求（线程）之间的延迟间隔，模拟对服务器的连续请求。
+配置元件维护Sampler需要的配置信息，并根据实际的需要会修改请求的内容。
+前置处理器和后置处理器负责在生成请求之前和之后完成工作。前置处理器常常用来修改请求的设置，后置处理器则常常用来处理响应的数据。"><meta itemprop="datePublished" content="2020-06-10T23:39:21+08:00" />
+<meta itemprop="dateModified" content="2020-06-10T23:39:21+08:00" />
+<meta itemprop="wordCount" content="57"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="JMeter使用"/>
-<meta name="twitter:description" content="JMeter测试 性能测试类型  基准测试：在给系统施加较低压力时，查看系统的运行状况并记录相关数做为基础参考 负载测试：是指对系统不断地增加压力或增加一定压力下的持续时间，直到系统的某项或多项性能指标达到安全临界值，例如某种资源已经达到饱和状态等 。 压力测试：压力测试是评估系统处于或超过预期负载时系统的运行情况，关注点在于系统在峰值负载或超出最大载荷情况下的处理能力。 稳定性测试（可靠性测试）：在给系统加载一定业务压力的情况下，使系统运行一段时间，以此检测系统是否稳定。24X3小时 并发测试：测试多个用户同时访问同一个应用、同一个模块或者数据记录时是否存在死锁或者其他性能问题，  线程组 进程：一个正在执行的程序对应一个进程 线程：一个进程有多个执行线程 线程组：按照线程性质对线程分组 三者关系：一个进程有多个线程组，一个线程组有多个线程
+<meta name="twitter:description" content="JMeter测试 性能测试类型 基准测试：在给系统施加较低压力时，查看系统的运行状况并记录相关数做为基础参考 负载测试：是指对系统不断地增加压力或增加一定压力下的持续时间，直到系统的某项或多项性能指标达到安全临界值，例如某种资源已经达到饱和状态等 。 压力测试：压力测试是评估系统处于或超过预期负载时系统的运行情况，关注点在于系统在峰值负载或超出最大载荷情况下的处理能力。 稳定性测试（可靠性测试）：在给系统加载一定业务压力的情况下，使系统运行一段时间，以此检测系统是否稳定。24X3小时 并发测试：测试多个用户同时访问同一个应用、同一个模块或者数据记录时是否存在死锁或者其他性能问题， 线程组 进程：一个正在执行的程序对应一个进程 线程：一个进程有多个执行线程 线程组：按照线程性质对线程分组 三者关系：一个进程有多个线程组，一个线程组有多个线程
 测试计划—线程组—线程组属性中的线程数
 并发执行：多个线程同时执行，特点：执行结束的顺序与开始的顺序不一致
 顺序执行：按照线程的启动顺序挨个执行
 默认情况下，线程组中的线程是并发执行
 每一个线程都要执行组内的http请求 设置线程组顺序执行：勾选测试计划中的（独立运行每个线程组）
 线程组用来模拟用户的并发访问
- 线程组主要包含三个参数：线程数、准备时长(Ramp-Up Period(in seconds))、循环次数。 线程数：虚拟用户数。一个虚拟用户占用一个进程或线程。设置多少虚拟用户数在这里也就是设置多少个线程数。 准备时长（秒）：设置的虚拟用户数需要多长时间全部启动。如果线程数为20 ，准备时长为10 ，那么需要10秒钟启动20个线程。也就是每秒钟启动2个线程。 循环次数：每个线程发送请求的次数。如果线程数为20 ，循环次数为100 ，那么每个线程发送100次请求。总请求数为20*100=2000 。如果勾选了“永远”，那么所有线程会一直发送请求，一到选择停止运行脚本。 调度器：设置线程组启动的开始时间和结束时间(配置调度器时，需要勾选循环次数为永远) 持续时间（秒）：测试持续时间，会覆盖结束时间 启动延迟（秒）：测试延迟启动时间，会覆盖启动时间 启动时间：测试启动时间，启动延迟会覆盖它。当启动时间已过，手动只需测试时当前时间也会覆盖它。 结束时间：测试结束时间，持续时间会覆盖它。   JMeter主要组件   测试计划是使用 JMeter 进行测试的起点，它是其它 JMeter 测试元件的容器。
-  线程组：代表一定数量的并发用户，它可以用来模拟并发用户发送请求。实际的请求内容在Sampler中定义，它被线程组包含。可以在“测试计划-&gt;添加-&gt;线程组”来建立它，然后在线程组面板里有几个输入栏：线程数、Ramp-Up Period(in seconds)、循环次数，其中Ramp-Up Period(in seconds)表示在这时间内创建完所有的线程。如有8个线程，Ramp-Up = 200秒，那么线程的启动时间间隔为200/8=25秒，这样的好处是：一开始不会对服务器有太大的负载。线程组是为模拟并发负载而设计。
-  取样器（Sampler）：模拟各种请求。所有实际的测试任务都由取样器承担，存在很多种请求。如：HTTP 、ftp请求等等。
-  监听器：负责收集测试结果，同时也被告知了结果显示的方式。功能是对取样器的请求结果显示、统计一些数据（吞吐量、KB/S……）等。
-  逻辑控制器：允许自定义JMeter发送请求的行为逻辑，它与Sampler结合使用可以模拟复杂的请求序列。
-  断言：用于来判断请求响应的结果是否如用户所期望，是否正确。它可以用来隔离问题域，即在确保功能正确的前提下执行压力测试。这个限制对于有效的测试是非常有用的。"/>
+线程组主要包含三个参数：线程数、准备时长(Ramp-Up Period(in seconds))、循环次数。 线程数：虚拟用户数。一个虚拟用户占用一个进程或线程。设置多少虚拟用户数在这里也就是设置多少个线程数。 准备时长（秒）：设置的虚拟用户数需要多长时间全部启动。如果线程数为20 ，准备时长为10 ，那么需要10秒钟启动20个线程。也就是每秒钟启动2个线程。 循环次数：每个线程发送请求的次数。如果线程数为20 ，循环次数为100 ，那么每个线程发送100次请求。总请求数为20*100=2000 。如果勾选了“永远”，那么所有线程会一直发送请求，一到选择停止运行脚本。 调度器：设置线程组启动的开始时间和结束时间(配置调度器时，需要勾选循环次数为永远) 持续时间（秒）：测试持续时间，会覆盖结束时间 启动延迟（秒）：测试延迟启动时间，会覆盖启动时间 启动时间：测试启动时间，启动延迟会覆盖它。当启动时间已过，手动只需测试时当前时间也会覆盖它。 结束时间：测试结束时间，持续时间会覆盖它。 JMeter主要组件 测试计划是使用 JMeter 进行测试的起点，它是其它 JMeter 测试元件的容器。
+线程组：代表一定数量的并发用户，它可以用来模拟并发用户发送请求。实际的请求内容在Sampler中定义，它被线程组包含。可以在“测试计划-&gt;添加-&gt;线程组”来建立它，然后在线程组面板里有几个输入栏：线程数、Ramp-Up Period(in seconds)、循环次数，其中Ramp-Up Period(in seconds)表示在这时间内创建完所有的线程。如有8个线程，Ramp-Up = 200秒，那么线程的启动时间间隔为200/8=25秒，这样的好处是：一开始不会对服务器有太大的负载。线程组是为模拟并发负载而设计。
+取样器（Sampler）：模拟各种请求。所有实际的测试任务都由取样器承担，存在很多种请求。如：HTTP 、ftp请求等等。
+监听器：负责收集测试结果，同时也被告知了结果显示的方式。功能是对取样器的请求结果显示、统计一些数据（吞吐量、KB/S……）等。
+逻辑控制器：允许自定义JMeter发送请求的行为逻辑，它与Sampler结合使用可以模拟复杂的请求序列。
+断言：用于来判断请求响应的结果是否如用户所期望，是否正确。它可以用来隔离问题域，即在确保功能正确的前提下执行压力测试。这个限制对于有效的测试是非常有用的。
+定时器：负责定义请求（线程）之间的延迟间隔，模拟对服务器的连续请求。
+配置元件维护Sampler需要的配置信息，并根据实际的需要会修改请求的内容。
+前置处理器和后置处理器负责在生成请求之前和之后完成工作。前置处理器常常用来修改请求的设置，后置处理器则常常用来处理响应的数据。"/>
 
 
 
@@ -114,7 +118,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -132,7 +136,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
     </ul>
 </nav>
 
@@ -165,7 +169,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/jmeter%E4%BD%BF%E7%94%A8/">JMeter使用</a></h2>
+            <h2 class="post-title"><a href="/blogs/jmeter%E4%BD%BF%E7%94%A8/">JMeter使用</a></h2>
 
             
 
@@ -249,12 +253,12 @@
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -273,7 +277,7 @@
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 

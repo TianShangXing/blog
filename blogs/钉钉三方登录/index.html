@@ -12,14 +12,14 @@
 创建一个网站应用，其中有用的信息是appid,appsecret，还有回调网址
 随后，查看官方文档，查看如何构造登录url: https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6
 这里我们用django的视图来操作
-# 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;amp;response_type=code&amp;amp;scope=snsapi_login&amp;amp;state=STATE&amp;amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
+# 构造钉钉登录url def ding_url(request): appid = &amp;#39;dingoaukgkwqknzjvamdqh&amp;#39; redirect_uri = &amp;#39;http://localhost:8000/dingding_back/&amp;#39; return redirect(&amp;#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&amp;#39; &#43; appid &#43;&amp;#39;&amp;amp;response_type=code&amp;amp;scope=snsapi_login&amp;amp;state=STATE&amp;amp;redirect_uri=&amp;#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
 随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
 怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
-import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&amp;quot;code&amp;quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64." />
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&amp;#34;code&amp;#34;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&amp;#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&amp;#39; # 构造签名 signature = base64." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/%E9%92%89%E9%92%89%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" />
+<link rel="canonical" href="/blogs/%E9%92%89%E9%92%89%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/" />
 
 
     <title>
@@ -35,17 +35,17 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
-    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
-    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
-    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#252627">
     <meta name="theme-color" content="#252627">
 
@@ -62,17 +62,12 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 # 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
 随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
 怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
-import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64.">
-<meta itemprop="datePublished" content="2020-04-02T19:13:18&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-02T19:13:18&#43;08:00" />
-<meta itemprop="wordCount" content="94">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&#34;code&#34;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64."><meta itemprop="datePublished" content="2020-04-02T19:13:18+08:00" />
+<meta itemprop="dateModified" content="2020-04-02T19:13:18+08:00" />
+<meta itemprop="wordCount" content="94"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="钉钉三方登录"/>
 <meta name="twitter:description" content="钉钉（DingTalk） 是阿里巴巴集团专为中国企业打造的免费沟通和协同的多端平台，提供PC版，Web版和手机版，支持手机和电脑间文件互传。
@@ -85,7 +80,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 # 构造钉钉登录url def ding_url(request): appid = &#39;dingoaukgkwqknzjvamdqh&#39; redirect_uri = &#39;http://localhost:8000/dingding_back/&#39; return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; &#43; appid &#43;&#39;&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=&#39; &#43; redirect_uri) 然后访问: http://localhost:8000/ding_url，就可以进行扫码
 随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的
 怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可
-import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&quot;code&quot;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64."/>
+import time import hmac import base64 from hashlib import sha256 import urllib import json # 构造钉钉回调方法 def ding_back(request): # 获取code code = request.GET.get(&#34;code&#34;) t = time.time() # 时间戳 timestamp = str((int(round(t * 1000)))) appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39; # 构造签名 signature = base64."/>
 
 
 
@@ -108,7 +103,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -126,7 +121,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
     </ul>
 </nav>
 
@@ -159,7 +154,7 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/%E9%92%89%E9%92%89%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">钉钉三方登录</a></h2>
+            <h2 class="post-title"><a href="/blogs/%E9%92%89%E9%92%89%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/">钉钉三方登录</a></h2>
 
             
 
@@ -173,18 +168,18 @@ import time import hmac import base64 from hashlib import sha256 import urllib i
 <p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20191221/20191221095537_44738.png" alt=""></p>
 <p>随后，查看官方文档，查看如何构造登录url: <a href="https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6">https://ding-doc.dingtalk.com/doc#/serverapi2/kymkv6</a></p>
 <p>这里我们用django的视图来操作</p>
-<pre><code># 构造钉钉登录url
+<pre tabindex="0"><code># 构造钉钉登录url
 def ding_url(request):
-    appid = 'dingoaukgkwqknzjvamdqh'
-    redirect_uri = 'http://localhost:8000/dingding_back/'
+    appid = &#39;dingoaukgkwqknzjvamdqh&#39;
+    redirect_uri = &#39;http://localhost:8000/dingding_back/&#39;
 
-    return redirect('https://oapi.dingtalk.com/connect/qrconnect?appid=' + appid +'&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=' + redirect_uri)
+    return redirect(&#39;https://oapi.dingtalk.com/connect/qrconnect?appid=&#39; + appid +&#39;&amp;response_type=code&amp;scope=snsapi_login&amp;state=STATE&amp;redirect_uri=&#39; + redirect_uri)
 </code></pre><p>然后访问: http://localhost:8000/ding_url，就可以进行扫码</p>
 <p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20191221/20191221100217_14450.png" alt=""></p>
 <p>随后，钉钉会将code返回到回调网址中，查看官方文档，只有java和php的sdk，并没有python的</p>
 <p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20191221/20191221100604_41675.png" alt=""></p>
 <p>怎么办，没关系，自己写，逻辑很简单，将时间戳，秘钥进行hmac加密即可</p>
-<pre><code>import time
+<pre tabindex="0"><code>import time
 import hmac
 import base64
 from hashlib import sha256
@@ -195,21 +190,21 @@ import json
 def ding_back(request):
 
     # 获取code
-    code = request.GET.get(&quot;code&quot;)
+    code = request.GET.get(&#34;code&#34;)
 
     t = time.time()
     
     # 时间戳
     timestamp = str((int(round(t * 1000))))
-    appSecret ='ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160'
+    appSecret =&#39;ly-AzMKMmCKQP3geaILT_An32kEfKO3HeOtApy5CgKwjytevVZC0WYsT2gxMB160&#39;
 
     # 构造签名
-    signature = base64.b64encode(hmac.new(appSecret.encode('utf-8'),timestamp.encode('utf-8'), digestmod=sha256).digest())
+    signature = base64.b64encode(hmac.new(appSecret.encode(&#39;utf-8&#39;),timestamp.encode(&#39;utf-8&#39;), digestmod=sha256).digest())
     
     # 请求接口，换取钉钉用户名
-    payload = {'tmp_auth_code':code}
-    headers = {'Content-Type': 'application/json'}
-    res = requests.post('https://oapi.dingtalk.com/sns/getuserinfo_bycode?signature='+urllib.parse.quote(signature.decode(&quot;utf-8&quot;))+&quot;&amp;timestamp=&quot;+timestamp+&quot;&amp;      accessKey=dingoaukgkwqknzjvamdqh&quot;,data=json.dumps(payload),headers=headers)
+    payload = {&#39;tmp_auth_code&#39;:code}
+    headers = {&#39;Content-Type&#39;: &#39;application/json&#39;}
+    res = requests.post(&#39;https://oapi.dingtalk.com/sns/getuserinfo_bycode?signature=&#39;+urllib.parse.quote(signature.decode(&#34;utf-8&#34;))+&#34;&amp;timestamp=&#34;+timestamp+&#34;&amp;      accessKey=dingoaukgkwqknzjvamdqh&#34;,data=json.dumps(payload),headers=headers)
 
     res_dict = json.loads(res.text)
     print(res_dict)
@@ -232,12 +227,12 @@ def ding_back(request):
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -256,7 +251,7 @@ def ding_back(request):
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 

@@ -14,12 +14,12 @@
 这里推荐使用高精度的接口，普通的识别率太差了
 在帮助文档里找到 通用文字识别（高精度版）
 第一步，获取access_token
-# 获取token res = requests.get(&amp;quot;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;amp;client_id=你的key&amp;amp;client_secret=你的秘钥&amp;quot;) res = json.loads(str(res.text)) token = res[&#39;access_token&#39;] 然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码
-# 接口地址 url = &#39;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=&#39; &#43; token # 定义头部信息 myheaders = {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;} # 操作图片 myimg = open(&#39;./code.png&#39;, &#39;rb&#39;) # 读取图片 temp_img = myimg.read() myimg.close() # 进行base64编码 temp_data = {&#39;image&#39;:base64.b64encode(temp_img)} # 对图片地址进行urlencode操作 temp_data = urllib.parse.urlencode(temp_data) # 请求视图接口 res = requests.post(url=url, data=temp_data, headers=myheaders) code = res." />
+# 获取token res = requests.get(&amp;#34;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;amp;client_id=你的key&amp;amp;client_secret=你的秘钥&amp;#34;) res = json.loads(str(res.text)) token = res[&amp;#39;access_token&amp;#39;] 然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码
+# 接口地址 url = &amp;#39;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=&amp;#39; &#43; token # 定义头部信息 myheaders = {&amp;#39;Content-Type&amp;#39;: &amp;#39;application/x-www-form-urlencoded&amp;#39;} # 操作图片 myimg = open(&amp;#39;./code.png&amp;#39;, &amp;#39;rb&amp;#39;) # 读取图片 temp_img = myimg.read() myimg.close() # 进行base64编码 temp_data = {&amp;#39;image&amp;#39;:base64.b64encode(temp_img)} # 对图片地址进行urlencode操作 temp_data = urllib.parse.urlencode(temp_data) # 请求视图接口 res = requests.post(url=url, data=temp_data, headers=myheaders) code = res." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" />
+<link rel="canonical" href="/blogs/%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/" />
 
 
     <title>
@@ -35,17 +35,17 @@
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
-    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
-    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
-    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#252627">
     <meta name="theme-color" content="#252627">
 
@@ -61,18 +61,13 @@
 这里推荐使用高精度的接口，普通的识别率太差了
 在帮助文档里找到 通用文字识别（高精度版）
 第一步，获取access_token
-# 获取token res = requests.get(&quot;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=你的key&amp;client_secret=你的秘钥&quot;) res = json.loads(str(res.text)) token = res[&#39;access_token&#39;] 然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码
-# 接口地址 url = &#39;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=&#39; &#43; token # 定义头部信息 myheaders = {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;} # 操作图片 myimg = open(&#39;./code.png&#39;, &#39;rb&#39;) # 读取图片 temp_img = myimg.read() myimg.close() # 进行base64编码 temp_data = {&#39;image&#39;:base64.b64encode(temp_img)} # 对图片地址进行urlencode操作 temp_data = urllib.parse.urlencode(temp_data) # 请求视图接口 res = requests.post(url=url, data=temp_data, headers=myheaders) code = res.">
-<meta itemprop="datePublished" content="2020-04-28T16:11:20&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-28T16:11:20&#43;08:00" />
-<meta itemprop="wordCount" content="78">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+# 获取token res = requests.get(&#34;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=你的key&amp;client_secret=你的秘钥&#34;) res = json.loads(str(res.text)) token = res[&#39;access_token&#39;] 然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码
+# 接口地址 url = &#39;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=&#39; &#43; token # 定义头部信息 myheaders = {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;} # 操作图片 myimg = open(&#39;./code.png&#39;, &#39;rb&#39;) # 读取图片 temp_img = myimg.read() myimg.close() # 进行base64编码 temp_data = {&#39;image&#39;:base64.b64encode(temp_img)} # 对图片地址进行urlencode操作 temp_data = urllib.parse.urlencode(temp_data) # 请求视图接口 res = requests.post(url=url, data=temp_data, headers=myheaders) code = res."><meta itemprop="datePublished" content="2020-04-28T16:11:20+08:00" />
+<meta itemprop="dateModified" content="2020-04-28T16:11:20+08:00" />
+<meta itemprop="wordCount" content="78"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="百度智能云文字识别"/>
 <meta name="twitter:description" content="现在好多的网址在登录时都需要输入验证码才能够登录成功，防止被恶意登录
@@ -84,7 +79,7 @@
 这里推荐使用高精度的接口，普通的识别率太差了
 在帮助文档里找到 通用文字识别（高精度版）
 第一步，获取access_token
-# 获取token res = requests.get(&quot;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=你的key&amp;client_secret=你的秘钥&quot;) res = json.loads(str(res.text)) token = res[&#39;access_token&#39;] 然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码
+# 获取token res = requests.get(&#34;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=你的key&amp;client_secret=你的秘钥&#34;) res = json.loads(str(res.text)) token = res[&#39;access_token&#39;] 然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码
 # 接口地址 url = &#39;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=&#39; &#43; token # 定义头部信息 myheaders = {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;} # 操作图片 myimg = open(&#39;./code.png&#39;, &#39;rb&#39;) # 读取图片 temp_img = myimg.read() myimg.close() # 进行base64编码 temp_data = {&#39;image&#39;:base64.b64encode(temp_img)} # 对图片地址进行urlencode操作 temp_data = urllib.parse.urlencode(temp_data) # 请求视图接口 res = requests.post(url=url, data=temp_data, headers=myheaders) code = res."/>
 
 
@@ -108,7 +103,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -126,7 +121,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
     </ul>
 </nav>
 
@@ -159,7 +154,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/">百度智能云文字识别</a></h2>
+            <h2 class="post-title"><a href="/blogs/%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/">百度智能云文字识别</a></h2>
 
             
 
@@ -176,20 +171,20 @@
 <p>在帮助文档里找到 通用文字识别（高精度版）</p>
 <p><img src="https://v3u.cn/v3u/Public/js/editor/attached/image/20200305/20200305073231_98368.png" alt=""></p>
 <p>第一步，获取access_token</p>
-<pre><code># 获取token
-res = requests.get(&quot;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=你的key&amp;client_secret=你的秘钥&quot;)
+<pre tabindex="0"><code># 获取token
+res = requests.get(&#34;https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=你的key&amp;client_secret=你的秘钥&#34;)
 
 res = json.loads(str(res.text))
-token = res['access_token']
+token = res[&#39;access_token&#39;]
 </code></pre><p>然后请求高精度识别接口，需要注意一点，这里图片需要转换成base64编码</p>
-<pre><code># 接口地址
-url = 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=' + token
+<pre tabindex="0"><code># 接口地址
+url = &#39;https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic?access_token=&#39; + token
 
 # 定义头部信息
-myheaders = {'Content-Type': 'application/x-www-form-urlencoded'}
+myheaders = {&#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;}
 
 # 操作图片
-myimg = open('./code.png', 'rb')
+myimg = open(&#39;./code.png&#39;, &#39;rb&#39;)
 
 # 读取图片
 temp_img = myimg.read()
@@ -197,7 +192,7 @@ temp_img = myimg.read()
 myimg.close()
 
 # 进行base64编码
-temp_data = {'image':base64.b64encode(temp_img)}
+temp_data = {&#39;image&#39;:base64.b64encode(temp_img)}
 
 # 对图片地址进行urlencode操作
 temp_data = urllib.parse.urlencode(temp_data)
@@ -205,7 +200,7 @@ temp_data = urllib.parse.urlencode(temp_data)
 # 请求视图接口
 res = requests.post(url=url, data=temp_data, headers=myheaders)
 
-code = res.json()['words_result'][0]['words']
+code = res.json()[&#39;words_result&#39;][0][&#39;words&#39;]
 </code></pre><p>百度接口会将识别出的验证码文字返回给你，当然了有一定误差是在所难免的</p>
 <p>现在验证码识别已经搞定，问题的关键是，每次打开页面的时候，怎么将图片传给百度接口</p>
 <p>其实很简单，我们可以考虑使用selenium自动化工具来截图，selenium是可以根据选择器做局部截图的</p>
@@ -227,12 +222,12 @@ code = res.json()['words_result'][0]['words']
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -251,7 +246,7 @@ code = res.json()['words_result'][0]['words']
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 

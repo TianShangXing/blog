@@ -5,13 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
-<meta name="description" content="关于Django跨域问题 　首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
-　这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
- 安装插件  pip install django-cors-headers 编辑配置文件  INSTALLED_APPS = [ &#39;django.contrib.admin&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.messages&#39;, &#39;django.contrib.staticfiles&#39;, &#39;corsheaders&#39;, ] MIDDLEWARE = [ &#39;django.middleware.security.SecurityMiddleware&#39;, &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;, &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件 &#39;django.middleware.common.CommonMiddleware&#39;, # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;, &#39;django.contrib.messages.middleware.MessageMiddleware&#39;, &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 　至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。" />
+<meta name="description" content="关于Django跨域问题 首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
+这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
+安装插件 pip install django-cors-headers 编辑配置文件 INSTALLED_APPS = [ &amp;#39;django.contrib.admin&amp;#39;, &amp;#39;django.contrib.auth&amp;#39;, &amp;#39;django.contrib.contenttypes&amp;#39;, &amp;#39;django.contrib.sessions&amp;#39;, &amp;#39;django.contrib.messages&amp;#39;, &amp;#39;django.contrib.staticfiles&amp;#39;, &amp;#39;corsheaders&amp;#39;, ] MIDDLEWARE = [ &amp;#39;django.middleware.security.SecurityMiddleware&amp;#39;, &amp;#39;django.contrib.sessions.middleware.SessionMiddleware&amp;#39;, &amp;#39;corsheaders.middleware.CorsMiddleware&amp;#39;, # 这里是新增的中间件 &amp;#39;django.middleware.common.CommonMiddleware&amp;#39;, # &amp;#39;django.middleware.csrf.CsrfViewMiddleware&amp;#39;, &amp;#39;django.contrib.auth.middleware.AuthenticationMiddleware&amp;#39;, &amp;#39;django.contrib.messages.middleware.MessageMiddleware&amp;#39;, &amp;#39;django.middleware.clickjacking.XFrameOptionsMiddleware&amp;#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" />
+<link rel="canonical" href="/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" />
 
 
     <title>
@@ -27,41 +27,36 @@
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
-    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
-    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
-    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#252627">
     <meta name="theme-color" content="#252627">
 
 
 
 <meta itemprop="name" content="Django跨域问题">
-<meta itemprop="description" content="关于Django跨域问题 　首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
-　这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
- 安装插件  pip install django-cors-headers 编辑配置文件  INSTALLED_APPS = [ &#39;django.contrib.admin&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.messages&#39;, &#39;django.contrib.staticfiles&#39;, &#39;corsheaders&#39;, ] MIDDLEWARE = [ &#39;django.middleware.security.SecurityMiddleware&#39;, &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;, &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件 &#39;django.middleware.common.CommonMiddleware&#39;, # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;, &#39;django.contrib.messages.middleware.MessageMiddleware&#39;, &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 　至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。">
-<meta itemprop="datePublished" content="2020-04-10T15:20:40&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-10T15:20:40&#43;08:00" />
-<meta itemprop="wordCount" content="43">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+<meta itemprop="description" content="关于Django跨域问题 首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
+这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
+安装插件 pip install django-cors-headers 编辑配置文件 INSTALLED_APPS = [ &#39;django.contrib.admin&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.messages&#39;, &#39;django.contrib.staticfiles&#39;, &#39;corsheaders&#39;, ] MIDDLEWARE = [ &#39;django.middleware.security.SecurityMiddleware&#39;, &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;, &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件 &#39;django.middleware.common.CommonMiddleware&#39;, # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;, &#39;django.contrib.messages.middleware.MessageMiddleware&#39;, &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。"><meta itemprop="datePublished" content="2020-04-10T15:20:40+08:00" />
+<meta itemprop="dateModified" content="2020-04-10T15:20:40+08:00" />
+<meta itemprop="wordCount" content="43"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="Django跨域问题"/>
-<meta name="twitter:description" content="关于Django跨域问题 　首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
-　这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
- 安装插件  pip install django-cors-headers 编辑配置文件  INSTALLED_APPS = [ &#39;django.contrib.admin&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.messages&#39;, &#39;django.contrib.staticfiles&#39;, &#39;corsheaders&#39;, ] MIDDLEWARE = [ &#39;django.middleware.security.SecurityMiddleware&#39;, &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;, &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件 &#39;django.middleware.common.CommonMiddleware&#39;, # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;, &#39;django.contrib.messages.middleware.MessageMiddleware&#39;, &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 　至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。"/>
+<meta name="twitter:description" content="关于Django跨域问题 首先，明确一个问题，就是跨域需要服务端支持才行，而不是靠前端修改代码可以解决的，无论你用jquery axios fetch都是如此。
+这里介绍一下，如果使用的是Django2.0本身作为web服务端，该如何处理跨域请求问题。
+安装插件 pip install django-cors-headers 编辑配置文件 INSTALLED_APPS = [ &#39;django.contrib.admin&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.messages&#39;, &#39;django.contrib.staticfiles&#39;, &#39;corsheaders&#39;, ] MIDDLEWARE = [ &#39;django.middleware.security.SecurityMiddleware&#39;, &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;, &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件 &#39;django.middleware.common.CommonMiddleware&#39;, # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;, &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;, &#39;django.contrib.messages.middleware.MessageMiddleware&#39;, &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;, ] CORS_ALLOW_CREDENTIALS = True CORS_ORIGIN_ALLOW_ALL = True 至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。"/>
 
 
 
@@ -84,7 +79,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -102,7 +97,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
     </ul>
 </nav>
 
@@ -135,7 +130,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">Django跨域问题</a></h2>
+            <h2 class="post-title"><a href="/blogs/django%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/">Django跨域问题</a></h2>
 
             
 
@@ -146,34 +141,33 @@
 <ol>
 <li>安装插件</li>
 </ol>
-<pre><code>pip install django-cors-headers
+<pre tabindex="0"><code>pip install django-cors-headers
 </code></pre><ol start="2">
 <li>编辑配置文件</li>
 </ol>
-<pre><code>INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'corsheaders',
+<pre tabindex="0"><code>INSTALLED_APPS = [
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;corsheaders&#39;,
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware', # 这里是新增的中间件
-    'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    &#39;django.middleware.security.SecurityMiddleware&#39;,
+    &#39;django.contrib.sessions.middleware.SessionMiddleware&#39;,
+    &#39;corsheaders.middleware.CorsMiddleware&#39;, # 这里是新增的中间件
+    &#39;django.middleware.common.CommonMiddleware&#39;,
+    # &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,
+    &#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;,
+    &#39;django.contrib.messages.middleware.MessageMiddleware&#39;,
+    &#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;,
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
-
 </code></pre><p>　　至此，就可以解决跨域异步请求的问题了，服务端的不同配置也不一样，比如使用nginx服务就需要单独配置nginx才能让服务端支持，所以不能一概而论。</p>
 
             </div>
@@ -191,12 +185,12 @@ CORS_ORIGIN_ALLOW_ALL = True
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -215,7 +209,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 

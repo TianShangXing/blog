@@ -5,27 +5,28 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
-<meta name="description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+<meta name="description" content="MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
 官网： https://www.mysql.com/cn/
- MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
- 数值类型 MySQL支持所有标准SQL数值数据类型。
+MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
+数值类型 MySQL支持所有标准SQL数值数据类型。
 这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL和NUMERIC)，以及近似数值数据类型(FLOAT、REAL和DOUBLE PRECISION)。
 关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。
 BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB表。
 作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。
 下面的表显示了需要的每个整数类型的存储和范围。
- 日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
+日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
 每个时间类型有一个有效值范围和一个&amp;quot;零&amp;quot;值，当指定不合法的MySQL不能表示的值时使用&amp;quot;零&amp;quot;值。
- 字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
+字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
 注意：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。
 CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。
 BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。
 BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。
-有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。" />
+有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。
+MySQL约束类型 约束名称 描述 NULL 空 NOT NULL 非空 UNIQUE 取值不允许重复（唯一） AUTO_INCREMENT 自增 PRIMARY KEY 主键（主关键字） FOREIGN KEY 外键（外关键字） CHECK 逻辑表达式约束 DEFAULT 默认值（缺省值） MySQL语言分类 DDL：数据定义语言" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/mysql%E5%9F%BA%E7%A1%80/" />
+<link rel="canonical" href="/blogs/mysql%E5%9F%BA%E7%A1%80/" />
 
 
     <title>
@@ -41,69 +42,66 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
-    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
-    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
-    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#252627">
     <meta name="theme-color" content="#252627">
 
 
 
 <meta itemprop="name" content="MySQL基础">
-<meta itemprop="description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+<meta itemprop="description" content="MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
 官网： https://www.mysql.com/cn/
- MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
- 数值类型 MySQL支持所有标准SQL数值数据类型。
+MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
+数值类型 MySQL支持所有标准SQL数值数据类型。
 这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL和NUMERIC)，以及近似数值数据类型(FLOAT、REAL和DOUBLE PRECISION)。
 关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。
 BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB表。
 作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。
 下面的表显示了需要的每个整数类型的存储和范围。
- 日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
+日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
 每个时间类型有一个有效值范围和一个&quot;零&quot;值，当指定不合法的MySQL不能表示的值时使用&quot;零&quot;值。
- 字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
+字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
 注意：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。
 CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。
 BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。
 BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。
-有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。">
-<meta itemprop="datePublished" content="2020-06-02T22:11:14&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-02T22:11:14&#43;08:00" />
-<meta itemprop="wordCount" content="628">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。
+MySQL约束类型 约束名称 描述 NULL 空 NOT NULL 非空 UNIQUE 取值不允许重复（唯一） AUTO_INCREMENT 自增 PRIMARY KEY 主键（主关键字） FOREIGN KEY 外键（外关键字） CHECK 逻辑表达式约束 DEFAULT 默认值（缺省值） MySQL语言分类 DDL：数据定义语言"><meta itemprop="datePublished" content="2020-06-02T22:11:14+08:00" />
+<meta itemprop="dateModified" content="2020-06-02T22:11:14+08:00" />
+<meta itemprop="wordCount" content="628"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="MySQL基础"/>
-<meta name="twitter:description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+<meta name="twitter:description" content="MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
 官网： https://www.mysql.com/cn/
- MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
- 数值类型 MySQL支持所有标准SQL数值数据类型。
+MySQL数据类型 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。
+数值类型 MySQL支持所有标准SQL数值数据类型。
 这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL和NUMERIC)，以及近似数值数据类型(FLOAT、REAL和DOUBLE PRECISION)。
 关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。
 BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB表。
 作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。
 下面的表显示了需要的每个整数类型的存储和范围。
- 日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
+日期和时间类型 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。
 每个时间类型有一个有效值范围和一个&quot;零&quot;值，当指定不合法的MySQL不能表示的值时使用&quot;零&quot;值。
- 字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
+字符串类型 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。
 注意：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。
 CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。
 BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。
 BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种 BLOB 类型：TINYBLOB、BLOB、MEDIUMBLOB 和 LONGBLOB。它们区别在于可容纳存储范围不同。
-有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。"/>
+有 4 种 TEXT 类型：TINYTEXT、TEXT、MEDIUMTEXT 和 LONGTEXT。对应的这 4 种 BLOB 类型，可存储的最大长度不同，可根据实际情况选择。
+MySQL约束类型 约束名称 描述 NULL 空 NOT NULL 非空 UNIQUE 取值不允许重复（唯一） AUTO_INCREMENT 自增 PRIMARY KEY 主键（主关键字） FOREIGN KEY 外键（外关键字） CHECK 逻辑表达式约束 DEFAULT 默认值（缺省值） MySQL语言分类 DDL：数据定义语言"/>
 
 
 
@@ -126,7 +124,7 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -144,7 +142,7 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
     </ul>
 </nav>
 
@@ -177,7 +175,7 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/mysql%E5%9F%BA%E7%A1%80/">MySQL基础</a></h2>
+            <h2 class="post-title"><a href="/blogs/mysql%E5%9F%BA%E7%A1%80/">MySQL基础</a></h2>
 
             
 
@@ -198,16 +196,16 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
 <p>BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB表。</p>
 <p>作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。</p>
 <p>下面的表显示了需要的每个整数类型的存储和范围。</p>
-<p><img src="https://tianshangxing.github.io/blog/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png" alt="数值类型"></p>
+<p><img src="/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png" alt="数值类型"></p>
 <hr>
 <h4 id="日期和时间类型">日期和时间类型</h4>
 <p>表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。</p>
 <p>每个时间类型有一个有效值范围和一个&quot;零&quot;值，当指定不合法的MySQL不能表示的值时使用&quot;零&quot;值。</p>
-<p><img src="https://tianshangxing.github.io/blog/%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.png" alt="日期和时间类型"></p>
+<p><img src="/%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.png" alt="日期和时间类型"></p>
 <hr>
 <h4 id="字符串类型">字符串类型</h4>
 <p>字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。</p>
-<p><img src="https://tianshangxing.github.io/blog/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B.png" alt="字符串类型"></p>
+<p><img src="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B.png" alt="字符串类型"></p>
 <p><strong>注意</strong>：char(n) 和 varchar(n) 中括号中 n 代表字符的个数，并不代表字节个数，比如 CHAR(30) 就可以存储 30 个字符。</p>
 <p>CHAR 和 VARCHAR 类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。</p>
 <p>BINARY 和 VARBINARY 类似于 CHAR 和 VARCHAR，不同的是它们包含二进制字符串而不要非二进制字符串。也就是说，它们包含字节字符串而不是字符字符串。这说明它们没有字符集，并且排序和比较基于列值字节的数值值。</p>
@@ -312,7 +310,7 @@ BLOB 是一个二进制大对象，可以容纳可变数量的数据。有 4 种
 <p>指定字段添加：insert into user(name) values (&lsquo;天上星&rsquo;);</p>
 <p>所有字段都添加内容：insert into user values (2, &lsquo;刘星伸&rsquo;, &lsquo;15647419067&rsquo;);</p>
 <p>批量添加数据 多条数据用,隔开：insert into user values (3, &lsquo;小星星&rsquo;,  &lsquo;17735399067&rsquo;), (4, &lsquo;大星星&rsquo;, &lsquo;15647419067&rsquo;);</p>
-<p>批量修改：update user set name='刘星伸&rsquo;;</p>
+<p>批量修改：update user set name=&lsquo;刘星伸&rsquo;;</p>
 <p>指定数据修改需要添加 where 关键字：
 update user set name = &lsquo;刘星伸&rsquo; where id=1;</p>
 <p>删除：</p>
@@ -342,8 +340,8 @@ update user set name = &lsquo;刘星伸&rsquo; where id=1;</p>
 </ol>
 <hr>
 <h3 id="mysql操作">MySQL操作</h3>
-<p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C1.png" alt="MySQL操作1"></p>
-<pre><code>创建数据库：
+<p><img src="/MySQL%E6%93%8D%E4%BD%9C1.png" alt="MySQL操作1"></p>
+<pre tabindex="0"><code>创建数据库：
 create database 1907c charset=utf8;
 
 删除数据库：
@@ -385,22 +383,22 @@ alter table user drop sex;
 alter database 1907c character set gbk
 
 指定字段添加：
-insert into user(name) values ('天上星');
+insert into user(name) values (&#39;天上星&#39;);
 
 所有字段都添加内容：
-insert into user values (5, '刘星伸', '15647419067', '男');
+insert into user values (5, &#39;刘星伸&#39;, &#39;15647419067&#39;, &#39;男&#39;);
 
 批量添加数据 多条数据用,隔开：
-insert into user values (3, '小星星', '17735399067', '男'), (4, '大星星', '15647419067', '男');
+insert into user values (3, &#39;小星星&#39;, &#39;17735399067&#39;, &#39;男&#39;), (4, &#39;大星星&#39;, &#39;15647419067&#39;, &#39;男&#39;);
 
 批量修改：
-update user set name='刘星伸';
+update user set name=&#39;刘星伸&#39;;
 
 指定数据修改需要添加 where 关键字：
-update user set name = '星' where id=1;
+update user set name = &#39;星&#39; where id=1;
 </code></pre><hr>
-<p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C2.png" alt="MySQL操作2"></p>
-<pre><code>CREATE DATABASE books charset=utf8;
+<p><img src="/MySQL%E6%93%8D%E4%BD%9C2.png" alt="MySQL操作2"></p>
+<pre tabindex="0"><code>CREATE DATABASE books charset=utf8;
 
 use books
 
@@ -413,16 +411,16 @@ create table book (
 );
 
 insert into book values
-(1, '北平无故事', 25, '刘和平', '作家出版社'),
-(2, '人间失格', 16, '太宰治著', '作家出版社'),
-(3, '高兴', 16, '贾平凹', '人民出版社'),
-(4, '源氏物语', 57, '刘和平', '人民出版社'),
-(5, '卡夫卡文集', 9, '卡夫卡', '邮电出版社'),
-(6, '大家', 12, '王蒙', '邮电出版社'),
-(7, '拉片子', 37, '杨健', '清华出版社'),
-(8, '古代散文', 5, '归有光', '安徽出版社'),
-(9, '百花散文', 6, '孙虹选', '百花文艺出版社'),
-(10, '方令孺散文集', 5, '方令孺', '安徽文艺');
+(1, &#39;北平无故事&#39;, 25, &#39;刘和平&#39;, &#39;作家出版社&#39;),
+(2, &#39;人间失格&#39;, 16, &#39;太宰治著&#39;, &#39;作家出版社&#39;),
+(3, &#39;高兴&#39;, 16, &#39;贾平凹&#39;, &#39;人民出版社&#39;),
+(4, &#39;源氏物语&#39;, 57, &#39;刘和平&#39;, &#39;人民出版社&#39;),
+(5, &#39;卡夫卡文集&#39;, 9, &#39;卡夫卡&#39;, &#39;邮电出版社&#39;),
+(6, &#39;大家&#39;, 12, &#39;王蒙&#39;, &#39;邮电出版社&#39;),
+(7, &#39;拉片子&#39;, 37, &#39;杨健&#39;, &#39;清华出版社&#39;),
+(8, &#39;古代散文&#39;, 5, &#39;归有光&#39;, &#39;安徽出版社&#39;),
+(9, &#39;百花散文&#39;, 6, &#39;孙虹选&#39;, &#39;百花文艺出版社&#39;),
+(10, &#39;方令孺散文集&#39;, 5, &#39;方令孺&#39;, &#39;安徽文艺&#39;);
 
 查询所有图书的信息，并按价格降序显示:
 select * from book ORDER BY price desc;
@@ -431,7 +429,7 @@ select * from book ORDER BY price desc;
 select publish, name, price from book ORDER BY price desc;
 
 查询出所有刘和平的图书信息 ，并输出：
-select * from book where author='刘和平';
+select * from book where author=&#39;刘和平&#39;;
 
 删除ID是2的记录，如果没有相关记录则提示：
 delete from book where id=2;
@@ -450,15 +448,15 @@ select * from book where price&gt;20;
 所有图书的价格上调20%，并查看信息：
 update book set price=price*1.2;
 </code></pre><hr>
-<p><img src="https://tianshangxing.github.io/blog/MySQL%E6%93%8D%E4%BD%9C3.png" alt="MySQL操作3"></p>
-<pre><code>CREATE DATABASE db_test charset=utf8;
+<p><img src="/MySQL%E6%93%8D%E4%BD%9C3.png" alt="MySQL操作3"></p>
+<pre tabindex="0"><code>CREATE DATABASE db_test charset=utf8;
 
 use db_test
 
 create table staff (
 	sid int primary key auto_increment,
 	sname varchar(20),
-	sex enum('男', '女'),
+	sex enum(&#39;男&#39;, &#39;女&#39;),
 	job varchar(20),
 	birthday DATE,
 	salary int(11),
@@ -467,10 +465,10 @@ create table staff (
 );
 
 insert into staff values
-(1001, '张三', '男', '高级工程师', '1975-1-1', 2200, 1100, 200),
-(1002, '李四', '女', '助工', '1985-1-1', 1200, 200, 100),
-(1003, '王五', '男', '工程师', '1978-11-11', 1900, 700, 200),
-(1004, '赵六', '男', '工程师', '1979-1-1', 1960, 700, 150);
+(1001, &#39;张三&#39;, &#39;男&#39;, &#39;高级工程师&#39;, &#39;1975-1-1&#39;, 2200, 1100, 200),
+(1002, &#39;李四&#39;, &#39;女&#39;, &#39;助工&#39;, &#39;1985-1-1&#39;, 1200, 200, 100),
+(1003, &#39;王五&#39;, &#39;男&#39;, &#39;工程师&#39;, &#39;1978-11-11&#39;, 1900, 700, 200),
+(1004, &#39;赵六&#39;, &#39;男&#39;, &#39;工程师&#39;, &#39;1979-1-1&#39;, 1960, 700, 150);
 
 修改表名为emp：
 alter table staff rename to emp;
@@ -479,7 +477,7 @@ alter table staff rename to emp;
 alter table emp add hobby varchar(50) unique;
 
 向表中添加一条记录：
-insert into emp value (1005, '星', '男', '测试', '1998-12-17', 9960, 700, 150, '电影，足球，纯音乐');
+insert into emp value (1005, &#39;星&#39;, &#39;男&#39;, &#39;测试&#39;, &#39;1998-12-17&#39;, 9960, 700, 150, &#39;电影，足球，纯音乐&#39;);
 
 修改sname字段的类型为varchar(30)：
 alter table emp change sname sname varchar(30);
@@ -488,14 +486,13 @@ alter table emp change sname sname varchar(30);
 select * from emp where sid=1002 or sid=1003 or sid=1005;
 
 修改表中job值是高级工程师员工的job为“架构师”：
-update emp set job='架构师' where job='高级工程师';
+update emp set job=&#39;架构师&#39; where job=&#39;高级工程师&#39;;
 
 删除表中sid是1003并且sname是王五的员工的记录：
-delete from emp where sid=1003 and sname='王五';
+delete from emp where sid=1003 and sname=&#39;王五&#39;;
 
 修改表中sid是1004员工的salary在原来的基础上-300：
 update emp set salary=salary-300 where sid=1004;
-
 </code></pre>
             </div>
         </article>
@@ -512,12 +509,12 @@ update emp set salary=salary-300 where sid=1004;
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -536,7 +533,7 @@ update emp set salary=salary-300 where sid=1004;
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 

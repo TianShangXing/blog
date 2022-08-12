@@ -5,24 +5,32 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
-<meta name="description" content="App移动端测试  现有市场上的移动端操作系统：
- Android iOS 微软 塞班 华为（未来）  测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
-移动端测试内容有   应用程序的功能测试
- 测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现    安装和卸载的测试
-  软件安装后是否可以正常运行
-  安装过程中是否可以取消
-  安装空间不足时，是否有相应提示
-  是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
-  卸载是否支持取消功能，单击取消后软件卸载功能是否正常
-  卸载后文件是否全部删除所有的安装文件夹
-  从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
-    软件的升级测试
- 当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。    登陆测试
- 登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息    权限测试" />
+<meta name="description" content="App移动端测试 现有市场上的移动端操作系统：
+Android iOS 微软 塞班 华为（未来） 测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
+移动端测试内容有 应用程序的功能测试
+测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现 安装和卸载的测试
+软件安装后是否可以正常运行
+安装过程中是否可以取消
+安装空间不足时，是否有相应提示
+是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
+卸载是否支持取消功能，单击取消后软件卸载功能是否正常
+卸载后文件是否全部删除所有的安装文件夹
+从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
+软件的升级测试
+当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。 登陆测试
+登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息 权限测试
+是否用户提醒和同意使用该权限 6.0以后都是需要申请权限 消息推送机制
+未锁屏时，应用后台运行，消息推送是否可正常接收，未锁屏时，App客户端使用过程中，可以收到消息提醒，且点击可查看。 锁屏时，手机消息栏是否可以接收到消息提醒。且点击可查看。点击后消息栏中消失。 推送是否用户同意 以及用户的使用习惯 前后台切换的功能
+App切换到后台，再回到App，检查是否停留在上一次操作界面 手机锁屏解屏后进入App注意是否会崩溃，功能状态是否正常 当APP使用过程中有电话进来中断后再切换到APP，功能状态是否正常 当关闭App进程后，在开启App，App能否正常启动 App在前后台一个正常切换，小窗口的模式 双系统的切换 当异常情况下考虑 有数据交互的情况下 UI测试（界面测试）
+确保产品UI符合产品经理制定的原型图与效果图 兼容性测试
+兼容性测试主要考虑手机的版本，型号，分辨率
+网络环境测试
+测试2G、3G、4G、wifi、有网、无网、弱网情况下应用的运行 网络不好时，提交数据是否一直处理提交中，是否会有延迟，数据交换失败是否会有提醒 有网到无网再到有网环境时，数据是否可以自动恢复，正常加载 无网络时，各种提示信息是否友好，数据本地化是否正确 monkey压力测试
+可以使用monkey对App做压力测试，主要就是测试操作App的时候，程序是否会崩溃 我们使用adb shell monkey 指定对应的app，执行要测试的次数，指定要触摸的比率，超时时间和忽略崩溃信息，就可以执行测试，将测试log存到某个位置，然后把测试出的bug 日志发送给开发.。 性能测试" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/" />
+<link rel="canonical" href="/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/" />
 
 
     <title>
@@ -38,63 +46,74 @@
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
-    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
-    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
-    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#252627">
     <meta name="theme-color" content="#252627">
 
 
 
 <meta itemprop="name" content="App移动端测试">
-<meta itemprop="description" content="App移动端测试  现有市场上的移动端操作系统：
- Android iOS 微软 塞班 华为（未来）  测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
-移动端测试内容有   应用程序的功能测试
- 测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现    安装和卸载的测试
-  软件安装后是否可以正常运行
-  安装过程中是否可以取消
-  安装空间不足时，是否有相应提示
-  是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
-  卸载是否支持取消功能，单击取消后软件卸载功能是否正常
-  卸载后文件是否全部删除所有的安装文件夹
-  从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
-    软件的升级测试
- 当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。    登陆测试
- 登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息    权限测试">
-<meta itemprop="datePublished" content="2020-06-04T23:07:39&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-04T23:07:39&#43;08:00" />
-<meta itemprop="wordCount" content="200">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+<meta itemprop="description" content="App移动端测试 现有市场上的移动端操作系统：
+Android iOS 微软 塞班 华为（未来） 测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
+移动端测试内容有 应用程序的功能测试
+测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现 安装和卸载的测试
+软件安装后是否可以正常运行
+安装过程中是否可以取消
+安装空间不足时，是否有相应提示
+是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
+卸载是否支持取消功能，单击取消后软件卸载功能是否正常
+卸载后文件是否全部删除所有的安装文件夹
+从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
+软件的升级测试
+当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。 登陆测试
+登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息 权限测试
+是否用户提醒和同意使用该权限 6.0以后都是需要申请权限 消息推送机制
+未锁屏时，应用后台运行，消息推送是否可正常接收，未锁屏时，App客户端使用过程中，可以收到消息提醒，且点击可查看。 锁屏时，手机消息栏是否可以接收到消息提醒。且点击可查看。点击后消息栏中消失。 推送是否用户同意 以及用户的使用习惯 前后台切换的功能
+App切换到后台，再回到App，检查是否停留在上一次操作界面 手机锁屏解屏后进入App注意是否会崩溃，功能状态是否正常 当APP使用过程中有电话进来中断后再切换到APP，功能状态是否正常 当关闭App进程后，在开启App，App能否正常启动 App在前后台一个正常切换，小窗口的模式 双系统的切换 当异常情况下考虑 有数据交互的情况下 UI测试（界面测试）
+确保产品UI符合产品经理制定的原型图与效果图 兼容性测试
+兼容性测试主要考虑手机的版本，型号，分辨率
+网络环境测试
+测试2G、3G、4G、wifi、有网、无网、弱网情况下应用的运行 网络不好时，提交数据是否一直处理提交中，是否会有延迟，数据交换失败是否会有提醒 有网到无网再到有网环境时，数据是否可以自动恢复，正常加载 无网络时，各种提示信息是否友好，数据本地化是否正确 monkey压力测试
+可以使用monkey对App做压力测试，主要就是测试操作App的时候，程序是否会崩溃 我们使用adb shell monkey 指定对应的app，执行要测试的次数，指定要触摸的比率，超时时间和忽略崩溃信息，就可以执行测试，将测试log存到某个位置，然后把测试出的bug 日志发送给开发.。 性能测试"><meta itemprop="datePublished" content="2020-06-04T23:07:39+08:00" />
+<meta itemprop="dateModified" content="2020-06-04T23:07:39+08:00" />
+<meta itemprop="wordCount" content="200"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="App移动端测试"/>
-<meta name="twitter:description" content="App移动端测试  现有市场上的移动端操作系统：
- Android iOS 微软 塞班 华为（未来）  测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
-移动端测试内容有   应用程序的功能测试
- 测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现    安装和卸载的测试
-  软件安装后是否可以正常运行
-  安装过程中是否可以取消
-  安装空间不足时，是否有相应提示
-  是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
-  卸载是否支持取消功能，单击取消后软件卸载功能是否正常
-  卸载后文件是否全部删除所有的安装文件夹
-  从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
-    软件的升级测试
- 当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。    登陆测试
- 登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息    权限测试"/>
+<meta name="twitter:description" content="App移动端测试 现有市场上的移动端操作系统：
+Android iOS 微软 塞班 华为（未来） 测试范围就是移动端的软件 公司内部一般选择的是真机测试/云测试 如果应用程序在Android进行测试 bug的数量居多 如果应用程序在iOS上测试 bug的数量少很多
+移动端测试内容有 应用程序的功能测试
+测试的时间：移动端的开发结束后 测试的依据：需求文档和UI设计效果图 测试的内容：测试页面，测试程序的逻辑功能的实现 安装和卸载的测试
+软件安装后是否可以正常运行
+安装过程中是否可以取消
+安装空间不足时，是否有相应提示
+是否可以卸载应用（可通过桌面卸载，也可以通过软件卸载)
+卸载是否支持取消功能，单击取消后软件卸载功能是否正常
+卸载后文件是否全部删除所有的安装文件夹
+从不同的应用市场下载进行安装测试，比如测试小米市场，华为市场，应用宝，安卓市场的安装测试。
+软件的升级测试
+当客户端有新版本时，是否有更新提示，当版本为非强制升级版时，用户可以取消更新，老版本能正常使用用户在下次启动App时，仍能出现更新提示。 当版本为强制升级版时，当给出强制更新后用户没有做更新时，退出客户端，下次启动App时，仍出现强制升级提示，当然现在强更已经很少出现了。 检查更新后各个功能是否能正常使用。 现在主流的安装更新方式开始向热更新热部署方式转变，就是在用户不需要手动更新的情况下，完成版本的静默更新。 登陆测试
+登录用户名和密码错误时，界面有提示信息 用户主动退出登陆后，下次进入app时，应该进入登陆界面 切换账号登录，检验登录的信息是否做到及时更新 对于多个端（web、iOS、Android等）进行操作时，确保数据库操作无误，且每个端可以及时看到数据的更新,一个账号只允许一台机器登陆的软件，需要账号登录多个手机时，是否将原用户踢下线，且能够给出提示信息 权限测试
+是否用户提醒和同意使用该权限 6.0以后都是需要申请权限 消息推送机制
+未锁屏时，应用后台运行，消息推送是否可正常接收，未锁屏时，App客户端使用过程中，可以收到消息提醒，且点击可查看。 锁屏时，手机消息栏是否可以接收到消息提醒。且点击可查看。点击后消息栏中消失。 推送是否用户同意 以及用户的使用习惯 前后台切换的功能
+App切换到后台，再回到App，检查是否停留在上一次操作界面 手机锁屏解屏后进入App注意是否会崩溃，功能状态是否正常 当APP使用过程中有电话进来中断后再切换到APP，功能状态是否正常 当关闭App进程后，在开启App，App能否正常启动 App在前后台一个正常切换，小窗口的模式 双系统的切换 当异常情况下考虑 有数据交互的情况下 UI测试（界面测试）
+确保产品UI符合产品经理制定的原型图与效果图 兼容性测试
+兼容性测试主要考虑手机的版本，型号，分辨率
+网络环境测试
+测试2G、3G、4G、wifi、有网、无网、弱网情况下应用的运行 网络不好时，提交数据是否一直处理提交中，是否会有延迟，数据交换失败是否会有提醒 有网到无网再到有网环境时，数据是否可以自动恢复，正常加载 无网络时，各种提示信息是否友好，数据本地化是否正确 monkey压力测试
+可以使用monkey对App做压力测试，主要就是测试操作App的时候，程序是否会崩溃 我们使用adb shell monkey 指定对应的app，执行要测试的次数，指定要触摸的比率，超时时间和忽略崩溃信息，就可以执行测试，将测试log存到某个位置，然后把测试出的bug 日志发送给开发.。 性能测试"/>
 
 
 
@@ -117,7 +136,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -135,7 +154,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
     </ul>
 </nav>
 
@@ -168,7 +187,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/">App移动端测试</a></h2>
+            <h2 class="post-title"><a href="/blogs/app%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%B5%8B%E8%AF%95/">App移动端测试</a></h2>
 
             
 
@@ -329,7 +348,7 @@
 <ol>
 <li>查看设备</li>
 </ol>
-<pre><code>adb devices
+<pre tabindex="0"><code>adb devices
 
 查看当前连接的设备, 连接到计算机的android设备或者模拟器将会列出显示
 List of devices attached
@@ -337,42 +356,42 @@ emulator-5554   device
 </code></pre><ol start="2">
 <li>使用adb命令进行安装软件</li>
 </ol>
-<pre><code>adb install -r (apk的路径) 
+<pre tabindex="0"><code>adb install -r (apk的路径) 
 
 -r 代表如果apk已安装，重新安装apk并保留数据和缓存文件。apk路径则可以直接将apk文件拖进cmd窗口，记得加空格。
 </code></pre><ol start="3">
 <li>卸载软件</li>
 </ol>
-<pre><code>adb uninstall 包名
+<pre tabindex="0"><code>adb uninstall 包名
 adb uninstall -k 包名   (保留配置文件以及缓存文件)
 </code></pre><ol start="4">
 <li>列出所有的包名</li>
 </ol>
-<pre><code>adb shell pm list package
+<pre tabindex="0"><code>adb shell pm list package
 </code></pre><ol start="5">
 <li>可以列出第三方的包名</li>
 </ol>
-<pre><code>adb shell pm list package -3
+<pre tabindex="0"><code>adb shell pm list package -3
 </code></pre><ol start="6">
 <li>可以列出系统应用的包名</li>
 </ol>
-<pre><code>db shell pm list package -s
+<pre tabindex="0"><code>db shell pm list package -s
 </code></pre><ol start="7">
 <li>查看手机内存的命令</li>
 </ol>
-<pre><code>adb shell dumpsys meminfo 包名
+<pre tabindex="0"><code>adb shell dumpsys meminfo 包名
 </code></pre><ol start="8">
 <li>录制视频</li>
 </ol>
-<pre><code>adb shell screenrecord /sdcard/demo.mp4
+<pre tabindex="0"><code>adb shell screenrecord /sdcard/demo.mp4
 </code></pre><ol start="9">
 <li>截图</li>
 </ol>
-<pre><code>adb shell screencap /sdcard/1907.png查看手机日志
+<pre tabindex="0"><code>adb shell screencap /sdcard/1907.png查看手机日志
 </code></pre><ol start="10">
 <li>查看手机日志</li>
 </ol>
-<pre><code>adb logcat
+<pre tabindex="0"><code>adb logcat
 </code></pre><table>
 <thead>
 <tr>
@@ -414,11 +433,11 @@ adb uninstall -k 包名   (保留配置文件以及缓存文件)
 <ol start="11">
 <li>将日志文件转换为本地文件</li>
 </ol>
-<pre><code>adb -s emulator-5554(设备名称) logcat -v time process &gt;d:log.txt(文件存放位置)
+<pre tabindex="0"><code>adb -s emulator-5554(设备名称) logcat -v time process &gt;d:log.txt(文件存放位置)
 </code></pre><ol start="12">
 <li>根据日志级别打印</li>
 </ol>
-<pre><code>adb logcat *：w(大于和等于这个级别的)
+<pre tabindex="0"><code>adb logcat *：w(大于和等于这个级别的)
 </code></pre>
             </div>
         </article>
@@ -435,12 +454,12 @@ adb uninstall -k 包名   (保留配置文件以及缓存文件)
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -459,7 +478,7 @@ adb uninstall -k 包名   (保留配置文件以及缓存文件)
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 

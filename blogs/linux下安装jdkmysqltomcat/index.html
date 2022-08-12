@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
 <meta name="description" content="我本地的Linux环境是Ubuntu，安装需要用到apt命令
- Ubuntu下安装JDK  更新软件包列表  sudo apt-get update 安装JDK  sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功  java -version openjdk version &amp;quot;1.8.0_252&amp;quot; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)  出现JDK版本说明安装成功
-  还可以通过输入java和javac查看是否安装成功
-   Ubuntu下安装MySQL 1.安装MySQL
-sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g." />
+Ubuntu下安装JDK 更新软件包列表 sudo apt-get update 安装JDK sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功 java -version openjdk version &amp;#34;1.8.0_252&amp;#34; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode) 出现JDK版本说明安装成功
+还可以通过输入java和javac查看是否安装成功
+Ubuntu下安装MySQL 1.安装MySQL
+sudo apt-get install mysql-server 安装完成连接MySQL mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g. Your MySQL connection id is 15 Server version: 5.5.5-10.1.38-MariaDB mariadb.org binary distribution Copyright (c) 2000, 2020, Oracle and/or its affiliates." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/" />
+<link rel="canonical" href="/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/" />
 
 
     <title>
@@ -29,17 +29,17 @@ sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
-    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
-    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
-    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#252627">
     <meta name="theme-color" content="#252627">
 
@@ -47,27 +47,22 @@ sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u
 
 <meta itemprop="name" content="Linux下安装JDK，MySQL，tomcat">
 <meta itemprop="description" content="我本地的Linux环境是Ubuntu，安装需要用到apt命令
- Ubuntu下安装JDK  更新软件包列表  sudo apt-get update 安装JDK  sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功  java -version openjdk version &quot;1.8.0_252&quot; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)  出现JDK版本说明安装成功
-  还可以通过输入java和javac查看是否安装成功
-   Ubuntu下安装MySQL 1.安装MySQL
-sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g.">
-<meta itemprop="datePublished" content="2020-06-16T22:47:04&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-16T22:47:04&#43;08:00" />
-<meta itemprop="wordCount" content="152">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+Ubuntu下安装JDK 更新软件包列表 sudo apt-get update 安装JDK sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功 java -version openjdk version &#34;1.8.0_252&#34; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode) 出现JDK版本说明安装成功
+还可以通过输入java和javac查看是否安装成功
+Ubuntu下安装MySQL 1.安装MySQL
+sudo apt-get install mysql-server 安装完成连接MySQL mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g. Your MySQL connection id is 15 Server version: 5.5.5-10.1.38-MariaDB mariadb.org binary distribution Copyright (c) 2000, 2020, Oracle and/or its affiliates."><meta itemprop="datePublished" content="2020-06-16T22:47:04+08:00" />
+<meta itemprop="dateModified" content="2020-06-16T22:47:04+08:00" />
+<meta itemprop="wordCount" content="152"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="Linux下安装JDK，MySQL，tomcat"/>
 <meta name="twitter:description" content="我本地的Linux环境是Ubuntu，安装需要用到apt命令
- Ubuntu下安装JDK  更新软件包列表  sudo apt-get update 安装JDK  sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功  java -version openjdk version &quot;1.8.0_252&quot; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)  出现JDK版本说明安装成功
-  还可以通过输入java和javac查看是否安装成功
-   Ubuntu下安装MySQL 1.安装MySQL
-sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g."/>
+Ubuntu下安装JDK 更新软件包列表 sudo apt-get update 安装JDK sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功 java -version openjdk version &#34;1.8.0_252&#34; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode) 出现JDK版本说明安装成功
+还可以通过输入java和javac查看是否安装成功
+Ubuntu下安装MySQL 1.安装MySQL
+sudo apt-get install mysql-server 安装完成连接MySQL mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g. Your MySQL connection id is 15 Server version: 5.5.5-10.1.38-MariaDB mariadb.org binary distribution Copyright (c) 2000, 2020, Oracle and/or its affiliates."/>
 
 
 
@@ -90,7 +85,7 @@ sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -108,7 +103,7 @@ sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
     </ul>
 </nav>
 
@@ -141,7 +136,7 @@ sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/">Linux下安装JDK，MySQL，tomcat</a></h2>
+            <h2 class="post-title"><a href="/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/">Linux下安装JDK，MySQL，tomcat</a></h2>
 
             
 
@@ -152,17 +147,17 @@ sudo apt-get install mysql-server 安装完成连接MySQL  mysql -h 127.0.0.1 -u
 <ol>
 <li>更新软件包列表</li>
 </ol>
-<pre><code>sudo apt-get update
+<pre tabindex="0"><code>sudo apt-get update
 </code></pre><ol start="2">
 <li>安装JDK</li>
 </ol>
-<pre><code>sudo apt-get install openjdk-8-jdk
+<pre tabindex="0"><code>sudo apt-get install openjdk-8-jdk
 </code></pre><ol start="3">
 <li>查看Java版本，看是否安装成功</li>
 </ol>
-<pre><code>java -version
+<pre tabindex="0"><code>java -version
 
-openjdk version &quot;1.8.0_252&quot;
+openjdk version &#34;1.8.0_252&#34;
 OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09)
 OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 </code></pre><ol start="4">
@@ -176,11 +171,11 @@ OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 <hr>
 <h3 id="ubuntu下安装mysql">Ubuntu下安装MySQL</h3>
 <p>1.安装MySQL</p>
-<pre><code>sudo apt-get install mysql-server
+<pre tabindex="0"><code>sudo apt-get install mysql-server
 </code></pre><ol start="2">
 <li>安装完成连接MySQL</li>
 </ol>
-<pre><code>mysql -h 127.0.0.1 -u root -p
+<pre tabindex="0"><code>mysql -h 127.0.0.1 -u root -p
 
 Enter password:
 输入MySQL密码就可以链接成功
@@ -195,43 +190,42 @@ Oracle is a registered trademark of Oracle Corporation and/or its
 affiliates. Other names may be trademarks of their respective
 owners.
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type &#39;help;&#39; or &#39;\h&#39; for help. Type &#39;\c&#39; to clear the current input statement.
 </code></pre><hr>
 <h3 id="ubuntu下安装tomcat">Ubuntu下安装tomcat</h3>
 <ol>
 <li>下载tomcat</li>
 </ol>
-<pre><code>wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.36/bin/apache-tomcat-9.0.36.zip
-
+<pre tabindex="0"><code>wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.36/bin/apache-tomcat-9.0.36.zip
 </code></pre><ol start="2">
 <li>更改权限</li>
 </ol>
-<pre><code>chmod +x apache-tomcat-9.0.36.zip
+<pre tabindex="0"><code>chmod +x apache-tomcat-9.0.36.zip
 </code></pre><ol start="3">
 <li>解压压缩包</li>
 </ol>
-<pre><code>unzip apache-tomcat-9.0.36.zip
+<pre tabindex="0"><code>unzip apache-tomcat-9.0.36.zip
 </code></pre><p>如果提示 -bash:unzip not found
 是因为没有下载unzip</p>
-<pre><code>yum install unzip
+<pre tabindex="0"><code>yum install unzip
 </code></pre><p>下载完重新解压就好了</p>
 <ol start="4">
 <li>解压后就得到了tomcat包，此时对apache-tomcat-9.0.36再次更改权限</li>
 </ol>
-<pre><code>chmod a+x -R *
+<pre tabindex="0"><code>chmod a+x -R *
 </code></pre><ol start="5">
 <li>进入apache-tomcat-9.0.36</li>
 </ol>
-<pre><code>cd apache-tomcat-9.0.36
+<pre tabindex="0"><code>cd apache-tomcat-9.0.36
 </code></pre><ol start="6">
 <li>进入bin目录</li>
 </ol>
-<pre><code>cd bin
+<pre tabindex="0"><code>cd bin
 </code></pre><ol start="7">
 <li>启动tomcat的命令
 进入到apache-tomcat-9.0.36的bin目录下后，执行下面命令</li>
 </ol>
-<pre><code>sh startup.sh
+<pre tabindex="0"><code>sh startup.sh
 </code></pre><p>这样就启动成功了</p>
 
             </div>
@@ -249,12 +243,12 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -273,7 +267,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 
