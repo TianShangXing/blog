@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TianShangXing&#39;s Blog</title>
-    <link>/</link>
+    <link>https://tianshangxing.github.io/blog/</link>
     <description>Recent content on TianShangXing&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 12 Aug 2022 16:36:06 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Aug 2022 16:36:06 +0800</lastBuildDate><atom:link href="https://tianshangxing.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>软件测试理论</title>
-      <link>/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/</link>
       <pubDate>Fri, 12 Aug 2022 16:36:06 +0800</pubDate>
       
-      <guid>/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/</guid>
       <description>软件缺陷定义 ​	软件缺陷就是通常说的Bug，它是指在软件中（包括文档和程序）存在的影响软件正常运行的问题。
 软件缺陷产生的原因 需求不明确和变更 软件需求不清晰或者开发人员对需求理解偏差，导致软件设计时偏离用户的需求目标，造成软件功 能或特征上的缺陷。此外，开发过程中客户频繁更新需求也会影响软件最终的质量。 软件结构复杂 编码问题 项目期限短 使用新技术 软件开发缺乏规范性文件指导 缺乏软件质量控制管理 软件缺陷分类 </description>
     </item>
     
     <item>
       <title>软件开发理论背景</title>
-      <link>/blogs/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%AE%BA%E8%83%8C%E6%99%AF/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%AE%BA%E8%83%8C%E6%99%AF/</link>
       <pubDate>Thu, 11 Aug 2022 21:06:48 +0800</pubDate>
       
-      <guid>/blogs/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%AE%BA%E8%83%8C%E6%99%AF/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%90%86%E8%AE%BA%E8%83%8C%E6%99%AF/</guid>
       <description>软件开发模式 1、瀑布模式 定义： 将软件生命周期的各项活动规定为按固定顺序而连接的若干阶段工作，形如瀑布流水，最终得到软件产品的项目。
 优点：
 为项目提供了按阶段划分的检查点 当前一阶段完成后，只需要去关注后续阶段。 缺点：
@@ -58,10 +58,10 @@
     
     <item>
       <title>阶段总结</title>
-      <link>/blogs/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 22 Jun 2020 10:40:46 +0800</pubDate>
       
-      <guid>/blogs/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/%E9%98%B6%E6%AE%B5%E6%80%BB%E7%BB%93/</guid>
       <description>软件开发的生命周期 客户提出需求(概念)
 根据客户的需求写出相对应的需求文档
 前端设计效果图(原型图)
@@ -93,10 +93,10 @@
     
     <item>
       <title>Python文件操作和异常捕获</title>
-      <link>/blogs/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%92%8C%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%92%8C%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/</link>
       <pubDate>Sun, 21 Jun 2020 23:26:46 +0800</pubDate>
       
-      <guid>/blogs/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%92%8C%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%92%8C%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7/</guid>
       <description>文件操作 打开文化 在python，使用open函数，可以打开一个已经存在的文件，或者创建一个新文件
 open(文件名，访问模式)
 示例如下：
@@ -111,19 +111,19 @@ f = open(&amp;#34;txt2.py&amp;#34;, &amp;#34;w&amp;#34;) f.write(&amp;#34;hello 
     
     <item>
       <title>Python函数面向对象</title>
-      <link>/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Sat, 20 Jun 2020 22:42:10 +0800</pubDate>
       
-      <guid>/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E5%87%BD%E6%95%B0%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
       <description>函数 # 1.	请手写一个函数，用来取出1—100（均包含）中5的倍数或者带有数字5的所有整数 # def func(b): # 定义函数 添加形参 b # # for i in range(1, b + 1): # 循环所有1-b所有数字 # if i % 5 == 0 or &amp;#34;5&amp;#34; in str(i): # 判断3的倍数或者带有数字3的所有整数 # print(i) # 输出 # # # func(100) # 调用函数 添加实参 # 2.	lis = [2,3,&amp;#39;k&amp;#39;,[&amp;#39;qwe&amp;#39;,20,[&amp;#39;k&amp;#39;,[&amp;#39;tt&amp;#39;,3,&amp;#39;1&amp;#39;]],89],&amp;#39;ab&amp;#39;,&amp;#39;adv&amp;#39;] 写一个函数将该列表中的tt变成大写 # def func(): # lis = [2, 3, &amp;#39;k&amp;#39;, [&amp;#39;qwe&amp;#39;, 20, [&amp;#39;k&amp;#39;, [&amp;#39;tt&amp;#39;, 3, &amp;#39;1&amp;#39;]], 89], &amp;#39;ab&amp;#39;, &amp;#39;adv&amp;#39;] # lis[3][2][1][0] = &amp;#39;TT&amp;#39; # 查下标替换tt 为 TT # print(lis) # # # func() # 3.</description>
     </item>
     
     <item>
       <title>Python语法进阶</title>
-      <link>/blogs/python%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6/</link>
       <pubDate>Thu, 18 Jun 2020 22:25:49 +0800</pubDate>
       
-      <guid>/blogs/python%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E8%AF%AD%E6%B3%95%E8%BF%9B%E9%98%B6/</guid>
       <description>python优点 简单，易学，免费，开源，高层语言，可扩展性，可移植性，解释型语言，面向对象，丰富的库，规范的代码
 变量的类型 标识符命名规则 小驼峰式命名法（lower camel case）： 第一个单词以小写字母开始；第二个单词的首字母大写，例如：myName；
 大驼峰式命名法（upper camel case）： 每一个单字的首字母都采用大写字母，例如：FirstName；
@@ -134,19 +134,19 @@ import keyword keyword.kwlist 常用的格式符号有哪些 格式符 转换 %c
     
     <item>
       <title>Python基础语法练习</title>
-      <link>/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</link>
       <pubDate>Wed, 17 Jun 2020 23:16:49 +0800</pubDate>
       
-      <guid>/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</guid>
       <description>Python基础语法练习 # 1.	str = &amp;#34; fgh &amp;#34; 写一个函数，只去掉字符串右侧的空格，左侧的空格保留 def func(): str = &amp;#34; fgh &amp;#34; print(str.rstrip(&amp;#39; &amp;#39;)) func() # 2.	输入10个数字到列表中，如果输入的不是数字，则跳过，不存 def func(): l = [] b = 1 while True: b += 1 if len(l) == 10: break a = input(&amp;#34;请输入数字：&amp;#34;) if a.isdigit(): a = int(a) l.append(a) else: continue print(l) func() # 3.	写一个函数，可以判断一个字符串是否为回文例子qwewq，函数返回true或者false def func(): s = input(&amp;#39;请输入字符串：&amp;#39;) if s == s[::-1]: return True else: return False print(func()) # 4.</description>
     </item>
     
     <item>
       <title>Linux下安装JDK，MySQL，tomcat</title>
-      <link>/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</link>
       <pubDate>Tue, 16 Jun 2020 22:47:04 +0800</pubDate>
       
-      <guid>/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</guid>
       <description>我本地的Linux环境是Ubuntu，安装需要用到apt命令
 Ubuntu下安装JDK 更新软件包列表 sudo apt-get update 安装JDK sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功 java -version openjdk version &amp;#34;1.8.0_252&amp;#34; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode) 出现JDK版本说明安装成功
 还可以通过输入java和javac查看是否安装成功
@@ -156,10 +156,10 @@ sudo apt-get install mysql-server 安装完成连接MySQL mysql -h 127.0.0.1 -u 
     
     <item>
       <title>Linux基础</title>
-      <link>/blogs/linux%E5%9F%BA%E7%A1%80/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/linux%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Mon, 15 Jun 2020 23:25:37 +0800</pubDate>
       
-      <guid>/blogs/linux%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/linux%E5%9F%BA%E7%A1%80/</guid>
       <description>Linux 目前市面上用的操作环境
 Windows	mac	Linux	麒麟	DOS
 Linux简介
@@ -190,10 +190,10 @@ r：读</description>
     
     <item>
       <title>JMeter与MySQL交互</title>
-      <link>/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</link>
+      <link>https://tianshangxing.github.io/blog/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</link>
       <pubDate>Thu, 11 Jun 2020 21:57:56 +0800</pubDate>
       
-      <guid>/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</guid>
+      <guid>https://tianshangxing.github.io/blog/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</guid>
       <description>JMeter与MySQL交互 建立线程组 添加JDBC Connection Configuration 添加JDBC Request 查看结构树就可以看到查询结果 </description>
     </item>
     
