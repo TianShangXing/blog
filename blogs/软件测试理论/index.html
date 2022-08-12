@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="软件缺陷定义 ​	软件缺陷就是通常说的Bug，它是指在软件中（包括文档和程序）存在的影响软件正常运行的问题。
+软件缺陷产生的原因 需求不明确和变更 软件需求不清晰或者开发人员对需求理解偏差，导致软件设计时偏离用户的需求目标，造成软件功 能或特征上的缺陷。此外，开发过程中客户频繁更新需求也会影响软件最终的质量。 软件结构复杂 编码问题 项目期限短 使用新技术 软件开发缺乏规范性文件指导 缺乏软件质量控制管理 软件缺陷分类 " />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/" />
+
+
+    <title>
+        
+            软件测试理论 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="软件测试理论">
+<meta itemprop="description" content="软件缺陷定义 ​	软件缺陷就是通常说的Bug，它是指在软件中（包括文档和程序）存在的影响软件正常运行的问题。
+软件缺陷产生的原因 需求不明确和变更 软件需求不清晰或者开发人员对需求理解偏差，导致软件设计时偏离用户的需求目标，造成软件功 能或特征上的缺陷。此外，开发过程中客户频繁更新需求也会影响软件最终的质量。 软件结构复杂 编码问题 项目期限短 使用新技术 软件开发缺乏规范性文件指导 缺乏软件质量控制管理 软件缺陷分类 "><meta itemprop="datePublished" content="2022-08-12T16:36:06+08:00" />
+<meta itemprop="dateModified" content="2022-08-12T16:36:06+08:00" />
+<meta itemprop="wordCount" content="14"><meta itemprop="image" content="/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="软件测试理论"/>
+<meta name="twitter:description" content="软件缺陷定义 ​	软件缺陷就是通常说的Bug，它是指在软件中（包括文档和程序）存在的影响软件正常运行的问题。
+软件缺陷产生的原因 需求不明确和变更 软件需求不清晰或者开发人员对需求理解偏差，导致软件设计时偏离用户的需求目标，造成软件功 能或特征上的缺陷。此外，开发过程中客户频繁更新需求也会影响软件最终的质量。 软件结构复杂 编码问题 项目期限短 使用新技术 软件开发缺乏规范性文件指导 缺乏软件质量控制管理 软件缺陷分类 "/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-08-12 16:36:06 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/blogs/">Blogs</a></li><li><a href="/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/">软件测试理论</a></h2>
+
+            
+
+            <div class="post-content">
+                <h3 id="软件缺陷定义">软件缺陷定义</h3>
+<p>​	软件缺陷就是通常说的Bug，它是指在软件中（包括文档和程序）存在的影响软件正常运行的问题。</p>
+<h3 id="软件缺陷产生的原因">软件缺陷产生的原因</h3>
+<ol>
+<li>需求不明确和变更 软件需求不清晰或者开发人员对需求理解偏差，导致软件设计时偏离用户的需求目标，造成软件功 能或特征上的缺陷。此外，开发过程中客户频繁更新需求也会影响软件最终的质量。</li>
+<li>软件结构复杂</li>
+<li>编码问题</li>
+<li>项目期限短</li>
+<li>使用新技术</li>
+<li>软件开发缺乏规范性文件指导</li>
+<li>缺乏软件质量控制管理</li>
+</ol>
+<h3 id="软件缺陷分类">软件缺陷分类</h3>
+<p><img src="%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB.jpg" alt=""></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            
+                <span><a href="/">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
+
+
+
+    </body>
+</html>

@@ -9,12 +9,13 @@
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Fri, 12 Aug 2022 16:36:06 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>/blogs/new/</link>
+      <title>软件测试理论</title>
+      <link>/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/</link>
       <pubDate>Fri, 12 Aug 2022 16:36:06 +0800</pubDate>
       
-      <guid>/blogs/new/</guid>
-      <description></description>
+      <guid>/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/</guid>
+      <description>软件缺陷定义 ​	软件缺陷就是通常说的Bug，它是指在软件中（包括文档和程序）存在的影响软件正常运行的问题。
+软件缺陷产生的原因 需求不明确和变更 软件需求不清晰或者开发人员对需求理解偏差，导致软件设计时偏离用户的需求目标，造成软件功 能或特征上的缺陷。此外，开发过程中客户频繁更新需求也会影响软件最终的质量。 软件结构复杂 编码问题 项目期限短 使用新技术 软件开发缺乏规范性文件指导 缺乏软件质量控制管理 软件缺陷分类 </description>
     </item>
     
     <item>
