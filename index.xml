@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 12 Aug 2022 16:36:06 +0800</lastBuildDate><atom:link href="https://tianshangxing.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Aug 2022 21:49:20 +0800</lastBuildDate><atom:link href="https://tianshangxing.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试计划模板</title>
+      <link>https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Sun, 14 Aug 2022 21:49:20 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92%E6%A8%A1%E6%9D%BF/</guid>
+      <description>桥的麻袋1.0 测试计划 文档编号	QDMD_JH_CS_001	项目名称	桥的麻袋1.0 起草人员	起草时间	审核人员	审核时间	批准人员	批准时间	二〇二X年xx月 版本修订记录 版本标识	操作	作 者	日 期 目录 版本修订记录	2 一、 测试目的	4 二、 测试资源	4 三、 测试范围	5 四、 测试风险	6 五、 人员分工	6 六、 测试策略	7 七、 测试进度	7 八、 测试准则	7 九、 测试文档	8 一、测试目的 本次测试的目标是验证对桥的麻袋1.0版本系统的功能、性能、安全、易用性等特性是否符合《桥的麻袋1.0需求规格说明书》的要求。 二、测试资源 1.软件环境 操作系统	Windows、Linux、MAC Web服务器	Apache 数据库	MySQL5.5 运行环境	PHP、Android、iOS 浏览器	Chrome、Firefox 文档操作	WPS、Office 2.硬件环境 硬件名称	配置	数量 PC端	处理器	Intel(R) Core(TM) i5-7200U CPU @ 2.</description>
+    </item>
+    
     <item>
       <title>软件测试理论</title>
       <link>https://tianshangxing.github.io/blog/blogs/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%90%86%E8%AE%BA/</link>
@@ -186,15 +195,6 @@ b：是装置文件，可提供存储的接口设备
 c：是串行接口设备
 后3位制
 r：读</description>
-    </item>
-    
-    <item>
-      <title>JMeter与MySQL交互</title>
-      <link>https://tianshangxing.github.io/blog/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</link>
-      <pubDate>Thu, 11 Jun 2020 21:57:56 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/jmeter%E4%B8%8Emysql%E4%BA%A4%E4%BA%92/</guid>
-      <description>JMeter与MySQL交互 建立线程组 添加JDBC Connection Configuration 添加JDBC Request 查看结构树就可以看到查询结果 </description>
     </item>
     
   </channel>
