@@ -76,10 +76,10 @@ hugo new site hugo_blog 就生成了一个名字为hugo_blog的新站点，可�
 打开配置文件config.toml，这是hugo的站点的相关配置，可以进行一些个性化的定制，改为下面这样：
 baseurl = &#34;/&#34; title = &#34;My site.&#34; copyright = &#34;Copyright (c) 2017, all rights reserved."><meta itemprop="datePublished" content="2019-01-03T14:29:07+08:00" />
 <meta itemprop="dateModified" content="2019-01-03T14:29:07+08:00" />
-<meta itemprop="wordCount" content="231"><meta itemprop="image" content="https://tianshangxing.github.io/blog/"/>
+<meta itemprop="wordCount" content="233"><meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog/"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
 
 <meta name="twitter:title" content="利用基于Go Lang的Hugo来打造属于自己的纯静态博客系统"/>
 <meta name="twitter:description" content="Go lang无疑是目前的当红炸子鸡，极大地提高了后端编程的效率，同时有着极高的性能。借助Go语言我们 可以用同步的方式写出高并发的服务端软件，同时，Go语言也是云原生第一语言，Docker，Kubernetes等等著名的项目都是使用Go语言实现的。
@@ -275,6 +275,7 @@ title: &#34;第一篇文章&#34;
 <p>访问一下，就可以看到我们非常快速而简单博客已经做好了。</p>
 <p>那么如何部署到线上呢？非常简单输入命令进行打包操作：</p>
 <pre tabindex="0"><code>hugo --baseUrl=&#34;项目地址/&#34;
+* 需要注意“项目地址”为上传到gitee/GitHub的***.github/gitee.io/博客名称
 </code></pre><p>hugo就会把你的站点生成纯静态页面，然后打包到public文件夹</p>
 <p>将public上传到gitee/GitHub下就可以拥有你的专属个人博客了。</p>
 
@@ -295,7 +296,7 @@ title: &#34;第一篇文章&#34;
         <div class="footer__content">
             <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog/">TianShangXing</a></span>
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
             <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>

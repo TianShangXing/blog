@@ -5,8 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
-<meta name="description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
-标题H1 # 标题H2 ## 标题H3 ### 标题H4 #### 标题H5 ###### 分割线 --- / *** 引述 &amp;gt; 单行代码 ` ` 代码块 ``` ``` 加粗文字 ** ** / `ctrl &#43; B` 倾斜文字 * * / _ _ / `CTRL &#43; I` 倾斜加粗 *** *** 删除线 ~~ ~~ 上标 X&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt; 下标 O&amp;lt;sup&amp;gt;2&amp;lt;/sup&amp;gt; 图片 ![图片alt](图片地址 &amp;#39;&amp;#39;图片title&amp;#39;&amp;#39;) 图片alt就是显示在图片下面的文字，相当于对图片内容的解释。 图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加 锚点与链接 Links [普通链接](http://localhost/) [普通链接带标题](http://localhost/ &amp;#34;普通链接带标题&amp;#34;) 直接链接：&amp;lt;https://github.com&amp;gt; [锚点链接][anchor-id] [anchor-id]: http://www.this-anchor-link.com/ GFM a-tail link @pandao &amp;gt; @pandao 无序列表（减号）Unordered Lists (-) - 列表一 - 列表二 - 列表三 无序列表（星号）Unordered Lists (*) * 列表一 * 列表二 * 列表三 无序列表（加号和嵌套）Unordered Lists (&#43;) &#43; 列表一 &#43; 列表二 &#43; 列表二-1 &#43; 列表二-2 &#43; 列表二-3 &#43; 列表三 * 列表一 * 列表二 * 列表三 有序列表 Ordered Lists (-) 1." />
+<meta name="description" content="Markdown是一种轻量级（可以使用普通文本编辑器编写的）标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
+由于 Markdown 的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。
+官网地址 https://www.markdownguide.org/
+常用的编辑器 Windows
+Typora、Simplenote、Laverna、Boostnote、Inkdrop、Cmd Markdown、Github、马克飞象、Yu Writer、看云、有道云笔记、为知笔记、蚂蚁笔记
+MacOS Typora、Typed、Ulysses、Falcon
+Linux Typora、Atom、GNU Emacs、Remarkable、Haroopad、ReText、UberWriter、Mark My Words
+Chromium内核浏览器插件 Markdown Preview、Markdown Here
+Android Draft、JotterPad X、坚果云Markdown
+iOS Byword、simplenote、坚果云Markdown RStudio是一个用于R的IDE，为称为sundown的Markdown变体提供了C&#43;&#43;包装函数
+标题H1 # 标题H2 ## 标题H3 ### 标题H4 #### 标题H5 ###### 分割线 --- / *** 引述 &amp;gt; 单行代码 ` ` 代码块 ``` ``` 加粗文字 ** ** / `ctrl &#43; B` 倾斜文字 * * / _ _ / `CTRL &#43; I` 倾斜加粗 *** *** 删除线 ~~ ~~ 上标 X&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt; 下标 O&amp;lt;sup&amp;gt;2&amp;lt;/sup&amp;gt; 图片 !" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -43,17 +52,35 @@
 
 
 <meta itemprop="name" content="Markdown语法">
-<meta itemprop="description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
-标题H1 # 标题H2 ## 标题H3 ### 标题H4 #### 标题H5 ###### 分割线 --- / *** 引述 &gt; 单行代码 ` ` 代码块 ``` ``` 加粗文字 ** ** / `ctrl &#43; B` 倾斜文字 * * / _ _ / `CTRL &#43; I` 倾斜加粗 *** *** 删除线 ~~ ~~ 上标 X&lt;sub&gt;2&lt;/sub&gt; 下标 O&lt;sup&gt;2&lt;/sup&gt; 图片 ![图片alt](图片地址 &#39;&#39;图片title&#39;&#39;) 图片alt就是显示在图片下面的文字，相当于对图片内容的解释。 图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加 锚点与链接 Links [普通链接](http://localhost/) [普通链接带标题](http://localhost/ &#34;普通链接带标题&#34;) 直接链接：&lt;https://github.com&gt; [锚点链接][anchor-id] [anchor-id]: http://www.this-anchor-link.com/ GFM a-tail link @pandao &gt; @pandao 无序列表（减号）Unordered Lists (-) - 列表一 - 列表二 - 列表三 无序列表（星号）Unordered Lists (*) * 列表一 * 列表二 * 列表三 无序列表（加号和嵌套）Unordered Lists (&#43;) &#43; 列表一 &#43; 列表二 &#43; 列表二-1 &#43; 列表二-2 &#43; 列表二-3 &#43; 列表三 * 列表一 * 列表二 * 列表三 有序列表 Ordered Lists (-) 1."><meta itemprop="datePublished" content="2020-01-20T10:17:28+08:00" />
+<meta itemprop="description" content="Markdown是一种轻量级（可以使用普通文本编辑器编写的）标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
+由于 Markdown 的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。
+官网地址 https://www.markdownguide.org/
+常用的编辑器 Windows
+Typora、Simplenote、Laverna、Boostnote、Inkdrop、Cmd Markdown、Github、马克飞象、Yu Writer、看云、有道云笔记、为知笔记、蚂蚁笔记
+MacOS Typora、Typed、Ulysses、Falcon
+Linux Typora、Atom、GNU Emacs、Remarkable、Haroopad、ReText、UberWriter、Mark My Words
+Chromium内核浏览器插件 Markdown Preview、Markdown Here
+Android Draft、JotterPad X、坚果云Markdown
+iOS Byword、simplenote、坚果云Markdown RStudio是一个用于R的IDE，为称为sundown的Markdown变体提供了C&#43;&#43;包装函数
+标题H1 # 标题H2 ## 标题H3 ### 标题H4 #### 标题H5 ###### 分割线 --- / *** 引述 &gt; 单行代码 ` ` 代码块 ``` ``` 加粗文字 ** ** / `ctrl &#43; B` 倾斜文字 * * / _ _ / `CTRL &#43; I` 倾斜加粗 *** *** 删除线 ~~ ~~ 上标 X&lt;sub&gt;2&lt;/sub&gt; 下标 O&lt;sup&gt;2&lt;/sup&gt; 图片 !"><meta itemprop="datePublished" content="2020-01-20T10:17:28+08:00" />
 <meta itemprop="dateModified" content="2020-01-20T10:17:28+08:00" />
-<meta itemprop="wordCount" content="155"><meta itemprop="image" content="https://tianshangxing.github.io/blog/"/>
+<meta itemprop="wordCount" content="184"><meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog/"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
 
 <meta name="twitter:title" content="Markdown语法"/>
-<meta name="twitter:description" content="Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
-标题H1 # 标题H2 ## 标题H3 ### 标题H4 #### 标题H5 ###### 分割线 --- / *** 引述 &gt; 单行代码 ` ` 代码块 ``` ``` 加粗文字 ** ** / `ctrl &#43; B` 倾斜文字 * * / _ _ / `CTRL &#43; I` 倾斜加粗 *** *** 删除线 ~~ ~~ 上标 X&lt;sub&gt;2&lt;/sub&gt; 下标 O&lt;sup&gt;2&lt;/sup&gt; 图片 ![图片alt](图片地址 &#39;&#39;图片title&#39;&#39;) 图片alt就是显示在图片下面的文字，相当于对图片内容的解释。 图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加 锚点与链接 Links [普通链接](http://localhost/) [普通链接带标题](http://localhost/ &#34;普通链接带标题&#34;) 直接链接：&lt;https://github.com&gt; [锚点链接][anchor-id] [anchor-id]: http://www.this-anchor-link.com/ GFM a-tail link @pandao &gt; @pandao 无序列表（减号）Unordered Lists (-) - 列表一 - 列表二 - 列表三 无序列表（星号）Unordered Lists (*) * 列表一 * 列表二 * 列表三 无序列表（加号和嵌套）Unordered Lists (&#43;) &#43; 列表一 &#43; 列表二 &#43; 列表二-1 &#43; 列表二-2 &#43; 列表二-3 &#43; 列表三 * 列表一 * 列表二 * 列表三 有序列表 Ordered Lists (-) 1."/>
+<meta name="twitter:description" content="Markdown是一种轻量级（可以使用普通文本编辑器编写的）标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
+由于 Markdown 的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。
+官网地址 https://www.markdownguide.org/
+常用的编辑器 Windows
+Typora、Simplenote、Laverna、Boostnote、Inkdrop、Cmd Markdown、Github、马克飞象、Yu Writer、看云、有道云笔记、为知笔记、蚂蚁笔记
+MacOS Typora、Typed、Ulysses、Falcon
+Linux Typora、Atom、GNU Emacs、Remarkable、Haroopad、ReText、UberWriter、Mark My Words
+Chromium内核浏览器插件 Markdown Preview、Markdown Here
+Android Draft、JotterPad X、坚果云Markdown
+iOS Byword、simplenote、坚果云Markdown RStudio是一个用于R的IDE，为称为sundown的Markdown变体提供了C&#43;&#43;包装函数
+标题H1 # 标题H2 ## 标题H3 ### 标题H4 #### 标题H5 ###### 分割线 --- / *** 引述 &gt; 单行代码 ` ` 代码块 ``` ``` 加粗文字 ** ** / `ctrl &#43; B` 倾斜文字 * * / _ _ / `CTRL &#43; I` 倾斜加粗 *** *** 删除线 ~~ ~~ 上标 X&lt;sub&gt;2&lt;/sub&gt; 下标 O&lt;sup&gt;2&lt;/sup&gt; 图片 !"/>
 
 
 
@@ -133,7 +160,37 @@
 
             <div class="post-content">
                 <p><img src="https://markdown.com.cn/hero.png" alt="markdown" title="markdown"></p>
-<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
+<p>Markdown是一种轻量级（可以使用普通文本编辑器编写的）标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”</p>
+<p>由于 Markdown 的轻量化、易读易写特性，并且对于图片，图表、数学式都有支持，许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。</p>
+<p>官网地址 <a href="https://www.markdownguide.org/">https://www.markdownguide.org/</a></p>
+<h4 id="常用的编辑器">常用的编辑器</h4>
+<ul>
+<li>
+<p>Windows</p>
+<p>Typora、Simplenote、Laverna、Boostnote、Inkdrop、Cmd Markdown、Github、马克飞象、Yu Writer、看云、有道云笔记、为知笔记、蚂蚁笔记</p>
+</li>
+<li>
+<p>MacOS
+Typora、Typed、Ulysses、Falcon</p>
+</li>
+<li>
+<p>Linux
+Typora、Atom、GNU Emacs、Remarkable、Haroopad、ReText、UberWriter、Mark My Words</p>
+</li>
+<li>
+<p>Chromium内核浏览器插件
+Markdown Preview、Markdown Here</p>
+</li>
+<li>
+<p>Android
+Draft、JotterPad X、坚果云Markdown</p>
+</li>
+<li>
+<p>iOS
+Byword、simplenote、坚果云Markdown
+RStudio是一个用于R的IDE，为称为sundown的Markdown变体提供了C++包装函数</p>
+</li>
+</ul>
 <pre tabindex="0"><code>标题H1 #
 
 标题H2 ##
@@ -244,7 +301,7 @@ GFM a-tail link @pandao
         <div class="footer__content">
             <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog/">TianShangXing</a></span>
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
             <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>

@@ -58,10 +58,10 @@
 逻辑流程图： 那么新浪微博的登录逻辑很简单： 拼接url -&gt; 回调获取code -&gt; 利用code换取uid和access_token -&gt; 使用access_token获取用户信息
 前端代码 methods:{ // 新浪微博三方登录 sina: function () { // 拼接url let client_id = 1484610767; let url = &#39;https://api.weibo.com/oauth2/authorize?client_id=&#39; &#43; client_id &#43; &#39;&amp;redirect_uri=http://127.0.0.1:8000/md_admin/weibo&#39;; // 跳转 站外跳转：window.location.href window.location.href = url; }, } 后端代码 # 新浪微博回调方法 def wb_back(request): # 接收参数 code = request.GET.get(&#39;code&#39;, None) # 定义token接口地址 url = &#39;https://api.weibo.com/oauth2/access_token&#39; # 定义参数 re = requests.post(url, data={ &#39;client_id&#39;: 1484610767, &#39;client_secret&#39;: &#39;e61c56200479acd83075a88fb1ab4a87&#39;, &#39;grant_type&#39;: &#39;authorization_code&#39;, &#39;code&#39;: code, &#39;redirect_uri&#39;: &#39;http://127."><meta itemprop="datePublished" content="2020-03-16T19:12:33+08:00" />
 <meta itemprop="dateModified" content="2020-03-16T19:12:33+08:00" />
-<meta itemprop="wordCount" content="139"><meta itemprop="image" content="https://tianshangxing.github.io/blog/"/>
+<meta itemprop="wordCount" content="139"><meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog/"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
 
 <meta name="twitter:title" content="新浪微博三方登录"/>
 <meta name="twitter:description" content="新浪微博：中国版的twitter，自2009年8月上线以来，新浪微博就一直保持着爆发式增长。2019年底，微博月活跃用户到达5.16亿，所以使用新浪微博账号进行三方登录来提高用户登录体验就显得尤为重要。本次就来实现一下微博登录。
@@ -239,7 +239,7 @@ def wb_back(request):
         <div class="footer__content">
             <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog/">TianShangXing</a></span>
+                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
             <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
