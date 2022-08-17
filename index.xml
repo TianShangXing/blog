@@ -7,7 +7,65 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 15 Aug 2022 20:18:13 +0800</lastBuildDate><atom:link href="https://tianshangxing.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 09:47:08 +0800</lastBuildDate><atom:link href="https://tianshangxing.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>缺陷报告与测试报告详解</title>
+      <link>https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E4%B8%8E%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Wed, 17 Aug 2022 09:47:08 +0800</pubDate>
+      
+      <guid>https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E4%B8%8E%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E8%AF%A6%E8%A7%A3/</guid>
+      <description>缺陷报告 定义：标识并描述发现的缺陷，具有清晰、完整、可重现问题所需的信息的文档。
+可理解为：测试人员发现缺陷,，将缺陷记录在《缺陷报告》中，通过缺陷报告将缺陷告知给开发人员，并对缺陷进行跟踪和管理。缺陷报告是测试人员与开发人员之间重要的沟通方式。
+核心要素 包括：缺陷编号、缺陷状态、缺陷标题、重现步骤（操作步骤、预期结果、实际结果）、严重程度、优先级、缺陷类型、测试环境、指派人。
+缺陷流转过程 八大状态 编写技巧 对错误的描述要做到简洁、准确、完整，揭示错误实质 尽量使用短语和短句，避免复杂句型句式 每个软件问题报告只书写一个缺陷或错误 明确指明错误类型和严重程度 每一个步骤尽量只记录一个完整操作 复现的操作步骤要完整，准确，简短 可以附加必要的错误特征图像（截图、服务器日志、业务访问地址） 可以附加必要的测试用例 缺陷报告内容 缺陷编号
+缺陷的唯一标识符
+缺陷状态
+缺陷跟踪过程的进展情况：
+①新建：刚发现的缺陷
+②已指派：已经由测试人员将缺陷指派给开发人员进行处理
+③已打开：开发人员正在修复缺陷
+④已修复：开发人员完成缺陷修复，还未进行回归测试
+⑤已拒绝：发开人员拒绝修复
+⑥已延期：对缺陷进行延缓处理
+⑦已关闭：由测试人员回归测试后，缺陷不存在了
+⑧重新打开：由测试人员回归测试后，发现缺陷仍然存在
+缺陷标题
+缺陷的概述，描述问题本质
+重现步骤
+①一步一步描述再现缺陷的操作步骤
+②预期结果
+③实际结果
+严重程度
+缺陷对软件系统的影响程度
+优先级
+修复缺陷的重要性或紧迫性
+缺陷类型
+根据缺陷产生的来源和根源划分出的缺陷种类
+功能、配置、安装、性能缺陷
+测试环境
+测试环境配置，包括软件环境和硬件环境
+指派人
+缺陷产生模块的开发负责人
+测试报告 定义：记录测试的过程和结果，对发现的问题和缺陷进行分析的文档。
+分类：阶段测试报告、整体测试报告
+报告内容 一、概要 编写目的
+①对测试报告进行相应的解释
+②对项目进行介绍
+③对于测试任务进行简单描述，要测试哪些内容
+测试人员
+类似于测试计划中的人员分工，简单描述日期等
+测试环境
+软件和硬件环境
+二、测试过程 阶段测试报告：
+测试进度情况
+用例执行情况
+缺陷统计
+总体测试报告
+各版本的测试情况
+各版本的缺陷统计
+三、缺陷分析 按照缺陷级别</description>
+    </item>
+    
     <item>
       <title>测试用例设计方法</title>
       <link>https://tianshangxing.github.io/blog/blogs/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/</link>
@@ -201,19 +259,6 @@ import keyword keyword.kwlist 常用的格式符号有哪些 格式符 转换 %c
       
       <guid>https://tianshangxing.github.io/blog/blogs/python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/</guid>
       <description>Python基础语法练习 # 1.	str = &amp;#34; fgh &amp;#34; 写一个函数，只去掉字符串右侧的空格，左侧的空格保留 def func(): str = &amp;#34; fgh &amp;#34; print(str.rstrip(&amp;#39; &amp;#39;)) func() # 2.	输入10个数字到列表中，如果输入的不是数字，则跳过，不存 def func(): l = [] b = 1 while True: b += 1 if len(l) == 10: break a = input(&amp;#34;请输入数字：&amp;#34;) if a.isdigit(): a = int(a) l.append(a) else: continue print(l) func() # 3.	写一个函数，可以判断一个字符串是否为回文例子qwewq，函数返回true或者false def func(): s = input(&amp;#39;请输入字符串：&amp;#39;) if s == s[::-1]: return True else: return False print(func()) # 4.</description>
-    </item>
-    
-    <item>
-      <title>Linux下安装JDK，MySQL，tomcat</title>
-      <link>https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</link>
-      <pubDate>Tue, 16 Jun 2020 22:47:04 +0800</pubDate>
-      
-      <guid>https://tianshangxing.github.io/blog/blogs/linux%E4%B8%8B%E5%AE%89%E8%A3%85jdkmysqltomcat/</guid>
-      <description>我本地的Linux环境是Ubuntu，安装需要用到apt命令
-Ubuntu下安装JDK 更新软件包列表 sudo apt-get update 安装JDK sudo apt-get install openjdk-8-jdk 查看Java版本，看是否安装成功 java -version openjdk version &amp;#34;1.8.0_252&amp;#34; OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1ubuntu1-b09) OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode) 出现JDK版本说明安装成功
-还可以通过输入java和javac查看是否安装成功
-Ubuntu下安装MySQL 1.安装MySQL
-sudo apt-get install mysql-server 安装完成连接MySQL mysql -h 127.0.0.1 -u root -p Enter password: 输入MySQL密码就可以链接成功 Welcome to the MySQL monitor. Commands end with ; or \g. Your MySQL connection id is 15 Server version: 5.5.5-10.1.38-MariaDB mariadb.org binary distribution Copyright (c) 2000, 2020, Oracle and/or its affiliates.</description>
     </item>
     
   </channel>

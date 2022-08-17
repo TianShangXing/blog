@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="TianShangXing ">
+<meta name="description" content="缺陷报告 定义：标识并描述发现的缺陷，具有清晰、完整、可重现问题所需的信息的文档。
+可理解为：测试人员发现缺陷,，将缺陷记录在《缺陷报告》中，通过缺陷报告将缺陷告知给开发人员，并对缺陷进行跟踪和管理。缺陷报告是测试人员与开发人员之间重要的沟通方式。
+核心要素 包括：缺陷编号、缺陷状态、缺陷标题、重现步骤（操作步骤、预期结果、实际结果）、严重程度、优先级、缺陷类型、测试环境、指派人。
+缺陷流转过程 八大状态 编写技巧 对错误的描述要做到简洁、准确、完整，揭示错误实质 尽量使用短语和短句，避免复杂句型句式 每个软件问题报告只书写一个缺陷或错误 明确指明错误类型和严重程度 每一个步骤尽量只记录一个完整操作 复现的操作步骤要完整，准确，简短 可以附加必要的错误特征图像（截图、服务器日志、业务访问地址） 可以附加必要的测试用例 缺陷报告内容 缺陷编号
+缺陷的唯一标识符
+缺陷状态
+缺陷跟踪过程的进展情况：
+①新建：刚发现的缺陷
+②已指派：已经由测试人员将缺陷指派给开发人员进行处理
+③已打开：开发人员正在修复缺陷
+④已修复：开发人员完成缺陷修复，还未进行回归测试
+⑤已拒绝：发开人员拒绝修复
+⑥已延期：对缺陷进行延缓处理
+⑦已关闭：由测试人员回归测试后，缺陷不存在了
+⑧重新打开：由测试人员回归测试后，发现缺陷仍然存在
+缺陷标题
+缺陷的概述，描述问题本质
+重现步骤
+①一步一步描述再现缺陷的操作步骤
+②预期结果
+③实际结果
+严重程度
+缺陷对软件系统的影响程度
+优先级
+修复缺陷的重要性或紧迫性
+缺陷类型
+根据缺陷产生的来源和根源划分出的缺陷种类
+功能、配置、安装、性能缺陷
+测试环境
+测试环境配置，包括软件环境和硬件环境
+指派人
+缺陷产生模块的开发负责人
+测试报告 定义：记录测试的过程和结果，对发现的问题和缺陷进行分析的文档。
+分类：阶段测试报告、整体测试报告
+报告内容 一、概要 编写目的
+①对测试报告进行相应的解释
+②对项目进行介绍
+③对于测试任务进行简单描述，要测试哪些内容
+测试人员
+类似于测试计划中的人员分工，简单描述日期等
+测试环境
+软件和硬件环境
+二、测试过程 阶段测试报告：
+测试进度情况
+用例执行情况
+缺陷统计
+总体测试报告
+各版本的测试情况
+各版本的缺陷统计
+三、缺陷分析 按照缺陷级别" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E4%B8%8E%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E8%AF%A6%E8%A7%A3/" />
+
+
+    <title>
+        
+            缺陷报告与测试报告详解 :: TianShangXing&#39;s Blog  — 欢迎来到天上星的博客
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tianshangxing.github.io/blog/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://tianshangxing.github.io/blog/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://tianshangxing.github.io/blog/favicon-16x16.png">
+    <link rel="manifest" href="https://tianshangxing.github.io/blog/site.webmanifest">
+    <link rel="mask-icon" href="https://tianshangxing.github.io/blog/safari-pinned-tab.svg" color="#252627">
+    <link rel="shortcut icon" href="https://tianshangxing.github.io/blog/favicon.ico">
+    <meta name="msapplication-TileColor" content="#252627">
+    <meta name="theme-color" content="#252627">
+
+
+
+<meta itemprop="name" content="缺陷报告与测试报告详解">
+<meta itemprop="description" content="缺陷报告 定义：标识并描述发现的缺陷，具有清晰、完整、可重现问题所需的信息的文档。
+可理解为：测试人员发现缺陷,，将缺陷记录在《缺陷报告》中，通过缺陷报告将缺陷告知给开发人员，并对缺陷进行跟踪和管理。缺陷报告是测试人员与开发人员之间重要的沟通方式。
+核心要素 包括：缺陷编号、缺陷状态、缺陷标题、重现步骤（操作步骤、预期结果、实际结果）、严重程度、优先级、缺陷类型、测试环境、指派人。
+缺陷流转过程 八大状态 编写技巧 对错误的描述要做到简洁、准确、完整，揭示错误实质 尽量使用短语和短句，避免复杂句型句式 每个软件问题报告只书写一个缺陷或错误 明确指明错误类型和严重程度 每一个步骤尽量只记录一个完整操作 复现的操作步骤要完整，准确，简短 可以附加必要的错误特征图像（截图、服务器日志、业务访问地址） 可以附加必要的测试用例 缺陷报告内容 缺陷编号
+缺陷的唯一标识符
+缺陷状态
+缺陷跟踪过程的进展情况：
+①新建：刚发现的缺陷
+②已指派：已经由测试人员将缺陷指派给开发人员进行处理
+③已打开：开发人员正在修复缺陷
+④已修复：开发人员完成缺陷修复，还未进行回归测试
+⑤已拒绝：发开人员拒绝修复
+⑥已延期：对缺陷进行延缓处理
+⑦已关闭：由测试人员回归测试后，缺陷不存在了
+⑧重新打开：由测试人员回归测试后，发现缺陷仍然存在
+缺陷标题
+缺陷的概述，描述问题本质
+重现步骤
+①一步一步描述再现缺陷的操作步骤
+②预期结果
+③实际结果
+严重程度
+缺陷对软件系统的影响程度
+优先级
+修复缺陷的重要性或紧迫性
+缺陷类型
+根据缺陷产生的来源和根源划分出的缺陷种类
+功能、配置、安装、性能缺陷
+测试环境
+测试环境配置，包括软件环境和硬件环境
+指派人
+缺陷产生模块的开发负责人
+测试报告 定义：记录测试的过程和结果，对发现的问题和缺陷进行分析的文档。
+分类：阶段测试报告、整体测试报告
+报告内容 一、概要 编写目的
+①对测试报告进行相应的解释
+②对项目进行介绍
+③对于测试任务进行简单描述，要测试哪些内容
+测试人员
+类似于测试计划中的人员分工，简单描述日期等
+测试环境
+软件和硬件环境
+二、测试过程 阶段测试报告：
+测试进度情况
+用例执行情况
+缺陷统计
+总体测试报告
+各版本的测试情况
+各版本的缺陷统计
+三、缺陷分析 按照缺陷级别"><meta itemprop="datePublished" content="2022-08-17T09:47:08+08:00" />
+<meta itemprop="dateModified" content="2022-08-17T09:47:08+08:00" />
+<meta itemprop="wordCount" content="85"><meta itemprop="image" content="https://tianshangxing.github.io/blog/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog/"/>
+
+<meta name="twitter:title" content="缺陷报告与测试报告详解"/>
+<meta name="twitter:description" content="缺陷报告 定义：标识并描述发现的缺陷，具有清晰、完整、可重现问题所需的信息的文档。
+可理解为：测试人员发现缺陷,，将缺陷记录在《缺陷报告》中，通过缺陷报告将缺陷告知给开发人员，并对缺陷进行跟踪和管理。缺陷报告是测试人员与开发人员之间重要的沟通方式。
+核心要素 包括：缺陷编号、缺陷状态、缺陷标题、重现步骤（操作步骤、预期结果、实际结果）、严重程度、优先级、缺陷类型、测试环境、指派人。
+缺陷流转过程 八大状态 编写技巧 对错误的描述要做到简洁、准确、完整，揭示错误实质 尽量使用短语和短句，避免复杂句型句式 每个软件问题报告只书写一个缺陷或错误 明确指明错误类型和严重程度 每一个步骤尽量只记录一个完整操作 复现的操作步骤要完整，准确，简短 可以附加必要的错误特征图像（截图、服务器日志、业务访问地址） 可以附加必要的测试用例 缺陷报告内容 缺陷编号
+缺陷的唯一标识符
+缺陷状态
+缺陷跟踪过程的进展情况：
+①新建：刚发现的缺陷
+②已指派：已经由测试人员将缺陷指派给开发人员进行处理
+③已打开：开发人员正在修复缺陷
+④已修复：开发人员完成缺陷修复，还未进行回归测试
+⑤已拒绝：发开人员拒绝修复
+⑥已延期：对缺陷进行延缓处理
+⑦已关闭：由测试人员回归测试后，缺陷不存在了
+⑧重新打开：由测试人员回归测试后，发现缺陷仍然存在
+缺陷标题
+缺陷的概述，描述问题本质
+重现步骤
+①一步一步描述再现缺陷的操作步骤
+②预期结果
+③实际结果
+严重程度
+缺陷对软件系统的影响程度
+优先级
+修复缺陷的重要性或紧迫性
+缺陷类型
+根据缺陷产生的来源和根源划分出的缺陷种类
+功能、配置、安装、性能缺陷
+测试环境
+测试环境配置，包括软件环境和硬件环境
+指派人
+缺陷产生模块的开发负责人
+测试报告 定义：记录测试的过程和结果，对发现的问题和缺陷进行分析的文档。
+分类：阶段测试报告、整体测试报告
+报告内容 一、概要 编写目的
+①对测试报告进行相应的解释
+②对项目进行介绍
+③对于测试任务进行简单描述，要测试哪些内容
+测试人员
+类似于测试计划中的人员分工，简单描述日期等
+测试环境
+软件和硬件环境
+二、测试过程 阶段测试报告：
+测试进度情况
+用例执行情况
+缺陷统计
+总体测试报告
+各版本的测试情况
+各版本的缺陷统计
+三、缺陷分析 按照缺陷级别"/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-08-17 09:47:08 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://tianshangxing.github.io/blog/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">TianShangXing&#39;s Blog</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://tianshangxing.github.io/blog/blogs/">Blogs</a></li><li><a href="https://tianshangxing.github.io/blog/resume/">Resume</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://tianshangxing.github.io/blog/blogs/%E7%BC%BA%E9%99%B7%E6%8A%A5%E5%91%8A%E4%B8%8E%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E8%AF%A6%E8%A7%A3/">缺陷报告与测试报告详解</a></h2>
+
+            
+
+            <div class="post-content">
+                <hr>
+<h3 id="缺陷报告">缺陷报告</h3>
+<p>定义：标识并描述发现的缺陷，具有清晰、完整、可重现问题所需的信息的文档。</p>
+<p>可理解为：测试人员发现缺陷,，将缺陷记录在《缺陷报告》中，通过缺陷报告将缺陷告知给开发人员，并对缺陷进行跟踪和管理。缺陷报告是测试人员与开发人员之间重要的沟通方式。</p>
+<h4 id="核心要素">核心要素</h4>
+<p>包括：缺陷编号、缺陷状态、<strong>缺陷标题</strong>、<strong>重现步骤</strong>（操作步骤、预期结果、实际结果）、严重程度、优先级、缺陷类型、测试环境、指派人。</p>
+<h4 id="缺陷流转过程">缺陷流转过程</h4>
+<p><img src="https://tianshangxing.github.io/blog/%E7%BC%BA%E9%99%B7%E6%B5%81%E8%BD%AC%E8%BF%87%E7%A8%8B.jpg" alt=""></p>
+<h4 id="八大状态">八大状态</h4>
+<p><img src="https://tianshangxing.github.io/blog/%E7%BC%BA%E9%99%B7%E5%85%AB%E5%A4%A7%E7%8A%B6%E6%80%81.jpg" alt=""></p>
+<h4 id="编写技巧">编写技巧</h4>
+<ul>
+<li>对错误的描述要做到简洁、准确、完整，揭示错误实质</li>
+<li>尽量使用短语和短句，避免复杂句型句式</li>
+<li>每个软件问题报告只书写一个缺陷或错误</li>
+<li>明确指明错误类型和严重程度</li>
+<li>每一个步骤尽量只记录一个完整操作</li>
+<li>复现的操作步骤要完整，准确，简短</li>
+<li>可以附加必要的错误特征图像（截图、服务器日志、<strong>业务访问地址</strong>）</li>
+<li>可以附加必要的测试用例</li>
+</ul>
+<h3 id="缺陷报告内容">缺陷报告内容</h3>
+<ol>
+<li>
+<p>缺陷编号</p>
+<p>缺陷的唯一标识符</p>
+</li>
+<li>
+<p>缺陷状态</p>
+<p>缺陷跟踪过程的进展情况：</p>
+<p>①新建：刚发现的缺陷</p>
+<p>②已指派：已经由测试人员将缺陷指派给开发人员进行处理</p>
+<p>③已打开：开发人员正在修复缺陷</p>
+<p>④已修复：开发人员完成缺陷修复，还未进行回归测试</p>
+<p>⑤已拒绝：发开人员拒绝修复</p>
+<p>⑥已延期：对缺陷进行延缓处理</p>
+<p>⑦已关闭：由测试人员回归测试后，缺陷不存在了</p>
+<p>⑧重新打开：由测试人员回归测试后，发现缺陷仍然存在</p>
+</li>
+<li>
+<p>缺陷标题</p>
+<p>缺陷的概述，描述问题本质</p>
+</li>
+<li>
+<p>重现步骤</p>
+<p>①一步一步描述再现缺陷的操作步骤</p>
+<p>②预期结果</p>
+<p>③实际结果</p>
+</li>
+<li>
+<p>严重程度</p>
+<p>缺陷对软件系统的影响程度</p>
+</li>
+<li>
+<p>优先级</p>
+<p>修复缺陷的重要性或紧迫性</p>
+</li>
+<li>
+<p>缺陷类型</p>
+<p>根据缺陷产生的来源和根源划分出的缺陷种类</p>
+<p>功能、配置、安装、性能缺陷</p>
+</li>
+<li>
+<p>测试环境</p>
+<p>测试环境配置，包括软件环境和硬件环境</p>
+</li>
+<li>
+<p>指派人</p>
+<p>缺陷产生模块的开发负责人</p>
+</li>
+</ol>
+<hr>
+<h3 id="测试报告">测试报告</h3>
+<p>定义：记录测试的过程和结果，对发现的问题和缺陷进行分析的文档。</p>
+<p>分类：阶段测试报告、整体测试报告</p>
+<h3 id="报告内容">报告内容</h3>
+<h4 id="一概要">一、概要</h4>
+<ol>
+<li>
+<p>编写目的</p>
+<p>①对测试报告进行相应的解释</p>
+<p>②对项目进行介绍</p>
+<p>③对于测试任务进行简单描述，要测试哪些内容</p>
+</li>
+<li>
+<p>测试人员</p>
+<p>类似于测试计划中的人员分工，简单描述日期等</p>
+</li>
+<li>
+<p>测试环境</p>
+<p>软件和硬件环境</p>
+</li>
+</ol>
+<h4 id="二测试过程">二、测试过程</h4>
+<p>阶段测试报告：</p>
+<ol>
+<li>
+<p>测试进度情况</p>
+</li>
+<li>
+<p>用例执行情况</p>
+</li>
+<li>
+<p>缺陷统计</p>
+</li>
+</ol>
+<p>总体测试报告</p>
+<ol>
+<li>
+<p>各版本的测试情况</p>
+</li>
+<li>
+<p>各版本的缺陷统计</p>
+</li>
+</ol>
+<h4 id="三缺陷分析">三、缺陷分析</h4>
+<ol>
+<li>
+<p>按照缺陷级别</p>
+</li>
+<li>
+<p>按照功能模块</p>
+</li>
+<li>
+<p>按照轮次</p>
+</li>
+<li>
+<p>缺陷总数</p>
+</li>
+<li>
+<p>缺陷类型</p>
+</li>
+<li>
+<p>缺陷趋势</p>
+</li>
+</ol>
+<h4 id="四测试总结">四、测试总结</h4>
+<ol>
+<li>
+<p>测试结论</p>
+<p>通过/不通过；</p>
+<p>需求覆盖率100%，测试用例执行过率100%；</p>
+<p>缺陷：致命=0，严重=0，一般=0，提示≤10%。</p>
+</li>
+<li>
+<p>风险分析</p>
+<p>测试进度、人员安排导致的风险；</p>
+<p>测试内容考虑范围之外导致的风险；</p>
+<p>测试环境不全面导致的风险。</p>
+</li>
+<li>
+<p>遗留问题</p>
+<p>遗留问题描述、等级、处理方法。</p>
+</li>
+</ol>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            
+                <span><a href="https://tianshangxing.github.io/blog/">TianShangXing</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+            <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
+
+
+
+    </body>
+</html>
