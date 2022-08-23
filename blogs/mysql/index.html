@@ -5,9 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
-<meta name="description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
-官网： https://www.mysql.com/cn/
-数据库迁移 建立数据库映射关系 python manage.py makemigrations myapp # 子应用名称 建表 python manage.py migrate " />
+<meta name="description" content="MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/
+数据库和SQL是什么关系？ 结构化查询语言(Structured Query Language)简称SQL，是一种特殊目的的编程语言，是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统；同时也是数据库脚本文件的扩展名。
+​数据库里面放着数据，而SQL是用来操作数据库里数据的语言（工具）。
+启动服务和停止服务 启动、停止服务操作 Win&#43;E打开资源管理器，右击此电脑-管理，选择服务和应用程序，找到对应的服务 services.msc打开服务管理器，找到对应服务 管理员身份运行cmd，关闭服务：net stop mysql；启动服务：net start mysql 创建.bat脚本，脚本内输入关闭服务：net stop mysql；启动服务：net start mysql，以管理员身份运行 进入、退出数据库 登录 命令行方式：cmd
+mysql -h localhost -P 3306 -u root -p 或者 mysql -uroot -p123456 （root是用户，123456密码） 注意：第一个-P要大写，输入完成后回车，再输入密码即可
+退出 exit、quit 或者 ctrl&#43;c
+表约束 primary key 主键（不允许重复，不能为空） auto_increment 自增 not null 非空 unique 唯一 charset（character set缩写） 设置编码 engine 设置存储引擎 常见命令 DDL - 数据库定义语言 显示数据库 show databases; 数据库创建 create database 数据库名 charset=utf8; 数据库切换 use 数据库; 删除数据库 drop database 库名 查看当前库的所有表 show tables; 查看其他库所以表 show tables from 库名; 创建表 create table 表名( 列名 类型, 列名 类型 ); 删除表 drop table 表名; 查看建库细节 show create database 库名; 查看建表细节 show create table 表名; 修改表结构 # 添加字段 alter table 表名 add 字段名 类型; # 重命名 alter table 表名 rename (to) 新表名; # 重命名字段并修改类型 alter table 表名 change 字段名 新字段名 类型及约束; # 修改字段类型 alter table 表名 modify 字段名 类型及约束; # 删除字段 alter table 表名 drop 字段名; DML - 数据库操作语言 插入数据(insert) insert into 表名 (字段) valus 值; 修改数据(update) update 表名 set 字段名 = 值 where 条件; 删除数据(delete) delete from 表名 where 条件; # 删除所有数据，不删除结构，会放到日志中，事务提交后才生效 delete from 表名; # 摧毁表，删除表中所有数据，不删除结构，立即生效 truncate from 表名; DQL - 数据库查询语言 # 查询表内所有信息 select * from 表名; # 条件查询 select 字段名 from 表名 where 条件; # 模糊查询 &amp;#39;_&amp;#39;:匹配单个字符; &amp;#39;%&amp;#39;:匹配任意长度 select 字段名 from 表名 where 字段名 like &amp;#39;_值&amp;#39;; select 字段名 from 表名 where 字段名 like &amp;#39;%值&amp;#39;; # 排序查询 order by 字段名 asc:升序(默认为升序，可以省略); desc:降序 select 字段名 from 表名 order by 字段名 (asc)/desc; # 分页查询 limit 起始值, 步长 (起始值从0开始) select 字段名 from 表名 limit m,n; # 分组查询 select 字段名, count(*) from 表名 group by 字段名 having 条件; # 函数 # count 统计个数 select count(*) from 表名; # 统计表里数据个数 # sum 求和 select sum(math) from 表名; # 查询数学总成绩 # avg 平均数 select avg(chinese) from 表名; # 查询语文平均分 select sum(chinese)/count(*) from 表名; # max 最大值 select max(english) from 表名; # 查询英语最高分 # min 最小值 select min(english) from 表名; # 查询英语最低分 多表联查 select 表名." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -27,7 +32,7 @@
 
 
 
-<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.73f55a8d452be4a71b2960620b80252cf69abd84d63fe7501abf0a39b1a70a78.css">
+<link rel="stylesheet" href="https://tianshangxing.github.io/blog/main.min.01710bb66eae7f22dfce673f5d03773a71e52d8e273581b97701e62d8db59cb3.css">
 
 
 
@@ -44,24 +49,29 @@
 
 
 <meta itemprop="name" content="MySQL">
-<meta itemprop="description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
-官网： https://www.mysql.com/cn/
-数据库迁移 建立数据库映射关系 python manage.py makemigrations myapp # 子应用名称 建表 python manage.py migrate ">
-<meta itemprop="datePublished" content="2020-04-12T12:01:31&#43;08:00" />
-<meta itemprop="dateModified" content="2020-04-12T12:01:31&#43;08:00" />
-<meta itemprop="wordCount" content="25">
-<meta itemprop="image" content="https://tianshangxing.github.io/blog"/>
-
-
-
+<meta itemprop="description" content="MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/
+数据库和SQL是什么关系？ 结构化查询语言(Structured Query Language)简称SQL，是一种特殊目的的编程语言，是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统；同时也是数据库脚本文件的扩展名。
+​数据库里面放着数据，而SQL是用来操作数据库里数据的语言（工具）。
+启动服务和停止服务 启动、停止服务操作 Win&#43;E打开资源管理器，右击此电脑-管理，选择服务和应用程序，找到对应的服务 services.msc打开服务管理器，找到对应服务 管理员身份运行cmd，关闭服务：net stop mysql；启动服务：net start mysql 创建.bat脚本，脚本内输入关闭服务：net stop mysql；启动服务：net start mysql，以管理员身份运行 进入、退出数据库 登录 命令行方式：cmd
+mysql -h localhost -P 3306 -u root -p 或者 mysql -uroot -p123456 （root是用户，123456密码） 注意：第一个-P要大写，输入完成后回车，再输入密码即可
+退出 exit、quit 或者 ctrl&#43;c
+表约束 primary key 主键（不允许重复，不能为空） auto_increment 自增 not null 非空 unique 唯一 charset（character set缩写） 设置编码 engine 设置存储引擎 常见命令 DDL - 数据库定义语言 显示数据库 show databases; 数据库创建 create database 数据库名 charset=utf8; 数据库切换 use 数据库; 删除数据库 drop database 库名 查看当前库的所有表 show tables; 查看其他库所以表 show tables from 库名; 创建表 create table 表名( 列名 类型, 列名 类型 ); 删除表 drop table 表名; 查看建库细节 show create database 库名; 查看建表细节 show create table 表名; 修改表结构 # 添加字段 alter table 表名 add 字段名 类型; # 重命名 alter table 表名 rename (to) 新表名; # 重命名字段并修改类型 alter table 表名 change 字段名 新字段名 类型及约束; # 修改字段类型 alter table 表名 modify 字段名 类型及约束; # 删除字段 alter table 表名 drop 字段名; DML - 数据库操作语言 插入数据(insert) insert into 表名 (字段) valus 值; 修改数据(update) update 表名 set 字段名 = 值 where 条件; 删除数据(delete) delete from 表名 where 条件; # 删除所有数据，不删除结构，会放到日志中，事务提交后才生效 delete from 表名; # 摧毁表，删除表中所有数据，不删除结构，立即生效 truncate from 表名; DQL - 数据库查询语言 # 查询表内所有信息 select * from 表名; # 条件查询 select 字段名 from 表名 where 条件; # 模糊查询 &#39;_&#39;:匹配单个字符; &#39;%&#39;:匹配任意长度 select 字段名 from 表名 where 字段名 like &#39;_值&#39;; select 字段名 from 表名 where 字段名 like &#39;%值&#39;; # 排序查询 order by 字段名 asc:升序(默认为升序，可以省略); desc:降序 select 字段名 from 表名 order by 字段名 (asc)/desc; # 分页查询 limit 起始值, 步长 (起始值从0开始) select 字段名 from 表名 limit m,n; # 分组查询 select 字段名, count(*) from 表名 group by 字段名 having 条件; # 函数 # count 统计个数 select count(*) from 表名; # 统计表里数据个数 # sum 求和 select sum(math) from 表名; # 查询数学总成绩 # avg 平均数 select avg(chinese) from 表名; # 查询语文平均分 select sum(chinese)/count(*) from 表名; # max 最大值 select max(english) from 表名; # 查询英语最高分 # min 最小值 select min(english) from 表名; # 查询英语最低分 多表联查 select 表名."><meta itemprop="datePublished" content="2020-04-12T12:01:31+08:00" />
+<meta itemprop="dateModified" content="2020-04-12T12:01:31+08:00" />
+<meta itemprop="wordCount" content="395"><meta itemprop="image" content="https://tianshangxing.github.io/blog/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://tianshangxing.github.io/blog"/>
+<meta name="twitter:image" content="https://tianshangxing.github.io/blog/"/>
 
 <meta name="twitter:title" content="MySQL"/>
-<meta name="twitter:description" content="MySQL  MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
-官网： https://www.mysql.com/cn/
-数据库迁移 建立数据库映射关系 python manage.py makemigrations myapp # 子应用名称 建表 python manage.py migrate "/>
+<meta name="twitter:description" content="MySQL MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+官网： https://www.mysql.com/
+数据库和SQL是什么关系？ 结构化查询语言(Structured Query Language)简称SQL，是一种特殊目的的编程语言，是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统；同时也是数据库脚本文件的扩展名。
+​数据库里面放着数据，而SQL是用来操作数据库里数据的语言（工具）。
+启动服务和停止服务 启动、停止服务操作 Win&#43;E打开资源管理器，右击此电脑-管理，选择服务和应用程序，找到对应的服务 services.msc打开服务管理器，找到对应服务 管理员身份运行cmd，关闭服务：net stop mysql；启动服务：net start mysql 创建.bat脚本，脚本内输入关闭服务：net stop mysql；启动服务：net start mysql，以管理员身份运行 进入、退出数据库 登录 命令行方式：cmd
+mysql -h localhost -P 3306 -u root -p 或者 mysql -uroot -p123456 （root是用户，123456密码） 注意：第一个-P要大写，输入完成后回车，再输入密码即可
+退出 exit、quit 或者 ctrl&#43;c
+表约束 primary key 主键（不允许重复，不能为空） auto_increment 自增 not null 非空 unique 唯一 charset（character set缩写） 设置编码 engine 设置存储引擎 常见命令 DDL - 数据库定义语言 显示数据库 show databases; 数据库创建 create database 数据库名 charset=utf8; 数据库切换 use 数据库; 删除数据库 drop database 库名 查看当前库的所有表 show tables; 查看其他库所以表 show tables from 库名; 创建表 create table 表名( 列名 类型, 列名 类型 ); 删除表 drop table 表名; 查看建库细节 show create database 库名; 查看建表细节 show create table 表名; 修改表结构 # 添加字段 alter table 表名 add 字段名 类型; # 重命名 alter table 表名 rename (to) 新表名; # 重命名字段并修改类型 alter table 表名 change 字段名 新字段名 类型及约束; # 修改字段类型 alter table 表名 modify 字段名 类型及约束; # 删除字段 alter table 表名 drop 字段名; DML - 数据库操作语言 插入数据(insert) insert into 表名 (字段) valus 值; 修改数据(update) update 表名 set 字段名 = 值 where 条件; 删除数据(delete) delete from 表名 where 条件; # 删除所有数据，不删除结构，会放到日志中，事务提交后才生效 delete from 表名; # 摧毁表，删除表中所有数据，不删除结构，立即生效 truncate from 表名; DQL - 数据库查询语言 # 查询表内所有信息 select * from 表名; # 条件查询 select 字段名 from 表名 where 条件; # 模糊查询 &#39;_&#39;:匹配单个字符; &#39;%&#39;:匹配任意长度 select 字段名 from 表名 where 字段名 like &#39;_值&#39;; select 字段名 from 表名 where 字段名 like &#39;%值&#39;; # 排序查询 order by 字段名 asc:升序(默认为升序，可以省略); desc:降序 select 字段名 from 表名 order by 字段名 (asc)/desc; # 分页查询 limit 起始值, 步长 (起始值从0开始) select 字段名 from 表名 limit m,n; # 分组查询 select 字段名, count(*) from 表名 group by 字段名 having 条件; # 函数 # count 统计个数 select count(*) from 表名; # 统计表里数据个数 # sum 求和 select sum(math) from 表名; # 查询数学总成绩 # avg 平均数 select avg(chinese) from 表名; # 查询语文平均分 select sum(chinese)/count(*) from 表名; # max 最大值 select max(english) from 表名; # 查询英语最高分 # min 最小值 select min(english) from 表名; # 查询英语最低分 多表联查 select 表名."/>
 
 
 
@@ -144,13 +154,167 @@
 <hr>
 <p><img src="https://www.runoob.com/wp-content/uploads/2014/03/mysql.jpg" alt=""></p>
 <p><strong>MySQL</strong> 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。</p>
-<p>官网： <a href="https://www.mysql.com/cn/">https://www.mysql.com/cn/</a></p>
-<h3 id="数据库迁移">数据库迁移</h3>
-<pre><code>建立数据库映射关系
-python manage.py makemigrations myapp # 子应用名称
+<p>官网： <a href="https://www.mysql.com/">https://www.mysql.com/</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="数据库和sql是什么关系"><strong>数据库和</strong>SQL是什么关系？</h4>
+<p><strong>结构化查询语言</strong>(Structured Query Language)简称SQL，是一种特殊目的的编程语言，是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统；同时也是数据库脚本文件的扩展名。</p>
+<p>​数据库里面放着数据，而SQL是用来操作数据库里数据的语言（工具）。</p>
+<h3 id="启动服务和停止服务">启动服务和停止服务</h3>
+<ul>
+<li>
+<h4 id="启动停止服务操作">启动、停止服务操作</h4>
+<ul>
+<li>Win+E打开资源管理器，右击此电脑-管理，选择服务和应用程序，找到对应的服务</li>
+</ul>
+<ul>
+<li>services.msc打开服务管理器，找到对应服务</li>
+</ul>
+<ul>
+<li>管理员身份运行cmd，关闭服务：net stop mysql；启动服务：net start mysql</li>
+<li>创建.bat脚本，脚本内输入关闭服务：net stop mysql；启动服务：net start mysql，以管理员身份运行</li>
+</ul>
+</li>
+</ul>
+<h3 id="进入退出数据库">进入、退出数据库</h3>
+<h4 id="登录">登录</h4>
+<p>命令行方式：cmd</p>
+<pre tabindex="0"><code>mysql -h localhost -P 3306 -u root -p 
+或者
+mysql -uroot -p123456 （root是用户，123456密码）
+</code></pre><p><strong>注意</strong>：第一个-P要大写，输入完成后回车，再输入密码即可</p>
+<h4 id="退出">退出</h4>
+<p>exit、quit 或者 ctrl+c</p>
+<h3 id="表约束">表约束</h3>
+<ul>
+<li>primary key 主键（不允许重复，不能为空）</li>
+<li>auto_increment 自增</li>
+<li>not null 非空</li>
+<li>unique 唯一</li>
+<li>charset（character set缩写） 设置编码</li>
+<li>engine 设置存储引擎</li>
+</ul>
+<h3 id="常见命令">常见命令</h3>
+<h3 id="ddl---数据库定义语言">DDL - 数据库定义语言</h3>
+<ol>
+<li>显示数据库</li>
+</ol>
+<pre tabindex="0"><code>show databases;
+</code></pre><ol start="2">
+<li>数据库创建</li>
+</ol>
+<pre tabindex="0"><code>create database 数据库名 charset=utf8;   
+</code></pre><ol start="3">
+<li>数据库切换</li>
+</ol>
+<pre tabindex="0"><code>use 数据库;
+</code></pre><ol start="4">
+<li>删除数据库</li>
+</ol>
+<pre tabindex="0"><code>drop database 库名
+</code></pre><ol start="5">
+<li>查看当前库的所有表</li>
+</ol>
+<pre tabindex="0"><code>show tables;
+</code></pre><ol start="6">
+<li>查看其他库所以表</li>
+</ol>
+<pre tabindex="0"><code>show tables from 库名;
+</code></pre><ol start="7">
+<li>创建表</li>
+</ol>
+<pre tabindex="0"><code>create table 表名(
+列名 类型,
+列名 类型 
+);
+</code></pre><ol start="8">
+<li>删除表</li>
+</ol>
+<pre tabindex="0"><code>drop table 表名;
+</code></pre><ol start="9">
+<li>查看建库细节</li>
+</ol>
+<pre tabindex="0"><code>show create database 库名;
+</code></pre><ol start="10">
+<li>查看建表细节</li>
+</ol>
+<pre tabindex="0"><code>show create table 表名;
+</code></pre><ol start="11">
+<li>修改表结构</li>
+</ol>
+<pre tabindex="0"><code># 添加字段
+alter table 表名 add 字段名 类型;
 
-建表
-python manage.py migrate
+# 重命名
+alter table 表名 rename (to) 新表名;
+
+# 重命名字段并修改类型
+alter table 表名 change 字段名 新字段名 类型及约束;
+
+# 修改字段类型
+alter table 表名 modify 字段名 类型及约束;
+
+# 删除字段
+alter table 表名 drop 字段名;
+</code></pre><h3 id="dml---数据库操作语言">DML - 数据库操作语言</h3>
+<h4 id="插入数据insert">插入数据(insert)</h4>
+<pre tabindex="0"><code>insert into 表名 (字段) valus 值;
+</code></pre><h4 id="修改数据update">修改数据(update)</h4>
+<pre tabindex="0"><code>update 表名 set 字段名 = 值 where 条件;
+</code></pre><h4 id="删除数据delete">删除数据(delete)</h4>
+<pre tabindex="0"><code>delete from 表名 where 条件;
+
+# 删除所有数据，不删除结构，会放到日志中，事务提交后才生效
+delete from 表名;
+
+# 摧毁表，删除表中所有数据，不删除结构，立即生效
+truncate from 表名;
+</code></pre><h3 id="dql---数据库查询语言">DQL - 数据库查询语言</h3>
+<pre tabindex="0"><code># 查询表内所有信息
+select * from 表名;
+
+# 条件查询
+select 字段名 from 表名 where 条件;
+
+# 模糊查询 &#39;_&#39;:匹配单个字符; &#39;%&#39;:匹配任意长度
+select 字段名 from 表名 where 字段名 like &#39;_值&#39;;
+select 字段名 from 表名 where 字段名 like &#39;%值&#39;;
+
+# 排序查询  order by 字段名 asc:升序(默认为升序，可以省略); desc:降序
+select 字段名 from 表名 order by 字段名 (asc)/desc;
+
+# 分页查询 limit 起始值, 步长 (起始值从0开始)
+select 字段名 from 表名 limit m,n;
+
+# 分组查询 
+select 字段名, count(*) from 表名 group by 字段名 having 条件;
+
+# 函数
+# count 统计个数
+select count(*) from 表名;      # 统计表里数据个数
+
+# sum   求和
+select sum(math) from 表名;     # 查询数学总成绩
+
+# avg   平均数
+select avg(chinese) from 表名;  # 查询语文平均分
+select sum(chinese)/count(*) from 表名;
+
+# max   最大值
+select max(english) from 表名;  # 查询英语最高分
+
+# min   最小值
+select min(english) from 表名;  # 查询英语最低分
+</code></pre><h4 id="多表联查">多表联查</h4>
+<pre tabindex="0"><code>select 表名.字段名 ··· from 表1, 表2, 表3 ··· where 表1.关联字段 = 表2.关联字段 and 表2.关联字段 = 表3.关联字段 ··· and 条件;
+</code></pre><h4 id="内连接将两张表对应的数据查询出来">内连接：将两张表对应的数据查询出来</h4>
+<pre tabindex="0"><code>select 表名.字段名 ··· from 表1 inner join 表2 on 表1.关联字段 = 表2.关联字段;
+</code></pre><h4 id="左外连接已左表为基准">左外连接：已左表为基准</h4>
+<pre tabindex="0"><code>select 表名.字段名 ··· from 表1 left join 表2 on 表1.关联字段 = 表2.关联字段;
+</code></pre><h4 id="右外连接已右表为基准">右外连接：已右表为基准，</h4>
+<pre tabindex="0"><code>select 表名.字段名 ··· from 表1 right join 表2 on 表1.关联字段 = 表2.关联字段;
+</code></pre><h4 id="子查询查询嵌套">子查询（查询嵌套）</h4>
+<pre tabindex="0"><code>select 字段名 from 表名 where 字段名 = (select 关联字段 from 表名 where 条件);
 </code></pre>
             </div>
         </article>
@@ -167,9 +331,9 @@ python manage.py migrate
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span>&copy; 2022</span>
             
-                <span><a href="https://tianshangxing.github.io/blog">TianShangXing</a></span>
+                <span><a href="https://tianshangxing.github.io/blog/">TianShangXing</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
             <span> <a href="https://tianshangxing.github.io/blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
@@ -191,7 +355,7 @@ python manage.py migrate
 
 
 
-<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.4a69500057d68129e88f497d354afe68422eb56de6d15e45dbe2190858ea5a76bfcb096406f992984b241db45f47388ac57ab0376e3b32125bef7a8a6d0f06c4.js" integrity="sha512-SmlQAFfWgSnoj0l9NUr&#43;aEIutW3m0V5F2&#43;IZCFjqWna/ywlkBvmSmEskHbRfRziKxXqwN247MhJb73qKbQ8GxA=="></script>
+<script type="text/javascript" src="https://tianshangxing.github.io/blog/bundle.min.b0238bd2801fa378c699d935667ed736af1b89c399fdd4f9befb92e184e6752f370edbef7a39f23bea2a845369efc74a75d0a36d179f03f05df5cb2929b7b787.js" integrity="sha512-sCOL0oAfo3jGmdk1Zn7XNq8bicOZ/dT5vvuS4YTmdS83DtvvejnyO&#43;oqhFNp78dKddCjbRefA/Bd9cspKbe3hw=="></script>
 
 
 

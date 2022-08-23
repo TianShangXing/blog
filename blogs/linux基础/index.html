@@ -6,31 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="TianShangXing ">
 <meta name="description" content="Linux 目前市面上用的操作环境
-Windows	mac	Linux	麒麟	DOS
+Windows、MacOS、Linux、Unix、MSDOS、Android、iOS
 Linux简介
 Linux是一个基于POSIX和unix的多用户 多任务 支持多线程和 多cpu的一个操作系统
-Linux的发行版：
-Ubuntu	RedHat	CentOS	Debian	SUse
+常见Linux的发行版：
+Ubuntu、CentOS、RedHat、Debian、SUse、KALI Linux、麒麟
 Linux的使用领域：
 LNMP Linux&#43;Nginx&#43;mysql&#43;Php
 LAMP Linux&#43;apache&#43;mysql&#43;Php
 Linux的安装：
-在虚拟机中进行安装linux 使用云服务的linux （阿里云 腾讯云） 常用命令 ls /：展示当前目录下的所有文件
-etc：存放配置文件和子目录 var：存放日志以及线程程序 bin/usr/sbin：系统用户使用的命令 对文件的操作
-cd ..：进入上一级目录 cd ../：进入根目录 cd **：进入任意文件夹 ls：展示所有文件夹下的子文件夹和子文件 ls -l：展示文件属性以及文件所属的用户和组 l rwx rwx rwx
+在虚拟机中进行安装linux 使用云服务的linux （阿里云 腾讯云） Linux目录结构
+bin：二进制可执行文件 sbin：只有root用户可以进入访问的二进制可执行文件 etc：配置文件 usr：存放共享的系统资源 home：存放用户文件的跟目录 root：超级用户目录 dev：存放设备文件 lib：存放程序运行所需要的共享库及内核模块 mnt：系统管理员安装临时文件系统的安装点 boot：存放用于系统引导时使用的各种文件 tmp：存放各种临时文件 var：存放运行时需要改变数据的文件 proc：存储硬件相关信息 常用命令 ls ：展示当前目录下的所有文件
+-a：查看所有文件（包括隐藏文件） -l：查看文件详细信息（简写为：ll） etc：存放配置文件和子目录 var：存放日志以及线程程序 bin/usr/sbin：系统用户使用的命令 对文件的操作
+cd ..：进入上一级目录 cd /：进入根目录 cd **：进入任意文件夹 ls：展示所有文件夹下的子文件夹和子文件 ls -a：展示所有文件（包括隐藏文件） ls -l：展示文件属性以及文件所属的用户和组(简写为ll) d rwx-rwx-rwx
 0 123 456 789
 下标为0：代表确定文件类型
 下标为123：确定文件的所属 拥有该文件的权限
 下标为456：确定属性组 所有有权限的用户组
 下标为789：其他用户拥有该文件的权限
-下标为0位置还可以是：- d l b c
--：是一个文件
-d：是一个目录
-l：是链接文档
-b：是装置文件，可提供存储的接口设备
-c：是串行接口设备
-后3位制
-r：读" />
+下标为0位置还可以是：- d l b c" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
@@ -68,64 +62,52 @@ r：读" />
 
 <meta itemprop="name" content="Linux基础">
 <meta itemprop="description" content="Linux 目前市面上用的操作环境
-Windows	mac	Linux	麒麟	DOS
+Windows、MacOS、Linux、Unix、MSDOS、Android、iOS
 Linux简介
 Linux是一个基于POSIX和unix的多用户 多任务 支持多线程和 多cpu的一个操作系统
-Linux的发行版：
-Ubuntu	RedHat	CentOS	Debian	SUse
+常见Linux的发行版：
+Ubuntu、CentOS、RedHat、Debian、SUse、KALI Linux、麒麟
 Linux的使用领域：
 LNMP Linux&#43;Nginx&#43;mysql&#43;Php
 LAMP Linux&#43;apache&#43;mysql&#43;Php
 Linux的安装：
-在虚拟机中进行安装linux 使用云服务的linux （阿里云 腾讯云） 常用命令 ls /：展示当前目录下的所有文件
-etc：存放配置文件和子目录 var：存放日志以及线程程序 bin/usr/sbin：系统用户使用的命令 对文件的操作
-cd ..：进入上一级目录 cd ../：进入根目录 cd **：进入任意文件夹 ls：展示所有文件夹下的子文件夹和子文件 ls -l：展示文件属性以及文件所属的用户和组 l rwx rwx rwx
+在虚拟机中进行安装linux 使用云服务的linux （阿里云 腾讯云） Linux目录结构
+bin：二进制可执行文件 sbin：只有root用户可以进入访问的二进制可执行文件 etc：配置文件 usr：存放共享的系统资源 home：存放用户文件的跟目录 root：超级用户目录 dev：存放设备文件 lib：存放程序运行所需要的共享库及内核模块 mnt：系统管理员安装临时文件系统的安装点 boot：存放用于系统引导时使用的各种文件 tmp：存放各种临时文件 var：存放运行时需要改变数据的文件 proc：存储硬件相关信息 常用命令 ls ：展示当前目录下的所有文件
+-a：查看所有文件（包括隐藏文件） -l：查看文件详细信息（简写为：ll） etc：存放配置文件和子目录 var：存放日志以及线程程序 bin/usr/sbin：系统用户使用的命令 对文件的操作
+cd ..：进入上一级目录 cd /：进入根目录 cd **：进入任意文件夹 ls：展示所有文件夹下的子文件夹和子文件 ls -a：展示所有文件（包括隐藏文件） ls -l：展示文件属性以及文件所属的用户和组(简写为ll) d rwx-rwx-rwx
 0 123 456 789
 下标为0：代表确定文件类型
 下标为123：确定文件的所属 拥有该文件的权限
 下标为456：确定属性组 所有有权限的用户组
 下标为789：其他用户拥有该文件的权限
-下标为0位置还可以是：- d l b c
--：是一个文件
-d：是一个目录
-l：是链接文档
-b：是装置文件，可提供存储的接口设备
-c：是串行接口设备
-后3位制
-r：读"><meta itemprop="datePublished" content="2020-06-15T23:25:37+08:00" />
+下标为0位置还可以是：- d l b c"><meta itemprop="datePublished" content="2020-06-15T23:25:37+08:00" />
 <meta itemprop="dateModified" content="2020-06-15T23:25:37+08:00" />
-<meta itemprop="wordCount" content="142"><meta itemprop="image" content="https://tianshangxing.github.io/blog/"/>
+<meta itemprop="wordCount" content="152"><meta itemprop="image" content="https://tianshangxing.github.io/blog/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tianshangxing.github.io/blog/"/>
 
 <meta name="twitter:title" content="Linux基础"/>
 <meta name="twitter:description" content="Linux 目前市面上用的操作环境
-Windows	mac	Linux	麒麟	DOS
+Windows、MacOS、Linux、Unix、MSDOS、Android、iOS
 Linux简介
 Linux是一个基于POSIX和unix的多用户 多任务 支持多线程和 多cpu的一个操作系统
-Linux的发行版：
-Ubuntu	RedHat	CentOS	Debian	SUse
+常见Linux的发行版：
+Ubuntu、CentOS、RedHat、Debian、SUse、KALI Linux、麒麟
 Linux的使用领域：
 LNMP Linux&#43;Nginx&#43;mysql&#43;Php
 LAMP Linux&#43;apache&#43;mysql&#43;Php
 Linux的安装：
-在虚拟机中进行安装linux 使用云服务的linux （阿里云 腾讯云） 常用命令 ls /：展示当前目录下的所有文件
-etc：存放配置文件和子目录 var：存放日志以及线程程序 bin/usr/sbin：系统用户使用的命令 对文件的操作
-cd ..：进入上一级目录 cd ../：进入根目录 cd **：进入任意文件夹 ls：展示所有文件夹下的子文件夹和子文件 ls -l：展示文件属性以及文件所属的用户和组 l rwx rwx rwx
+在虚拟机中进行安装linux 使用云服务的linux （阿里云 腾讯云） Linux目录结构
+bin：二进制可执行文件 sbin：只有root用户可以进入访问的二进制可执行文件 etc：配置文件 usr：存放共享的系统资源 home：存放用户文件的跟目录 root：超级用户目录 dev：存放设备文件 lib：存放程序运行所需要的共享库及内核模块 mnt：系统管理员安装临时文件系统的安装点 boot：存放用于系统引导时使用的各种文件 tmp：存放各种临时文件 var：存放运行时需要改变数据的文件 proc：存储硬件相关信息 常用命令 ls ：展示当前目录下的所有文件
+-a：查看所有文件（包括隐藏文件） -l：查看文件详细信息（简写为：ll） etc：存放配置文件和子目录 var：存放日志以及线程程序 bin/usr/sbin：系统用户使用的命令 对文件的操作
+cd ..：进入上一级目录 cd /：进入根目录 cd **：进入任意文件夹 ls：展示所有文件夹下的子文件夹和子文件 ls -a：展示所有文件（包括隐藏文件） ls -l：展示文件属性以及文件所属的用户和组(简写为ll) d rwx-rwx-rwx
 0 123 456 789
 下标为0：代表确定文件类型
 下标为123：确定文件的所属 拥有该文件的权限
 下标为456：确定属性组 所有有权限的用户组
 下标为789：其他用户拥有该文件的权限
-下标为0位置还可以是：- d l b c
--：是一个文件
-d：是一个目录
-l：是链接文档
-b：是装置文件，可提供存储的接口设备
-c：是串行接口设备
-后3位制
-r：读"/>
+下标为0位置还可以是：- d l b c"/>
 
 
 
@@ -208,15 +190,15 @@ r：读"/>
 <ol>
 <li>
 <p>目前市面上用的操作环境</p>
-<p>Windows	mac	Linux	麒麟	DOS</p>
+<p>Windows、MacOS、Linux、Unix、MSDOS、Android、iOS</p>
 </li>
 <li>
 <p>Linux简介</p>
 <p>Linux是一个基于POSIX和unix的多用户 多任务 支持多线程和 多cpu的一个操作系统</p>
 </li>
 <li>
-<p>Linux的发行版：</p>
-<p>Ubuntu	RedHat	CentOS	Debian	SUse</p>
+<p>常见Linux的发行版：</p>
+<p>Ubuntu、CentOS、RedHat、Debian、SUse、KALI Linux、麒麟</p>
 </li>
 <li>
 <p>Linux的使用领域：</p>
@@ -225,41 +207,62 @@ r：读"/>
 </li>
 <li>
 <p>Linux的安装：</p>
-<ol>
+<ul>
 <li>在虚拟机中进行安装linux</li>
 <li>使用云服务的linux （阿里云 腾讯云）</li>
-</ol>
+</ul>
+</li>
+<li>
+<p>Linux目录结构</p>
+<ul>
+<li>bin：二进制可执行文件</li>
+<li>sbin：只有root用户可以进入访问的二进制可执行文件</li>
+<li>etc：配置文件</li>
+<li>usr：存放共享的系统资源</li>
+<li>home：存放用户文件的跟目录</li>
+<li>root：超级用户目录</li>
+<li>dev：存放设备文件</li>
+<li>lib：存放程序运行所需要的共享库及内核模块</li>
+<li>mnt：系统管理员安装临时文件系统的安装点</li>
+<li>boot：存放用于系统引导时使用的各种文件</li>
+<li>tmp：存放各种临时文件</li>
+<li>var：存放运行时需要改变数据的文件</li>
+<li>proc：存储硬件相关信息</li>
+</ul>
 </li>
 </ol>
 <hr>
 <h3 id="常用命令">常用命令</h3>
 <ol>
 <li>
-<p>ls /：展示当前目录下的所有文件</p>
-<ol>
+<p>ls ：展示当前目录下的所有文件</p>
+<ul>
+<li>-a：查看所有文件（包括隐藏文件）</li>
+<li>-l：查看文件详细信息（简写为：ll）</li>
 <li>etc：存放配置文件和子目录</li>
 <li>var：存放日志以及线程程序</li>
 <li>bin/usr/sbin：系统用户使用的命令</li>
-</ol>
+</ul>
 </li>
 <li>
 <p>对文件的操作</p>
-<ol>
+<ul>
 <li>cd ..：进入上一级目录</li>
-<li>cd ../：进入根目录</li>
+<li>cd /：进入根目录</li>
 <li>cd **：进入任意文件夹</li>
 <li>ls：展示所有文件夹下的子文件夹和子文件</li>
-<li>ls -l：展示文件属性以及文件所属的用户和组</li>
-</ol>
+<li>ls -a：展示所有文件（包括隐藏文件）</li>
+<li>ls -l：展示文件属性以及文件所属的用户和组(简写为ll)</li>
+</ul>
 </li>
 <li>
-<p>l rwx rwx rwx</p>
+<p>d rwx-rwx-rwx</p>
 <p>0 123 456 789</p>
 <p>下标为0：代表确定文件类型</p>
 <p>下标为123：确定文件的所属 拥有该文件的权限</p>
 <p>下标为456：确定属性组  所有有权限的用户组</p>
 <p>下标为789：其他用户拥有该文件的权限</p>
-<ol>
+<ul>
 <li>
 <p>下标为0位置还可以是：- d l b c</p>
 <p>-：是一个文件</p>
@@ -275,7 +278,7 @@ r：读"/>
 <p>x：执行</p>
 <p>-：权限</p>
 </li>
-</ol>
+</ul>
 </li>
 <li>
 <p>屏幕清空：clear/ctrl+l</p>
@@ -297,37 +300,42 @@ r：读"/>
 </li>
 <li>
 <p>移动/重命名：mv</p>
-<ol>
+<ul>
 <li>-f：文件已经存在直接覆盖</li>
 <li>-i：询问是否覆盖</li>
 <li>-r：文件升级</li>
-</ol>
+</ul>
 </li>
 <li>
 <p>移除：rm</p>
-<ol>
+<ul>
 <li>-f：忽略不存在的文件</li>
 <li>-i：互动模式</li>
 <li>-r：递归删除</li>
-</ol>
+</ul>
 </li>
 <li>
 <p>编辑文件：vi</p>
-<ol>
-<li>i：insert输入模式</li>
+<ul>
+<li>a：从光标当前字符后编辑</li>
+<li>i：从光标原位置进行编辑</li>
+<li>o：从光标所在下一行编辑</li>
 <li>:q：退出</li>
 <li>:q!：退出不报存</li>
 <li>:w：保存</li>
-<li>: wq：保存并退出</li>
+<li>:wq：保存并退出</li>
 <li>:x：保存并退出</li>
 <li>命令模式  command mode</li>
 <li>输入模式  insert mode</li>
 <li>底线模式  lastline mode</li>
-</ol>
+</ul>
 </li>
+</ol>
+<p><img src="https://tianshangxing.github.io/blog/vim%E6%93%8D%E4%BD%9C%E5%9B%BE.gif" alt="vim操作图"></p>
+<ol start="13">
 <li>
 <p>查看文件内容</p>
-<ol>
+<ul>
 <li>cat：由第一行显示内容
 <ol>
 <li>cat -a</li>
@@ -350,23 +358,23 @@ r：读"/>
 <li>q：退出</li>
 </ol>
 </li>
-</ol>
+</ul>
 </li>
 <li>
 <p>添加用户账户：useradd ** 用户名</p>
-<ol>
+<ul>
 <li>-g：用户组</li>
 <li>-u：用户号</li>
 <li>-d：指定用户主目录</li>
 <li>-s：shell文件 指定用户登录sell</li>
-</ol>
+</ul>
 <p>使用shell脚本的方式</p>
-<ol>
+<ul>
 <li>在Linux下进行创建文件  后缀名位 .sh</li>
 <li>编辑创建的好的文件</li>
 <li>Chmod +x /文件路径</li>
 <li>执行编译的命令</li>
-</ol>
+</ul>
 </li>
 </ol>
 
